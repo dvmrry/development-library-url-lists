@@ -10,7 +10,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
 from urllib.error import HTTPError, URLError
-from urllib.parse import quote, urlsplit
+from urllib.parse import quote, urlsplit, urlunsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 
 from .catalog import load_catalog, read_json, write_json_atomic
@@ -47,8 +47,8 @@ class DiscoveryError(RuntimeError):
 
 class _TrustedRedirectHandler(HTTPRedirectHandler):
     def redirect_request(self, request, fp, code, message, headers, new_url):
-        _validate_network_url(new_url)
-        return super().redirect_request(request, fp, code, message, headers, new_url)
+        safe_url = _trusted_ascii_url(new_url)
+        return super().redirect_request(request, fp, code, message, headers, safe_url)
 
 
 _OPENER = build_opener(_TrustedRedirectHandler())
@@ -58,23 +58,48 @@ def _validate_network_url(url: str) -> None:
     parsed = urlsplit(url)
     if parsed.scheme != "https" or parsed.hostname not in TRUSTED_NETWORK_HOSTS:
         raise DiscoveryError(f"collector refused untrusted network endpoint: {url}")
+    if parsed.username is not None or parsed.password is not None:
+        raise DiscoveryError("collector refused credentials in a network endpoint")
+    if parsed.port not in {None, 443}:
+        raise DiscoveryError("collector refused a nonstandard network endpoint port")
+
+
+def _trusted_ascii_url(url: str) -> str:
+    """Validate a collector URL and safely encode attacker-controlled paths."""
+
+    _validate_network_url(url)
+    parsed = urlsplit(url)
+    authority = parsed.hostname
+    if parsed.port == 443:
+        authority = f"{authority}:443"
+    return urlunsplit(
+        (
+            "https",
+            authority,
+            quote(parsed.path, safe="/%:@-._~"),
+            quote(parsed.query, safe="=&%"),
+            "",
+        )
+    )
 
 
 def _get_bytes(url: str, *, token: str | None = None) -> bytes:
-    _validate_network_url(url)
+    safe_url = _trusted_ascii_url(url)
     headers = {
         "Accept": "application/vnd.github+json",
         "User-Agent": "development-library-url-lists/0.1",
         "X-GitHub-Api-Version": "2022-11-28",
     }
-    if token and urlsplit(url).hostname == "api.github.com":
+    if token and urlsplit(safe_url).hostname == "api.github.com":
         headers["Authorization"] = f"Bearer {token}"
-    request = Request(url, headers=headers)
+    request = Request(safe_url, headers=headers)
     try:
         with _OPENER.open(request, timeout=30) as response:
             return response.read(2_000_001)
-    except (HTTPError, URLError, TimeoutError) as error:
-        raise DiscoveryError(f"trusted source request failed for {url}: {error}") from error
+    except (HTTPError, URLError, TimeoutError, UnicodeError) as error:
+        raise DiscoveryError(
+            f"trusted source request failed for {safe_url}: {error}"
+        ) from error
 
 
 def _get_json(url: str, *, token: str | None = None) -> Any:

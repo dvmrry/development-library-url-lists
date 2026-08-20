@@ -7,7 +7,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from url_lists.discovery import extract_context_urls, filter_observations, merge_candidates
+from url_lists.discovery import (
+    _trusted_ascii_url,
+    extract_context_urls,
+    filter_observations,
+    merge_candidates,
+)
 
 
 class DiscoveryTests(unittest.TestCase):
@@ -71,6 +76,15 @@ documentation = "https://docs.example.com"
         self.assertEqual(
             extract_context_urls(content, ["index-url"]),
             ["https://packages.example.org/simple"],
+        )
+
+    def test_trusted_api_path_is_ascii_encoded(self) -> None:
+        encoded = _trusted_ascii_url(
+            "https://api.github.com/repos/acme/project/contents/\u200efile"
+        )
+        self.assertEqual(
+            encoded,
+            "https://api.github.com/repos/acme/project/contents/%E2%80%8Efile",
         )
 
     def test_confidence_increases_with_independent_repositories(self) -> None:
