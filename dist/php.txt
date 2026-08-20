@@ -1,0 +1,4 @@
+asset-packagist.org
+packages.drupal.org
+packagist.org
+repo.packagist.org

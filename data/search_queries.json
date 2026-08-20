@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "queries": [
+    {
+      "ecosystem": "javascript",
+      "query": "\"registry=\" filename:.npmrc",
+      "context_terms": ["registry="],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "javascript",
+      "query": "\"npmRegistryServer\" filename:.yarnrc.yml",
+      "context_terms": ["npmRegistryServer"],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "javascript",
+      "query": "\"registry\" filename:bunfig.toml",
+      "context_terms": ["registry"],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "python",
+      "query": "\"extra-index-url\" filename:pip.conf",
+      "context_terms": ["extra-index-url"],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "python",
+      "query": "\"index-url\" filename:pip.conf",
+      "context_terms": ["index-url"],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "python",
+      "query": "\"[[tool.uv.index]]\" filename:pyproject.toml",
+      "context_terms": ["url ="],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "python",
+      "query": "\"channels:\" filename:.condarc",
+      "context_terms": ["http://", "https://"],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "jvm",
+      "query": "\"<repository>\" \"<url>https://\" extension:xml",
+      "context_terms": ["<url>"],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "jvm",
+      "query": "\"<mirror>\" \"<url>https://\" filename:settings.xml",
+      "context_terms": ["<url>"],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "jvm",
+      "query": "\"maven { url\" extension:gradle",
+      "context_terms": ["url"],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "jvm",
+      "query": "\"resolvers +=\" extension:sbt",
+      "context_terms": ["resolver", "url"],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "dotnet",
+      "query": "\"<packageSources>\" filename:NuGet.Config",
+      "context_terms": ["<add "],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "rust",
+      "query": "\"[registries]\" filename:config.toml",
+      "context_terms": ["index =", "registry ="],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "rust",
+      "query": "\"replace-with\" filename:config.toml",
+      "context_terms": ["registry =", "index ="],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "go",
+      "query": "\"GOPROXY=\"",
+      "context_terms": ["GOPROXY"],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "php",
+      "query": "\"repositories\" filename:composer.json",
+      "context_terms": ["\"url\""],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "ruby",
+      "query": "\"source https://\" filename:Gemfile",
+      "context_terms": ["source"],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "cpp",
+      "query": "\"conan remote add\"",
+      "context_terms": ["conan remote add"],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "cpp",
+      "query": "\"remotes\" filename:remotes.json",
+      "context_terms": ["\"url\""],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "dart",
+      "query": "\"PUB_HOSTED_URL=\"",
+      "context_terms": ["PUB_HOSTED_URL"],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "erlang",
+      "query": "\"HEX_MIRROR=\"",
+      "context_terms": ["HEX_MIRROR"],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "haskell",
+      "query": "\"package-indices:\" filename:config",
+      "context_terms": ["http://", "https://"],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "r",
+      "query": "\"options(repos\" extension:R",
+      "context_terms": ["repos"],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "julia",
+      "query": "\"JULIA_PKG_SERVER=\"",
+      "context_terms": ["JULIA_PKG_SERVER"],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "swift",
+      "query": "\"source 'https://\" filename:Podfile",
+      "context_terms": ["source"],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "swift",
+      "query": "\"registries\" filename:registries.json",
+      "context_terms": ["\"url\""],
+      "max_results": 20
+    },
+    {
+      "ecosystem": "containers",
+      "query": "\"registry-mirrors\" filename:daemon.json",
+      "context_terms": ["registry-mirrors", "http://", "https://"],
+      "max_results": 20
+    }
+  ]
+}

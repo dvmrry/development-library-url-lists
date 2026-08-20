@@ -1,0 +1,3 @@
+builds.hex.pm
+hex.pm
+repo.hex.pm

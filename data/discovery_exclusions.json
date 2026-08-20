@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "exact_hosts": [
+    "127.0.0.1",
+    "bitbucket.org",
+    "example.com",
+    "github.com",
+    "gitlab.com",
+    "localhost"
+  ],
+  "suffixes": [
+    ".example",
+    ".invalid",
+    ".internal",
+    ".local",
+    ".localhost",
+    ".test"
+  ],
+  "shared_hosts": [
+    "amazonaws.com",
+    "azure.com",
+    "cloudfront.net",
+    "googleapis.com",
+    "googleusercontent.com",
+    "storage.googleapis.com"
+  ]
+}

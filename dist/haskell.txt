@@ -1,0 +1,2 @@
+hackage.haskell.org
+stackage.org

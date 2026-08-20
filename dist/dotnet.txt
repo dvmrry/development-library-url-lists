@@ -1,0 +1,6 @@
+api.myget.org
+api.nuget.org
+globalcdn.nuget.org
+nuget.pkg.github.com
+pkgs.dev.azure.com
+www.nuget.org

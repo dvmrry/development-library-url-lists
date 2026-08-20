@@ -1,0 +1,8 @@
+cdn.jsdelivr.net
+deno.land
+jsr.io
+npm.pkg.github.com
+registry.npmjs.org
+registry.npmmirror.com
+registry.yarnpkg.com
+unpkg.com

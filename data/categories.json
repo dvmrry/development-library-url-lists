@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "categories": [
+    {"id": "python", "title": "Python and Conda", "filename": "python.txt"},
+    {"id": "javascript", "title": "JavaScript and TypeScript", "filename": "javascript.txt"},
+    {"id": "jvm", "title": "JVM, Maven, and Gradle", "filename": "jvm.txt"},
+    {"id": "dotnet", "title": ".NET and NuGet", "filename": "dotnet.txt"},
+    {"id": "rust", "title": "Rust and Cargo", "filename": "rust.txt"},
+    {"id": "go", "title": "Go modules", "filename": "go.txt"},
+    {"id": "php", "title": "PHP and Composer", "filename": "php.txt"},
+    {"id": "ruby", "title": "Ruby and RubyGems", "filename": "ruby.txt"},
+    {"id": "cpp", "title": "C and C++", "filename": "cpp.txt"},
+    {"id": "dart", "title": "Dart and Flutter", "filename": "dart.txt"},
+    {"id": "erlang", "title": "Erlang and Elixir", "filename": "erlang.txt"},
+    {"id": "haskell", "title": "Haskell", "filename": "haskell.txt"},
+    {"id": "r", "title": "R", "filename": "r.txt"},
+    {"id": "julia", "title": "Julia", "filename": "julia.txt"},
+    {"id": "swift", "title": "Swift and CocoaPods", "filename": "swift.txt"},
+    {"id": "containers", "title": "Containers and OCI", "filename": "containers.txt"},
+    {"id": "multi_ecosystem", "title": "Multi-ecosystem hosted registries", "filename": "multi-ecosystem.txt"}
+  ]
+}

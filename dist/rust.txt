@@ -1,0 +1,4 @@
+crates.io
+index.crates.io
+rsproxy.cn
+static.crates.io

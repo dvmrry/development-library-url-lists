@@ -1,0 +1,16 @@
+auth.docker.io
+cgr.dev
+gcr.io
+ghcr.io
+hub.docker.com
+mcr.microsoft.com
+nvcr.io
+.pkg.dev
+production.cloudflare.docker.com
+public.ecr.aws
+quay.io
+registry-1.docker.io
+registry.access.redhat.com
+registry.gitlab.com
+registry.k8s.io
+registry.redhat.io

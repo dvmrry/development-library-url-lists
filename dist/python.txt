@@ -1,0 +1,6 @@
+conda.anaconda.org
+files.pythonhosted.org
+prefix.dev
+pypi.org
+repo.anaconda.com
+test.pypi.org

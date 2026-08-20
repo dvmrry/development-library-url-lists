@@ -1,0 +1,2 @@
+cdn.cocoapods.org
+trunk.cocoapods.org

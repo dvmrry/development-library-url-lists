@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {"target": "pypi.org", "match": "exact", "categories": ["python"], "kind": "canonical", "status": "approved", "evidence": ["https://packaging.python.org/en/latest/specifications/simple-repository-api/"]},
+    {"target": "files.pythonhosted.org", "match": "exact", "categories": ["python"], "kind": "artifact-cdn", "status": "approved", "evidence": ["https://docs.pypi.org/api/index-api/"]},
+    {"target": "test.pypi.org", "match": "exact", "categories": ["python"], "kind": "canonical-test", "status": "approved", "evidence": ["https://packaging.python.org/en/latest/guides/using-testpypi/"]},
+    {"target": "repo.anaconda.com", "match": "exact", "categories": ["python"], "kind": "canonical", "status": "approved", "evidence": ["https://www.anaconda.com/docs/getting-started/working-with-conda/reference/default-repositories"]},
+    {"target": "conda.anaconda.org", "match": "exact", "categories": ["python"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/channels.html"]},
+    {"target": "prefix.dev", "match": "exact", "categories": ["python"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://prefix.dev/docs"]},
+
+    {"target": "registry.npmjs.org", "match": "exact", "categories": ["javascript"], "kind": "canonical", "status": "approved", "evidence": ["https://docs.npmjs.com/cli/v11/using-npm/registry"]},
+    {"target": "registry.yarnpkg.com", "match": "exact", "categories": ["javascript"], "kind": "mirror", "status": "approved", "evidence": ["https://yarnpkg.com/configuration/yarnrc#npmRegistryServer"]},
+    {"target": "registry.npmmirror.com", "match": "exact", "categories": ["javascript"], "kind": "mirror", "status": "approved", "evidence": ["https://npmmirror.com/"]},
+    {"target": "jsr.io", "match": "exact", "categories": ["javascript"], "kind": "canonical", "status": "approved", "evidence": ["https://jsr.io/docs/introduction"]},
+    {"target": "deno.land", "match": "exact", "categories": ["javascript"], "kind": "module-host", "status": "approved", "evidence": ["https://docs.deno.com/runtime/fundamentals/modules/"]},
+    {"target": "unpkg.com", "match": "exact", "categories": ["javascript"], "kind": "artifact-cdn", "status": "approved", "evidence": ["https://unpkg.com/"]},
+    {"target": "cdn.jsdelivr.net", "match": "exact", "categories": ["javascript"], "kind": "artifact-cdn", "status": "approved", "evidence": ["https://www.jsdelivr.com/documentation"]},
+
+    {"target": "repo.maven.apache.org", "match": "exact", "categories": ["jvm"], "kind": "canonical", "status": "approved", "evidence": ["https://maven.apache.org/pom.html"]},
+    {"target": "repo1.maven.org", "match": "exact", "categories": ["jvm"], "kind": "canonical-alias", "status": "approved", "evidence": ["https://maven.apache.org/repository/"]},
+    {"target": "plugins.gradle.org", "match": "exact", "categories": ["jvm"], "kind": "canonical", "status": "approved", "evidence": ["https://plugins.gradle.org/docs"]},
+    {"target": "plugins-artifacts.gradle.org", "match": "exact", "categories": ["jvm"], "kind": "artifact-cdn", "status": "approved", "evidence": ["https://plugins.gradle.org/docs"]},
+    {"target": "maven.google.com", "match": "exact", "categories": ["jvm"], "kind": "canonical", "status": "approved", "evidence": ["https://developer.android.com/build/remote-repositories"]},
+    {"target": "repo.spring.io", "match": "exact", "categories": ["jvm"], "kind": "vendor-repository", "status": "approved", "evidence": ["https://repo.spring.io/"]},
+    {"target": "repository.jboss.org", "match": "exact", "categories": ["jvm"], "kind": "vendor-repository", "status": "approved", "evidence": ["https://repository.jboss.org/"]},
+    {"target": "jitpack.io", "match": "exact", "categories": ["jvm"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://docs.jitpack.io/"]},
+    {"target": "clojars.org", "match": "exact", "categories": ["jvm"], "kind": "community-registry", "status": "approved", "evidence": ["https://clojars.org/"]},
+
+    {"target": "api.nuget.org", "match": "exact", "categories": ["dotnet"], "kind": "canonical", "status": "approved", "evidence": ["https://learn.microsoft.com/nuget/api/overview"]},
+    {"target": "globalcdn.nuget.org", "match": "exact", "categories": ["dotnet"], "kind": "artifact-cdn", "status": "approved", "evidence": ["https://learn.microsoft.com/nuget/api/package-base-address-resource"]},
+    {"target": "www.nuget.org", "match": "exact", "categories": ["dotnet"], "kind": "canonical", "status": "approved", "evidence": ["https://www.nuget.org/"]},
+    {"target": "api.myget.org", "match": "exact", "categories": ["dotnet", "multi_ecosystem"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://docs.myget.org/"]},
+
+    {"target": "crates.io", "match": "exact", "categories": ["rust"], "kind": "canonical", "status": "approved", "evidence": ["https://doc.rust-lang.org/cargo/reference/registries.html"]},
+    {"target": "static.crates.io", "match": "exact", "categories": ["rust"], "kind": "artifact-cdn", "status": "approved", "evidence": ["https://doc.rust-lang.org/cargo/reference/registry-index.html"]},
+    {"target": "index.crates.io", "match": "exact", "categories": ["rust"], "kind": "canonical-index", "status": "approved", "evidence": ["https://doc.rust-lang.org/cargo/reference/registry-index.html"]},
+    {"target": "rsproxy.cn", "match": "exact", "categories": ["rust"], "kind": "mirror", "status": "approved", "evidence": ["https://rsproxy.cn/"]},
+
+    {"target": "proxy.golang.org", "match": "exact", "categories": ["go"], "kind": "canonical", "status": "approved", "evidence": ["https://go.dev/ref/mod#goproxy-protocol"]},
+    {"target": "sum.golang.org", "match": "exact", "categories": ["go"], "kind": "checksum-service", "status": "approved", "evidence": ["https://go.dev/ref/mod#checksum-database"]},
+    {"target": "index.golang.org", "match": "exact", "categories": ["go"], "kind": "canonical-index", "status": "approved", "evidence": ["https://index.golang.org/"]},
+    {"target": "goproxy.io", "match": "exact", "categories": ["go"], "kind": "mirror", "status": "approved", "evidence": ["https://goproxy.io/"]},
+    {"target": "goproxy.cn", "match": "exact", "categories": ["go"], "kind": "mirror", "status": "approved", "evidence": ["https://goproxy.cn/"]},
+
+    {"target": "repo.packagist.org", "match": "exact", "categories": ["php"], "kind": "canonical", "status": "approved", "evidence": ["https://packagist.org/about"]},
+    {"target": "packagist.org", "match": "exact", "categories": ["php"], "kind": "canonical", "status": "approved", "evidence": ["https://packagist.org/about"]},
+    {"target": "asset-packagist.org", "match": "exact", "categories": ["php"], "kind": "community-registry", "status": "approved", "evidence": ["https://asset-packagist.org/"]},
+    {"target": "packages.drupal.org", "match": "exact", "categories": ["php"], "kind": "vendor-repository", "status": "approved", "evidence": ["https://www.drupal.org/docs/develop/using-composer/manage-dependencies"]},
+
+    {"target": "rubygems.org", "match": "exact", "categories": ["ruby"], "kind": "canonical", "status": "approved", "evidence": ["https://guides.rubygems.org/run-your-own-gem-server/"]},
+    {"target": "index.rubygems.org", "match": "exact", "categories": ["ruby"], "kind": "canonical-index", "status": "approved", "evidence": ["https://guides.rubygems.org/rubygems-org-api/"]},
+
+    {"target": "center2.conan.io", "match": "exact", "categories": ["cpp"], "kind": "canonical", "status": "approved", "evidence": ["https://docs.conan.io/2/reference/config_files/remotes.html"]},
+    {"target": "center.conan.io", "match": "exact", "categories": ["cpp"], "kind": "canonical-alias", "status": "approved", "evidence": ["https://conan.io/center"]},
+
+    {"target": "pub.dev", "match": "exact", "categories": ["dart"], "kind": "canonical", "status": "approved", "evidence": ["https://dart.dev/tools/pub/custom-package-repositories"]},
+    {"target": "pub.dartlang.org", "match": "exact", "categories": ["dart"], "kind": "canonical-alias", "status": "approved", "evidence": ["https://raw.githubusercontent.com/package-url/purl-spec/main/docs/types/definitions/pub-definition.md"]},
+    {"target": "pub.flutter-io.cn", "match": "exact", "categories": ["dart"], "kind": "mirror", "status": "approved", "evidence": ["https://docs.flutter.dev/community/china"]},
+
+    {"target": "repo.hex.pm", "match": "exact", "categories": ["erlang"], "kind": "canonical", "status": "approved", "evidence": ["https://hex.pm/docs/usage"]},
+    {"target": "hex.pm", "match": "exact", "categories": ["erlang"], "kind": "canonical", "status": "approved", "evidence": ["https://hex.pm/docs/usage"]},
+    {"target": "builds.hex.pm", "match": "exact", "categories": ["erlang"], "kind": "artifact-host", "status": "approved", "evidence": ["https://hex.pm/docs/usage"]},
+
+    {"target": "hackage.haskell.org", "match": "exact", "categories": ["haskell"], "kind": "canonical", "status": "approved", "evidence": ["https://hackage.haskell.org/"]},
+    {"target": "stackage.org", "match": "exact", "categories": ["haskell"], "kind": "curated-repository", "status": "approved", "evidence": ["https://www.stackage.org/"]},
+
+    {"target": "cloud.r-project.org", "match": "exact", "categories": ["r"], "kind": "canonical-mirror", "status": "approved", "evidence": ["https://cran.r-project.org/mirrors.html"]},
+    {"target": "cran.r-project.org", "match": "exact", "categories": ["r"], "kind": "canonical", "status": "approved", "evidence": ["https://cran.r-project.org/"]},
+    {"target": "bioconductor.org", "match": "exact", "categories": ["r"], "kind": "canonical", "status": "approved", "evidence": ["https://www.bioconductor.org/install/"]},
+    {"target": "packagemanager.posit.co", "match": "exact", "categories": ["r"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://packagemanager.posit.co/"]},
+
+    {"target": "pkg.julialang.org", "match": "exact", "categories": ["julia"], "kind": "canonical", "status": "approved", "evidence": ["https://pkgdocs.julialang.org/dev/registries/"]},
+
+    {"target": "cdn.cocoapods.org", "match": "exact", "categories": ["swift"], "kind": "canonical-index", "status": "approved", "evidence": ["https://blog.cocoapods.org/CocoaPods-1.8.0-beta/"]},
+    {"target": "trunk.cocoapods.org", "match": "exact", "categories": ["swift"], "kind": "canonical", "status": "approved", "evidence": ["https://guides.cocoapods.org/making/getting-setup-with-trunk.html"]},
+
+    {"target": "registry-1.docker.io", "match": "exact", "categories": ["containers"], "kind": "canonical", "status": "approved", "evidence": ["https://docs.docker.com/docker-hub/"]},
+    {"target": "hub.docker.com", "match": "exact", "categories": ["containers"], "kind": "canonical", "status": "approved", "evidence": ["https://raw.githubusercontent.com/package-url/purl-spec/main/docs/types/definitions/docker-definition.md"]},
+    {"target": "auth.docker.io", "match": "exact", "categories": ["containers"], "kind": "authentication", "status": "approved", "evidence": ["https://docs.docker.com/reference/api/registry/auth/"]},
+    {"target": "production.cloudflare.docker.com", "match": "exact", "categories": ["containers"], "kind": "artifact-cdn", "status": "approved", "evidence": ["https://docs.docker.com/desktop/setup/allow-list/"]},
+    {"target": "ghcr.io", "match": "exact", "categories": ["containers", "multi_ecosystem"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://docs.github.com/packages/working-with-a-github-packages-registry/working-with-the-container-registry"]},
+    {"target": "quay.io", "match": "exact", "categories": ["containers"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://docs.quay.io/"]},
+    {"target": "gcr.io", "match": "exact", "categories": ["containers"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"]},
+    {"target": "public.ecr.aws", "match": "exact", "categories": ["containers"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://docs.aws.amazon.com/AmazonECR/latest/public/what-is-ecr.html"]},
+    {"target": "mcr.microsoft.com", "match": "exact", "categories": ["containers"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://learn.microsoft.com/azure/container-registry/container-registry-artifact-streaming"]},
+    {"target": "nvcr.io", "match": "exact", "categories": ["containers"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://docs.nvidia.com/ngc/gpu-cloud/ngc-private-registry-user-guide/"]},
+    {"target": "registry.k8s.io", "match": "exact", "categories": ["containers"], "kind": "canonical", "status": "approved", "evidence": ["https://kubernetes.io/blog/2023/03/10/image-registry-redirect/"]},
+    {"target": "registry.gitlab.com", "match": "exact", "categories": ["containers", "multi_ecosystem"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://docs.gitlab.com/user/packages/container_registry/"]},
+    {"target": "cgr.dev", "match": "exact", "categories": ["containers"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://edu.chainguard.dev/chainguard/chainguard-images/overview/"]},
+    {"target": "registry.access.redhat.com", "match": "exact", "categories": ["containers"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://access.redhat.com/RegistryAuthentication"]},
+    {"target": "registry.redhat.io", "match": "exact", "categories": ["containers"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://access.redhat.com/RegistryAuthentication"]},
+
+    {"target": ".jfrog.io", "match": "suffix", "categories": ["multi_ecosystem"], "kind": "hosted-registry-provider", "status": "approved", "evidence": ["https://jfrog.com/help/r/jfrog-platform-administration-documentation/jfrog-platform-domain-and-structure"]},
+    {"target": ".cloudsmith.io", "match": "suffix", "categories": ["multi_ecosystem"], "kind": "hosted-registry-provider", "status": "approved", "evidence": ["https://help.cloudsmith.io/docs/repository-formats"]},
+    {"target": ".fury.io", "match": "suffix", "categories": ["multi_ecosystem"], "kind": "hosted-registry-provider", "status": "approved", "evidence": ["https://gemfury.com/help/"]},
+    {"target": ".pkg.dev", "match": "suffix", "categories": ["containers", "multi_ecosystem"], "kind": "hosted-registry-provider", "status": "approved", "evidence": ["https://cloud.google.com/artifact-registry/docs/repositories"]},
+    {"target": "packagecloud.io", "match": "exact", "categories": ["multi_ecosystem"], "kind": "hosted-registry-provider", "status": "approved", "evidence": ["https://packagecloud.io/docs"]},
+    {"target": "pkgs.dev.azure.com", "match": "exact", "categories": ["dotnet", "multi_ecosystem"], "kind": "hosted-registry-provider", "status": "approved", "evidence": ["https://learn.microsoft.com/azure/devops/artifacts/start-using-azure-artifacts"]},
+    {"target": "npm.pkg.github.com", "match": "exact", "categories": ["javascript", "multi_ecosystem"], "kind": "hosted-registry-provider", "status": "approved", "evidence": ["https://docs.github.com/packages/working-with-a-github-packages-registry/working-with-the-npm-registry"]},
+    {"target": "maven.pkg.github.com", "match": "exact", "categories": ["jvm", "multi_ecosystem"], "kind": "hosted-registry-provider", "status": "approved", "evidence": ["https://docs.github.com/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry"]},
+    {"target": "nuget.pkg.github.com", "match": "exact", "categories": ["dotnet", "multi_ecosystem"], "kind": "hosted-registry-provider", "status": "approved", "evidence": ["https://docs.github.com/packages/working-with-a-github-packages-registry/working-with-the-nuget-registry"]},
+    {"target": "rubygems.pkg.github.com", "match": "exact", "categories": ["ruby", "multi_ecosystem"], "kind": "hosted-registry-provider", "status": "approved", "evidence": ["https://docs.github.com/packages/working-with-a-github-packages-registry/working-with-the-rubygems-registry"]}
+  ]
+}

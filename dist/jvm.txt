@@ -1,0 +1,10 @@
+clojars.org
+jitpack.io
+maven.google.com
+maven.pkg.github.com
+plugins-artifacts.gradle.org
+plugins.gradle.org
+repo.maven.apache.org
+repo.spring.io
+repo1.maven.org
+repository.jboss.org

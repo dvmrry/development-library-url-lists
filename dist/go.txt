@@ -1,0 +1,5 @@
+goproxy.cn
+goproxy.io
+index.golang.org
+proxy.golang.org
+sum.golang.org

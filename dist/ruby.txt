@@ -1,0 +1,3 @@
+index.rubygems.org
+rubygems.org
+rubygems.pkg.github.com

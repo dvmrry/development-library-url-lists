@@ -1,0 +1,13 @@
+api.myget.org
+.cloudsmith.io
+.fury.io
+ghcr.io
+.jfrog.io
+maven.pkg.github.com
+npm.pkg.github.com
+nuget.pkg.github.com
+packagecloud.io
+.pkg.dev
+pkgs.dev.azure.com
+registry.gitlab.com
+rubygems.pkg.github.com

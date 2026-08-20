@@ -1,0 +1,3 @@
+pub.dartlang.org
+pub.dev
+pub.flutter-io.cn
