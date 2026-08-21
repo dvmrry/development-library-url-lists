@@ -347,6 +347,10 @@ def merge_candidates(
     }
     additions = 0
 
+    for candidate in by_target.values():
+        candidate["confidence"] = _confidence(candidate.get("sources", []))
+        candidate["review_flags"] = _review_flags(candidate["target"])
+
     for observation in observations:
         target = observation["target"]
         source = {

@@ -26,6 +26,16 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Restore evidence from an open automation branch
+        env:
+          UPDATE_BRANCH: automation/update-url-list-candidates
+        shell: bash
+        run: |
+          if git ls-remote --exit-code --heads origin "refs/heads/$UPDATE_BRANCH" >/dev/null; then
+            git fetch --no-tags origin "$UPDATE_BRANCH"
+            git restore --source=FETCH_HEAD -- data/candidates.json
+          fi
+
       - name: Discover candidates and render outputs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

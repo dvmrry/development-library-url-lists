@@ -76,6 +76,34 @@ class DiscoveryTests(unittest.TestCase):
         )
         self.assertEqual(filtered, [])
 
+    def test_legacy_candidate_gets_review_metadata(self) -> None:
+        legacy = {
+            "schema_version": 1,
+            "candidates": [
+                {
+                    "target": "docs.example.org",
+                    "match": "exact",
+                    "categories": ["python"],
+                    "confidence": "low",
+                    "first_seen": "2026-08-20",
+                    "last_evidence_change": "2026-08-20",
+                    "sources": [
+                        {
+                            "source": "https://github.com/acme/project/blob/main/pip.conf",
+                            "source_kind": "github-code",
+                            "repository": "acme/project",
+                        }
+                    ],
+                }
+            ],
+        }
+        merged, additions = merge_candidates(legacy, [], today="2026-08-21")
+        self.assertEqual(additions, 0)
+        self.assertEqual(
+            merged["candidates"][0]["review_flags"],
+            ["documentation-like", "placeholder-like"],
+        )
+
     def test_context_extraction_ignores_unrelated_project_urls(self) -> None:
         content = """
 homepage = "https://project.example.com"
