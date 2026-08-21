@@ -46,14 +46,24 @@ so a malicious public config cannot turn the workflow into an SSRF primitive.
 ## Approval model
 
 Discovery never edits a published block list directly. A candidate needs human
-review and promotion:
+review. Promote a real repository:
 
 ~~~console
 python scripts/promote.py mirror.example.org --category python
 ~~~
 
+Reject an unrelated or placeholder host so future runs keep it suppressed:
+
+~~~console
+python scripts/reject.py docs.example.org --reason "documentation site"
+~~~
+
 Promotion records the discovery evidence, removes the review candidate, and
-regenerates `dist/`. Entries are never removed automatically; a retired
+regenerates `dist/`. Rejection preserves its evidence and rationale in
+`data/rejections.json`. Deterministic flags identify documentation-like,
+placeholder-like, and nonstandard-port candidates to speed up review.
+
+Published entries are never removed automatically; a retired
 endpoint remains in the evidence catalog with status `retired`.
 
 This intentionally favors false negatives in published policy over silently

@@ -3,6 +3,10 @@
 Contributions can add a seed, improve a discovery query, or promote a
 machine-discovered candidate.
 
+False positives should be rejected with `scripts/reject.py` so the decision,
+source evidence, and rationale remain auditable and the target is not
+rediscovered every week.
+
 Every approved catalog entry must include:
 
 - a normalized target;

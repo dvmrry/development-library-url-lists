@@ -46,6 +46,16 @@ def validate_candidates(document: dict[str, Any], category_ids: set[str]) -> lis
             problems.append(f"{label} has unknown categories")
         if candidate.get("confidence") not in {"low", "medium", "high"}:
             problems.append(f"{label} has invalid confidence")
+        review_flags = candidate.get("review_flags")
+        if not isinstance(review_flags, list) or not all(
+            flag in {
+                "documentation-like",
+                "nonstandard-port",
+                "placeholder-like",
+            }
+            for flag in review_flags
+        ):
+            problems.append(f"{label} has invalid review flags")
         sources = candidate.get("sources")
         if not isinstance(sources, list) or not sources:
             problems.append(f"{label} has no evidence sources")
@@ -58,6 +68,52 @@ def validate_candidates(document: dict[str, Any], category_ids: set[str]) -> lis
             for source in sources
         ):
             problems.append(f"{label} has an invalid evidence source")
+    return problems
+
+
+def validate_rejections(
+    document: dict[str, Any],
+    category_ids: set[str],
+    candidate_targets: set[str],
+) -> list[str]:
+    problems: list[str] = []
+    if document.get("schema_version") != 1:
+        return ["unsupported rejections schema version"]
+    rejections = document.get("rejections")
+    if not isinstance(rejections, list):
+        return ["rejections must be a list"]
+
+    seen: set[str] = set()
+    for index, rejection in enumerate(rejections, start=1):
+        label = f"rejection {index}"
+        if not isinstance(rejection, dict):
+            problems.append(f"{label} must be an object")
+            continue
+        target = rejection.get("target")
+        try:
+            normalized = normalize_target(target, preserve_path=False)
+        except (TargetError, TypeError) as error:
+            problems.append(f"{label} has invalid target: {error}")
+            continue
+        if target != normalized:
+            problems.append(f"{label} target is not normalized")
+        if target in seen:
+            problems.append(f"{label} duplicates target: {target}")
+        if target in candidate_targets:
+            problems.append(f"{label} is still present as a candidate")
+        seen.add(target)
+        categories = rejection.get("categories")
+        if (
+            not isinstance(categories, list)
+            or not categories
+            or set(categories) - category_ids
+        ):
+            problems.append(f"{label} has invalid categories")
+        if not isinstance(rejection.get("reason"), str) or not rejection["reason"].strip():
+            problems.append(f"{label} has no reason")
+        sources = rejection.get("sources")
+        if not isinstance(sources, list) or not sources:
+            problems.append(f"{label} has no preserved evidence")
     return problems
 
 
@@ -104,9 +160,21 @@ def main() -> int:
     categories = load_categories(ROOT)
     load_catalog(ROOT)
     category_ids = {item["id"] for item in categories}
+    candidates_document = read_json(ROOT / "data" / "candidates.json")
     problems = validate_candidates(
-        read_json(ROOT / "data" / "candidates.json"),
+        candidates_document,
         category_ids,
+    )
+    problems.extend(
+        validate_rejections(
+            read_json(ROOT / "data" / "rejections.json"),
+            category_ids,
+            {
+                candidate.get("target")
+                for candidate in candidates_document.get("candidates", [])
+                if isinstance(candidate, dict)
+            },
+        )
     )
     problems.extend(validate_discovery_configuration(category_ids))
     problems.extend(validate_documents(ROOT))

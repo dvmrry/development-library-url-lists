@@ -67,6 +67,15 @@ class DiscoveryTests(unittest.TestCase):
         self.assertEqual(additions, 0)
         self.assertEqual(first, second)
 
+    def test_rejected_target_stays_filtered(self) -> None:
+        filtered = filter_observations(
+            [self.observation("https://noise.example.org/packages")],
+            exclusions=self.exclusions,
+            catalog_entries=self.catalog,
+            rejected_targets={"noise.example.org"},
+        )
+        self.assertEqual(filtered, [])
+
     def test_context_extraction_ignores_unrelated_project_urls(self) -> None:
         content = """
 homepage = "https://project.example.com"
@@ -101,6 +110,20 @@ documentation = "https://docs.example.com"
             today="2026-08-20",
         )
         self.assertEqual(merged["candidates"][0]["confidence"], "medium")
+
+    def test_review_flags_are_deterministic(self) -> None:
+        observation = self.observation("https://docs.yourcompany.com/packages")
+        observation["target"] = "docs.yourcompany.com"
+        del observation["discovered_url"]
+        merged, _ = merge_candidates(
+            {"schema_version": 1, "candidates": []},
+            [observation],
+            today="2026-08-20",
+        )
+        self.assertEqual(
+            merged["candidates"][0]["review_flags"],
+            ["documentation-like", "placeholder-like"],
+        )
 
     @staticmethod
     def observation(url: str) -> dict[str, str]:

@@ -275,9 +275,11 @@ def filter_observations(
     *,
     exclusions: dict[str, Any],
     catalog_entries: Iterable[dict[str, Any]],
+    rejected_targets: Iterable[str] = (),
 ) -> list[dict[str, str]]:
     """Normalize and conservatively filter untrusted observations."""
 
+    rejected = set(rejected_targets)
     filtered: list[dict[str, str]] = []
     for observation in observations:
         try:
@@ -287,6 +289,8 @@ def filter_observations(
             )
             hostname = target_hostname(target)
         except (KeyError, TargetError):
+            continue
+        if target in rejected:
             continue
         if _is_excluded(hostname, exclusions):
             continue
@@ -307,6 +311,22 @@ def _confidence(sources: list[dict[str, str]]) -> str:
     if len(repositories) >= 2:
         return "medium"
     return "low"
+
+
+def _review_flags(target: str) -> list[str]:
+    hostname = target_hostname(target)
+    flags: list[str] = []
+    if (
+        hostname.startswith(("doc.", "docs.", "documentation."))
+        or hostname.endswith((".readthedocs.io", ".readthedocs.org"))
+    ):
+        flags.append("documentation-like")
+    placeholder_labels = {"company", "example", "mycompany", "yourcompany"}
+    if any(label in placeholder_labels for label in hostname.split(".")):
+        flags.append("placeholder-like")
+    if ":" in target.split("/", 1)[0]:
+        flags.append("nonstandard-port")
+    return flags
 
 
 def merge_candidates(
@@ -374,6 +394,7 @@ def merge_candidates(
             ),
         )
         candidate["confidence"] = _confidence(candidate["sources"])
+        candidate["review_flags"] = _review_flags(target)
         if changed:
             candidate["last_evidence_change"] = observed_date
 
@@ -393,6 +414,11 @@ def run_network_discovery(root: Path, *, token: str | None = None) -> int:
 
     queries = read_json(root / "data" / "search_queries.json").get("queries", [])
     exclusions = read_json(root / "data" / "discovery_exclusions.json")
+    rejections = read_json(root / "data" / "rejections.json")
+    if rejections.get("schema_version") != 1 or not isinstance(
+        rejections.get("rejections"), list
+    ):
+        raise DiscoveryError("unsupported rejections document")
     catalog = load_catalog(root)
     observations = collect_github_code(queries, token=github_token)
     observations.extend(collect_purl_definitions())
@@ -400,6 +426,9 @@ def run_network_discovery(root: Path, *, token: str | None = None) -> int:
         observations,
         exclusions=exclusions,
         catalog_entries=catalog["entries"],
+        rejected_targets={
+            rejection["target"] for rejection in rejections["rejections"]
+        },
     )
 
     candidates_path = root / "data" / "candidates.json"
