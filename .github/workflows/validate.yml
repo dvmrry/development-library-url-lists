@@ -2,6 +2,9 @@ name: Validate
 
 on:
   pull_request:
+    paths-ignore:
+      - data/candidates.json
+      - dist/**
   push:
     branches:
       - main
