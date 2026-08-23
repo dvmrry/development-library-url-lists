@@ -1,4 +1,4076 @@
 {
-  "schema_version": 1,
-  "candidates": []
+  "candidates": [
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "1e8d15c63ea5dbc1624f0b7b1d20c4d52bdb18f97e41f93f8831150f3d2c71a7",
+          "extractor": "pip-config",
+          "query_id": "pip-extra-index",
+          "repository": "vrk-kpa/opendata",
+          "source": "https://github.com/vrk-kpa/opendata/blob/163b9498df2b9411790129f9adf0f2db989be237/ckan/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "ckan/pip.conf",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "alpine-wheels.github.io"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "ccd1ac76b2905475ef4787f67c6c0589bfa26a68b19bc9362894c9b5e36053cb",
+          "extractor": "conda-yaml",
+          "query_id": "conda-channel-alias",
+          "repository": "pnlbwh/multi-shell-dMRIharmonization",
+          "source": "https://github.com/pnlbwh/multi-shell-dMRIharmonization/blob/602fe91b93fe4bc3166881ab392d1d9f2fe51a53/.condarc",
+          "source_kind": "github-code",
+          "source_path": ".condarc",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "anaconda.mgb.org"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "afd7ef807dfa7150612b637457530743ce23394365b49f47a83139c1d9e897b5",
+          "extractor": "conda-yaml",
+          "query_id": "conda-channel-alias",
+          "repository": "NOAA-GSL/contrib_miniconda3",
+          "source": "https://github.com/NOAA-GSL/contrib_miniconda3/blob/8c97c66923a30b91d7518e5b7d43c9f3274f61cd/4.5.12/.condarc",
+          "source_kind": "github-code",
+          "source_path": "4.5.12/.condarc",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "anaconda.rdhpcs.noaa.gov"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "retired-service"
+      ],
+      "sources": [
+        {
+          "content_sha256": "b5ff90ba65c83de18fb695bc15285c2a18fca17620c9280effe3e99354002f2a",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "Exiv2/exiv2",
+          "source": "https://github.com/Exiv2/exiv2/blob/e84cb9db060527416a43f3d257656331c85aff28/README-CONAN.md",
+          "source_kind": "github-code",
+          "source_path": "README-CONAN.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "90ed321f3ea110da2bad5ba748c8f78a5bbbbceb17044bef505200c85d30ed3d",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "LesnyRumcajs/grpc_bench",
+          "source": "https://github.com/LesnyRumcajs/grpc_bench/blob/48b6b958832c995eee021361bdf3544d7c356fcc/lua_grpc_st_onhold/Dockerfile",
+          "source_kind": "github-code",
+          "source_path": "lua_grpc_st_onhold/Dockerfile",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "799284543382148ee4be0666170733c367217d785cdd3c700a242f396f64c64f",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "PacktPublishing/Software-Architecture-with-Cpp",
+          "source": "https://github.com/PacktPublishing/Software-Architecture-with-Cpp/blob/8be901cafa57654d7b3ad360126bf3c9d668cca2/Chapter12/README.md",
+          "source_kind": "github-code",
+          "source_path": "Chapter12/README.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "3bafdee484f99462badd2fb2dc9f1a19bfa649517270b6379357ffd6619fb907",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "ericniebler/range-v3",
+          "source": "https://github.com/ericniebler/range-v3/blob/108f93c279c8f9cec175dac361084983d0176e99/CMakeLists.txt",
+          "source_kind": "github-code",
+          "source_path": "CMakeLists.txt",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "e3595218986edc830c8608314cd943929a21062cc22ea2e1151f45ba5b51feff",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "facebookincubator/FBX2glTF",
+          "source": "https://github.com/facebookincubator/FBX2glTF/blob/739ee5db94b0ca9eabe2b6ed92f32d13175072a3/Dockerfile",
+          "source_kind": "github-code",
+          "source_path": "Dockerfile",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "21378ffd6af282458258677828afcd494babb896b886a2405487102c95d1f6ce",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "facebookincubator/FBX2glTF",
+          "source": "https://github.com/facebookincubator/FBX2glTF/blob/739ee5db94b0ca9eabe2b6ed92f32d13175072a3/README.md",
+          "source_kind": "github-code",
+          "source_path": "README.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "f973cb5036f8f44bd9b2e113baa911fd376eae09d43dd32e48cc8dc88de46709",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "grisumbras/enum-flags",
+          "source": "https://github.com/grisumbras/enum-flags/blob/48d25b470ee6971d0db15f020937abf6017ebf51/README.md",
+          "source_kind": "github-code",
+          "source_path": "README.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "20fabdab06dc06926ed660160d52702379b01478e631b976b97dca99f4af2da8",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "jinq0123/LuaPbIntf",
+          "source": "https://github.com/jinq0123/LuaPbIntf/blob/781761b3557c5a08b47446ad10b30d83d4b79ddf/README.md",
+          "source_kind": "github-code",
+          "source_path": "README.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "5ac8029644640c002d0f497cde7660704ad249b490e8023e2d66d53a4f234f9d",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "jinq0123/grpc-lua",
+          "source": "https://github.com/jinq0123/grpc-lua/blob/90797e106b89e81837f53df1c61aad28ed32dbac/README.md",
+          "source_kind": "github-code",
+          "source_path": "README.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "e5c045bc1f008d0e1c2509c01addc61c8a1c12cbbf3a2f302ff9510b89450c75",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "karasusan/OpenVDBForUnity",
+          "source": "https://github.com/karasusan/OpenVDBForUnity/blob/d4906025a0592c52d07edef151ce2b2b904f2bc8/.travis/install.sh",
+          "source_kind": "github-code",
+          "source_path": ".travis/install.sh",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "6530ab83e98d7df9d53f1c162b831c6276a8941bed0158a9b2d6acd1ed2d0b7d",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "kmhofmann/selene",
+          "source": "https://github.com/kmhofmann/selene/blob/11718e1a7de6ff6251c46e4ef429a7cfb1bdb9eb/docs/installation.md",
+          "source_kind": "github-code",
+          "source_path": "docs/installation.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "4867062c206912787a9a1e598e2a94ca182c4a9257b9660484b939382f96d405",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "thelfer/tfel",
+          "source": "https://github.com/thelfer/tfel/blob/df68fbe6cdd2954d03e417941b85331451872c08/README-conan.md",
+          "source_kind": "github-code",
+          "source_path": "README-conan.md",
+          "source_role": "documentation"
+        }
+      ],
+      "target": "api.bintray.com"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "medium",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "9524f35353f03af0b192ea43f3f616d029fc220e08b3b1d180228382a1da3a96",
+          "extractor": "conan-json",
+          "query_id": "conan-remotes-json",
+          "repository": "SiliconLabs/matter_extension",
+          "source": "https://github.com/SiliconLabs/matter_extension/blob/5e1a67e5bc22b0778a4e8844f4d08b4d77a2d78b/packages/remotes.json",
+          "source_kind": "github-code",
+          "source_path": "packages/remotes.json",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "d15a1418086f0575ca3506b3a3f06c40c5c7ab85c4e39518f5763cf7b34cf71b",
+          "extractor": "conan-json",
+          "query_id": "conan-remotes-json",
+          "repository": "SiliconLabs/z-wave-ts-silabs",
+          "source": "https://github.com/SiliconLabs/z-wave-ts-silabs/blob/10c51c790f463d0bee11eb7fe3d30bb33afcfe26/remotes.json",
+          "source_kind": "github-code",
+          "source_path": "remotes.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "artifactory-local.silabs.net"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "3ca1d9f9a7282ed6ae018972f4f003accc4faaef70e1e2cd1dcab0ef0afdd62f",
+          "extractor": "pip-config",
+          "query_id": "pip-extra-index",
+          "repository": "nasa/opera-sds-pcm",
+          "source": "https://github.com/nasa/opera-sds-pcm/blob/9a4172637f8c7c600b21488c8eebe00dc923dffb/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "pip.conf",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "artifactory.jpl.nasa.gov"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "247892576beb549d3cd1670fa9536527a881c3500089220a7cfd18f44a593fbd",
+          "extractor": "conan-json",
+          "query_id": "conan-remotes-json",
+          "repository": "xtuml/masl",
+          "source": "https://github.com/xtuml/masl/blob/7a59e1f6cebbf802e5162172043e69a4912acad7/docker/masl-dev/conan-config/remotes.json",
+          "source_kind": "github-code",
+          "source_path": "docker/masl-dev/conan-config/remotes.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "artifactory.onefact.net"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "medium",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "9524f35353f03af0b192ea43f3f616d029fc220e08b3b1d180228382a1da3a96",
+          "extractor": "conan-json",
+          "query_id": "conan-remotes-json",
+          "repository": "SiliconLabs/matter_extension",
+          "source": "https://github.com/SiliconLabs/matter_extension/blob/5e1a67e5bc22b0778a4e8844f4d08b4d77a2d78b/packages/remotes.json",
+          "source_kind": "github-code",
+          "source_path": "packages/remotes.json",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "d15a1418086f0575ca3506b3a3f06c40c5c7ab85c4e39518f5763cf7b34cf71b",
+          "extractor": "conan-json",
+          "query_id": "conan-remotes-json",
+          "repository": "SiliconLabs/z-wave-ts-silabs",
+          "source": "https://github.com/SiliconLabs/z-wave-ts-silabs/blob/10c51c790f463d0bee11eb7fe3d30bb33afcfe26/remotes.json",
+          "source_kind": "github-code",
+          "source_path": "remotes.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "artifactory.silabs.net"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "ecbb16614c243dd343a5e8517d3ff95edf7c09a3a66fa1d6a9503cad49e948bf",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "camunda/camunda",
+          "source": "https://github.com/camunda/camunda/blob/672b5a7a0add9f5be80078f191f988c5bb9fc841/maven-settings.xml",
+          "source_kind": "github-code",
+          "source_path": "maven-settings.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "artifacts.camunda.com"
+    },
+    {
+      "categories": [
+        "go"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "sources": [
+        {
+          "content_sha256": "dee66b4d90d11c8178f721274291313a93d712dc292f077ba96db5b1c229502e",
+          "extractor": "environment-assignment",
+          "query_id": "go-proxy",
+          "repository": "IBAX-io/go-ibax",
+          "source": "https://github.com/IBAX-io/go-ibax/blob/66f135846a10d1a1edddbceff517b9c937639576/README.md",
+          "source_kind": "github-code",
+          "source_path": "README.md",
+          "source_role": "documentation"
+        }
+      ],
+      "target": "athens.azurefd.net"
+    },
+    {
+      "categories": [
+        "dotnet"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "5b033b40328778c6dbe07408611b6e326586e0cd521ac1d434686582360296ca",
+          "extractor": "nuget-xml",
+          "query_id": "nuget-package-sources",
+          "repository": "BotBuilderCommunity/botbuilder-community-dotnet",
+          "source": "https://github.com/BotBuilderCommunity/botbuilder-community-dotnet/blob/5625e8164b0e83b4a7a66af37cdb6b83fbb9914d/nuget.config",
+          "source_kind": "github-code",
+          "source_path": "nuget.config",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "botbuilder.myget.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "58927d3e2e029d03783ca7670dc9c5dae94ddb329d61ff69db8ae6cf96b68e3b",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "vert-x3/vertx-examples",
+          "source": "https://github.com/vert-x3/vertx-examples/blob/28c594db476583f41b2326ed41ebb837726f59e6/settings.xml",
+          "source_kind": "github-code",
+          "source_path": "settings.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "central.sonatype.com"
+    },
+    {
+      "categories": [
+        "dotnet"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "4301538b513b656ec8dbca5018a8714a5e2d29f87e35f8fa9803a01a8294c292",
+          "extractor": "nuget-xml",
+          "query_id": "nuget-package-sources",
+          "repository": "mgravell/PooledAwait",
+          "source": "https://github.com/mgravell/PooledAwait/blob/e1b18312be845e77751178be1793aaee95ab22c6/nuget.config",
+          "source_kind": "github-code",
+          "source_path": "nuget.config",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "ci.appveyor.com"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "nonstandard-port"
+      ],
+      "sources": [
+        {
+          "content_sha256": "45ee9df791db6dc56e7a9546c19c7e224db1a0713035aa406af1aca29a9651ba",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "ray-cast/AnimatorGo",
+          "source": "https://github.com/ray-cast/AnimatorGo/blob/473539b34b9b7986538a2053004e1c1292129bc0/build.bat",
+          "source_kind": "github-code",
+          "source_path": "build.bat",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "conan.iteale.com:19479"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "sources": [
+        {
+          "content_sha256": "0e0a1a86653aa27a18854e01e3d36bee87537b556a4afb27dc73c4b440103130",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "NatLabRockies/OpenStudio",
+          "source": "https://github.com/NatLabRockies/OpenStudio/blob/03150b3539f27b244bac75e249ab6b6a9583cc8d/BUILDING.md",
+          "source_kind": "github-code",
+          "source_path": "BUILDING.md",
+          "source_role": "documentation"
+        }
+      ],
+      "target": "conan.openstudio.net"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "medium",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "9524f35353f03af0b192ea43f3f616d029fc220e08b3b1d180228382a1da3a96",
+          "extractor": "conan-json",
+          "query_id": "conan-remotes-json",
+          "repository": "SiliconLabs/matter_extension",
+          "source": "https://github.com/SiliconLabs/matter_extension/blob/5e1a67e5bc22b0778a4e8844f4d08b4d77a2d78b/packages/remotes.json",
+          "source_kind": "github-code",
+          "source_path": "packages/remotes.json",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "d15a1418086f0575ca3506b3a3f06c40c5c7ab85c4e39518f5763cf7b34cf71b",
+          "extractor": "conan-json",
+          "query_id": "conan-remotes-json",
+          "repository": "SiliconLabs/z-wave-ts-silabs",
+          "source": "https://github.com/SiliconLabs/z-wave-ts-silabs/blob/10c51c790f463d0bee11eb7fe3d30bb33afcfe26/remotes.json",
+          "source_kind": "github-code",
+          "source_path": "remotes.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "conan.silabs.net"
+    },
+    {
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "697b86cd2fd569ebc44ca77770f19f95b9fa3e4b305b22a80f3c8e75eff906ee",
+          "extractor": "r-repositories",
+          "query_id": "r-repositories",
+          "repository": "Kaggle/docker-rstats",
+          "source": "https://github.com/Kaggle/docker-rstats/blob/7f87ef40939e893f34939e3f033c61cd2d1ce9bb/RProfile.R",
+          "source_kind": "github-code",
+          "source_path": "RProfile.R",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "f085b7602596dcc597982072587a6174178372944dd0a166c246a56603d3d492",
+          "extractor": "r-repositories",
+          "query_id": "r-repositories",
+          "repository": "natverse/nat",
+          "source": "https://github.com/natverse/nat/blob/ccf69b118f3475130748bafb1b087c8aca30a6ce/build_docs.r",
+          "source_kind": "github-code",
+          "source_path": "build_docs.r",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "5cf28af883877757ca54168a56c57872d70df7349778b24529d57fa0b38b329a",
+          "extractor": "r-repositories",
+          "query_id": "r-repositories",
+          "repository": "rstudio/tinytex",
+          "source": "https://github.com/rstudio/tinytex/blob/d01200eb642187eb3b00b02084500844906cbeef/tools/config.R",
+          "source_kind": "github-code",
+          "source_path": "tools/config.R",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "cran.rstudio.com"
+    },
+    {
+      "categories": [
+        "rust"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "7f79d5e8e9f62b1c3decd7dbbcdd8ca3918db32bb47bbd4f5335f2c8674917a8",
+          "extractor": "cargo-toml",
+          "query_id": "cargo-registries",
+          "repository": "Sunscreen-tech/Sunscreen",
+          "source": "https://github.com/Sunscreen-tech/Sunscreen/blob/f8ee4a0dc32418f2acd9e176c6f0af73cdf68d40/.cargo/config.toml",
+          "source_kind": "github-code",
+          "source_path": ".cargo/config.toml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "crates.sunscreen.tech"
+    },
+    {
+      "categories": [
+        "dart"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "sources": [
+        {
+          "content_sha256": "55feea41fd423d98714431f2d812f1c971e8d2ac3b96dc560f55c367c8a6ab73",
+          "extractor": "environment-assignment",
+          "query_id": "dart-pub-hosted",
+          "repository": "yuchuangu85/Develop-Source",
+          "source": "https://github.com/yuchuangu85/Develop-Source/blob/0868142a7b4994194e4980c4620ae6ee628a3bfb/Cross-Platform/Flutter/README.md",
+          "source_kind": "github-code",
+          "source_path": "Cross-Platform/Flutter/README.md",
+          "source_role": "documentation"
+        }
+      ],
+      "target": "dart-pub.mirrors.sjtug.sjtu.edu.cn"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "retired-service"
+      ],
+      "sources": [
+        {
+          "content_sha256": "b5504563effa64156b9d82b02f2b4474b7e4e9456d14042ea0efce45e387f6fb",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "devexperts/aprof",
+          "source": "https://github.com/devexperts/aprof/blob/d211d6a059ddd1be8542e64276c8bf3dfe278501/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "d1d570e0769cae0dbc34329915a03fa2c25a898d4c3f0778e5cb9af5a3644208",
+          "extractor": "sbt-resolver",
+          "query_id": "sbt-resolvers",
+          "repository": "kenshoo/metrics-play",
+          "source": "https://github.com/kenshoo/metrics-play/blob/6c33b0998ded70458703a5089a914e889df2a5a8/build.sbt",
+          "source_kind": "github-code",
+          "source_path": "build.sbt",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "71b39cb0747f7208d7a2c05fe5592e5295161f9986dae75f0d02ae8f9cba1b27",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "stirante/RuneChanger",
+          "source": "https://github.com/stirante/RuneChanger/blob/29eed9f735e01c41e799f81c9a223b112ae6a3b7/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "dl.bintray.com"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "d306d457e1487fb4c5beb5f56fcf1756ec7c60db7846c852a05e0cc93f38b929",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "easzlab/kubeasz",
+          "source": "https://github.com/easzlab/kubeasz/blob/2547bf30deeb3becbf5630156a9fbcf71a432101/roles/docker/templates/daemon.json.j2",
+          "source_kind": "github-code",
+          "source_path": "roles/docker/templates/daemon.json.j2",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "docker.1ms.run"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "d306d457e1487fb4c5beb5f56fcf1756ec7c60db7846c852a05e0cc93f38b929",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "easzlab/kubeasz",
+          "source": "https://github.com/easzlab/kubeasz/blob/2547bf30deeb3becbf5630156a9fbcf71a432101/roles/docker/templates/daemon.json.j2",
+          "source_kind": "github-code",
+          "source_path": "roles/docker/templates/daemon.json.j2",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "docker.1panel.live"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "d306d457e1487fb4c5beb5f56fcf1756ec7c60db7846c852a05e0cc93f38b929",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "easzlab/kubeasz",
+          "source": "https://github.com/easzlab/kubeasz/blob/2547bf30deeb3becbf5630156a9fbcf71a432101/roles/docker/templates/daemon.json.j2",
+          "source_kind": "github-code",
+          "source_path": "roles/docker/templates/daemon.json.j2",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "docker.amingg.com"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "2d2ebeb3454a13484387ab6bdecc787b3b555910ab033dceb653fc2864431572",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "chenzhiwei/linux",
+          "source": "https://github.com/chenzhiwei/linux/blob/bdfa947b04b07163b34baf08d1c26363fcaa145c/docker/daemon.json",
+          "source_kind": "github-code",
+          "source_path": "docker/daemon.json",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "e9dce1e00282ec8a246fab66370e0cd3abc6631c78a1d3b4f19c75ce8de4708b",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "tinyclub/linux-lab",
+          "source": "https://github.com/tinyclub/linux-lab/blob/cbd1cbd2e078fb5c164002adc1e56fdaeb101910/doc/install/daemon.json",
+          "source_kind": "github-code",
+          "source_path": "doc/install/daemon.json",
+          "source_role": "documentation"
+        }
+      ],
+      "target": "docker.mirrors.ustc.edu.cn"
+    },
+    {
+      "categories": [
+        "dotnet"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "76a34992413db858a95a30a489f1cc4e82f3ca8c3ec5f5a2006b7a0c9a3faf5d",
+          "extractor": "nuget-xml",
+          "query_id": "nuget-package-sources",
+          "repository": "goldshtn/linux-tracing-workshop",
+          "source": "https://github.com/goldshtn/linux-tracing-workshop/blob/a3a34fe7242a16047f277f28c1e5c1edef29340d/dotnet/NuGet.Config",
+          "source_kind": "github-code",
+          "source_path": "dotnet/NuGet.Config",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "dotnet.myget.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "eb836bd135308b72dac9ab12c6bc5402a525ad7b044d0b3a5480df4a3f72be9f",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "SAP/hybris-commerce-eclipse-plugin",
+          "source": "https://github.com/SAP/hybris-commerce-eclipse-plugin/blob/3d8f10a62cf6b37a9272acdd95f94f23300070fc/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "download.eclipse.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "medium",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "c0c1c05557c073944d52251b191d5df79d7c7ad62bfd8bd228749464866a8376",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "Glamdring/computoser",
+          "source": "https://github.com/Glamdring/computoser/blob/94b518cc46d672ee062532befd180f2105f0f248/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "0930bb2ea00d92013085977bd25fb188ce5ef6d656cb9cc93f34ae2e8d05ea0e",
+          "extractor": "sbt-resolver",
+          "query_id": "sbt-resolvers",
+          "repository": "jsuereth/scala-arm",
+          "source": "https://github.com/jsuereth/scala-arm/blob/41d63402108324b8ba90affa1f93b19d9f447f5c/build.sbt",
+          "source_kind": "github-code",
+          "source_path": "build.sbt",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "download.java.net"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "high",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "e0654798fddb7bb9a0ddcd760b2b23fa645c7947e50a6bf427cd42a4f783fdc5",
+          "extractor": "uv-toml",
+          "query_id": "uv-index",
+          "repository": "DataArcTech/DataArc-SynData-Toolkit",
+          "source": "https://github.com/DataArcTech/DataArc-SynData-Toolkit/blob/b6f0b97e0c9e5a70bea6835884d6ec62297c6a5e/pyproject.toml",
+          "source_kind": "github-code",
+          "source_path": "pyproject.toml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "89cecfa5ada0e025858af6154c8c2c693cbed0f4c44b9e80515d706f9cb5a56e",
+          "extractor": "uv-toml",
+          "query_id": "uv-index",
+          "repository": "Emerge-Lab/gpudrive",
+          "source": "https://github.com/Emerge-Lab/gpudrive/blob/aa48a431ed127a37610cc2176db30ec73d0c55df/pyproject.toml",
+          "source_kind": "github-code",
+          "source_path": "pyproject.toml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "e948795c9a8713cf1940a05c9763cb39ef42978a98fb86403e5bb2c395cc1014",
+          "extractor": "uv-toml",
+          "query_id": "uv-index",
+          "repository": "arhanjain/polaris",
+          "source": "https://github.com/arhanjain/polaris/blob/129abc45f680559a7da62b9280fdb127b02b7275/pyproject.toml",
+          "source_kind": "github-code",
+          "source_path": "pyproject.toml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "806f6378af075378de711ec661fd15b04d75ac5c438b10042bd25c54c7d3cb82",
+          "extractor": "uv-toml",
+          "query_id": "uv-index",
+          "repository": "borglab/gtsfm",
+          "source": "https://github.com/borglab/gtsfm/blob/4e626637001747dbd1fcb2ea50a266c49fb8da07/pyproject.toml",
+          "source_kind": "github-code",
+          "source_path": "pyproject.toml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "158329f346a19c22bd144015f029ab10860051548e737421de5efa78a0d054a0",
+          "extractor": "uv-toml",
+          "query_id": "uv-index",
+          "repository": "daydreamlive/DEMON",
+          "source": "https://github.com/daydreamlive/DEMON/blob/7c3a31b8d4857d15da4e51a69f8ca682f8876204/pyproject.toml",
+          "source_kind": "github-code",
+          "source_path": "pyproject.toml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "e91f5355cf311c6face1929a75f0a39cabce5e384cf76d616849db03a9b97f60",
+          "extractor": "uv-toml",
+          "query_id": "uv-index",
+          "repository": "elefant-ai/open-p2p",
+          "source": "https://github.com/elefant-ai/open-p2p/blob/a329d98cbe62119679a254d71bea6446773541bc/pyproject.toml",
+          "source_kind": "github-code",
+          "source_path": "pyproject.toml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "7268baf6ffa3dd3990d13e0a93ff6ae4a6b07415025c0f2d90e54bd0f4eb9b6d",
+          "extractor": "uv-toml",
+          "query_id": "uv-index",
+          "repository": "facebookresearch/blt",
+          "source": "https://github.com/facebookresearch/blt/blob/9774ed4fcc78313f9f218295f3d7e4decdadf2ae/pyproject.toml",
+          "source_kind": "github-code",
+          "source_path": "pyproject.toml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "e4f4ff48acbf971ed0eecfcf6bbb32e282b13c1885abcb5fc96c85619f00c9e1",
+          "extractor": "uv-toml",
+          "query_id": "uv-index",
+          "repository": "guidelabs/steerling",
+          "source": "https://github.com/guidelabs/steerling/blob/f34ffa89e46969445f3cf6e7c885e9623a2047c1/pyproject.toml",
+          "source_kind": "github-code",
+          "source_path": "pyproject.toml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "2adfce59561234ad5f4b8eb8f7ccdf7ac1ec6afaad10f12f32f4ef177960aaf8",
+          "extractor": "uv-toml",
+          "query_id": "uv-index",
+          "repository": "lavaman131/dinov2.cpp",
+          "source": "https://github.com/lavaman131/dinov2.cpp/blob/3d070782afc264b7d60aa5692c5b10cb79b9bd56/pyproject.toml",
+          "source_kind": "github-code",
+          "source_path": "pyproject.toml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "892152d348bd8306cf0a7b0a9c1895c4ec7d68cb4049c9ab3b7118853bee3c45",
+          "extractor": "uv-toml",
+          "query_id": "uv-index",
+          "repository": "lumina37/rotate-captcha-crack",
+          "source": "https://github.com/lumina37/rotate-captcha-crack/blob/4a1c0b8792c9a658e74436066349cd340ca9de59/pyproject.toml",
+          "source_kind": "github-code",
+          "source_path": "pyproject.toml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "02df96953903a4bf45d7bad3591983cc7d6970e42cb5ab69108fbb4205c57292",
+          "extractor": "uv-toml",
+          "query_id": "uv-index",
+          "repository": "masouduut94/volleyball_analytics",
+          "source": "https://github.com/masouduut94/volleyball_analytics/blob/c746a879552cc559748649012844342affc0d9c6/pyproject.toml",
+          "source_kind": "github-code",
+          "source_path": "pyproject.toml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "dd6d98e6457a6ba6d8ddda027bac8abfea4229f47ea1af5841ea5744d40a2ba1",
+          "extractor": "uv-toml",
+          "query_id": "uv-index",
+          "repository": "wangwenho/HanziGen",
+          "source": "https://github.com/wangwenho/HanziGen/blob/7ba30b735984aa04d1ba5a61ef4f9025aa55fc23/pyproject.toml",
+          "source_kind": "github-code",
+          "source_path": "pyproject.toml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "download.pytorch.org"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "c69c3b364fd4c2bd2f59d1163933ff5929580d7e2b734bc73c462a5ac6710dc7",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "unixhot/salt-kubebin",
+          "source": "https://github.com/unixhot/salt-kubebin/blob/9f545ee1f3115b3ff6fa8390cf74e85caf244aa1/salt/k8s/templates/docker/daemon.json.template",
+          "source_kind": "github-code",
+          "source_path": "salt/k8s/templates/docker/daemon.json.template",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "dx5z2hy7.mirror.aliyuncs.com"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "sources": [
+        {
+          "content_sha256": "b76955a871d0cb2cf7bb51be4c6349c97dda210e9f435e790d882f81fb712507",
+          "extractor": "conan-json",
+          "query_id": "conan-remotes-json",
+          "repository": "NEARBuilders/near-social-js",
+          "source": "https://github.com/NEARBuilders/near-social-js/blob/695c899db4eb581d763ba6cd593e07b2fa403970/demo/host/remotes.json",
+          "source_kind": "github-code",
+          "source_path": "demo/host/remotes.json",
+          "source_role": "example"
+        }
+      ],
+      "target": "elliot-braem-1032-near-social-js-ui-near-social-j-6efa4bd9f-ze.zephyrcloud.app"
+    },
+    {
+      "categories": [
+        "dotnet"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "c08ccb301f17c595285c2b478961f04baf556d10478a9f0439e15afee82f5532",
+          "extractor": "nuget-xml",
+          "query_id": "nuget-package-sources",
+          "repository": "exceptionless/Exceptionless",
+          "source": "https://github.com/exceptionless/Exceptionless/blob/9fa81b49ed776c7bbda86ada5492e21d63c9ec6a/NuGet.Config",
+          "source_kind": "github-code",
+          "source_path": "NuGet.Config",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "f.feedz.io"
+    },
+    {
+      "categories": [
+        "ruby"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "c6c440a5a7f629be8112a7d0ab6289e0616e77ff0a5df02f37f2b6822dc36f67",
+          "extractor": "ruby-source",
+          "query_id": "gemfile-source",
+          "repository": "pangea-project/pangea-tooling",
+          "source": "https://github.com/pangea-project/pangea-tooling/blob/b137331e058919ef181a7a73e2bde7856d86a35d/Gemfile.git",
+          "source_kind": "github-code",
+          "source_path": "Gemfile.git",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "git.gem.cache.pangea.pub"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "3b1f1b8244381d7765a5deff44312980a5080dd3be33c119e6d4d79107bd4cd7",
+          "extractor": "conan-json",
+          "query_id": "conan-remotes-json",
+          "repository": "paulscherrerinstitute/std_detector_buffer",
+          "source": "https://github.com/paulscherrerinstitute/std_detector_buffer/blob/e2eba41407d448d83a41604edc8ea7924a46a0bf/conan/remotes.json",
+          "source_kind": "github-code",
+          "source_path": "conan/remotes.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "git.psi.ch"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "13891bc16ad564a9aefdb817805c0f2df099467bac694e69fc16219b0fe3ce06",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "pixiu-io/kubez-ansible",
+          "source": "https://github.com/pixiu-io/kubez-ansible/blob/e76768c4b2cd1734ae99d1c77dd757cba78acd22/ansible/roles/baremetal/templates/kube-daemon.json.j2",
+          "source_kind": "github-code",
+          "source_path": "ansible/roles/baremetal/templates/kube-daemon.json.j2",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "hdi5v8p1.mirror.aliyuncs.com"
+    },
+    {
+      "categories": [
+        "erlang"
+      ],
+      "confidence": "high",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "74c6bc166cf4681bc2649eb95236bcf6b6d976af6ecbb3720eff36e5f8a2eb24",
+          "extractor": "environment-assignment",
+          "query_id": "hex-mirror",
+          "repository": "DogLooksGood/dotfiles",
+          "source": "https://github.com/DogLooksGood/dotfiles/blob/1ffc24b68cc5d82446bcebfda59861061ddae7cc/manjaro-dots/.zshrc",
+          "source_kind": "github-code",
+          "source_path": "manjaro-dots/.zshrc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "0543a50bf20f7adfa96fd9da92b552ef5f410c8c1a46edc99be365c5416bd1a1",
+          "extractor": "environment-assignment",
+          "query_id": "hex-mirror",
+          "repository": "EdmondFrank/gitgud",
+          "source": "https://github.com/EdmondFrank/gitgud/blob/6b51e00001aed397fe0eebb7ace96597ffb14c8e/Dockerfile",
+          "source_kind": "github-code",
+          "source_path": "Dockerfile",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "c48daeeafd67574775befe95a505c881d1f5a86187d8962d24cd5d05e6718d30",
+          "extractor": "environment-assignment",
+          "query_id": "hex-mirror",
+          "repository": "damon-kwok/oh-my-env",
+          "source": "https://github.com/damon-kwok/oh-my-env/blob/ad763ed14832948dcaae91b0218bfc3596d90fdb/packages/lang/elixir",
+          "source_kind": "github-code",
+          "source_path": "packages/lang/elixir",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "10a0d6f505844d17f8fdf6286b6b4fd14f82f73de57858608c5a9d8b091ae87d",
+          "extractor": "environment-assignment",
+          "query_id": "hex-mirror",
+          "repository": "dfang/bash",
+          "source": "https://github.com/dfang/bash/blob/b0e2a90833e6e02c0e1a59d3abe5b0ae5b1e6da2/home/.mirrors",
+          "source_kind": "github-code",
+          "source_path": "home/.mirrors",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "6b7d6d4c149a552aeaf663b39b7c771dc28976044a22409ee065eb1f9587a595",
+          "extractor": "environment-assignment",
+          "query_id": "hex-mirror",
+          "repository": "fky2015/dotfiles",
+          "source": "https://github.com/fky2015/dotfiles/blob/e81882a71ff23562ef1e961e4d24a2affd76242b/.exports.zsh",
+          "source_kind": "github-code",
+          "source_path": ".exports.zsh",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "0f18b47cf3c497794596e819be0adeb32c16bfff0e03af3fe766c1809fb7a8f6",
+          "extractor": "environment-assignment",
+          "query_id": "hex-mirror",
+          "repository": "getong/getong_code_snippet",
+          "source": "https://github.com/getong/getong_code_snippet/blob/e96208e76d8ce0e5cbc3ed3b06df60c450a99e87/erlang_code/rebar3.org",
+          "source_kind": "github-code",
+          "source_path": "erlang_code/rebar3.org",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "b5a62a7d98caa01c223ce7adc971a228d5fdb7ced55c2671d3922a923614b300",
+          "extractor": "environment-assignment",
+          "query_id": "hex-mirror",
+          "repository": "leops-china/leops-cheatsheet",
+          "source": "https://github.com/leops-china/leops-cheatsheet/blob/7b26149c80e3e01f1f9f53602a873e534b817755/docs/cheatsheet/public/mirrors.md",
+          "source_kind": "github-code",
+          "source_path": "docs/cheatsheet/public/mirrors.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "8c7bed033d4a161e27839cd0f1332a14e21f3c1afa9d2b798825983e4c4aae04",
+          "extractor": "environment-assignment",
+          "query_id": "hex-mirror",
+          "repository": "lework/lemonitor",
+          "source": "https://github.com/lework/lemonitor/blob/1b9912fa675f254011d59f725c45fc0bc80997a9/static/data/mirrors.md",
+          "source_kind": "github-code",
+          "source_path": "static/data/mirrors.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "8cc2c2dfc3bd56ccfb93d1a018a5ae2f5995d65795a0fcb1f055e7e0b511afbb",
+          "extractor": "environment-assignment",
+          "query_id": "hex-mirror",
+          "repository": "lework/reference",
+          "source": "https://github.com/lework/reference/blob/0b74471f80a4503c850f7fe6b2512769f2a4ca60/source/_posts/mirrors.md",
+          "source_kind": "github-code",
+          "source_path": "source/_posts/mirrors.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "41abb4946342b844eb9bef4457e30f70b932d6df4c2a682b78afbed710c2a4ff",
+          "extractor": "environment-assignment",
+          "query_id": "hex-mirror",
+          "repository": "shenxiangzhuang/legacyblog",
+          "source": "https://github.com/shenxiangzhuang/legacyblog/blob/be5fe4365fb0b54668f3c8092f841746ff80d0c5/docs/cs/programming/elixir/index.md",
+          "source_kind": "github-code",
+          "source_path": "docs/cs/programming/elixir/index.md",
+          "source_role": "documentation"
+        }
+      ],
+      "target": "hexpm.upyun.com"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "a2798b381cbd6812143af7b55462552ba84b4d2a43ce04a3170136f1f3d9ca05",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "unifreq/openwrt_packit",
+          "source": "https://github.com/unifreq/openwrt_packit/blob/e88d776ced23ff1c36a193aa4bf80011ec29aeea/files/s905/daemon.json",
+          "source_kind": "github-code",
+          "source_path": "files/s905/daemon.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "hub-mirror.c.163.com"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "d306d457e1487fb4c5beb5f56fcf1756ec7c60db7846c852a05e0cc93f38b929",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "easzlab/kubeasz",
+          "source": "https://github.com/easzlab/kubeasz/blob/2547bf30deeb3becbf5630156a9fbcf71a432101/roles/docker/templates/daemon.json.j2",
+          "source_kind": "github-code",
+          "source_path": "roles/docker/templates/daemon.json.j2",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "hub.rat.dev"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "d306d457e1487fb4c5beb5f56fcf1756ec7c60db7846c852a05e0cc93f38b929",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "easzlab/kubeasz",
+          "source": "https://github.com/easzlab/kubeasz/blob/2547bf30deeb3becbf5630156a9fbcf71a432101/roles/docker/templates/daemon.json.j2",
+          "source_kind": "github-code",
+          "source_path": "roles/docker/templates/daemon.json.j2",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "hub1.nat.tf"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "5a6791a810f48c56b9c843b61c5d9df0b6e225c0cff00eb297807b764f7bf024",
+          "extractor": "conan-json",
+          "query_id": "conan-remotes-json",
+          "repository": "Deltares/Delft3D",
+          "source": "https://github.com/Deltares/Delft3D/blob/035f2d436ac6bcbc98e62c792ab7d398db5f1d4b/conan/config/remotes.json",
+          "source_kind": "github-code",
+          "source_path": "conan/config/remotes.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "internal-artifacts.deltares.nl"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "62e97abb4604aca9471fb0f14a04dd82cd8481ef339733627314bee75bd4949a",
+          "extractor": "sbt-resolver",
+          "query_id": "sbt-resolvers",
+          "repository": "seyhanp/seyhan",
+          "source": "https://github.com/seyhanp/seyhan/blob/45da8d00f4cd0baa3bfa1bb20f6ca124f7b7d397/build.sbt",
+          "source_kind": "github-code",
+          "source_path": "build.sbt",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "jaspersoft.artifactoryonline.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "retired-service"
+      ],
+      "sources": [
+        {
+          "content_sha256": "ef78d24c4ec2f51fc122d7f1a10a04f6654c4cbfa169452859cab644437af7c9",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "lobobrowser/LoboBrowser",
+          "source": "https://github.com/lobobrowser/LoboBrowser/blob/7d60db5425c09b6c11c8b82c4fcc943cc5de0410/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "jcenter.bintray.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "dea44cc48fb3594d6dc256e9e06a202287bc28394db89167493a2d89e54b9e1e",
+          "extractor": "sbt-resolver",
+          "query_id": "sbt-resolvers",
+          "repository": "shadowsocksr-rm/shadowsocksr-android",
+          "source": "https://github.com/shadowsocksr-rm/shadowsocksr-android/blob/ad7af09df3421a2b8c159734a5834d9714ef1613/build.sbt",
+          "source_kind": "github-code",
+          "source_path": "build.sbt",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "jraf.org"
+    },
+    {
+      "categories": [
+        "julia"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "sources": [
+        {
+          "content_sha256": "1ee2db09b5addf5bd901c72edfb7663a54c2ce058aaba936fa56f81f294a92b3",
+          "extractor": "environment-assignment",
+          "query_id": "julia-pkg-server",
+          "repository": "DyadLang/SpacePowerWorkshop.jl",
+          "source": "https://github.com/DyadLang/SpacePowerWorkshop.jl/blob/7742ccc052efccf17cdc34bdee444071b4348f1e/README.md",
+          "source_kind": "github-code",
+          "source_path": "README.md",
+          "source_role": "documentation"
+        }
+      ],
+      "target": "juliahub.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "57c4157a665f9c57f7575e31781f484930e36664366ba6198ff85f2419433c80",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "JoySafety/JoySafety",
+          "source": "https://github.com/JoySafety/JoySafety/blob/a2342fdb6c105f00f8045a8c7d9c7cbb35972582/deploy/settings.xml",
+          "source_kind": "github-code",
+          "source_path": "deploy/settings.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "maven.163.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "high",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "57c4157a665f9c57f7575e31781f484930e36664366ba6198ff85f2419433c80",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "JoySafety/JoySafety",
+          "source": "https://github.com/JoySafety/JoySafety/blob/a2342fdb6c105f00f8045a8c7d9c7cbb35972582/deploy/settings.xml",
+          "source_kind": "github-code",
+          "source_path": "deploy/settings.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "a6e2bf7e57dbc341bd0030110878644b41aee0952bea6dddc0d8e3999e9918e5",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "Qihoo360/hbox",
+          "source": "https://github.com/Qihoo360/hbox/blob/b5eb493fc35a63d3faef055b85326ce79d628233/.mvn/settings.xml",
+          "source_kind": "github-code",
+          "source_path": ".mvn/settings.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "b9c682631626d3dea7e8888213d5f5c734221ebddac7e0eff7807385dd95f21c",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "ZhongFuCheng3y/austin",
+          "source": "https://github.com/ZhongFuCheng3y/austin/blob/8379c029e0ba3c541f1e34cfc9c8401a4355b2f6/doc/maven/settings.xml",
+          "source_kind": "github-code",
+          "source_path": "doc/maven/settings.xml",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "00dba14a8918e16d0b91e8995e71b2aa8dd4e8e4688681cb8d920780702bea3a",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "dromara/Jpom",
+          "source": "https://github.com/dromara/Jpom/blob/723b1ccca071772f7d7ad3481740624da6bc91df/script/settings.xml",
+          "source_kind": "github-code",
+          "source_path": "script/settings.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "39b1aabee47976fd1ba857e83ffbf7f94ceb99329e454f517d0122f4aa395271",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "dromara/x-file-storage",
+          "source": "https://github.com/dromara/x-file-storage/blob/f7baa6e933398185096a5bff5e427593247b19d7/.mvn/settings.xml",
+          "source_kind": "github-code",
+          "source_path": ".mvn/settings.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "d3e605cdd6c752d20101e6acbffa1d864ab623210cf4e6e086d12ab037715414",
+          "extractor": "gradle-repository",
+          "query_id": "gradle-maven-repositories",
+          "repository": "hi-dhl/PokemonGo",
+          "source": "https://github.com/hi-dhl/PokemonGo/blob/ed204eaefa6f2929c04f3de668ae5d23db13f5d9/build.gradle",
+          "source_kind": "github-code",
+          "source_path": "build.gradle",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "b6866f84d931ed6805c8dd80fc825f2bd359bc4b117650367661844485841bc1",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "pnoker/iot-dc3",
+          "source": "https://github.com/pnoker/iot-dc3/blob/ca5b9734460f39351956c8318ecfe565a2cba37f/.mvn/settings.xml",
+          "source_kind": "github-code",
+          "source_path": ".mvn/settings.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "maven.aliyun.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "b5504563effa64156b9d82b02f2b4474b7e4e9456d14042ea0efce45e387f6fb",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "devexperts/aprof",
+          "source": "https://github.com/devexperts/aprof/blob/d211d6a059ddd1be8542e64276c8bf3dfe278501/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "maven.in.devexperts.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "f0c34cda9dda813b20a1fdf42d00f75229811c318f509eeb9cf81ae18c67a593",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "OpenNMS/opennms",
+          "source": "https://github.com/OpenNMS/opennms/blob/e9f333dee36c81fac411b6ce8d2a07d1424a77c5/.circleci/settings.xml",
+          "source_kind": "github-code",
+          "source_path": ".circleci/settings.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "maven.opennms.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "medium",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "c0c1c05557c073944d52251b191d5df79d7c7ad62bfd8bd228749464866a8376",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "Glamdring/computoser",
+          "source": "https://github.com/Glamdring/computoser/blob/94b518cc46d672ee062532befd180f2105f0f248/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "aa27356db55cea4d1b6c4c0e8cbc5149c994f2852bcd3031eebd96a3f712db17",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "ponxu/blog4j",
+          "source": "https://github.com/ponxu/blog4j/blob/d9be3eaa3e4f972ec11732ddc3fb238fafb6ec85/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "maven.springframework.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "eac9b7c86216413ab494384944219a8d797e39fe6e178e58295e8f3cbbee9e79",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "appreciated/vaadin-app-layout",
+          "source": "https://github.com/appreciated/vaadin-app-layout/blob/c9d2a70eef045f07e7a06f207fe406da70ace5f2/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "maven.vaadin.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "da61104d297286275cd7367c42666021aa2c8d9f96830f0b6933a3243c17cf3e",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "wso2/product-microgateway",
+          "source": "https://github.com/wso2/product-microgateway/blob/7f01aaeae542c8f659a81b6bb506688c1651c806/.maven/settings.xml",
+          "source_kind": "github-code",
+          "source_path": ".maven/settings.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "maven.wso2.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "f3a06a1d2b0d40ab0c895becb32007a180c812461e62de4e5c4a06ac6c42ca6d",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "openmrs/openmrs-module-cdagenerator",
+          "source": "https://github.com/openmrs/openmrs-module-cdagenerator/blob/8b8bf601b344c40aef5449a1a6e790441e4633e0/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "mavenrepo.openmrs.org"
+    },
+    {
+      "categories": [
+        "rust"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "95a1fbacfae6f6cbe318f84fd49886550c1f0330409c45b09a25958fd62cc148",
+          "extractor": "cargo-toml",
+          "query_id": "cargo-registries",
+          "repository": "microsoft/mxc",
+          "source": "https://github.com/microsoft/mxc/blob/7dac1a952f0c9ad13f0a4cb089c4e0e8b3e0013a/.azure-pipelines/.cargo/config.toml",
+          "source_kind": "github-code",
+          "source_path": ".azure-pipelines/.cargo/config.toml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "microsoft.pkgs.visualstudio.com"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "a2798b381cbd6812143af7b55462552ba84b4d2a43ce04a3170136f1f3d9ca05",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "unifreq/openwrt_packit",
+          "source": "https://github.com/unifreq/openwrt_packit/blob/e88d776ced23ff1c36a193aa4bf80011ec29aeea/files/s905/daemon.json",
+          "source_kind": "github-code",
+          "source_path": "files/s905/daemon.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "mirror.baidubce.com"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "medium",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "7ff797cefec3a7360716db705e0c8016b34f99e605ca88667605dabce104494c",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "coder/coder",
+          "source": "https://github.com/coder/coder/blob/c9a1e2bceef354408b890f81bb6b3eb0c6fb1af7/dogfood/coder/ubuntu-22.04/files/etc/docker/daemon.json",
+          "source_kind": "github-code",
+          "source_path": "dogfood/coder/ubuntu-22.04/files/etc/docker/daemon.json",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "7ff797cefec3a7360716db705e0c8016b34f99e605ca88667605dabce104494c",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "coder/coder",
+          "source": "https://github.com/coder/coder/blob/c9a1e2bceef354408b890f81bb6b3eb0c6fb1af7/dogfood/coder/ubuntu-26.04/files/etc/docker/daemon.json",
+          "source_kind": "github-code",
+          "source_path": "dogfood/coder/ubuntu-26.04/files/etc/docker/daemon.json",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "28979eab43ea9453f97fad4aa08877ff9e392d501c36847620c75724e1d10b32",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "play-with-docker/play-with-docker",
+          "source": "https://github.com/play-with-docker/play-with-docker/blob/62cb0727cab93cf4273017d33e965a5f26c83b05/dockerfiles/dind/daemon.json",
+          "source_kind": "github-code",
+          "source_path": "dockerfiles/dind/daemon.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "mirror.gcr.io"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "8c6f0047e18d0e208a19f44ee14eca153cd0af321c90cc20a5a22dd10f2ffd67",
+          "extractor": "uv-toml",
+          "query_id": "uv-index",
+          "repository": "SUC-DriverOld/MSST-WebUI",
+          "source": "https://github.com/SUC-DriverOld/MSST-WebUI/blob/332c024771d9c048d209b12663d4745a4cb676f2/pyproject.toml",
+          "source_kind": "github-code",
+          "source_path": "pyproject.toml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "mirror.nju.edu.cn"
+    },
+    {
+      "categories": [
+        "php",
+        "python"
+      ],
+      "confidence": "high",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "fb74b5231e4953b6118666ada69beacb3c1b25d4a1370fc1e7cb76572e765dc5",
+          "extractor": "pip-config",
+          "query_id": "pip-extra-index",
+          "repository": "BaihaiAI/IDP",
+          "source": "https://github.com/BaihaiAI/IDP/blob/23eadcda9d3b7c57dd377ecffb574207daca099b/docker_build/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "docker_build/pip.conf",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "e0654798fddb7bb9a0ddcd760b2b23fa645c7947e50a6bf427cd42a4f783fdc5",
+          "extractor": "uv-toml",
+          "query_id": "uv-index",
+          "repository": "DataArcTech/DataArc-SynData-Toolkit",
+          "source": "https://github.com/DataArcTech/DataArc-SynData-Toolkit/blob/b6f0b97e0c9e5a70bea6835884d6ec62297c6a5e/pyproject.toml",
+          "source_kind": "github-code",
+          "source_path": "pyproject.toml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "5bd63a1f591c2fd27f092ed5616d6a713567459678ec1a38a0ad01b4d9b79e12",
+          "extractor": "pip-config",
+          "query_id": "pip-index",
+          "repository": "DeepInsight-AI/DeepBI",
+          "source": "https://github.com/DeepInsight-AI/DeepBI/blob/8baf98e0f586bc912aabada93233640def75d864/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "pip.conf",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "54ee3a5a638acf54eb7a1e10d49bd1a4848b779501b898a85d4b85647231b64c",
+          "extractor": "pip-config",
+          "query_id": "pip-index",
+          "repository": "alibaba/Elastic-Federated-Learning-Solution",
+          "source": "https://github.com/alibaba/Elastic-Federated-Learning-Solution/blob/92efcfacf026ac31d5da32b1eab3b20bd003f57f/docker/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "docker/pip.conf",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "c2b10fb8cae8bab45c9704ace7040c5c7ea1fcf89793eb29adb60e42822feb0b",
+          "extractor": "conda-yaml",
+          "query_id": "conda-custom-channels",
+          "repository": "dxcweb/local-ai",
+          "source": "https://github.com/dxcweb/local-ai/blob/b227ba68bd566cc29eb511d213270a10a0b44bd2/src/service/.condarc.aly",
+          "source_kind": "github-code",
+          "source_path": "src/service/.condarc.aly",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "7660920fe08ba65ca4051abcfedce05495b97602de8194e54f27bd6efaa05824",
+          "extractor": "composer-json",
+          "query_id": "composer-repositories",
+          "repository": "edusoho/edusoho",
+          "source": "https://github.com/edusoho/edusoho/blob/ec046e7e6e9c0c8ef1ca97d90da4057a8a1b8505/composer.json",
+          "source_kind": "github-code",
+          "source_path": "composer.json",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "32167e1fa348b0151256b439fac76e7dc5f60b09f5b474f0aad4a2b4f612781e",
+          "extractor": "pip-config",
+          "query_id": "pip-index",
+          "repository": "flink-extended/dl-on-flink",
+          "source": "https://github.com/flink-extended/dl-on-flink/blob/ab209907c4a4ed7a017d00d079519fb01fd4045d/docker/flink/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "docker/flink/pip.conf",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "022ef5984fea9fc45de44a9f030c3d3fc41ea5ea6dddea5308c03c118280977c",
+          "extractor": "pip-config",
+          "query_id": "pip-index",
+          "repository": "flyhigher139/OctBlog",
+          "source": "https://github.com/flyhigher139/OctBlog/blob/2f653377f7e5f3ca49df46c69168ae9fbadfb8b7/app/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "app/pip.conf",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "022ef5984fea9fc45de44a9f030c3d3fc41ea5ea6dddea5308c03c118280977c",
+          "extractor": "pip-config",
+          "query_id": "pip-index",
+          "repository": "flyhigher139/mayblog",
+          "source": "https://github.com/flyhigher139/mayblog/blob/d4434059291fc4a4d584d093c99d5f7ecb2f3598/blog/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "blog/pip.conf",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "6928f8554cd944d58f319780e66ff677d0b94376ded5327f2d9f539689f75930",
+          "extractor": "pip-config",
+          "query_id": "pip-index",
+          "repository": "grimoire/mmdetection-to-tensorrt",
+          "source": "https://github.com/grimoire/mmdetection-to-tensorrt/blob/b5c6d0eed2a384a715cc800548d06458daa2e774/docker/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "docker/pip.conf",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "6928f8554cd944d58f319780e66ff677d0b94376ded5327f2d9f539689f75930",
+          "extractor": "pip-config",
+          "query_id": "pip-index",
+          "repository": "int32bit/dotfiles",
+          "source": "https://github.com/int32bit/dotfiles/blob/7a31997c723d05f5263db34f7de8790e52e0f992/pip/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "pip/pip.conf",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "1daaef59652e592aabb8d54a0252f66fd472473b75f20109659b4317c983d61a",
+          "extractor": "conda-yaml",
+          "query_id": "conda-custom-channels",
+          "repository": "intelligent-machine-learning/atorch",
+          "source": "https://github.com/intelligent-machine-learning/atorch/blob/7fb7da86be5794c57440db5b96f3278c158f0c7a/dev/docker/base/.condarc",
+          "source_kind": "github-code",
+          "source_path": "dev/docker/base/.condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "6a03c761abbb6118b1d2208c9478e7b94ecf99d6b5d4a6c21e7ba334cb99a84f",
+          "extractor": "uv-toml",
+          "query_id": "uv-index",
+          "repository": "knownsec/aipyapp",
+          "source": "https://github.com/knownsec/aipyapp/blob/49086c0f22ed6e8afd6cb4bbd2364516d92ce3b9/pyproject.toml",
+          "source_kind": "github-code",
+          "source_path": "pyproject.toml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "f368f2b3546f9ed97ab218b7ec7d74d65d51e210cbd502b4c12a7297037f5ddf",
+          "extractor": "pip-config",
+          "query_id": "pip-index",
+          "repository": "longguikeji/arkid",
+          "source": "https://github.com/longguikeji/arkid/blob/b7a7c074fb0ee36b1f779353c1b4d3b3288c1cae/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "pip.conf",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "mirrors.aliyun.com"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "high",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "013bd4752ad6ea186246ed8d7c74430342b3aa7716967082cf8256259bd7f4b6",
+          "extractor": "conda-yaml",
+          "query_id": "conda-custom-channels",
+          "repository": "SJTU-IPADS/gnnlab",
+          "source": "https://github.com/SJTU-IPADS/gnnlab/blob/2d0dd92ce4e2efec3d47212ce73358cd03f8d3d8/docker/.condarc",
+          "source_kind": "github-code",
+          "source_path": "docker/.condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "1b2e857ac049245cd6217fb5a50eed9e20e0d0dc069949bd89e7be805a529de5",
+          "extractor": "conda-yaml",
+          "query_id": "conda-custom-channels",
+          "repository": "epfml/federated-learning-public-code",
+          "source": "https://github.com/epfml/federated-learning-public-code/blob/44dd5551071969eb354ee2ed091a9ba36c1d5b08/environments/pytorch-mpi/.condarc",
+          "source_kind": "github-code",
+          "source_path": "environments/pytorch-mpi/.condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "7323440572c88882cf9480194dd6f1bf405d32115e8a84a2067562d60f6165db",
+          "extractor": "conda-yaml",
+          "query_id": "conda-channel-alias",
+          "repository": "young010101/dotfiles",
+          "source": "https://github.com/young010101/dotfiles/blob/99c080776076adaba29f33ab1638857e0f7aeca7/.condarc",
+          "source_kind": "github-code",
+          "source_path": ".condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "1d7a6aa29b38ba177b715d937c09b187ed8666d1c57d53504ce521eb47df373f",
+          "extractor": "conda-yaml",
+          "query_id": "conda-custom-channels",
+          "repository": "zju3dv/neuralbody",
+          "source": "https://github.com/zju3dv/neuralbody/blob/3c516b953477006a3d1a7311eb4d51438c982c33/docker/.condarc",
+          "source_kind": "github-code",
+          "source_path": "docker/.condarc",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "mirrors.bfsu.edu.cn"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "57c4157a665f9c57f7575e31781f484930e36664366ba6198ff85f2419433c80",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "JoySafety/JoySafety",
+          "source": "https://github.com/JoySafety/JoySafety/blob/a2342fdb6c105f00f8045a8c7d9c7cbb35972582/deploy/settings.xml",
+          "source_kind": "github-code",
+          "source_path": "deploy/settings.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "b9c682631626d3dea7e8888213d5f5c734221ebddac7e0eff7807385dd95f21c",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "ZhongFuCheng3y/austin",
+          "source": "https://github.com/ZhongFuCheng3y/austin/blob/8379c029e0ba3c541f1e34cfc9c8401a4355b2f6/doc/maven/settings.xml",
+          "source_kind": "github-code",
+          "source_path": "doc/maven/settings.xml",
+          "source_role": "documentation"
+        }
+      ],
+      "target": "mirrors.cloud.tencent.com"
+    },
+    {
+      "categories": [
+        "dart"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "sources": [
+        {
+          "content_sha256": "55feea41fd423d98714431f2d812f1c971e8d2ac3b96dc560f55c367c8a6ab73",
+          "extractor": "environment-assignment",
+          "query_id": "dart-pub-hosted",
+          "repository": "yuchuangu85/Develop-Source",
+          "source": "https://github.com/yuchuangu85/Develop-Source/blob/0868142a7b4994194e4980c4620ae6ee628a3bfb/Cross-Platform/Flutter/README.md",
+          "source_kind": "github-code",
+          "source_path": "Cross-Platform/Flutter/README.md",
+          "source_role": "documentation"
+        }
+      ],
+      "target": "mirrors.cnnic.cn"
+    },
+    {
+      "categories": [
+        "julia",
+        "python"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "9ff7359849e9f7eed8ccb19ba996fe213c0f693b52d52998ec7f77044d1ba49a",
+          "extractor": "environment-assignment",
+          "query_id": "julia-pkg-server",
+          "repository": "QuantumBFS/quantum.harness",
+          "source": "https://github.com/QuantumBFS/quantum.harness/blob/f46e71729c2d0a290027cd9c340a4d6eb6b9109f/skills/setup-julia/SKILL.md",
+          "source_kind": "github-code",
+          "source_path": "skills/setup-julia/SKILL.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "fbd979255e76d414d9b21f19032ae7e1f545c946bd366525cd157ce510e7c845",
+          "extractor": "uv-toml",
+          "query_id": "uv-index",
+          "repository": "xiesx123/CreatorBox",
+          "source": "https://github.com/xiesx123/CreatorBox/blob/bc1adf57267a973566fdcf47b3ecffbcce1a12a2/pyproject.toml",
+          "source_kind": "github-code",
+          "source_path": "pyproject.toml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "mirrors.nju.edu.cn"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "sources": [
+        {
+          "content_sha256": "ae187d41e6a9a3751fed9ed7278fee53a70c969dd2a4fe387ea608c39b85cdb0",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "beclab/Olares",
+          "source": "https://github.com/beclab/Olares/blob/9e520991b90c8d0675ac9875323a4762e0369887/docs/code-snippets/docker-daemon.json",
+          "source_kind": "github-code",
+          "source_path": "docs/code-snippets/docker-daemon.json",
+          "source_role": "documentation"
+        }
+      ],
+      "target": "mirrors.olares.cn"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "cd3132c2c06f519eb0e3d646bb2a0dd0d528719d35d25c83d1bc6eb47a2ce462",
+          "extractor": "conda-yaml",
+          "query_id": "conda-custom-channels",
+          "repository": "yizhiwang96/deepvecfont",
+          "source": "https://github.com/yizhiwang96/deepvecfont/blob/e1fe3255c876fa0d347018ffda80fe9b8d62ea1c/.condarc",
+          "source_kind": "github-code",
+          "source_path": ".condarc",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "mirrors.pku.edu.cn"
+    },
+    {
+      "categories": [
+        "dart",
+        "haskell",
+        "python"
+      ],
+      "confidence": "high",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "f0638c979fc1c7332f73a63c37b1a6d704a37d867ab153290f3f38138eb7349c",
+          "extractor": "conda-yaml",
+          "query_id": "conda-channel-alias",
+          "repository": "Certseeds/dotfiles",
+          "source": "https://github.com/Certseeds/dotfiles/blob/e3c1424c2e3e8774f67ebe546470d8d553632be0/lang/.condarc",
+          "source_kind": "github-code",
+          "source_path": "lang/.condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "304cc975c015efda55dd08a30dfbab1671c4c0c65dd20565418bfb845d13c2d2",
+          "extractor": "conda-yaml",
+          "query_id": "conda-channel-alias",
+          "repository": "JupiterFund/workspace",
+          "source": "https://github.com/JupiterFund/workspace/blob/7ad98051eae211483f0202c30e1fb6cdcd12a942/.condarc",
+          "source_kind": "github-code",
+          "source_path": ".condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "f6b1f70626c7cb44ef9330e398cdcacb7584123eaa09145c6c80b7224ba28615",
+          "extractor": "conda-yaml",
+          "query_id": "conda-custom-channels",
+          "repository": "Karmenzind/dotfiles-and-scripts",
+          "source": "https://github.com/Karmenzind/dotfiles-and-scripts/blob/3d5864ced835b39de3dcb4f805f2131fd2a1953c/home_k/.condarc",
+          "source_kind": "github-code",
+          "source_path": "home_k/.condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "b42650165be829755b92fe1137de654ab558f7a8710aa7b4ac71fa598859a83a",
+          "extractor": "stack-yaml",
+          "query_id": "stack-package-indices",
+          "repository": "KumaCool/Haskell-learning-notes",
+          "source": "https://github.com/KumaCool/Haskell-learning-notes/blob/a6634954f6d4685eac6e3d743690f65877e1d8a7/.devcontainer/stack-tuna-config.yaml",
+          "source_kind": "github-code",
+          "source_path": ".devcontainer/stack-tuna-config.yaml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "141bcb1379a195084798b88ef025f573696fe7e23b48f120abe7590b7953bdd4",
+          "extractor": "conda-yaml",
+          "query_id": "conda-custom-channels",
+          "repository": "Oneflow-Inc/oneflow",
+          "source": "https://github.com/Oneflow-Inc/oneflow/blob/25c8978c1c8b1371ef6aa4187dae4495bd233c35/ci/conda/tuna.condarc",
+          "source_kind": "github-code",
+          "source_path": "ci/conda/tuna.condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "fbebaebcf42600b74e17aca5316e3e71cb4b7eaa7d25fb383f4254266da9b57b",
+          "extractor": "conda-yaml",
+          "query_id": "conda-channel-alias",
+          "repository": "QiangZiBro/Qdotfiles",
+          "source": "https://github.com/QiangZiBro/Qdotfiles/blob/ebc689b890524d4709012aeece94cd9bea01c6b3/conda/.condarc",
+          "source_kind": "github-code",
+          "source_path": "conda/.condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "9d52d7dc6715af5e4898b70e8fe0213920b74e5eab0d3f849136355cd64bae1c",
+          "extractor": "conda-yaml",
+          "query_id": "conda-channel-alias",
+          "repository": "Sorosliu1029/dotfiles",
+          "source": "https://github.com/Sorosliu1029/dotfiles/blob/05502840cd8f6d4f9308add52a246015839525c6/conda/.condarc",
+          "source_kind": "github-code",
+          "source_path": "conda/.condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "b72ec3ed7d20a4900935fada3487ab73b49146d03b8aafd1824cf3f750289dba",
+          "extractor": "conda-yaml",
+          "query_id": "conda-custom-channels",
+          "repository": "ZouJiu1/zhihu_spider_selenium",
+          "source": "https://github.com/ZouJiu1/zhihu_spider_selenium/blob/bca199370d261075a91792072e6e58d6b7796926/msedgedriver/.condarc",
+          "source_kind": "github-code",
+          "source_path": "msedgedriver/.condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "11fcd9e1c0d6dc83336a91254dcfdd7fd9f971757a9c726a74312edb9109cea6",
+          "extractor": "stack-yaml",
+          "query_id": "stack-package-indices",
+          "repository": "airtz/dotfiles",
+          "source": "https://github.com/airtz/dotfiles/blob/fef6732aab77a2faf0acde2fb0824b098d3d9b73/files/.stack/config.yaml",
+          "source_kind": "github-code",
+          "source_path": "files/.stack/config.yaml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "94b610b21af9652710e973909f248cdaaee30bbe4734190835cb5ddda1e38ceb",
+          "extractor": "stack-yaml",
+          "query_id": "stack-package-indices",
+          "repository": "apuex/etude",
+          "source": "https://github.com/apuex/etude/blob/811766d214b714e34ebaf49c8059b171c8e0bf76/haskell/stack/config/config.yaml",
+          "source_kind": "github-code",
+          "source_path": "haskell/stack/config/config.yaml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "3706b921fba92f30a4a857555be9e6a01f4036a0cf855e9944b03181e8a7f373",
+          "extractor": "stack-yaml",
+          "query_id": "stack-package-indices",
+          "repository": "berberman/dotfiles",
+          "source": "https://github.com/berberman/dotfiles/blob/432145e4d454d3a6ccb2ca14fe634d76e06862bf/haskell/.stack/config.yaml",
+          "source_kind": "github-code",
+          "source_path": "haskell/.stack/config.yaml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "2b96bae0389adbcfe403bd637dbdb6d3687b5cd758a3481d29096158737d40da",
+          "extractor": "conda-yaml",
+          "query_id": "conda-default-channels",
+          "repository": "bozoyan/AsrTools",
+          "source": "https://github.com/bozoyan/AsrTools/blob/6f3fa8fccabbdd673e2ea9d197c8fa39b656d23a/logs/.condarc",
+          "source_kind": "github-code",
+          "source_path": "logs/.condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "fdeaa2f39ef8a46a4944e9254b6d1ac3c5856df3c1c4ab0a35543776027cb823",
+          "extractor": "stack-yaml",
+          "query_id": "stack-package-indices",
+          "repository": "damon-kwok/oh-my-env",
+          "source": "https://github.com/damon-kwok/oh-my-env/blob/ad763ed14832948dcaae91b0218bfc3596d90fdb/conf/stack/config.yaml",
+          "source_kind": "github-code",
+          "source_path": "conf/stack/config.yaml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "44385fce4b9e36f66acdc939bf194b07e40e04466daf768c2ccb4c84c831017c",
+          "extractor": "stack-yaml",
+          "query_id": "stack-package-indices",
+          "repository": "damon-kwok/oh-my-env",
+          "source": "https://github.com/damon-kwok/oh-my-env/blob/ad763ed14832948dcaae91b0218bfc3596d90fdb/conf/stack/config_old.yaml",
+          "source_kind": "github-code",
+          "source_path": "conf/stack/config_old.yaml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "fbebaebcf42600b74e17aca5316e3e71cb4b7eaa7d25fb383f4254266da9b57b",
+          "extractor": "conda-yaml",
+          "query_id": "conda-channel-alias",
+          "repository": "dingjingmaster/ml-spider",
+          "source": "https://github.com/dingjingmaster/ml-spider/blob/8bd0c09953391251515a816a9592b0d14ab8cd78/data/.condarc",
+          "source_kind": "github-code",
+          "source_path": "data/.condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "2e163b702a6b52f73fc45e93a60110a187493e6fccc219ad4f46a3d057d51293",
+          "extractor": "conda-yaml",
+          "query_id": "conda-custom-channels",
+          "repository": "dxcweb/local-ai",
+          "source": "https://github.com/dxcweb/local-ai/blob/b227ba68bd566cc29eb511d213270a10a0b44bd2/src/service/.condarc",
+          "source_kind": "github-code",
+          "source_path": "src/service/.condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "6d1176f3fdf7c0d1651a234085daf5353a8d099b71af4073536f640cb51398bf",
+          "extractor": "environment-assignment",
+          "query_id": "dart-pub-hosted",
+          "repository": "hedzr/mirror-list",
+          "source": "https://github.com/hedzr/mirror-list/blob/b3a6cd7137ba492ebb5c1560f2c2cf4fa6bb583c/docs/index.md",
+          "source_kind": "github-code",
+          "source_path": "docs/index.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "b72ec3ed7d20a4900935fada3487ab73b49146d03b8aafd1824cf3f750289dba",
+          "extractor": "conda-yaml",
+          "query_id": "conda-custom-channels",
+          "repository": "hughplay/TVR",
+          "source": "https://github.com/hughplay/TVR/blob/d6b94b38d89c443e89e99c5395d17e66b06085d4/docker/misc/.condarc",
+          "source_kind": "github-code",
+          "source_path": "docker/misc/.condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "f6b1f70626c7cb44ef9330e398cdcacb7584123eaa09145c6c80b7224ba28615",
+          "extractor": "conda-yaml",
+          "query_id": "conda-custom-channels",
+          "repository": "hypergravity/laspec",
+          "source": "https://github.com/hypergravity/laspec/blob/ea46b915b461ca15423aadd791f50cbaeb9da364/.condarc",
+          "source_kind": "github-code",
+          "source_path": ".condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "b23c6ba9431a1676795d02b10bc0b7f6300fc43861cd155ed4737b3a1e3c2a43",
+          "extractor": "environment-assignment",
+          "query_id": "dart-pub-hosted",
+          "repository": "ineo6/awesome-mirror",
+          "source": "https://github.com/ineo6/awesome-mirror/blob/215071be5b23f3d6a1272bff8ce7b416b5a47936/README.md",
+          "source_kind": "github-code",
+          "source_path": "README.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "c8847cd85c29dad99d10a165ab19bda9d276e9a1b17bfdb1121df531a6a3e233",
+          "extractor": "conda-yaml",
+          "query_id": "conda-custom-channels",
+          "repository": "kaixindelele/ChatPaper",
+          "source": "https://github.com/kaixindelele/ChatPaper/blob/f19b3a4510c24d49a14549a41de4ad4dd32dc6c1/docker/tsinghua.condarc",
+          "source_kind": "github-code",
+          "source_path": "docker/tsinghua.condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "8d1f4f529f9dfcc106365f7f74ffe0379dc8929c6c43d782797dadc029cfa915",
+          "extractor": "conda-yaml",
+          "query_id": "conda-channel-alias",
+          "repository": "kevin-meng/OS-base-docker",
+          "source": "https://github.com/kevin-meng/OS-base-docker/blob/b9a8301033840ffd94ad6fa7a1cec6bdda15bb7c/anaconda/config/.condarc",
+          "source_kind": "github-code",
+          "source_path": "anaconda/config/.condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "8d1f4f529f9dfcc106365f7f74ffe0379dc8929c6c43d782797dadc029cfa915",
+          "extractor": "conda-yaml",
+          "query_id": "conda-channel-alias",
+          "repository": "kevin-meng/OS-base-docker",
+          "source": "https://github.com/kevin-meng/OS-base-docker/blob/b9a8301033840ffd94ad6fa7a1cec6bdda15bb7c/miniconda/config/.condarc",
+          "source_kind": "github-code",
+          "source_path": "miniconda/config/.condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "fbebaebcf42600b74e17aca5316e3e71cb4b7eaa7d25fb383f4254266da9b57b",
+          "extractor": "conda-yaml",
+          "query_id": "conda-channel-alias",
+          "repository": "leoatchina/leoatchina-datasci",
+          "source": "https://github.com/leoatchina/leoatchina-datasci/blob/96b4008d385f4cff522f711e3e766aa371b6fccc/datasci/.condarc",
+          "source_kind": "github-code",
+          "source_path": "datasci/.condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "ea602808c702cccb76002c50fe5be36c215238ade954d92ef96b7b62d09e04e7",
+          "extractor": "stack-yaml",
+          "query_id": "stack-package-indices",
+          "repository": "lqhuang/dotfiles",
+          "source": "https://github.com/lqhuang/dotfiles/blob/3a962e8f82a38a817761e8456898fee301e8e4a0/stack/config.yaml",
+          "source_kind": "github-code",
+          "source_path": "stack/config.yaml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "80f97eedcf0c1ef2e1bbbe1ccd2855ed054645b27f67f40ce7e7e29d389b8f56",
+          "extractor": "stack-yaml",
+          "query_id": "stack-package-indices",
+          "repository": "lululau/dot_files",
+          "source": "https://github.com/lululau/dot_files/blob/98331bbf9c4b12d3158a92fd8cfef4d509b9ecc8/stack-config.yaml",
+          "source_kind": "github-code",
+          "source_path": "stack-config.yaml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "fbebaebcf42600b74e17aca5316e3e71cb4b7eaa7d25fb383f4254266da9b57b",
+          "extractor": "conda-yaml",
+          "query_id": "conda-channel-alias",
+          "repository": "qixuema/envs",
+          "source": "https://github.com/qixuema/envs/blob/c0dc9a9173dfdb5c7c8b0bda9eef939e149f17b6/novnc/.condarc",
+          "source_kind": "github-code",
+          "source_path": "novnc/.condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "fbebaebcf42600b74e17aca5316e3e71cb4b7eaa7d25fb383f4254266da9b57b",
+          "extractor": "conda-yaml",
+          "query_id": "conda-channel-alias",
+          "repository": "qixuema/envs",
+          "source": "https://github.com/qixuema/envs/blob/c0dc9a9173dfdb5c7c8b0bda9eef939e149f17b6/unovnc/.condarc",
+          "source_kind": "github-code",
+          "source_path": "unovnc/.condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "49e0ebdd93d508ff48762660a03452e294e48405d821ccd08e265458157252e0",
+          "extractor": "conda-yaml",
+          "query_id": "conda-custom-channels",
+          "repository": "vra/mirrors-china",
+          "source": "https://github.com/vra/mirrors-china/blob/958707b40ab4d7e1f83709f54140d50e4c8eba15/configs/.condarc",
+          "source_kind": "github-code",
+          "source_path": "configs/.condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "c8847cd85c29dad99d10a165ab19bda9d276e9a1b17bfdb1121df531a6a3e233",
+          "extractor": "conda-yaml",
+          "query_id": "conda-custom-channels",
+          "repository": "youkaichao/my-portable-aiml-environment",
+          "source": "https://github.com/youkaichao/my-portable-aiml-environment/blob/c7a5dcd81246d3a0d2e8c042487daf8e5cbe9a06/.condarc",
+          "source_kind": "github-code",
+          "source_path": ".condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "55feea41fd423d98714431f2d812f1c971e8d2ac3b96dc560f55c367c8a6ab73",
+          "extractor": "environment-assignment",
+          "query_id": "dart-pub-hosted",
+          "repository": "yuchuangu85/Develop-Source",
+          "source": "https://github.com/yuchuangu85/Develop-Source/blob/0868142a7b4994194e4980c4620ae6ee628a3bfb/Cross-Platform/Flutter/README.md",
+          "source_kind": "github-code",
+          "source_path": "Cross-Platform/Flutter/README.md",
+          "source_role": "documentation"
+        }
+      ],
+      "target": "mirrors.tuna.tsinghua.edu.cn"
+    },
+    {
+      "categories": [
+        "haskell",
+        "julia",
+        "python"
+      ],
+      "confidence": "high",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "720c431b82b015d2aa3700c4e1d8ce5a8e248bde9cd9657df0c1a706f80fef34",
+          "extractor": "stack-yaml",
+          "query_id": "stack-package-indices",
+          "repository": "Akagi201/learning-haskell",
+          "source": "https://github.com/Akagi201/learning-haskell/blob/09482663a97c1d9ef7f167a214ce4bc80695ffdc/stack/config.yaml",
+          "source_kind": "github-code",
+          "source_path": "stack/config.yaml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "8c6f0047e18d0e208a19f44ee14eca153cd0af321c90cc20a5a22dd10f2ffd67",
+          "extractor": "uv-toml",
+          "query_id": "uv-index",
+          "repository": "SUC-DriverOld/MSST-WebUI",
+          "source": "https://github.com/SUC-DriverOld/MSST-WebUI/blob/332c024771d9c048d209b12663d4745a4cb676f2/pyproject.toml",
+          "source_kind": "github-code",
+          "source_path": "pyproject.toml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "ebd51ee85f5abda75c4711e8b3ca80ccb8d89033d055f9eaa3a752cd63aef136",
+          "extractor": "stack-yaml",
+          "query_id": "stack-package-indices",
+          "repository": "aGolduck/etc",
+          "source": "https://github.com/aGolduck/etc/blob/64d5f9ebceb79dcf20c03e02b5a660bdd9419f71/stack-config.yaml",
+          "source_kind": "github-code",
+          "source_path": "stack-config.yaml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "528af2d1bbb2804a4873aaeaf326a356699a8a4026fe1d4eb194a00084039ae5",
+          "extractor": "conda-yaml",
+          "query_id": "conda-custom-channels",
+          "repository": "secretflow/secretflow",
+          "source": "https://github.com/secretflow/secretflow/blob/11425fa5282cf0898393cf881df09d210ef384e2/docker/release/.condarc",
+          "source_kind": "github-code",
+          "source_path": "docker/release/.condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "528af2d1bbb2804a4873aaeaf326a356699a8a4026fe1d4eb194a00084039ae5",
+          "extractor": "conda-yaml",
+          "query_id": "conda-custom-channels",
+          "repository": "secretflow/spec",
+          "source": "https://github.com/secretflow/spec/blob/cf2b6c4e11bb5e8c52b20b616fa2fb3a7f6882b4/.condarc",
+          "source_kind": "github-code",
+          "source_path": ".condarc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "8a3428c21923b83ac698fe48f61ef72a98798577404f6d9cc166b55e079a9122",
+          "extractor": "environment-assignment",
+          "query_id": "julia-pkg-server",
+          "repository": "ustclug/mirrorhelp",
+          "source": "https://github.com/ustclug/mirrorhelp/blob/1a29f1580f55be869565eec4e5c6abb135dc1065/docs/julia.md",
+          "source_kind": "github-code",
+          "source_path": "docs/julia.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "20fc31768ea1f87a1ca9d3fdc79364e0a3278fdee123ebe6598fbd91cfa8b695",
+          "extractor": "stack-yaml",
+          "query_id": "stack-package-indices",
+          "repository": "zhangkaizhao/configurations",
+          "source": "https://github.com/zhangkaizhao/configurations/blob/1e72bcf7139742282140f40df6d069c8f5e52845/haskell/stack/config.yaml",
+          "source_kind": "github-code",
+          "source_path": "haskell/stack/config.yaml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "mirrors.ustc.edu.cn"
+    },
+    {
+      "categories": [
+        "go"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "sources": [
+        {
+          "content_sha256": "28567ef9d254e6780a2127e634961943d0fb6cd8d8fab5e80178da3b73568712",
+          "extractor": "environment-assignment",
+          "query_id": "go-proxy",
+          "repository": "opsre/Thanks-Mirror",
+          "source": "https://github.com/opsre/Thanks-Mirror/blob/2c31b29910945a0c3f8740d0248f3a4686e2b46c/README.md",
+          "source_kind": "github-code",
+          "source_path": "README.md",
+          "source_role": "documentation"
+        }
+      ],
+      "target": "nexus.eryajf.net"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "71b39cb0747f7208d7a2c05fe5592e5295161f9986dae75f0d02ae8f9cba1b27",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "stirante/RuneChanger",
+          "source": "https://github.com/stirante/RuneChanger/blob/29eed9f735e01c41e799f81c9a223b112ae6a3b7/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "nexus.stirante.com"
+    },
+    {
+      "categories": [
+        "php"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "e9832f9b5627867a2e3c00045c43a4b4903682a78a01918d1ce15292d66c6234",
+          "extractor": "composer-json",
+          "query_id": "composer-repositories",
+          "repository": "whitecube/nova-flexible-content",
+          "source": "https://github.com/whitecube/nova-flexible-content/blob/d48d607686fad3dfc8b2fe725789857e6eeaa6e4/composer.json",
+          "source_kind": "github-code",
+          "source_path": "composer.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "nova.laravel.com"
+    },
+    {
+      "categories": [
+        "javascript"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "dbcc2bd63bda3919732f5d86d45c5cb0f82c4ccea8a37d4f2f83f2c1baccf36f",
+          "extractor": "npmrc",
+          "query_id": "npmrc-registry",
+          "repository": "nordicsemi/pc-nrfconnect-launcher",
+          "source": "https://github.com/nordicsemi/pc-nrfconnect-launcher/blob/92cf12680d96e9f74f7fb12e2ea402daddba0460/.npmrc-internal",
+          "source_kind": "github-code",
+          "source_path": ".npmrc-internal",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "npm.nordicsemi.no"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "high",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "42ce49c7c4080641d243f078faa63df55df52633128d5f90d313c07595a0f88f",
+          "extractor": "sbt-resolver",
+          "query_id": "sbt-resolvers",
+          "repository": "Comcast/sirius",
+          "source": "https://github.com/Comcast/sirius/blob/b69ca498cb5d8a225eaa90c4d091ff7d913e6836/build.sbt",
+          "source_kind": "github-code",
+          "source_path": "build.sbt",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "c0c1c05557c073944d52251b191d5df79d7c7ad62bfd8bd228749464866a8376",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "Glamdring/computoser",
+          "source": "https://github.com/Glamdring/computoser/blob/94b518cc46d672ee062532befd180f2105f0f248/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "c3a99a8dc4d5689fcaa82409725e325a386ba43333e73435ca74adbe7fcef056",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "PhantomThief/simple-failover-java",
+          "source": "https://github.com/PhantomThief/simple-failover-java/blob/c024cb9ab8e77784ba10af5b3da3d82da5c7cd35/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "eac9b7c86216413ab494384944219a8d797e39fe6e178e58295e8f3cbbee9e79",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "appreciated/vaadin-app-layout",
+          "source": "https://github.com/appreciated/vaadin-app-layout/blob/c9d2a70eef045f07e7a06f207fe406da70ace5f2/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "14625914cd854b6c4b7c5b494bbaf493f493e3e8656052a3fc60c3eb792a2f9b",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "cternes/openkeepass",
+          "source": "https://github.com/cternes/openkeepass/blob/761839f1c151f37b2fb7ac1fdfecb4d099e4e0bb/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "288a6927d6d6277f84dc8f1d7a420624664c02933d93441565f8b9394aa5acbd",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "e-gineering/gitflow-helper-maven-plugin",
+          "source": "https://github.com/e-gineering/gitflow-helper-maven-plugin/blob/2d6d947113a17fc56d51349cff71b201ed3ee476/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "1ed83e29d4c819c60f4f43db338dbc07a216ecb7b4ae352f8bea0ab675fed1af",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "hsp8712/addrparser",
+          "source": "https://github.com/hsp8712/addrparser/blob/a6e7d12fbe51fc63c80a7577a904f88b221727fe/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "993eed00fe7e7213a3b675d436ae0a7bde03ad98a9acc4a69baa2405c28233ef",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "json-template/JsonTemplate",
+          "source": "https://github.com/json-template/JsonTemplate/blob/093d5a74f0d71259497b650355e6482e9ded9975/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "ff3a702b93720a58bec874ec9594684fa201388e594f936d25105ab6800a77b1",
+          "extractor": "sbt-resolver",
+          "query_id": "sbt-resolvers",
+          "repository": "knowitall/openie",
+          "source": "https://github.com/knowitall/openie/blob/877f182c9c9ffc0c6d1d25e9ebaec493a6ba8496/build.sbt",
+          "source_kind": "github-code",
+          "source_path": "build.sbt",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "442aaa1c9628e94125f16b6b5d5f8a9460a2358a4afee56172c4412e24029336",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "kristian/system-hook",
+          "source": "https://github.com/kristian/system-hook/blob/c9463895324c5b467f0b8535dbd90a440006645d/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "5e8b210200a883cca8ae3d8aedeeb9a27f57ebc094be702f3e64f74bce8c88bb",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "lior-k/fast-elasticsearch-vector-scoring",
+          "source": "https://github.com/lior-k/fast-elasticsearch-vector-scoring/blob/bb3405bfe8ed3cd21694b7d98a5e1b3c505bbccb/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "88cba64c20c1ab35f8d994c785cb4b6a941185185d52f03876bc429b4aaa5e52",
+          "extractor": "gradle-repository",
+          "query_id": "gradle-maven-repositories",
+          "repository": "liu-xiao-dong/JD-Test",
+          "source": "https://github.com/liu-xiao-dong/JD-Test/blob/9dc3696d0492d80a9d6ff9c2ddb32a0600ece71c/build.gradle",
+          "source_kind": "github-code",
+          "source_path": "build.gradle",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "ef78d24c4ec2f51fc122d7f1a10a04f6654c4cbfa169452859cab644437af7c9",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "lobobrowser/LoboBrowser",
+          "source": "https://github.com/lobobrowser/LoboBrowser/blob/7d60db5425c09b6c11c8b82c4fcc943cc5de0410/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "d95de40543b685e06645941f621417716397ea1571109b1b5e2d65ad615fd91c",
+          "extractor": "sbt-resolver",
+          "query_id": "sbt-resolvers",
+          "repository": "mikeyhu/scaladiagrams",
+          "source": "https://github.com/mikeyhu/scaladiagrams/blob/8508bb490e9d9a1802679cde19909a9f6f2d7313/build.sbt",
+          "source_kind": "github-code",
+          "source_path": "build.sbt",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "3528a888094e4a1a034908370c5ac07419459abf130f3997624c2ee4e9650b1c",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "mongobee/mongobee",
+          "source": "https://github.com/mongobee/mongobee/blob/4e1ec5e381121fc9e5ad54881c84029114bafa52/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "987d6a3a10f05a9e3a0fafa9ed4fe97236d5afc3ebbcaa6079070e87f192b23b",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "nidi3/graphviz-java",
+          "source": "https://github.com/nidi3/graphviz-java/blob/f0c1fdfa37c8b9876ef1dcccec1a6c19219e727e/settings.xml",
+          "source_kind": "github-code",
+          "source_path": "settings.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "624ddcf5f4098cc32b315cb33108afea47353801d6aa7c9058b47ca9c745cad0",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "pinpoint-apm/pinpoint",
+          "source": "https://github.com/pinpoint-apm/pinpoint/blob/09324f126394c7461894c93a9ecec0a6b8ef6532/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "71b39cb0747f7208d7a2c05fe5592e5295161f9986dae75f0d02ae8f9cba1b27",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "stirante/RuneChanger",
+          "source": "https://github.com/stirante/RuneChanger/blob/29eed9f735e01c41e799f81c9a223b112ae6a3b7/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "0f6e60ec7bf8b91cf2c2ff2c5dd241ed4cfe682222abb910be1fecbdd89c417a",
+          "extractor": "gradle-repository",
+          "query_id": "gradle-maven-repositories",
+          "repository": "ushahidi/SMSSync",
+          "source": "https://github.com/ushahidi/SMSSync/blob/01b0271d87c6d095b187388dca9652b02d29abaa/build.gradle",
+          "source_kind": "github-code",
+          "source_path": "build.gradle",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "oss.sonatype.org"
+    },
+    {
+      "categories": [
+        "r"
+      ],
+      "confidence": "medium",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "800cec3010f03e596311f043aef97b96d184e61f685288406313e094ff3422c1",
+          "extractor": "r-repositories",
+          "query_id": "r-repositories",
+          "repository": "ThinkR-open/engineering-shiny-book",
+          "source": "https://github.com/ThinkR-open/engineering-shiny-book/blob/c69b54b3b2f899199ca29c1612e58df6c9e92b50/before-build.R",
+          "source_kind": "github-code",
+          "source_path": "before-build.R",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "7476ac1d948f551953d0700bc8b54a2503b6c03992d01ef452741f39c762900e",
+          "extractor": "r-repositories",
+          "query_id": "r-repositories",
+          "repository": "juliasilge/supervised-ML-case-studies-course",
+          "source": "https://github.com/juliasilge/supervised-ML-case-studies-course/blob/19620906cdc88efdb9993c9c50d6879ff1c60eb6/binder/install.R",
+          "source_kind": "github-code",
+          "source_path": "binder/install.R",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "packagemanager.rstudio.com"
+    },
+    {
+      "categories": [
+        "erlang",
+        "julia"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "sources": [
+        {
+          "content_sha256": "e1f723e9197f5b50776004fcc0c3d3051f4e6e3f6b79c5374a985c5f666a693f",
+          "extractor": "environment-assignment",
+          "query_id": "hex-mirror",
+          "repository": "Vulnetix/cli",
+          "source": "https://github.com/Vulnetix/cli/blob/329676d3b10c594b87df8c4f7e297ab1b731c642/website/content/docs/enterprise/package-firewall/hex.md",
+          "source_kind": "github-code",
+          "source_path": "website/content/docs/enterprise/package-firewall/hex.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "df5dab3ac7d9b59fb8be1cacb6ca1578baa3bdda04e1118abc47b7dcfb9e5b76",
+          "extractor": "environment-assignment",
+          "query_id": "julia-pkg-server",
+          "repository": "Vulnetix/cli",
+          "source": "https://github.com/Vulnetix/cli/blob/329676d3b10c594b87df8c4f7e297ab1b731c642/website/content/docs/enterprise/package-firewall/julia.md",
+          "source_kind": "github-code",
+          "source_path": "website/content/docs/enterprise/package-firewall/julia.md",
+          "source_role": "documentation"
+        }
+      ],
+      "target": "packages.vulnetix.com"
+    },
+    {
+      "categories": [
+        "php"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "1a9df6bb034d139cd068feb6200f9c9c7506c561cdc75508bb610b4afa9883b8",
+          "extractor": "composer-json",
+          "query_id": "composer-repositories",
+          "repository": "swoft-cloud/swoft-cli",
+          "source": "https://github.com/swoft-cloud/swoft-cli/blob/bfd4cfb6dd40bb4a2c65ee7e7e5223dec253e9a4/composer.json.dev",
+          "source_kind": "github-code",
+          "source_path": "composer.json.dev",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "packagist.laravel-china.org"
+    },
+    {
+      "categories": [
+        "php"
+      ],
+      "confidence": "high",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "1d17960e2a0be36f11ca39a4b2abc88d8a55251e48b7027b385a1f505b0a093d",
+          "extractor": "composer-json",
+          "query_id": "composer-repositories",
+          "repository": "alexandregz/twofactor_gauthenticator",
+          "source": "https://github.com/alexandregz/twofactor_gauthenticator/blob/b14306150da37c18b7a1e761875e8aa06d47e6a0/composer.json",
+          "source_kind": "github-code",
+          "source_path": "composer.json",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "628b22888260ee271ddf8644534a1e9aaafe59611ba1d8ccaaabb815330d008a",
+          "extractor": "composer-json",
+          "query_id": "composer-repositories",
+          "repository": "sentora/sentora-core",
+          "source": "https://github.com/sentora/sentora-core/blob/78e4041bfb981868dcfbebff47d1a991a09f3ca1/etc/apps/webmail/composer.json-dist",
+          "source_kind": "github-code",
+          "source_path": "etc/apps/webmail/composer.json-dist",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "6dc6a2477495a28b7f0083af2acdf897732504c9baf263e1a72305c5841ca711",
+          "extractor": "composer-json",
+          "query_id": "composer-repositories",
+          "repository": "zpanel/zpanelx",
+          "source": "https://github.com/zpanel/zpanelx/blob/f9e8d4d9a281b382292985f09056d97694c3258e/etc/apps/webmail/composer.json-dist",
+          "source_kind": "github-code",
+          "source_path": "etc/apps/webmail/composer.json-dist",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "plugins.roundcube.net"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "130b97e9cb2526ead20e75667f605f0efd1abd12c8c9c35f3dbd5a1adf536915",
+          "extractor": "pip-config",
+          "query_id": "pip-extra-index",
+          "repository": "skybrush-io/skybrush-server",
+          "source": "https://github.com/skybrush-io/skybrush-server/blob/254ccc05e378d9dee7ccc3e77852b90c95615857/etc/deployment/docker/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "etc/deployment/docker/pip.conf",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "pypi.collmot.com"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "0435cbe5c6706f5bf54789dc96c0d5b8afb31a64bd386a67fe526f14b1d57ef6",
+          "extractor": "uv-toml",
+          "query_id": "uv-index",
+          "repository": "getsentry/pypi",
+          "source": "https://github.com/getsentry/pypi/blob/c8a578a932791e37162a75bbf8c2d2b9ab2e72ce/pyproject.toml",
+          "source_kind": "github-code",
+          "source_path": "pyproject.toml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "pypi.devinfra.sentry.io"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "medium",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "fb74b5231e4953b6118666ada69beacb3c1b25d4a1370fc1e7cb76572e765dc5",
+          "extractor": "pip-config",
+          "query_id": "pip-extra-index",
+          "repository": "BaihaiAI/IDP",
+          "source": "https://github.com/BaihaiAI/IDP/blob/23eadcda9d3b7c57dd377ecffb574207daca099b/docker_build/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "docker_build/pip.conf",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "b632d2a624443b5f803e178616685784660d833e3e4afda07895c34faa6ae201",
+          "extractor": "pip-config",
+          "query_id": "pip-extra-index",
+          "repository": "pyeden/FastAPI-demo",
+          "source": "https://github.com/pyeden/FastAPI-demo/blob/98d46fb00c2d1fbb371bb4b319e44b0ef55a4e90/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "pip.conf",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "pypi.douban.com"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "high",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "e0c300ef578a4a6d678e0e90ce3456217bd9d574acf67979dbf5202768a7738d",
+          "extractor": "pip-config",
+          "query_id": "pip-index",
+          "repository": "kerlomz/captcha_platform",
+          "source": "https://github.com/kerlomz/captcha_platform/blob/f7d719bd1239a987996e266bd7fe35c96003b378/.pip.conf",
+          "source_kind": "github-code",
+          "source_path": ".pip.conf",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "b2c7ec6ef12c8cd8b72de5f76568075939f63e54e876c224ef342ab38144928d",
+          "extractor": "pip-config",
+          "query_id": "pip-index",
+          "repository": "khs1994-docker/lnmp",
+          "source": "https://github.com/khs1994-docker/lnmp/blob/43eb77cb0d88b46f9da42d36921ff3db787eb0cc/config/python/.pip/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "config/python/.pip/pip.conf",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "da0ca2c80e751f374949869153536b19f8ae1a478dbf2d0b426d784cded4191f",
+          "extractor": "pip-config",
+          "query_id": "pip-index",
+          "repository": "pinry/pinry",
+          "source": "https://github.com/pinry/pinry/blob/05476b112401cf34a38bfbffc67c37f5f6c3b38f/docker/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "docker/pip.conf",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "pypi.doubanio.com"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "d0271df8003b4ba3a0634e038fee37711b01f000a45f033e8f2db29af619e08c",
+          "extractor": "pip-config",
+          "query_id": "pip-index",
+          "repository": "photonixapp/photonix",
+          "source": "https://github.com/photonixapp/photonix/blob/c3a4b5ccef2493b6c38029aa7bf79a6c65af770b/docker/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "docker/pip.conf",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "pypi.epixstudios.co.uk"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "d87cb44c6f8593fe42cc205237fe8526ac284b2c954fa39e776cd462ea1a8ee4",
+          "extractor": "pip-config",
+          "query_id": "pip-index",
+          "repository": "unias/docklet",
+          "source": "https://github.com/unias/docklet/blob/70c089a6a5bb186dc3f898127af84d79b4dfab2d/tools/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "tools/pip.conf",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "pypi.mirrors.ustc.edu.cn"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "34a2de4a135a0f9bb33285dbb6cde8d851882dbd77691a8f0ad21b6ada966240",
+          "extractor": "pip-config",
+          "query_id": "pip-extra-index",
+          "repository": "liguodongiot/llm-action",
+          "source": "https://github.com/liguodongiot/llm-action/blob/3a1e24448ec451108f448580fa8a37f04ee834f2/llm-compression/quantization/llm-qat/cfd70ff/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "llm-compression/quantization/llm-qat/cfd70ff/pip.conf",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "pypi.ngc.nvidia.com"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "e948795c9a8713cf1940a05c9763cb39ef42978a98fb86403e5bb2c395cc1014",
+          "extractor": "uv-toml",
+          "query_id": "uv-index",
+          "repository": "arhanjain/polaris",
+          "source": "https://github.com/arhanjain/polaris/blob/129abc45f680559a7da62b9280fdb127b02b7275/pyproject.toml",
+          "source_kind": "github-code",
+          "source_path": "pyproject.toml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "pypi.nvidia.com"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "high",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "e828e4bf6f2f9d2fed20d43271e6de2316122e3e589be5f84719aa928847572f",
+          "extractor": "pip-config",
+          "query_id": "pip-index",
+          "repository": "0xbug/Hawkeye",
+          "source": "https://github.com/0xbug/Hawkeye/blob/3ef48c27c47c86c8bfe013b4a266e08534c821d4/deploy/pyenv/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "deploy/pyenv/pip.conf",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "fb74b5231e4953b6118666ada69beacb3c1b25d4a1370fc1e7cb76572e765dc5",
+          "extractor": "pip-config",
+          "query_id": "pip-extra-index",
+          "repository": "BaihaiAI/IDP",
+          "source": "https://github.com/BaihaiAI/IDP/blob/23eadcda9d3b7c57dd377ecffb574207daca099b/docker_build/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "docker_build/pip.conf",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "5146f04382a1dac1c3d6c8521ff2ed62064ecd5ccedebd5d99392e8c45623c4d",
+          "extractor": "pip-config",
+          "query_id": "pip-index",
+          "repository": "IceBearAI/LLM-And-More",
+          "source": "https://github.com/IceBearAI/LLM-And-More/blob/95ca1d266c213f22d1f35e17e96407d353625010/docker/llmops/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "docker/llmops/pip.conf",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "04dd0ccb09d356c6eac8676cec795f82c4b521f007b65675cb0b75a0c2fdcc37",
+          "extractor": "pip-config",
+          "query_id": "pip-index",
+          "repository": "Vu1nT0tal/IoT-vulhub",
+          "source": "https://github.com/Vu1nT0tal/IoT-vulhub/blob/80a58b00485403fd88578da85d846210cc9792f2/baseImage/ubuntu1604/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "baseImage/ubuntu1604/pip.conf",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "326f64f0cd7dd54c62aed270302e8fc6c4b3631c360beec1032e0b32bfd1111a",
+          "extractor": "pip-config",
+          "query_id": "pip-extra-index",
+          "repository": "jianzfb/antgo",
+          "source": "https://github.com/jianzfb/antgo/blob/4cf2c5b2eebb526718b4211910ca3cea975c79cd/docker/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "docker/pip.conf",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "b632d2a624443b5f803e178616685784660d833e3e4afda07895c34faa6ae201",
+          "extractor": "pip-config",
+          "query_id": "pip-extra-index",
+          "repository": "pyeden/FastAPI-demo",
+          "source": "https://github.com/pyeden/FastAPI-demo/blob/98d46fb00c2d1fbb371bb4b319e44b0ef55a4e90/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "pip.conf",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "fbd979255e76d414d9b21f19032ae7e1f545c946bd366525cd157ce510e7c845",
+          "extractor": "uv-toml",
+          "query_id": "uv-index",
+          "repository": "xiesx123/CreatorBox",
+          "source": "https://github.com/xiesx123/CreatorBox/blob/bc1adf57267a973566fdcf47b3ecffbcce1a12a2/pyproject.toml",
+          "source_kind": "github-code",
+          "source_path": "pyproject.toml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "pypi.tuna.tsinghua.edu.cn"
+    },
+    {
+      "categories": [
+        "r"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "2ba2006d0df1c815351190b27dec03b9ca00671acae16012e5375b3caff18112",
+          "extractor": "r-repositories",
+          "query_id": "r-repositories",
+          "repository": "radiant-rstats/radiant",
+          "source": "https://github.com/radiant-rstats/radiant/blob/1bdb1780bdfbe59127a666e446e2a1ee3bc83aff/build/build_win.R",
+          "source_kind": "github-code",
+          "source_path": "build/build_win.R",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "radiant-rstats.github.io"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "2d2ebeb3454a13484387ab6bdecc787b3b555910ab033dceb653fc2864431572",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "chenzhiwei/linux",
+          "source": "https://github.com/chenzhiwei/linux/blob/bdfa947b04b07163b34baf08d1c26363fcaa145c/docker/daemon.json",
+          "source_kind": "github-code",
+          "source_path": "docker/daemon.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "registry.cn-hangzhou.aliyuncs.com"
+    },
+    {
+      "categories": [
+        "rust"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "55e4f01d9e7fceef26de102a3f9478c0641a83f341da577e883d241cb200470d",
+          "extractor": "cargo-toml",
+          "query_id": "cargo-registries",
+          "repository": "gosub-io/gosub-engine",
+          "source": "https://github.com/gosub-io/gosub-engine/blob/138bbb298f73504badb59ddb951f9a30c43a9b5c/.cargo/config.toml",
+          "source_kind": "github-code",
+          "source_path": ".cargo/config.toml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "registry.gosub.io"
+    },
+    {
+      "categories": [
+        "swift"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "ce5ba96c49790d1fdbf2df44e98ae6933085674939ea08f418461c334eb3717e",
+          "extractor": "swift-registries-json",
+          "query_id": "swift-registries",
+          "repository": "tuist/tuist",
+          "source": "https://github.com/tuist/tuist/blob/d8431e4b6c30d40efa2b8149266701b0dc07e863/.swiftpm/configuration/registries.json",
+          "source_kind": "github-code",
+          "source_path": ".swiftpm/configuration/registries.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "registry.tuist.dev"
+    },
+    {
+      "categories": [
+        "julia"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "114fd8d814a5a63645fb2b9c00ffe010df0b6502d0a04c231c2d94fc8ececce3",
+          "extractor": "environment-assignment",
+          "query_id": "julia-pkg-server",
+          "repository": "Suzhou-Tongyuan/SyslabCC-JuliaAOT",
+          "source": "https://github.com/Suzhou-Tongyuan/SyslabCC-JuliaAOT/blob/bf4e4e2b46145cb1452d0fa86986c26b101672e5/setup.sh",
+          "source_kind": "github-code",
+          "source_path": "setup.sh",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "releases.tongyuan.cc"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "b037efc149b0f3024286df3e0a733da874f07bc3311da83657e87a072492726a",
+          "extractor": "sbt-resolver",
+          "query_id": "sbt-resolvers",
+          "repository": "prnicolas/ScalaMl",
+          "source": "https://github.com/prnicolas/ScalaMl/blob/cb06d36f90e525da904af2a5ad98cd4616284e64/build.sbt",
+          "source_kind": "github-code",
+          "source_path": "build.sbt",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "repo.akka.io"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "79577ab9433e74743f9d3457254438ed17b6cc1bb8988700ee843b2ec7d093c1",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "BetonQuest/BetonQuest",
+          "source": "https://github.com/BetonQuest/BetonQuest/blob/6e25c34c282d8c792bfc745a5c46a95b19987c0e/.mvn/settings.xml",
+          "source_kind": "github-code",
+          "source_path": ".mvn/settings.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "repo.betonquest.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "4759c33643f008df58ab898d0974c953498071158df1139a2bf653b40d1b453c",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "lambdaisland/deep-diff2",
+          "source": "https://github.com/lambdaisland/deep-diff2/blob/c01094c6827d7ff047545941525e4677a04a6d99/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "repo.clojars.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "ef47b8055452f5e11ca3c9a10217f72ce34a2e99c352d3539870e36ef68af91c",
+          "extractor": "sbt-resolver",
+          "query_id": "sbt-resolvers",
+          "repository": "adept-dm/adept",
+          "source": "https://github.com/adept-dm/adept/blob/94bf9976e02721c4af5f0c019a954b90a09de175/build.sbt",
+          "source_kind": "github-code",
+          "source_path": "build.sbt",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "repo.eclipse.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "4d22972a9b882b193590c90cf66758b2031ec4975d7b249907c9e88672fd3eb2",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "gentics/mesh",
+          "source": "https://github.com/gentics/mesh/blob/ae898ba1664004a19160867513df93c202b8547b/build/settings.xml",
+          "source_kind": "github-code",
+          "source_path": "build/settings.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "repo.gentics.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "medium",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "57c4157a665f9c57f7575e31781f484930e36664366ba6198ff85f2419433c80",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "JoySafety/JoySafety",
+          "source": "https://github.com/JoySafety/JoySafety/blob/a2342fdb6c105f00f8045a8c7d9c7cbb35972582/deploy/settings.xml",
+          "source_kind": "github-code",
+          "source_path": "deploy/settings.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "b9c682631626d3dea7e8888213d5f5c734221ebddac7e0eff7807385dd95f21c",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "ZhongFuCheng3y/austin",
+          "source": "https://github.com/ZhongFuCheng3y/austin/blob/8379c029e0ba3c541f1e34cfc9c8401a4355b2f6/doc/maven/settings.xml",
+          "source_kind": "github-code",
+          "source_path": "doc/maven/settings.xml",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "e7d253ccbcfc3c5a1790e5019158d3b5552cb0b16d8f39d1e4d2debad75da4e9",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "platonai/Browser4",
+          "source": "https://github.com/platonai/Browser4/blob/8b22bc969140bf5e3d61273da0f3a0ece81a48fb/bin/tools/maven/cn/settings.xml",
+          "source_kind": "github-code",
+          "source_path": "bin/tools/maven/cn/settings.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "repo.huaweicloud.com"
+    },
+    {
+      "categories": [
+        "php"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "e5a2209bbd66e5099d6ebe560cc526bdf8204a525452308e65f0dea8c474eeab",
+          "extractor": "composer-json",
+          "query_id": "composer-repositories",
+          "repository": "Adyen/adyen-magento2",
+          "source": "https://github.com/Adyen/adyen-magento2/blob/9e739bb1a54b9d0bd9825e14dea6ef9cb9e44e92/composer.json",
+          "source_kind": "github-code",
+          "source_path": "composer.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "repo.magento.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "336bf9f1d23cd108d2c8c1bd624e647d0623ae9134c436c602396e55b06161da",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "jason1210/java-bucket",
+          "source": "https://github.com/jason1210/java-bucket/blob/35b36216775d8fe58e1122203b1a2f9e17e61966/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "repo.rdc.aliyun.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "c0c1c05557c073944d52251b191d5df79d7c7ad62bfd8bd228749464866a8376",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "Glamdring/computoser",
+          "source": "https://github.com/Glamdring/computoser/blob/94b518cc46d672ee062532befd180f2105f0f248/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "repo.springsource.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "high",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "42ce49c7c4080641d243f078faa63df55df52633128d5f90d313c07595a0f88f",
+          "extractor": "sbt-resolver",
+          "query_id": "sbt-resolvers",
+          "repository": "Comcast/sirius",
+          "source": "https://github.com/Comcast/sirius/blob/b69ca498cb5d8a225eaa90c4d091ff7d913e6836/build.sbt",
+          "source_kind": "github-code",
+          "source_path": "build.sbt",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "ef47b8055452f5e11ca3c9a10217f72ce34a2e99c352d3539870e36ef68af91c",
+          "extractor": "sbt-resolver",
+          "query_id": "sbt-resolvers",
+          "repository": "adept-dm/adept",
+          "source": "https://github.com/adept-dm/adept/blob/94bf9976e02721c4af5f0c019a954b90a09de175/build.sbt",
+          "source_kind": "github-code",
+          "source_path": "build.sbt",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "5e2c4af600704e6cfb2091494eccb0c7667cc6136dc664ef6f3a67c70a4ee841",
+          "extractor": "sbt-resolver",
+          "query_id": "sbt-resolvers",
+          "repository": "chrisdinn/brando",
+          "source": "https://github.com/chrisdinn/brando/blob/efcc20d6b99868d121f8fd7923ebf8b2d9e97089/build.sbt",
+          "source_kind": "github-code",
+          "source_path": "build.sbt",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "9a5617e402f836c1da805980e44820716357f75801e54b352b30b314f07ed1c9",
+          "extractor": "sbt-resolver",
+          "query_id": "sbt-resolvers",
+          "repository": "geeksville/arduleader",
+          "source": "https://github.com/geeksville/arduleader/blob/15f8c543ddead9a5a272fd891545325aff8ef7d7/build.sbt",
+          "source_kind": "github-code",
+          "source_path": "build.sbt",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "d1d570e0769cae0dbc34329915a03fa2c25a898d4c3f0778e5cb9af5a3644208",
+          "extractor": "sbt-resolver",
+          "query_id": "sbt-resolvers",
+          "repository": "kenshoo/metrics-play",
+          "source": "https://github.com/kenshoo/metrics-play/blob/6c33b0998ded70458703a5089a914e889df2a5a8/build.sbt",
+          "source_kind": "github-code",
+          "source_path": "build.sbt",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "d95de40543b685e06645941f621417716397ea1571109b1b5e2d65ad615fd91c",
+          "extractor": "sbt-resolver",
+          "query_id": "sbt-resolvers",
+          "repository": "mikeyhu/scaladiagrams",
+          "source": "https://github.com/mikeyhu/scaladiagrams/blob/8508bb490e9d9a1802679cde19909a9f6f2d7313/build.sbt",
+          "source_kind": "github-code",
+          "source_path": "build.sbt",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "repo.typesafe.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "high",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "c0c1c05557c073944d52251b191d5df79d7c7ad62bfd8bd228749464866a8376",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "Glamdring/computoser",
+          "source": "https://github.com/Glamdring/computoser/blob/94b518cc46d672ee062532befd180f2105f0f248/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "987d6a3a10f05a9e3a0fafa9ed4fe97236d5afc3ebbcaa6079070e87f192b23b",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "nidi3/graphviz-java",
+          "source": "https://github.com/nidi3/graphviz-java/blob/f0c1fdfa37c8b9876ef1dcccec1a6c19219e727e/settings.xml",
+          "source_kind": "github-code",
+          "source_path": "settings.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "1effa74f9e47b59c447e6d7025468edfbec705c51fc703f7020696b8aa0e8265",
+          "extractor": "sbt-resolver",
+          "query_id": "sbt-resolvers",
+          "repository": "norbert-radyk/spoiwo",
+          "source": "https://github.com/norbert-radyk/spoiwo/blob/a99a156a3217f0ae4a777c02c152dcf90fd77cc7/build.sbt",
+          "source_kind": "github-code",
+          "source_path": "build.sbt",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "repository.apache.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "9d03cc8825628d08395f9f7be0a8c8ba38fc44da4c77fb0f7ef0918e26680f24",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "camunda/docker-camunda-bpm-platform",
+          "source": "https://github.com/camunda/docker-camunda-bpm-platform/blob/19f70eda8195e4936b7e245428fff79e5de835fd/settings.xml",
+          "source_kind": "github-code",
+          "source_path": "settings.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "repository.nexus.camunda.cloud"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "da61104d297286275cd7367c42666021aa2c8d9f96830f0b6933a3243c17cf3e",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "wso2/product-microgateway",
+          "source": "https://github.com/wso2/product-microgateway/blob/7f01aaeae542c8f659a81b6bb506688c1651c806/.maven/settings.xml",
+          "source_kind": "github-code",
+          "source_path": ".maven/settings.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "resources.knopflerfish.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "080c7c2d4a144fcbbac4112118460271f651b7d456a190305c61bdc745631c98",
+          "extractor": "sbt-resolver",
+          "query_id": "sbt-resolvers",
+          "repository": "scala/scala-dist",
+          "source": "https://github.com/scala/scala-dist/blob/1182e6deb82feae6f7e050bfdb5e62ab8ab0d426/build.sbt",
+          "source_kind": "github-code",
+          "source_path": "build.sbt",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "scala-ci.typesafe.com"
+    },
+    {
+      "categories": [
+        "swift"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "6647bae2efe3003518f09b779db6694a28e35b0606d3201894f92b45c7e7d280",
+          "extractor": "swift-registries-json",
+          "query_id": "swift-registries",
+          "repository": "tuist/tuist",
+          "source": "https://github.com/tuist/tuist/blob/d8431e4b6c30d40efa2b8149266701b0dc07e863/server/native/xcactivitylog_nif/.swiftpm/configuration/registries.json",
+          "source_kind": "github-code",
+          "source_path": "server/native/xcactivitylog_nif/.swiftpm/configuration/registries.json",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "6647bae2efe3003518f09b779db6694a28e35b0606d3201894f92b45c7e7d280",
+          "extractor": "swift-registries-json",
+          "query_id": "swift-registries",
+          "repository": "tuist/tuist",
+          "source": "https://github.com/tuist/tuist/blob/d8431e4b6c30d40efa2b8149266701b0dc07e863/server/native/xcresult_nif/.swiftpm/configuration/registries.json",
+          "source_kind": "github-code",
+          "source_path": "server/native/xcresult_nif/.swiftpm/configuration/registries.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "tuist.dev"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "9c44cd9fb51bf6a001360432cf19b520e2e182aaf68f6bf9da55fc17bf29ed44",
+          "extractor": "pip-config",
+          "query_id": "pip-extra-index",
+          "repository": "thorrak/fermentrack",
+          "source": "https://github.com/thorrak/fermentrack/blob/1aea05b07b9445edce2f39480b03c93eced125e6/compose/production/django/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "compose/production/django/pip.conf",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "wheels.fermentrack.com"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "a3fd3b7b5a6e7bec0b8c3e4887c830434dfca2b7eb38a651a7747b4a629293b0",
+          "extractor": "pip-config",
+          "query_id": "pip-index",
+          "repository": "linuxserver/docker-homeassistant",
+          "source": "https://github.com/linuxserver/docker-homeassistant/blob/21583925d1d4f64b92bbbc3951af15bc1f954b15/root/etc/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "root/etc/pip.conf",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "wheels.home-assistant.io"
+    },
+    {
+      "categories": [
+        "php"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "2f487325df31a0db50f840a59952cb6d3b5848e18c8c0039661e3d2368cce6ef",
+          "extractor": "composer-json",
+          "query_id": "composer-repositories",
+          "repository": "kasparsd/minit",
+          "source": "https://github.com/kasparsd/minit/blob/46a6a3d9191bcd40bbc49083d4ff929a415e3d90/composer.json",
+          "source_kind": "github-code",
+          "source_path": "composer.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "wpackagist.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "549ebac66274bfbfcfd4566219b0d623861d6c775c8f09c817868278033dd4e4",
+          "extractor": "sbt-resolver",
+          "query_id": "sbt-resolvers",
+          "repository": "amplab/SparkNet",
+          "source": "https://github.com/amplab/SparkNet/blob/199116dfa73832e1dae37a2b8921839f36a9bab3/build.sbt",
+          "source_kind": "github-code",
+          "source_path": "build.sbt",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "www.eecs.berkeley.edu"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "dad1045dc96c1c9e4ca7f2cc5ca4566209be579c8920ed2dd379392c352e5450",
+          "extractor": "sbt-resolver",
+          "query_id": "sbt-resolvers",
+          "repository": "mcoblenz/Obsidian",
+          "source": "https://github.com/mcoblenz/Obsidian/blob/a32efc07b0a3c3128413999324f55f16fb349c1b/build.sbt",
+          "source_kind": "github-code",
+          "source_path": "build.sbt",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "www.jitpack.io"
+    },
+    {
+      "categories": [
+        "dotnet"
+      ],
+      "confidence": "medium",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "2fa4472a545901cf16a9d6bbcad1d921d72192b872e295d8ab58cce9905b444c",
+          "extractor": "nuget-xml",
+          "query_id": "nuget-package-sources",
+          "repository": "Element-Blazor/Element-Blazor",
+          "source": "https://github.com/Element-Blazor/Element-Blazor/blob/dbd8d7c3a3b2654ecef90221477182b42ebcf2c0/nuget.config",
+          "source_kind": "github-code",
+          "source_path": "nuget.config",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "cbbb4e1277e27e303d2a06ae27c9df6ba30e59e7e5fc1b223c2fa07eabd957f7",
+          "extractor": "nuget-xml",
+          "query_id": "nuget-package-sources",
+          "repository": "xBimTeam/XbimWindowsUI",
+          "source": "https://github.com/xBimTeam/XbimWindowsUI/blob/faa8e9450866f929c7514e2b4b18d285648ccf75/nuget.config",
+          "source_kind": "github-code",
+          "source_path": "nuget.config",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "www.myget.org"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "high",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "36ec5fbf204e7a60ffef80da01d62085a38eb41ae5c73b16e11c32c59978bb60",
+          "extractor": "pip-config",
+          "query_id": "pip-extra-index",
+          "repository": "Jpe230/SonicPad-Debian",
+          "source": "https://github.com/Jpe230/SonicPad-Debian/blob/aa2c5853e61627aeee5f1d4aa6c0b5c5dbdc59d5/src/base_rootfs/etc/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "src/base_rootfs/etc/pip.conf",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "005331a21d6818025630824ea0e35fc4314a73ed176408412fbf7c074d6220c4",
+          "extractor": "pip-config",
+          "query_id": "pip-extra-index",
+          "repository": "RickDB/PlexAniSync",
+          "source": "https://github.com/RickDB/PlexAniSync/blob/ae7905433867bce5bff9000b50d4ce161085a3f0/Docker/PlexAniSync/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "Docker/PlexAniSync/pip.conf",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "005331a21d6818025630824ea0e35fc4314a73ed176408412fbf7c074d6220c4",
+          "extractor": "pip-config",
+          "query_id": "pip-extra-index",
+          "repository": "RickDB/PlexAniSync",
+          "source": "https://github.com/RickDB/PlexAniSync/blob/ae7905433867bce5bff9000b50d4ce161085a3f0/Docker/Tautulli/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "Docker/Tautulli/pip.conf",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "005331a21d6818025630824ea0e35fc4314a73ed176408412fbf7c074d6220c4",
+          "extractor": "pip-config",
+          "query_id": "pip-extra-index",
+          "repository": "ambianic/ambianic-edge",
+          "source": "https://github.com/ambianic/ambianic-edge/blob/cad14a3ae8a2149c9e17e1bd41ee7d1b75568271/build/raspberrypi.pip.conf",
+          "source_kind": "github-code",
+          "source_path": "build/raspberrypi.pip.conf",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "36ec5fbf204e7a60ffef80da01d62085a38eb41ae5c73b16e11c32c59978bb60",
+          "extractor": "pip-config",
+          "query_id": "pip-index",
+          "repository": "balena-io-experimental/inkyshot",
+          "source": "https://github.com/balena-io-experimental/inkyshot/blob/9af36eb3d84f8528d8b6959f2c255d6d86aeb08c/inkyshot/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "inkyshot/pip.conf",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "005331a21d6818025630824ea0e35fc4314a73ed176408412fbf7c074d6220c4",
+          "extractor": "pip-config",
+          "query_id": "pip-extra-index",
+          "repository": "bluerobotics/BlueOS",
+          "source": "https://github.com/bluerobotics/BlueOS/blob/8e16119ea52340fd9dbb596fbc0f7a49090871d3/bootstrap/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "bootstrap/pip.conf",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "005331a21d6818025630824ea0e35fc4314a73ed176408412fbf7c074d6220c4",
+          "extractor": "pip-config",
+          "query_id": "pip-extra-index",
+          "repository": "dtcooper/raspberrypi-os-docker",
+          "source": "https://github.com/dtcooper/raspberrypi-os-docker/blob/0e597b219f17d9017819051e0b317b5d4f0ba485/image/etc/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "image/etc/pip.conf",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "4bcee9b3e490fc20ab53170296e1d9be33fd1e80ff833424fc1aba4a79a4f3cc",
+          "extractor": "pip-config",
+          "query_id": "pip-index",
+          "repository": "niccokunzmann/open-web-calendar",
+          "source": "https://github.com/niccokunzmann/open-web-calendar/blob/718fb2aa5f334ff914cca91e55713793728b6c4c/docker/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "docker/pip.conf",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "9c44cd9fb51bf6a001360432cf19b520e2e182aaf68f6bf9da55fc17bf29ed44",
+          "extractor": "pip-config",
+          "query_id": "pip-extra-index",
+          "repository": "thorrak/fermentrack",
+          "source": "https://github.com/thorrak/fermentrack/blob/1aea05b07b9445edce2f39480b03c93eced125e6/compose/production/django/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "compose/production/django/pip.conf",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "www.piwheels.org"
+    }
+  ],
+  "discovery_rules_sha256": "aa83fa11e54f9465bb47389b463d0e01e809320dc389fe75a8b9fdab9401af14",
+  "schema_version": 1
 }
