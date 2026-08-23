@@ -221,7 +221,7 @@ class LlmReviewTests(unittest.TestCase):
 
         gemini_result = call_provider(
             "gemini",
-            "gemini-3.5-flash-lite",
+            "gemini-3.7-flash",
             "test-secret",
             bundle,
             transport=gemini,

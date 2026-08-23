@@ -31,7 +31,7 @@ MAX_FINDINGS = 25
 DEFAULT_MODELS = {
     "openai": "gpt-5.4-mini",
     "anthropic": "claude-haiku-4-5",
-    "gemini": "gemini-3.5-flash-lite",
+    "gemini": "gemini-3.7-flash",
     "deepseek": "deepseek-v4-flash",
 }
 PROVIDER_API_KEYS = {

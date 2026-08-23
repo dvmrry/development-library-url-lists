@@ -37,7 +37,7 @@ and product availability change; the links below are the source of truth.
 | --- | --- | --- | --- |
 | OpenAI | `gpt-5.4-mini` | Separate API key and usage billing. At current list prices, the expected weekly request is pennies. | Recommended paid baseline for stronger gap analysis and strict structured output. |
 | Anthropic | `claude-haiku-4-5` | Separate API key for this GitHub Actions adapter. Claude subscription Routines are an alternative outside the workflow. | Useful when Claude is already approved by the organization. |
-| Gemini | `gemini-3.5-flash-lite` | A limited API free tier is available. Google states that free-tier content may be used to improve its products; paid-tier content is not. | Best zero-incremental-cost experiment for this public-data repository. |
+| Gemini | `gemini-3.7-flash` | A limited API free tier is available. Google states that free-tier content may be used to improve its products; paid-tier content is not. | Best zero-incremental-cost experiment for this public-data repository. |
 | DeepSeek | `deepseek-v4-flash` | Separate prepaid API account; JSON mode rather than schema-constrained output. | Low-cost experiment when organizational data-processing and provider approval permit it. |
 
 Current references:
