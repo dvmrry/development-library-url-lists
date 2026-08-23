@@ -268,9 +268,11 @@ def build_review_input(root: Path) -> dict[str, Any]:
         ],
         "discovery_queries": [
             {
+                "id": item.get("id"),
                 "ecosystem": item.get("ecosystem"),
                 "query": item.get("query"),
-                "context_terms": item.get("context_terms", []),
+                "extractor": item.get("extractor"),
+                "keys": item.get("keys", []),
             }
             for item in queries
         ],

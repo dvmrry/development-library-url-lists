@@ -29,20 +29,30 @@ suffix, for example `.jfrog.io`. Asterisks are never emitted.
 The weekly GitHub Actions job uses only Python's standard library and the
 repository's built-in `GITHUB_TOKEN`. It:
 
-1. Searches public code for 27 package-manager settings, including npm, Yarn,
+1. Searches public code for package-manager settings across npm, Yarn,
    pip, uv, Conda, Maven, Gradle, NuGet, Cargo, Go, Composer, RubyGems, Conan,
    Dart, Hex, Haskell, R, Julia, CocoaPods, Swift registries, and OCI mirrors.
 2. Reads default repositories from the official Package-URL definitions.
-3. Extracts and normalizes public hostnames.
-4. Removes private/test/shared infrastructure and targets already covered by
-   the curated catalog.
-5. Merges new evidence into `data/candidates.json`.
+3. Parses only package-manager-specific configuration fields and normalizes
+   their public hostnames.
+4. Removes private/test/shared infrastructure, obvious documentation and
+   placeholder targets, and targets already covered by the curated catalog.
+5. Records extractor, source path, source role, and content hash provenance in
+   `data/candidates.json`, then scores independent, non-identical configuration
+   evidence.
 6. Optionally asks one configured LLM for suggestion-only coverage gaps.
 7. Tests the result and opens or updates an automation pull request.
 
 The collectors contact only `api.github.com` and
 `raw.githubusercontent.com`. Discovered URLs are parsed but never fetched,
 so a malicious public config cannot turn the workflow into an SSRF primitive.
+
+Every search query names a deterministic extractor for its actual format, such
+as a Maven XML path, Cargo TOML field, or Docker JSON key. Generic line-wide
+URL matching is rejected by validation. Documentation, examples, and tests may
+preserve useful evidence but cannot raise confidence by repetition. A discovery
+rules fingerprint rebuilds the candidate snapshot after extraction or filtering
+logic changes, preventing older noisy results from surviving a stricter rule set.
 
 ## Approval model
 
@@ -62,7 +72,8 @@ python scripts/reject.py docs.example.org --reason "documentation site"
 Promotion records the discovery evidence, removes the review candidate, and
 regenerates `dist/`. Rejection preserves its evidence and rationale in
 `data/rejections.json`. Deterministic flags identify documentation-like,
-placeholder-like, and nonstandard-port candidates to speed up review.
+placeholder-like, nonstandard-port, retired-service, and non-configuration-only
+candidates to speed up review.
 
 Published entries are never removed automatically; a retired
 endpoint remains in the evidence catalog with status `retired`.

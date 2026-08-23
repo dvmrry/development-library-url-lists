@@ -91,9 +91,10 @@ class LlmReviewTests(unittest.TestCase):
                 "schema_version": 1,
                 "queries": [
                     {
+                        "id": "pip-index",
                         "ecosystem": "python",
                         "query": '"index-url" filename:pip.conf',
-                        "context_terms": ["index-url"],
+                        "extractor": "pip-config",
                         "max_results": 20,
                     }
                 ],
