@@ -11,7 +11,9 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import sys
 import tempfile
+import time
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -28,6 +30,8 @@ PROMPT_VERSION = "1"
 MAX_INPUT_BYTES = 500_000
 MAX_RESPONSE_BYTES = 2_000_000
 MAX_FINDINGS = 25
+RETRY_DELAYS_SECONDS = (5, 15, 30)
+RETRYABLE_HTTP_STATUS_CODES = {429, 500, 502, 503, 504}
 DEFAULT_MODELS = {
     "openai": "gpt-5.4-mini",
     "anthropic": "claude-haiku-4-5",
@@ -299,23 +303,53 @@ def _post_json(
         "User-Agent": "development-library-url-lists/0.2",
         **headers,
     }
-    request = Request(
-        url,
-        data=_canonical_json(payload).encode("utf-8"),
-        headers=request_headers,
-        method="POST",
-    )
-    try:
-        with _OPENER.open(request, timeout=120) as response:
-            content = response.read(MAX_RESPONSE_BYTES + 1)
-    except HTTPError as error:
-        detail = error.read(512).decode("utf-8", errors="replace")
-        detail = re.sub(r"\s+", " ", detail).strip()
-        raise ReviewError(
-            f"provider returned HTTP {error.code}: {detail or error.reason}"
-        ) from error
-    except (URLError, TimeoutError, UnicodeError) as error:
-        raise ReviewError(f"provider request failed: {error}") from error
+    encoded_payload = _canonical_json(payload).encode("utf-8")
+    attempts = len(RETRY_DELAYS_SECONDS) + 1
+    for attempt in range(attempts):
+        request = Request(
+            url,
+            data=encoded_payload,
+            headers=request_headers,
+            method="POST",
+        )
+        try:
+            with _OPENER.open(request, timeout=120) as response:
+                content = response.read(MAX_RESPONSE_BYTES + 1)
+            break
+        except HTTPError as error:
+            detail = error.read(512).decode("utf-8", errors="replace")
+            detail = re.sub(r"\s+", " ", detail).strip()
+            if (
+                error.code not in RETRYABLE_HTTP_STATUS_CODES
+                or attempt == attempts - 1
+            ):
+                raise ReviewError(
+                    f"provider returned HTTP {error.code}: {detail or error.reason}"
+                ) from error
+            retry_after = (
+                error.headers.get("Retry-After", "") if error.headers else ""
+            )
+            delay = RETRY_DELAYS_SECONDS[attempt]
+            if retry_after.isdigit():
+                delay = min(int(retry_after), 60)
+            print(
+                f"Transient provider HTTP {error.code}; retrying in {delay} seconds "
+                f"(attempt {attempt + 2}/{attempts})",
+                file=sys.stderr,
+            )
+            time.sleep(delay)
+        except (URLError, TimeoutError) as error:
+            if attempt == attempts - 1:
+                raise ReviewError(f"provider request failed: {error}") from error
+            delay = RETRY_DELAYS_SECONDS[attempt]
+            print(
+                f"Transient provider request failure; retrying in {delay} seconds "
+                f"(attempt {attempt + 2}/{attempts})",
+                file=sys.stderr,
+            )
+            time.sleep(delay)
+        except UnicodeError as error:
+            raise ReviewError(f"provider request failed: {error}") from error
     if len(content) > MAX_RESPONSE_BYTES:
         raise ReviewError("provider response exceeded the size limit")
     try:

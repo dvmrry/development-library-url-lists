@@ -5,7 +5,10 @@ import sys
 import tempfile
 import unittest
 from datetime import datetime, timezone
+from io import BytesIO
 from pathlib import Path
+from unittest.mock import patch
+from urllib.error import HTTPError
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
@@ -13,6 +16,7 @@ sys.path.insert(0, str(ROOT / "src"))
 from url_lists.llm_review import (
     PROVIDER_ENDPOINTS,
     ReviewError,
+    _post_json,
     build_review_input,
     call_provider,
     create_review_report,
@@ -227,6 +231,36 @@ class LlmReviewTests(unittest.TestCase):
             transport=gemini,
         )
         self.assertEqual(gemini_result.usage["total_tokens"], 100)
+
+    def test_transport_retries_transient_provider_errors(self) -> None:
+        class FakeResponse:
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *args):
+                return False
+
+            @staticmethod
+            def read(limit):
+                return b'{"result":"ok"}'
+
+        busy = HTTPError(
+            PROVIDER_ENDPOINTS["gemini"],
+            500,
+            "high demand",
+            {},
+            BytesIO(b'{"error":{"message":"high demand"}}'),
+        )
+        with (
+            patch("url_lists.llm_review._OPENER.open", side_effect=[busy, FakeResponse()])
+            as open_request,
+            patch("url_lists.llm_review.time.sleep") as sleep,
+        ):
+            response = _post_json(PROVIDER_ENDPOINTS["gemini"], {}, {"test": True})
+
+        self.assertEqual(response, {"result": "ok"})
+        self.assertEqual(open_request.call_count, 2)
+        sleep.assert_called_once_with(5)
 
     def test_validates_targets_and_marks_model_links_unverified(self) -> None:
         bundle = build_review_input(self.make_root())
