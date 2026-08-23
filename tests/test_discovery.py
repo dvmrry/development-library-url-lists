@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import base64
+import contextlib
 import hashlib
+import io
 import sys
 import unittest
 from pathlib import Path
@@ -190,6 +192,64 @@ class DiscoveryTests(unittest.TestCase):
             observation["content_sha256"],
             hashlib.sha256(content.encode()).hexdigest(),
         )
+
+    def test_extraction_failure_skips_the_file_without_aborting_the_run(self) -> None:
+        search_result = {
+            "items": [
+                {
+                    "url": "https://api.github.com/repos/acme/broken/contents/x",
+                    "html_url": "https://github.com/acme/broken/blob/a/x",
+                    "path": "x",
+                    "repository": {"full_name": "acme/broken"},
+                },
+                {
+                    "url": "https://api.github.com/repos/acme/good/contents/pip.conf",
+                    "html_url": "https://github.com/acme/good/blob/b/pip.conf",
+                    "path": "pip.conf",
+                    "repository": {"full_name": "acme/good"},
+                },
+            ]
+        }
+        good_content = {
+            "encoding": "base64",
+            "content": base64.b64encode(
+                b"index-url = https://packages.vendor.net/simple\n"
+            ).decode(),
+        }
+        broken_content = {
+            "encoding": "base64",
+            "content": base64.b64encode(b"whatever\n").decode(),
+        }
+        stderr = io.StringIO()
+        with patch(
+            "url_lists.discovery._get_json",
+            side_effect=[search_result, broken_content, good_content],
+        ), patch(
+            "url_lists.discovery.extract_registry_urls",
+            side_effect=[
+                RuntimeError("degenerate input"),
+                ["https://packages.vendor.net/simple"],
+            ],
+        ), contextlib.redirect_stderr(stderr):
+            observations = collect_github_code(
+                [
+                    {
+                        "id": "pip-index",
+                        "ecosystem": "python",
+                        "query": '"index-url" filename:pip.conf',
+                        "extractor": "pip-config",
+                        "max_results": 20,
+                    }
+                ],
+                token="test-token",
+                delay_seconds=0,
+            )
+        self.assertEqual(len(observations), 1)
+        self.assertEqual(observations[0]["repository"], "acme/good")
+        report = stderr.getvalue()
+        self.assertIn("Extraction failed and was skipped", report)
+        self.assertIn("repository=acme/broken", report)
+        self.assertIn("skipped 1 file(s)", report)
 
     def test_confidence_increases_with_independent_repositories(self) -> None:
         observations = []

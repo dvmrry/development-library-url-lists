@@ -404,7 +404,10 @@ def _extract_environment(text: str, keys: tuple[str, ...]) -> list[str]:
             closing = value.find(quote, 1)
             value = value[1:closing] if closing > 0 else value[1:]
         else:
-            value = value.split()[0]
+            parts = value.split()
+            if not parts:
+                continue
+            value = parts[0]
         values = (
             re.split(r"[,|]", value)
             if match.group("key").upper() == "GOPROXY"
@@ -498,11 +501,20 @@ def _balanced_delimiter(
     start: int,
     opening: str,
     closing: str,
+    *,
+    max_scan: int = 10_000,
 ) -> str:
+    """Return a balanced slice, scanning at most max_scan characters.
+
+    The scan bound keeps a hostile file full of unbalanced delimiters from
+    turning repeated calls into quadratic work; real configuration values
+    balance within a few hundred characters.
+    """
+
     depth = 0
     quote: str | None = None
     escaped = False
-    for position in range(start, len(text)):
+    for position in range(start, min(len(text), start + max_scan)):
         character = text[position]
         if quote:
             if escaped:
@@ -554,10 +566,16 @@ def _assignment_value(text: str, start: int) -> str:
     return text[start:]
 
 
+_MAX_R_OPTION_CALLS = 100
+
+
 def _extract_r_repositories(text: str, _: tuple[str, ...]) -> list[str]:
     urls: list[str] = []
     active_text = "\n".join(_active_lines(text))
-    for match in re.finditer(r"\boptions\s*\(", active_text, re.IGNORECASE):
+    matches = re.finditer(r"\boptions\s*\(", active_text, re.IGNORECASE)
+    for index, match in enumerate(matches):
+        if index >= _MAX_R_OPTION_CALLS:
+            break
         call = _balanced_call(active_text, match.end() - 1)
         assignment = re.search(r"(?:^|[(,\s])repos\s*=", call, re.IGNORECASE)
         if assignment:

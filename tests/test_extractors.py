@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import sys
+import time
 import unittest
 from pathlib import Path
 
@@ -247,6 +248,41 @@ documentation <- "https://docs.acme.net/r"
 <project><repositories><repository><url>&repo;</url></repository></repositories></project>
 """
         self.assertEqual(extract_registry_urls(content, "maven-pom-xml"), [])
+
+    def test_environment_assignment_ignores_empty_values(self) -> None:
+        content = "GOPROXY= \nGOPROXY=\nGOPROXY=\t\nGOPROXY=''\nGOPROXY=\"\"\n"
+        self.assertEqual(
+            extract_registry_urls(
+                content,
+                "environment-assignment",
+                keys=["GOPROXY"],
+            ),
+            [],
+        )
+
+    def test_r_pathological_unbalanced_calls_complete_quickly(self) -> None:
+        # Regression: repeated unbalanced "options(" once scanned to the end
+        # of the file for every match (quadratic; ~34s for 8,000 repetitions
+        # on the reference machine, ~136s for this fixture). The bounded scan
+        # finishes in well under a second, so the 10-second budget holds a
+        # margin of more than an order of magnitude in both directions even
+        # on slow CI hardware.
+        content = "options(repos\n" * 16_000
+        start = time.perf_counter()
+        result = extract_registry_urls(content, "r-repositories")
+        elapsed = time.perf_counter() - start
+        self.assertEqual(result, [])
+        self.assertLess(elapsed, 10.0)
+
+    def test_r_balanced_calls_still_extract_after_scan_bound(self) -> None:
+        content = (
+            "noise <- 1\n" * 200
+            + 'options(repos = c(CRAN = "https://r.acme.net/cran"))\n'
+        )
+        self.assertEqual(
+            extract_registry_urls(content, "r-repositories"),
+            ["https://r.acme.net/cran"],
+        )
 
     def test_pip_multiline_extra_indexes_are_bounded_to_the_setting(self) -> None:
         content = """

@@ -6,6 +6,7 @@ import base64
 import hashlib
 import json
 import os
+import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -155,6 +156,20 @@ def _source_role(path: str) -> str:
     return "configuration"
 
 
+def _safe_log_text(value: str, *, maximum: int = 160) -> str:
+    """Sanitize untrusted text for log output.
+
+    Strips control characters (defeating log/workflow-command injection via
+    hostile repository or path names) and truncates to a bounded length.
+    """
+
+    cleaned = "".join(
+        character if character.isprintable() else "?" for character in value
+    )
+    cleaned = cleaned.replace("%", "%25")
+    return cleaned[:maximum]
+
+
 def collect_github_code(
     queries: Iterable[dict[str, Any]],
     *,
@@ -164,6 +179,7 @@ def collect_github_code(
     """Collect URLs from public package-manager configuration on GitHub."""
 
     observations: list[dict[str, str]] = []
+    extraction_failures = 0
     query_list = list(queries)
     for query_index, query in enumerate(query_list):
         query_id = query["id"]
@@ -203,11 +219,27 @@ def collect_github_code(
             except (ValueError, UnicodeDecodeError):
                 continue
             content_sha256 = hashlib.sha256(decoded_bytes).hexdigest()
-            for discovered_url in extract_registry_urls(
-                decoded,
-                extractor,
-                keys=keys,
-            ):
+            try:
+                discovered_urls = extract_registry_urls(
+                    decoded,
+                    extractor,
+                    keys=keys,
+                )
+            except Exception as error:  # noqa: BLE001 - untrusted input boundary
+                # A single degenerate or hostile public file must never abort
+                # the whole discovery run; skip it, but report it so a
+                # systemic parser regression cannot hide behind a green run.
+                extraction_failures += 1
+                print(
+                    "Extraction failed and was skipped: "
+                    f"query={_safe_log_text(query_id)} "
+                    f"repository={_safe_log_text(repository)} "
+                    f"path={_safe_log_text(source_path)} "
+                    f"error={_safe_log_text(type(error).__name__)}",
+                    file=sys.stderr,
+                )
+                continue
+            for discovered_url in discovered_urls:
                 observations.append(
                     {
                         "category": ecosystem,
@@ -224,6 +256,12 @@ def collect_github_code(
                 )
         if query_index + 1 < len(query_list) and delay_seconds:
             time.sleep(delay_seconds)
+    if extraction_failures:
+        print(
+            f"Discovery skipped {extraction_failures} file(s) whose "
+            "extraction failed; see warnings above.",
+            file=sys.stderr,
+        )
     return observations
 
 
