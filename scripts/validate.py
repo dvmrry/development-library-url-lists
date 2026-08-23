@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from url_lists.catalog import load_catalog, load_categories, read_json, validate_documents
+from url_lists.llm_review import validate_review_files
 from url_lists.normalize import TargetError, normalize_target
 
 
@@ -178,6 +179,7 @@ def main() -> int:
     )
     problems.extend(validate_discovery_configuration(category_ids))
     problems.extend(validate_documents(ROOT))
+    problems.extend(validate_review_files(ROOT))
     if problems:
         for problem in problems:
             print(f"ERROR: {problem}", file=sys.stderr)
