@@ -31,5 +31,15 @@ jobs:
           python -m compileall -q src scripts tests
           python -m unittest discover -s tests -v
 
+      # Temporary same-repository integration check for PR #4. Remove after the
+      # configured Gemini key and live API response have been verified.
+      - name: Gemini integration smoke test
+        if: github.head_ref == 'codex/llm-coverage-review' && vars.LLM_REVIEW_PROVIDER == 'gemini'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python scripts/llm_review.py --provider gemini
+          cat reviews/llm/latest.md
+
       - name: Verify source and generated lists
         run: python scripts/validate.py
