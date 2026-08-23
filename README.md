@@ -37,7 +37,8 @@ repository's built-in `GITHUB_TOKEN`. It:
 4. Removes private/test/shared infrastructure and targets already covered by
    the curated catalog.
 5. Merges new evidence into `data/candidates.json`.
-6. Tests the result and opens or updates an automation pull request.
+6. Optionally asks one configured LLM for suggestion-only coverage gaps.
+7. Tests the result and opens or updates an automation pull request.
 
 The collectors contact only `api.github.com` and
 `raw.githubusercontent.com`. Discovered URLs are parsed but never fetched,
@@ -68,6 +69,19 @@ endpoint remains in the evidence catalog with status `retired`.
 
 This intentionally favors false negatives in published policy over silently
 blocking an unrelated hostname because it appeared in an untrusted config.
+
+## Optional LLM review
+
+An opt-in pre-PR reviewer supports OpenAI, Anthropic, Gemini, and DeepSeek. It
+receives a compact inventory, returns strictly validated suggestions, and writes
+`reviews/llm/latest.json` plus a human-readable Markdown report into the
+automation PR. It never edits the catalog, promotes a candidate, fetches a
+suggested URL, or changes a Zscaler rule.
+
+The feature is off unless a repository variable selects a provider and the
+matching API-key secret is present. Provider failures do not stop deterministic
+discovery. Every suggested evidence link is marked unverified. See
+[the setup, provider comparison, and review contract](docs/llm-review.md).
 
 ## Local verification
 
@@ -101,9 +115,10 @@ The spike requires no paid service:
 - official Package-URL data;
 - Python's standard library.
 
-An LLM can later rank or summarize candidates, but it should never be the
-authority that promotes or removes a network-policy target. No LLM or external
-API key is part of this spike.
+The optional LLM review is disabled by default, so no LLM account or external
+API key is required. If enabled, provider usage follows that provider's API
+pricing or free-tier terms. The model remains a reviewer and is never the
+authority that promotes or removes a network-policy target.
 
 ## Limits
 

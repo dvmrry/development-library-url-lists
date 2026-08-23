@@ -41,6 +41,34 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/update.py --network
 
+      - name: Optional OpenAI coverage review
+        if: vars.LLM_REVIEW_PROVIDER == 'openai'
+        env:
+          LLM_REVIEW_MODEL: ${{ vars.LLM_REVIEW_MODEL }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python scripts/llm_review.py --provider openai --optional
+
+      - name: Optional Anthropic coverage review
+        if: vars.LLM_REVIEW_PROVIDER == 'anthropic'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          LLM_REVIEW_MODEL: ${{ vars.LLM_REVIEW_MODEL }}
+        run: python scripts/llm_review.py --provider anthropic --optional
+
+      - name: Optional Gemini coverage review
+        if: vars.LLM_REVIEW_PROVIDER == 'gemini'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          LLM_REVIEW_MODEL: ${{ vars.LLM_REVIEW_MODEL }}
+        run: python scripts/llm_review.py --provider gemini --optional
+
+      - name: Optional DeepSeek coverage review
+        if: vars.LLM_REVIEW_PROVIDER == 'deepseek'
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          LLM_REVIEW_MODEL: ${{ vars.LLM_REVIEW_MODEL }}
+        run: python scripts/llm_review.py --provider deepseek --optional
+
       - name: Test the proposed update
         run: |
           python -m unittest discover -s tests -v
@@ -52,7 +80,7 @@ jobs:
           UPDATE_BRANCH: automation/update-url-list-candidates
         shell: bash
         run: |
-          if git diff --quiet -- data/candidates.json dist; then
+          if ! git status --porcelain -- data/candidates.json dist reviews/llm | grep -q .; then
             echo "No new evidence was discovered."
             exit 0
           fi
@@ -61,6 +89,9 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git switch -c "$UPDATE_BRANCH"
           git add -- data/candidates.json dist
+          if [ -d reviews/llm ]; then
+            git add -- reviews/llm
+          fi
           git commit -m "chore: refresh URL discovery candidates"
           git push --force origin "HEAD:$UPDATE_BRANCH"
 
@@ -69,5 +100,5 @@ jobs:
               --base main \
               --head "$UPDATE_BRANCH" \
               --title "chore: refresh URL discovery candidates" \
-              --body "Automated discovery from public package-manager configurations and Package-URL definitions. Candidates require human review before promotion."
+              --body "Automated discovery from public package-manager configurations and Package-URL definitions. Candidates require human review before promotion. If configured, reviews/llm/latest.md contains suggestion-only LLM gap analysis; its links remain unverified until a person checks them."
           fi
