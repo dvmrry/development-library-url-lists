@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import base64
+import hashlib
 import json
 import os
+import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -14,10 +16,16 @@ from urllib.parse import quote, urlsplit, urlunsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 
 from .catalog import load_catalog, read_json, write_json_atomic
+from .extractors import extract_registry_urls
 from .normalize import TargetError, extract_urls, normalize_target, target_hostname
 
 
 TRUSTED_NETWORK_HOSTS = {"api.github.com", "raw.githubusercontent.com"}
+SOURCE_ROLES = frozenset(
+    {"configuration", "documentation", "example", "official", "test"}
+)
+NON_CONFIGURATION_ROLES = frozenset({"documentation", "example", "test"})
+HARD_REJECTION_FLAGS = frozenset({"documentation-like", "placeholder-like"})
 PURL_TYPE_CATEGORIES = {
     "cargo": "rust",
     "cocoapods": "swift",
@@ -41,6 +49,8 @@ PURL_TYPE_CATEGORIES = {
     "swift": "swift",
     "vcpkg": "cpp",
 }
+
+
 class DiscoveryError(RuntimeError):
     """Raised when a trusted discovery source cannot be processed."""
 
@@ -122,6 +132,44 @@ def _get_text(url: str, *, token: str | None = None) -> str:
         raise DiscoveryError(f"trusted source returned non-UTF-8 text: {url}") from error
 
 
+def _source_role(path: str) -> str:
+    """Classify evidence without treating documentation as production config."""
+
+    normalized = path.replace("\\", "/").lower().strip("/")
+    parts = tuple(part for part in normalized.split("/") if part)
+    directories = set(parts[:-1])
+    filename = parts[-1] if parts else ""
+    if (
+        filename.startswith(("readme", "contributing"))
+        or filename.endswith((".md", ".mdx", ".rst", ".adoc", ".asciidoc"))
+        or directories.intersection({"doc", "docs", "documentation"})
+    ):
+        return "documentation"
+    if directories.intersection(
+        {"fixture", "fixtures", "spec", "specs", "test", "tests", "testing"}
+    ):
+        return "test"
+    if directories.intersection(
+        {"demo", "demos", "example", "examples", "sample", "samples"}
+    ):
+        return "example"
+    return "configuration"
+
+
+def _safe_log_text(value: str, *, maximum: int = 160) -> str:
+    """Sanitize untrusted text for log output.
+
+    Strips control characters (defeating log/workflow-command injection via
+    hostile repository or path names) and truncates to a bounded length.
+    """
+
+    cleaned = "".join(
+        character if character.isprintable() else "?" for character in value
+    )
+    cleaned = cleaned.replace("%", "%25")
+    return cleaned[:maximum]
+
+
 def collect_github_code(
     queries: Iterable[dict[str, Any]],
     *,
@@ -131,10 +179,14 @@ def collect_github_code(
     """Collect URLs from public package-manager configuration on GitHub."""
 
     observations: list[dict[str, str]] = []
+    extraction_failures = 0
     query_list = list(queries)
     for query_index, query in enumerate(query_list):
+        query_id = query["id"]
         ecosystem = query["ecosystem"]
         search_text = query["query"]
+        extractor = query["extractor"]
+        keys = query.get("keys", [])
         maximum = min(int(query.get("max_results", 10)), 100)
         search_url = (
             "https://api.github.com/search/code"
@@ -144,10 +196,11 @@ def collect_github_code(
         for item in result.get("items", []):
             content_url = item.get("url")
             evidence_url = item.get("html_url")
+            source_path = item.get("path")
             repository = item.get("repository", {}).get("full_name")
             if not all(
                 isinstance(value, str) and value
-                for value in (content_url, evidence_url, repository)
+                for value in (content_url, evidence_url, source_path, repository)
             ):
                 continue
             try:
@@ -158,25 +211,57 @@ def collect_github_code(
             if document.get("encoding") != "base64" or not isinstance(encoded, str):
                 continue
             try:
-                decoded = base64.b64decode(
+                decoded_bytes = base64.b64decode(
                     "".join(encoded.split()),
                     validate=True,
-                ).decode("utf-8")
+                )
+                decoded = decoded_bytes.decode("utf-8")
             except (ValueError, UnicodeDecodeError):
                 continue
-            context_terms = query.get("context_terms", [])
-            for discovered_url in extract_context_urls(decoded, context_terms):
+            content_sha256 = hashlib.sha256(decoded_bytes).hexdigest()
+            try:
+                discovered_urls = extract_registry_urls(
+                    decoded,
+                    extractor,
+                    keys=keys,
+                )
+            except Exception as error:  # noqa: BLE001 - untrusted input boundary
+                # A single degenerate or hostile public file must never abort
+                # the whole discovery run; skip it, but report it so a
+                # systemic parser regression cannot hide behind a green run.
+                extraction_failures += 1
+                print(
+                    "Extraction failed and was skipped: "
+                    f"query={_safe_log_text(query_id)} "
+                    f"repository={_safe_log_text(repository)} "
+                    f"path={_safe_log_text(source_path)} "
+                    f"error={_safe_log_text(type(error).__name__)}",
+                    file=sys.stderr,
+                )
+                continue
+            for discovered_url in discovered_urls:
                 observations.append(
                     {
                         "category": ecosystem,
                         "discovered_url": discovered_url,
+                        "query_id": query_id,
+                        "extractor": extractor,
                         "source": evidence_url,
                         "source_kind": "github-code",
+                        "source_path": source_path,
+                        "source_role": _source_role(source_path),
                         "repository": repository,
+                        "content_sha256": content_sha256,
                     }
                 )
         if query_index + 1 < len(query_list) and delay_seconds:
             time.sleep(delay_seconds)
+    if extraction_failures:
+        print(
+            f"Discovery skipped {extraction_failures} file(s) whose "
+            "extraction failed; see warnings above.",
+            file=sys.stderr,
+        )
     return observations
 
 
@@ -200,6 +285,7 @@ def collect_purl_definitions() -> list[dict[str, str]]:
             f"docs/types/definitions/{purl_type}-definition.md"
         )
         document = _get_text(source_url)
+        content_sha256 = hashlib.sha256(document.encode("utf-8")).hexdigest()
         for line in document.splitlines():
             if not line.strip().lower().startswith("- **default repository url:**"):
                 continue
@@ -208,35 +294,19 @@ def collect_purl_definitions() -> list[dict[str, str]]:
                     {
                         "category": category,
                         "discovered_url": discovered_url,
+                        "query_id": f"purl-{purl_type}-default",
+                        "extractor": "purl-default-repository",
                         "source": source_url,
                         "source_kind": "purl-definition",
+                        "source_path": (
+                            f"docs/types/definitions/{purl_type}-definition.md"
+                        ),
+                        "source_role": "official",
                         "repository": "package-url/purl-spec",
+                        "content_sha256": content_sha256,
                     }
                 )
     return observations
-
-
-def extract_context_urls(text: str, context_terms: Iterable[str]) -> list[str]:
-    """Extract URLs only from lines relevant to the searched setting."""
-
-    terms = [term.lower() for term in context_terms if term]
-    if not terms:
-        return extract_urls(text)
-
-    lines = text.splitlines()
-    selected: set[int] = set()
-    for index, line in enumerate(lines):
-        if any(term in line.lower() for term in terms):
-            selected.add(index)
-
-    urls: list[str] = []
-    seen: set[str] = set()
-    for index in sorted(selected):
-        for url in extract_urls(lines[index]):
-            if url not in seen:
-                seen.add(url)
-                urls.append(url)
-    return urls
 
 
 def _is_excluded(hostname: str, exclusions: dict[str, Any]) -> bool:
@@ -296,6 +366,8 @@ def filter_observations(
             continue
         if _is_covered(target, catalog_entries):
             continue
+        if HARD_REJECTION_FLAGS.intersection(_review_flags(target)):
+            continue
         normalized = dict(observation)
         normalized["target"] = target
         del normalized["discovered_url"]
@@ -303,29 +375,73 @@ def filter_observations(
     return filtered
 
 
-def _confidence(sources: list[dict[str, str]]) -> str:
-    repositories = {source["repository"] for source in sources}
-    kinds = {source["source_kind"] for source in sources}
-    if len(repositories) >= 3 or len(kinds) >= 2:
+def _confidence(
+    sources: list[dict[str, str]],
+    review_flags: Iterable[str] = (),
+) -> str:
+    if "retired-service" in review_flags:
+        return "low"
+    if any(source.get("source_kind") == "purl-definition" for source in sources):
         return "high"
-    if len(repositories) >= 2:
+    repositories = {
+        source["repository"]
+        for source in sources
+        if source.get("source_role", "configuration") == "configuration"
+    }
+    fingerprints = {
+        source.get("content_sha256") or f"repository:{source['repository']}"
+        for source in sources
+        if source.get("source_role", "configuration") == "configuration"
+    }
+    independent_evidence = min(len(repositories), len(fingerprints))
+    if independent_evidence >= 3:
+        return "high"
+    if independent_evidence >= 2:
         return "medium"
     return "low"
 
 
-def _review_flags(target: str) -> list[str]:
+def _review_flags(
+    target: str,
+    sources: Iterable[dict[str, str]] = (),
+) -> list[str]:
     hostname = target_hostname(target)
     flags: list[str] = []
     if (
         hostname.startswith(("doc.", "docs.", "documentation."))
+        or hostname == "wikipedia.org"
+        or hostname.endswith(".wikipedia.org")
         or hostname.endswith((".readthedocs.io", ".readthedocs.org"))
     ):
         flags.append("documentation-like")
-    placeholder_labels = {"company", "example", "mycompany", "yourcompany"}
+    placeholder_labels = {
+        "company",
+        "example",
+        "myhost",
+        "mycompany",
+        "placeholder",
+        "youappname",
+        "yourapp",
+        "yourappname",
+        "yourcompany",
+        "yourdomain",
+        "yourorg",
+        "xxx",
+        "yyy",
+        "zzz",
+    }
     if any(label in placeholder_labels for label in hostname.split(".")):
         flags.append("placeholder-like")
     if ":" in target.split("/", 1)[0]:
         flags.append("nonstandard-port")
+    source_list = list(sources)
+    if source_list and all(
+        source.get("source_role", "configuration") in NON_CONFIGURATION_ROLES
+        for source in source_list
+    ):
+        flags.append("non-configuration-evidence-only")
+    if hostname == "bintray.com" or hostname.endswith(".bintray.com"):
+        flags.append("retired-service")
     return flags
 
 
@@ -348,8 +464,10 @@ def merge_candidates(
     additions = 0
 
     for candidate in by_target.values():
-        candidate["confidence"] = _confidence(candidate.get("sources", []))
-        candidate["review_flags"] = _review_flags(candidate["target"])
+        sources = candidate.get("sources", [])
+        review_flags = _review_flags(candidate["target"], sources)
+        candidate["confidence"] = _confidence(sources, review_flags)
+        candidate["review_flags"] = review_flags
 
     for observation in observations:
         target = observation["target"]
@@ -357,6 +475,16 @@ def merge_candidates(
             key: observation[key]
             for key in ("source", "source_kind", "repository")
         }
+        for key in (
+            "content_sha256",
+            "extractor",
+            "query_id",
+            "source_path",
+            "source_role",
+        ):
+            value = observation.get(key)
+            if isinstance(value, str) and value:
+                source[key] = value
         candidate = by_target.get(target)
         if candidate is None:
             candidate = {
@@ -371,34 +499,41 @@ def merge_candidates(
             by_target[target] = candidate
 
         categories = set(candidate.get("categories", []))
-        source_identities = {
-            (item["source"], item["source_kind"], item["repository"])
-            for item in candidate.get("sources", [])
-        }
+        candidate_sources = candidate.setdefault("sources", [])
+        source_identity = _source_identity(source)
+        existing_source = next(
+            (
+                item
+                for item in candidate_sources
+                if _source_identity(item) == source_identity
+            ),
+            None,
+        )
         changed = False
         if observation["category"] not in categories:
             categories.add(observation["category"])
             changed = True
-        source_identity = (
-            source["source"],
-            source["source_kind"],
-            source["repository"],
-        )
-        if source_identity not in source_identities:
-            candidate.setdefault("sources", []).append(source)
+        if existing_source is None:
+            candidate_sources.append(source)
             changed = True
             additions += 1
+        else:
+            for key, value in source.items():
+                if existing_source.get(key) != value:
+                    existing_source[key] = value
+                    changed = True
         candidate["categories"] = sorted(categories)
         candidate["sources"] = sorted(
-            candidate["sources"],
+            candidate_sources,
             key=lambda item: (
                 item["source_kind"],
                 item["repository"],
                 item["source"],
             ),
         )
-        candidate["confidence"] = _confidence(candidate["sources"])
-        candidate["review_flags"] = _review_flags(target)
+        review_flags = _review_flags(target, candidate["sources"])
+        candidate["confidence"] = _confidence(candidate["sources"], review_flags)
+        candidate["review_flags"] = review_flags
         if changed:
             candidate["last_evidence_change"] = observed_date
 
@@ -409,6 +544,89 @@ def merge_candidates(
     return {"schema_version": 1, "candidates": candidates}, additions
 
 
+def _source_identity(source: dict[str, str]) -> tuple[str, str, str]:
+    source_path = source.get("source_path")
+    location = f"path:{source_path}" if source_path else f"url:{source['source']}"
+    return source["source_kind"], source["repository"], location
+
+
+def _discovery_rules_sha256(
+    root: Path,
+    queries: dict[str, Any],
+    exclusions: dict[str, Any],
+) -> str:
+    """Fingerprint the configuration and code that decide candidate inclusion."""
+
+    digest = hashlib.sha256()
+    for label, value in (("queries", queries), ("exclusions", exclusions)):
+        digest.update(label.encode("utf-8"))
+        digest.update(
+            json.dumps(
+                value,
+                sort_keys=True,
+                separators=(",", ":"),
+                ensure_ascii=True,
+            ).encode("utf-8")
+        )
+    for relative_path in (
+        "src/url_lists/discovery.py",
+        "src/url_lists/extractors.py",
+        "src/url_lists/normalize.py",
+    ):
+        try:
+            content = (root / relative_path).read_text(encoding="utf-8")
+        except OSError as error:
+            raise DiscoveryError(
+                f"cannot fingerprint discovery rule file {relative_path}: {error}"
+            ) from error
+        digest.update(relative_path.encode("utf-8"))
+        digest.update(content.replace("\r\n", "\n").encode("utf-8"))
+    return digest.hexdigest()
+
+
+def _reconcile_current_candidates(
+    current: dict[str, Any],
+    *,
+    rules_sha256: str,
+    exclusions: dict[str, Any],
+    catalog_entries: Iterable[dict[str, Any]],
+    rejected_targets: Iterable[str],
+) -> dict[str, Any]:
+    """Drop stale-rule snapshots and entries resolved by deterministic policy."""
+
+    if current.get("schema_version") != 1 or not isinstance(
+        current.get("candidates"), list
+    ):
+        raise DiscoveryError("unsupported candidates document")
+    reconciled = {
+        "schema_version": 1,
+        "discovery_rules_sha256": rules_sha256,
+        "candidates": [],
+    }
+    if current.get("discovery_rules_sha256") != rules_sha256:
+        return reconciled
+
+    rejected = set(rejected_targets)
+    for candidate in current["candidates"]:
+        try:
+            target = normalize_target(candidate["target"], preserve_path=False)
+            hostname = target_hostname(target)
+        except (KeyError, TargetError, TypeError):
+            continue
+        if target in rejected:
+            continue
+        if _is_excluded(hostname, exclusions):
+            continue
+        if _is_covered(target, catalog_entries):
+            continue
+        if HARD_REJECTION_FLAGS.intersection(
+            _review_flags(target, candidate.get("sources", []))
+        ):
+            continue
+        reconciled["candidates"].append(candidate)
+    return reconciled
+
+
 def run_network_discovery(root: Path, *, token: str | None = None) -> int:
     """Run all collectors and persist newly evidenced candidates."""
 
@@ -416,7 +634,8 @@ def run_network_discovery(root: Path, *, token: str | None = None) -> int:
     if not github_token:
         raise DiscoveryError("GITHUB_TOKEN is required for GitHub code search")
 
-    queries = read_json(root / "data" / "search_queries.json").get("queries", [])
+    queries_document = read_json(root / "data" / "search_queries.json")
+    queries = queries_document.get("queries", [])
     exclusions = read_json(root / "data" / "discovery_exclusions.json")
     rejections = read_json(root / "data" / "rejections.json")
     if rejections.get("schema_version") != 1 or not isinstance(
@@ -437,7 +656,18 @@ def run_network_discovery(root: Path, *, token: str | None = None) -> int:
 
     candidates_path = root / "data" / "candidates.json"
     current = read_json(candidates_path)
+    rules_sha256 = _discovery_rules_sha256(root, queries_document, exclusions)
+    current = _reconcile_current_candidates(
+        current,
+        rules_sha256=rules_sha256,
+        exclusions=exclusions,
+        catalog_entries=catalog["entries"],
+        rejected_targets={
+            rejection["target"] for rejection in rejections["rejections"]
+        },
+    )
     merged, additions = merge_candidates(current, observations)
+    merged["discovery_rules_sha256"] = rules_sha256
     if merged != current:
         write_json_atomic(candidates_path, merged)
     return additions

@@ -2,13 +2,18 @@
   "schema_version": 1,
   "exact_hosts": [
     "127.0.0.1",
+    "api.github.com",
     "bitbucket.org",
     "example.com",
     "github.com",
     "gitlab.com",
-    "localhost"
+    "localhost",
+    "mvnrepository.com",
+    "raw.github.com",
+    "www.mvnrepository.com"
   ],
   "suffixes": [
+    ".artipie",
     ".example",
     ".invalid",
     ".internal",
@@ -20,6 +25,7 @@
     "amazonaws.com",
     "azure.com",
     "cloudfront.net",
+    "githubusercontent.com",
     "googleapis.com",
     "googleusercontent.com",
     "storage.googleapis.com"
