@@ -128,6 +128,12 @@ The helper uses the bulk endpoint in groups of at most 20, disables ranking,
 caps itself at 20 API calls per run, and caches results for 90 days. Successful
 batches are retained even if a later batch fails.
 
+For credential and response-shape verification, the discovery workflow also
+offers a manual `cloudflare_smoke` mode. Run it against a non-default branch;
+it restores the open automation PR's candidate file, makes exactly one bulk
+request, prints only aggregate counts, and uploads no Cloudflare artifact.
+Scheduled and ordinary manual discovery runs never invoke this mode.
+
 Free, Pro, and Business accounts currently receive 100 Security Intelligence
 API calls per month. The call cap and private cache are designed around that
 budget. Cloudflare setup, terms, and API references are listed in

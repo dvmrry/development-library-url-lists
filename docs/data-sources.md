@@ -62,6 +62,12 @@ for Free, Pro, and Business accounts. The private helper therefore:
 - queries only missing or 90-day-stale candidates; and
 - writes each successful batch to the cache before attempting the next one.
 
+The manual `cloudflare_smoke` workflow input is a branch-only integration
+check. It reads candidates from the open automation pull request, spends at
+most one API call, emits only aggregate status, and retains detailed responses
+only in the disposable runner's gitignored `.private/` directory. No response
+file is committed or uploaded as an artifact.
+
 Cloudflare classifications are not assumed to match Zscaler categories. They
 are independent evidence to help prioritize and identify suspicious or clearly
 irrelevant candidates before the final Zscaler Site Review pass on a
