@@ -112,6 +112,11 @@ def _application(value: Any) -> dict[str, Any] | None:
         return None
     if not isinstance(value, dict):
         raise CloudflareIntelError("Cloudflare application field changed shape")
+    if not value:
+        # The bulk endpoint uses an empty object when no cloud application was
+        # identified for a domain. Normalize that documented-optional state in
+        # the same way as an omitted application field.
+        return None
     identifier = value.get("id")
     name = value.get("name")
     if identifier is not None and not isinstance(identifier, int):

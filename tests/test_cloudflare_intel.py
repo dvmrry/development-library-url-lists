@@ -94,6 +94,17 @@ class CloudflareIntelTests(unittest.TestCase):
         self.assertEqual(result["application"], {"name": "Package repository"})
         self.assertEqual(result["content_categories"], [{"name": "Technology"}])
 
+    def test_empty_application_means_no_detected_cloud_app(self) -> None:
+        _, result = _normalize_result(
+            {
+                "domain": "packages.vendor.net",
+                "application": {},
+                "content_categories": [],
+                "risk_types": [],
+            }
+        )
+        self.assertIsNone(result["application"])
+
     def test_bulk_request_disables_ranking_and_never_exceeds_twenty(self) -> None:
         domains = ["one.vendor.net", "two.vendor.net"]
         payload = {
