@@ -19,6 +19,7 @@ from url_lists.discovery import (
     collect_github_code,
     filter_observations,
     merge_candidates,
+    reconcile_published_snapshot,
 )
 
 
@@ -347,6 +348,113 @@ class DiscoveryTests(unittest.TestCase):
             today="2026-08-20",
         )
         self.assertEqual(merged["candidates"][0]["confidence"], "high")
+
+    def test_official_mirror_list_is_high_confidence(self) -> None:
+        observation = self.observation("https://mirror.vendor.net/packages")
+        observation["target"] = "mirror.vendor.net"
+        del observation["discovered_url"]
+        observation["source_kind"] = "published-list"
+        observation["source_role"] = "official"
+        merged, _ = merge_candidates(
+            {"schema_version": 1, "candidates": []},
+            [observation],
+            today="2026-08-20",
+        )
+        self.assertEqual(merged["candidates"][0]["confidence"], "high")
+
+    def test_third_party_registry_catalog_is_medium_confidence(self) -> None:
+        observation = self.observation("https://packages.vendor.net/simple")
+        observation["target"] = "packages.vendor.net"
+        del observation["discovered_url"]
+        observation["source_kind"] = "published-list"
+        observation["source_role"] = "registry-catalog"
+        merged, _ = merge_candidates(
+            {"schema_version": 1, "candidates": []},
+            [observation],
+            today="2026-08-20",
+        )
+        self.assertEqual(merged["candidates"][0]["confidence"], "medium")
+
+    def test_successful_published_refresh_removes_absent_mirror(self) -> None:
+        observation = self.observation("https://removed.vendor.net/packages")
+        observation["target"] = "removed.vendor.net"
+        del observation["discovered_url"]
+        observation.update(
+            {
+                "source_kind": "published-list",
+                "source_role": "official",
+                "query_id": "official-mirrors",
+                "source_path": "https://removed.vendor.net/packages",
+            }
+        )
+        merged, _ = merge_candidates(
+            {"schema_version": 1, "candidates": []},
+            [observation],
+            today="2026-08-20",
+        )
+        reconciled = reconcile_published_snapshot(
+            merged,
+            [],
+            successful_query_ids={"official-mirrors"},
+            today="2026-08-21",
+        )
+        self.assertEqual(reconciled["candidates"], [])
+
+    def test_failed_published_refresh_preserves_prior_mirror(self) -> None:
+        observation = self.observation("https://retained.vendor.net/packages")
+        observation["target"] = "retained.vendor.net"
+        del observation["discovered_url"]
+        observation.update(
+            {
+                "source_kind": "published-list",
+                "source_role": "official",
+                "query_id": "failed-mirrors",
+                "source_path": "https://retained.vendor.net/packages",
+            }
+        )
+        merged, _ = merge_candidates(
+            {"schema_version": 1, "candidates": []},
+            [observation],
+            today="2026-08-20",
+        )
+        reconciled = reconcile_published_snapshot(
+            merged,
+            [],
+            successful_query_ids={"different-source"},
+            today="2026-08-21",
+        )
+        self.assertEqual(len(reconciled["candidates"]), 1)
+
+    def test_removing_published_source_recomputes_mixed_candidate_category(self) -> None:
+        github = self.observation("https://mixed.vendor.net/simple")
+        github["target"] = "mixed.vendor.net"
+        del github["discovered_url"]
+        published = dict(github)
+        published.update(
+            {
+                "category": "multi_ecosystem",
+                "source": "https://catalog.vendor.net/mirrors.json",
+                "source_kind": "published-list",
+                "source_role": "mirror-catalog",
+                "repository": "vendor/mirror-catalog",
+                "query_id": "mirror-catalog",
+                "source_path": "https://mixed.vendor.net/packages",
+            }
+        )
+        merged, _ = merge_candidates(
+            {"schema_version": 1, "candidates": []},
+            [github, published],
+            today="2026-08-20",
+        )
+        reconciled = reconcile_published_snapshot(
+            merged,
+            [],
+            successful_query_ids={"mirror-catalog"},
+            today="2026-08-21",
+        )
+        candidate = reconciled["candidates"][0]
+        self.assertEqual(candidate["categories"], ["python"])
+        self.assertEqual(len(candidate["sources"]), 1)
 
     def test_merge_preserves_extractor_provenance(self) -> None:
         observation = self.observation("https://packages.vendor.net/simple")

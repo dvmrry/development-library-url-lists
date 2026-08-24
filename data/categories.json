@@ -17,6 +17,7 @@
     {"id": "julia", "title": "Julia", "filename": "julia.txt"},
     {"id": "swift", "title": "Swift and CocoaPods", "filename": "swift.txt"},
     {"id": "containers", "title": "Containers and OCI", "filename": "containers.txt"},
+    {"id": "os_packages", "title": "Operating system package repositories", "filename": "os-packages.txt"},
     {"id": "multi_ecosystem", "title": "Multi-ecosystem hosted registries", "filename": "multi-ecosystem.txt"}
   ]
 }

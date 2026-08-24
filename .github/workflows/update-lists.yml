@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "17 3 * * 2"
   workflow_dispatch:
+    inputs:
+      cloudflare_smoke:
+        description: Test one private Cloudflare batch against the open discovery PR
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -14,7 +20,44 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  cloudflare-smoke:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.cloudflare_smoke }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.11"
+
+      - name: Restore candidates from the open automation pull request
+        env:
+          UPDATE_BRANCH: automation/update-url-list-candidates
+        shell: bash
+        run: |
+          git fetch --no-tags --depth=1 origin "$UPDATE_BRANCH"
+          git restore --source=FETCH_HEAD -- data/candidates.json
+
+      - name: Test one private Cloudflare batch
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID || secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: python scripts/enrich_cloudflare.py --max-calls 1 --stale-days 90
+
+      - name: Confirm detailed results stayed private
+        shell: bash
+        run: |
+          test -f .private/cloudflare/latest.json
+          test -f .private/cloudflare/latest.md
+          echo "Cloudflare returned a structurally valid batch. Detailed classifications remain only on this disposable runner."
+
   discover:
+    if: ${{ github.event_name != 'workflow_dispatch' || !inputs.cloudflare_smoke }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -40,6 +83,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/update.py --network
+
+      - name: Export candidates for private vendor review
+        run: python scripts/export_review_queue.py
 
       - name: Optional OpenAI coverage review
         if: vars.LLM_REVIEW_PROVIDER == 'openai'
@@ -80,7 +126,7 @@ jobs:
           UPDATE_BRANCH: automation/update-url-list-candidates
         shell: bash
         run: |
-          if ! git status --porcelain -- data/candidates.json dist reviews/llm | grep -q .; then
+          if ! git status --porcelain -- data/candidates.json dist reviews/llm reviews/pending | grep -q .; then
             echo "No new evidence was discovered."
             exit 0
           fi
@@ -89,6 +135,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git switch -c "$UPDATE_BRANCH"
           git add -- data/candidates.json dist
+          git add -- reviews/pending
           if [ -d reviews/llm ]; then
             git add -- reviews/llm
           fi
@@ -100,5 +147,5 @@ jobs:
               --base main \
               --head "$UPDATE_BRANCH" \
               --title "chore: refresh URL discovery candidates" \
-              --body "Automated discovery from public package-manager configurations and Package-URL definitions. Candidates require human review before promotion. If configured, reviews/llm/latest.md contains suggestion-only LLM gap analysis; its links remain unverified until a person checks them."
+              --body "Automated discovery from public package-manager configurations, Package-URL definitions, and published registry/mirror catalogs. Candidates require human review before promotion. reviews/pending contains the public handoff queue for a private Cloudflare/Zscaler pass. If configured, reviews/llm/latest.md contains suggestion-only LLM gap analysis; its links remain unverified until a person checks them."
           fi
