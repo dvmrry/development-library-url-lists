@@ -17,9 +17,13 @@ Generated files live in `dist/`:
 - `all.txt` contains every approved target.
 - One plain-text file is published for each ecosystem, including Python,
   JavaScript, JVM, .NET, Rust, Go, PHP, Ruby, C/C++, Dart, Erlang/Elixir,
-  Haskell, R, Julia, Swift, containers, and multi-ecosystem providers.
+  Haskell, R, Julia, Swift, containers, operating-system packages, and
+  multi-ecosystem providers.
 - `catalog.json` retains category, match type, status, kind, and evidence.
 - `manifest.json` and `SHA256SUMS` provide counts and integrity hashes.
+- `reviews/pending/domains.txt` and `queue.json` provide a minimal handoff for
+  private Cloudflare and Zscaler review without publishing either vendor's
+  response data.
 
 Targets are lowercase and scheme-free. A leading period represents a provider
 suffix, for example `.jfrog.io`. Asterisks are never emitted.
@@ -33,19 +37,23 @@ repository's built-in `GITHUB_TOKEN`. It:
    pip, uv, Conda, Maven, Gradle, NuGet, Cargo, Go, Composer, RubyGems, Conan,
    Dart, Hex, Haskell, R, Julia, CocoaPods, Swift registries, and OCI mirrors.
 2. Reads default repositories from the official Package-URL definitions.
-3. Parses only package-manager-specific configuration fields and normalizes
+3. Reads published registry and mirror catalogs from ecosyste.ms, MirrorZ,
+   CRAN, Alpine, Arch Linux, and Debian.
+4. Parses only package-manager-specific configuration fields and normalizes
    their public hostnames.
-4. Removes private/test/shared infrastructure, obvious documentation and
+5. Removes private/test/shared infrastructure, obvious documentation and
    placeholder targets, and targets already covered by the curated catalog.
-5. Records extractor, source path, source role, and content hash provenance in
+6. Records extractor, source path, source role, ecosystem, and content hash provenance in
    `data/candidates.json`, then scores independent, non-identical configuration
    evidence.
-6. Optionally asks one configured LLM for suggestion-only coverage gaps.
-7. Tests the result and opens or updates an automation pull request.
+7. Exports a minimal queue for a private Cloudflare/Zscaler pass and optionally
+   asks one configured LLM for suggestion-only coverage gaps.
+8. Tests the result and opens or updates an automation pull request.
 
-The collectors contact only `api.github.com` and
-`raw.githubusercontent.com`. Discovered URLs are parsed but never fetched,
-so a malicious public config cannot turn the workflow into an SSRF primitive.
+Collectors contact only the fixed source hosts documented in
+[`docs/data-sources.md`](docs/data-sources.md). Discovered URLs are parsed but
+never fetched, so a malicious public config or catalog record cannot turn the
+workflow into an SSRF primitive.
 
 Every search query names a deterministic extractor for its actual format, such
 as a Maven XML path, Cargo TOML field, or Docker JSON key. Generic line-wide
@@ -94,6 +102,37 @@ matching API-key secret is present. Provider failures do not stop deterministic
 discovery. Every suggested evidence link is marked unverified. See
 [the setup, provider comparison, and review contract](docs/llm-review.md).
 
+## Optional Cloudflare enrichment
+
+Cloudflare Domain Intelligence adds a second opinion about each candidate's
+application, content categories, inherited categories, risk score, and risk
+types. It is enrichment evidence only and cannot promote, reject, or edit a
+target.
+
+The public workflow deliberately does **not** publish Cloudflare responses.
+Cloudflare's current Cloudforce One terms restrict third-party disclosure of
+API-delivered threat intelligence, while public redistribution rights for the
+ordinary Domain Intelligence response are not explicit. The repository
+therefore writes `reviews/pending/domains.txt` and
+`reviews/pending/queue.json`, which can feed a private runner or a local work
+device. Detailed Cloudflare results are cached only beneath the gitignored
+`.private/` directory.
+
+For that private execution, create a least-privilege custom API token with
+`Account > Intel > Read`, scoped to the intended account, and expose:
+
+- `CLOUDFLARE_API_TOKEN` as a secret;
+- `CLOUDFLARE_ACCOUNT_ID` as a variable.
+
+The helper uses the bulk endpoint in groups of at most 20, disables ranking,
+caps itself at 20 API calls per run, and caches results for 90 days. Successful
+batches are retained even if a later batch fails.
+
+Free, Pro, and Business accounts currently receive 100 Security Intelligence
+API calls per month. The call cap and private cache are designed around that
+budget. Cloudflare setup, terms, and API references are listed in
+[`docs/data-sources.md`](docs/data-sources.md).
+
 ## Local verification
 
 Python 3.11 or later is sufficient. There are no runtime dependencies.
@@ -117,6 +156,13 @@ $env:GITHUB_TOKEN = "..."
 python scripts/update.py --network
 ~~~
 
+To run Cloudflare enrichment on a private runner or locally, set
+`CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`, then run:
+
+~~~console
+python scripts/enrich_cloudflare.py --max-calls 20 --stale-days 90
+~~~
+
 ## Cost
 
 The spike requires no paid service:
@@ -124,12 +170,14 @@ The spike requires no paid service:
 - public-repository GitHub Actions usage;
 - GitHub's authenticated API through the workflow token;
 - official Package-URL data;
+- public registry and mirror catalogs;
 - Python's standard library.
 
-The optional LLM review is disabled by default, so no LLM account or external
-API key is required. If enabled, provider usage follows that provider's API
-pricing or free-tier terms. The model remains a reviewer and is never the
-authority that promotes or removes a network-policy target.
+Private Cloudflare enrichment requires an account and API token but is designed
+around the ordinary account quota. The optional LLM review is disabled by
+default. If enabled, provider usage follows that provider's API pricing or
+free-tier terms. Neither enrichment provider is the authority that promotes or
+removes a network-policy target.
 
 ## Limits
 
@@ -146,4 +194,5 @@ that the internal artifact service has every required upstream endpoint.
 See [CONTRIBUTING.md](CONTRIBUTING.md). Each curated addition needs a category,
 match mode, endpoint kind, and at least one public evidence URL.
 
-MIT licensed.
+The repository code is MIT licensed. Source-derived data retains any applicable
+upstream terms and attribution; see [`docs/data-sources.md`](docs/data-sources.md).

@@ -16,6 +16,7 @@ from url_lists.discovery import SOURCE_ROLES
 from url_lists.extractors import SUPPORTED_EXTRACTORS
 from url_lists.llm_review import validate_review_files
 from url_lists.normalize import TargetError, normalize_target
+from url_lists.review_queue import validate_review_queue
 
 
 def validate_candidates(document: dict[str, Any], category_ids: set[str]) -> list[str]:
@@ -82,7 +83,13 @@ def validate_candidates(document: dict[str, Any], category_ids: set[str]) -> lis
                 ):
                     problems.append(f"{label} has an invalid evidence source")
                     break
-                optional_strings = ("extractor", "query_id", "source_path")
+                optional_strings = (
+                    "extractor",
+                    "query_id",
+                    "source_category",
+                    "source_ecosystem",
+                    "source_path",
+                )
                 if any(
                     key in source
                     and (
@@ -92,6 +99,12 @@ def validate_candidates(document: dict[str, Any], category_ids: set[str]) -> lis
                     for key in optional_strings
                 ):
                     problems.append(f"{label} has invalid evidence provenance")
+                    break
+                if (
+                    "source_category" in source
+                    and source["source_category"] not in category_ids
+                ):
+                    problems.append(f"{label} has invalid evidence source category")
                     break
                 if (
                     "source_role" in source
@@ -236,6 +249,7 @@ def main() -> int:
     problems.extend(validate_discovery_configuration(category_ids))
     problems.extend(validate_documents(ROOT))
     problems.extend(validate_review_files(ROOT))
+    problems.extend(validate_review_queue(ROOT))
     if problems:
         for problem in problems:
             print(f"ERROR: {problem}", file=sys.stderr)

@@ -41,6 +41,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/update.py --network
 
+      - name: Export candidates for private vendor review
+        run: python scripts/export_review_queue.py
+
       - name: Optional OpenAI coverage review
         if: vars.LLM_REVIEW_PROVIDER == 'openai'
         env:
@@ -80,7 +83,7 @@ jobs:
           UPDATE_BRANCH: automation/update-url-list-candidates
         shell: bash
         run: |
-          if ! git status --porcelain -- data/candidates.json dist reviews/llm | grep -q .; then
+          if ! git status --porcelain -- data/candidates.json dist reviews/llm reviews/pending | grep -q .; then
             echo "No new evidence was discovered."
             exit 0
           fi
@@ -89,6 +92,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git switch -c "$UPDATE_BRANCH"
           git add -- data/candidates.json dist
+          git add -- reviews/pending
           if [ -d reviews/llm ]; then
             git add -- reviews/llm
           fi
@@ -100,5 +104,5 @@ jobs:
               --base main \
               --head "$UPDATE_BRANCH" \
               --title "chore: refresh URL discovery candidates" \
-              --body "Automated discovery from public package-manager configurations and Package-URL definitions. Candidates require human review before promotion. If configured, reviews/llm/latest.md contains suggestion-only LLM gap analysis; its links remain unverified until a person checks them."
+              --body "Automated discovery from public package-manager configurations, Package-URL definitions, and published registry/mirror catalogs. Candidates require human review before promotion. reviews/pending contains the public handoff queue for a private Cloudflare/Zscaler pass. If configured, reviews/llm/latest.md contains suggestion-only LLM gap analysis; its links remain unverified until a person checks them."
           fi
