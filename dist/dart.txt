@@ -1,3 +1,4 @@
+mirrors.tuna.tsinghua.edu.cn
 pub.dartlang.org
 pub.dev
 pub.flutter-io.cn

@@ -1,104 +1,1557 @@
 {
-  "schema_version": 1,
   "entries": [
-    {"target": "pypi.org", "match": "exact", "categories": ["python"], "kind": "canonical", "status": "approved", "evidence": ["https://packaging.python.org/en/latest/specifications/simple-repository-api/"]},
-    {"target": "files.pythonhosted.org", "match": "exact", "categories": ["python"], "kind": "artifact-cdn", "status": "approved", "evidence": ["https://docs.pypi.org/api/index-api/"]},
-    {"target": "test.pypi.org", "match": "exact", "categories": ["python"], "kind": "canonical-test", "status": "approved", "evidence": ["https://packaging.python.org/en/latest/guides/using-testpypi/"]},
-    {"target": "repo.anaconda.com", "match": "exact", "categories": ["python"], "kind": "canonical", "status": "approved", "evidence": ["https://www.anaconda.com/docs/getting-started/working-with-conda/reference/default-repositories"]},
-    {"target": "conda.anaconda.org", "match": "exact", "categories": ["python"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/channels.html"]},
-    {"target": "prefix.dev", "match": "exact", "categories": ["python"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://prefix.dev/docs"]},
-
-    {"target": "registry.npmjs.org", "match": "exact", "categories": ["javascript"], "kind": "canonical", "status": "approved", "evidence": ["https://docs.npmjs.com/cli/v11/using-npm/registry"]},
-    {"target": "registry.yarnpkg.com", "match": "exact", "categories": ["javascript"], "kind": "mirror", "status": "approved", "evidence": ["https://yarnpkg.com/configuration/yarnrc#npmRegistryServer"]},
-    {"target": "registry.npmmirror.com", "match": "exact", "categories": ["javascript"], "kind": "mirror", "status": "approved", "evidence": ["https://npmmirror.com/"]},
-    {"target": "jsr.io", "match": "exact", "categories": ["javascript"], "kind": "canonical", "status": "approved", "evidence": ["https://jsr.io/docs/introduction"]},
-    {"target": "deno.land", "match": "exact", "categories": ["javascript"], "kind": "module-host", "status": "approved", "evidence": ["https://docs.deno.com/runtime/fundamentals/modules/"]},
-    {"target": "unpkg.com", "match": "exact", "categories": ["javascript"], "kind": "artifact-cdn", "status": "approved", "evidence": ["https://unpkg.com/"]},
-    {"target": "cdn.jsdelivr.net", "match": "exact", "categories": ["javascript"], "kind": "artifact-cdn", "status": "approved", "evidence": ["https://www.jsdelivr.com/documentation"]},
-
-    {"target": "repo.maven.apache.org", "match": "exact", "categories": ["jvm"], "kind": "canonical", "status": "approved", "evidence": ["https://maven.apache.org/pom.html"]},
-    {"target": "repo1.maven.org", "match": "exact", "categories": ["jvm"], "kind": "canonical-alias", "status": "approved", "evidence": ["https://maven.apache.org/repository/"]},
-    {"target": "plugins.gradle.org", "match": "exact", "categories": ["jvm"], "kind": "canonical", "status": "approved", "evidence": ["https://plugins.gradle.org/docs"]},
-    {"target": "plugins-artifacts.gradle.org", "match": "exact", "categories": ["jvm"], "kind": "artifact-cdn", "status": "approved", "evidence": ["https://plugins.gradle.org/docs"]},
-    {"target": "maven.google.com", "match": "exact", "categories": ["jvm"], "kind": "canonical", "status": "approved", "evidence": ["https://developer.android.com/build/remote-repositories"]},
-    {"target": "repo.spring.io", "match": "exact", "categories": ["jvm"], "kind": "vendor-repository", "status": "approved", "evidence": ["https://repo.spring.io/"]},
-    {"target": "repository.jboss.org", "match": "exact", "categories": ["jvm"], "kind": "vendor-repository", "status": "approved", "evidence": ["https://repository.jboss.org/"]},
-    {"target": "jitpack.io", "match": "exact", "categories": ["jvm"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://docs.jitpack.io/"]},
-    {"target": "clojars.org", "match": "exact", "categories": ["jvm"], "kind": "community-registry", "status": "approved", "evidence": ["https://clojars.org/"]},
-
-    {"target": "api.nuget.org", "match": "exact", "categories": ["dotnet"], "kind": "canonical", "status": "approved", "evidence": ["https://learn.microsoft.com/nuget/api/overview"]},
-    {"target": "globalcdn.nuget.org", "match": "exact", "categories": ["dotnet"], "kind": "artifact-cdn", "status": "approved", "evidence": ["https://learn.microsoft.com/nuget/api/package-base-address-resource"]},
-    {"target": "www.nuget.org", "match": "exact", "categories": ["dotnet"], "kind": "canonical", "status": "approved", "evidence": ["https://www.nuget.org/"]},
-    {"target": "api.myget.org", "match": "exact", "categories": ["dotnet", "multi_ecosystem"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://docs.myget.org/"]},
-
-    {"target": "crates.io", "match": "exact", "categories": ["rust"], "kind": "canonical", "status": "approved", "evidence": ["https://doc.rust-lang.org/cargo/reference/registries.html"]},
-    {"target": "static.crates.io", "match": "exact", "categories": ["rust"], "kind": "artifact-cdn", "status": "approved", "evidence": ["https://doc.rust-lang.org/cargo/reference/registry-index.html"]},
-    {"target": "index.crates.io", "match": "exact", "categories": ["rust"], "kind": "canonical-index", "status": "approved", "evidence": ["https://doc.rust-lang.org/cargo/reference/registry-index.html"]},
-    {"target": "rsproxy.cn", "match": "exact", "categories": ["rust"], "kind": "mirror", "status": "approved", "evidence": ["https://rsproxy.cn/"]},
-
-    {"target": "proxy.golang.org", "match": "exact", "categories": ["go"], "kind": "canonical", "status": "approved", "evidence": ["https://go.dev/ref/mod#goproxy-protocol"]},
-    {"target": "sum.golang.org", "match": "exact", "categories": ["go"], "kind": "checksum-service", "status": "approved", "evidence": ["https://go.dev/ref/mod#checksum-database"]},
-    {"target": "index.golang.org", "match": "exact", "categories": ["go"], "kind": "canonical-index", "status": "approved", "evidence": ["https://index.golang.org/"]},
-    {"target": "goproxy.io", "match": "exact", "categories": ["go"], "kind": "mirror", "status": "approved", "evidence": ["https://goproxy.io/"]},
-    {"target": "goproxy.cn", "match": "exact", "categories": ["go"], "kind": "mirror", "status": "approved", "evidence": ["https://goproxy.cn/"]},
-
-    {"target": "repo.packagist.org", "match": "exact", "categories": ["php"], "kind": "canonical", "status": "approved", "evidence": ["https://packagist.org/about"]},
-    {"target": "packagist.org", "match": "exact", "categories": ["php"], "kind": "canonical", "status": "approved", "evidence": ["https://packagist.org/about"]},
-    {"target": "asset-packagist.org", "match": "exact", "categories": ["php"], "kind": "community-registry", "status": "approved", "evidence": ["https://asset-packagist.org/"]},
-    {"target": "packages.drupal.org", "match": "exact", "categories": ["php"], "kind": "vendor-repository", "status": "approved", "evidence": ["https://www.drupal.org/docs/develop/using-composer/manage-dependencies"]},
-
-    {"target": "rubygems.org", "match": "exact", "categories": ["ruby"], "kind": "canonical", "status": "approved", "evidence": ["https://guides.rubygems.org/run-your-own-gem-server/"]},
-    {"target": "index.rubygems.org", "match": "exact", "categories": ["ruby"], "kind": "canonical-index", "status": "approved", "evidence": ["https://guides.rubygems.org/rubygems-org-api/"]},
-
-    {"target": "center2.conan.io", "match": "exact", "categories": ["cpp"], "kind": "canonical", "status": "approved", "evidence": ["https://docs.conan.io/2/reference/config_files/remotes.html"]},
-    {"target": "center.conan.io", "match": "exact", "categories": ["cpp"], "kind": "canonical-alias", "status": "approved", "evidence": ["https://conan.io/center"]},
-
-    {"target": "pub.dev", "match": "exact", "categories": ["dart"], "kind": "canonical", "status": "approved", "evidence": ["https://dart.dev/tools/pub/custom-package-repositories"]},
-    {"target": "pub.dartlang.org", "match": "exact", "categories": ["dart"], "kind": "canonical-alias", "status": "approved", "evidence": ["https://raw.githubusercontent.com/package-url/purl-spec/main/docs/types/definitions/pub-definition.md"]},
-    {"target": "pub.flutter-io.cn", "match": "exact", "categories": ["dart"], "kind": "mirror", "status": "approved", "evidence": ["https://docs.flutter.dev/community/china"]},
-
-    {"target": "repo.hex.pm", "match": "exact", "categories": ["erlang"], "kind": "canonical", "status": "approved", "evidence": ["https://hex.pm/docs/usage"]},
-    {"target": "hex.pm", "match": "exact", "categories": ["erlang"], "kind": "canonical", "status": "approved", "evidence": ["https://hex.pm/docs/usage"]},
-    {"target": "builds.hex.pm", "match": "exact", "categories": ["erlang"], "kind": "artifact-host", "status": "approved", "evidence": ["https://hex.pm/docs/usage"]},
-
-    {"target": "hackage.haskell.org", "match": "exact", "categories": ["haskell"], "kind": "canonical", "status": "approved", "evidence": ["https://hackage.haskell.org/"]},
-    {"target": "stackage.org", "match": "exact", "categories": ["haskell"], "kind": "curated-repository", "status": "approved", "evidence": ["https://www.stackage.org/"]},
-
-    {"target": "cloud.r-project.org", "match": "exact", "categories": ["r"], "kind": "canonical-mirror", "status": "approved", "evidence": ["https://cran.r-project.org/mirrors.html"]},
-    {"target": "cran.r-project.org", "match": "exact", "categories": ["r"], "kind": "canonical", "status": "approved", "evidence": ["https://cran.r-project.org/"]},
-    {"target": "bioconductor.org", "match": "exact", "categories": ["r"], "kind": "canonical", "status": "approved", "evidence": ["https://www.bioconductor.org/install/"]},
-    {"target": "packagemanager.posit.co", "match": "exact", "categories": ["r"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://packagemanager.posit.co/"]},
-
-    {"target": "pkg.julialang.org", "match": "exact", "categories": ["julia"], "kind": "canonical", "status": "approved", "evidence": ["https://pkgdocs.julialang.org/dev/registries/"]},
-
-    {"target": "cdn.cocoapods.org", "match": "exact", "categories": ["swift"], "kind": "canonical-index", "status": "approved", "evidence": ["https://blog.cocoapods.org/CocoaPods-1.8.0-beta/"]},
-    {"target": "trunk.cocoapods.org", "match": "exact", "categories": ["swift"], "kind": "canonical", "status": "approved", "evidence": ["https://guides.cocoapods.org/making/getting-setup-with-trunk.html"]},
-
-    {"target": "registry-1.docker.io", "match": "exact", "categories": ["containers"], "kind": "canonical", "status": "approved", "evidence": ["https://docs.docker.com/docker-hub/"]},
-    {"target": "hub.docker.com", "match": "exact", "categories": ["containers"], "kind": "canonical", "status": "approved", "evidence": ["https://raw.githubusercontent.com/package-url/purl-spec/main/docs/types/definitions/docker-definition.md"]},
-    {"target": "auth.docker.io", "match": "exact", "categories": ["containers"], "kind": "authentication", "status": "approved", "evidence": ["https://docs.docker.com/reference/api/registry/auth/"]},
-    {"target": "production.cloudflare.docker.com", "match": "exact", "categories": ["containers"], "kind": "artifact-cdn", "status": "approved", "evidence": ["https://docs.docker.com/desktop/setup/allow-list/"]},
-    {"target": "ghcr.io", "match": "exact", "categories": ["containers", "multi_ecosystem"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://docs.github.com/packages/working-with-a-github-packages-registry/working-with-the-container-registry"]},
-    {"target": "quay.io", "match": "exact", "categories": ["containers"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://docs.quay.io/"]},
-    {"target": "gcr.io", "match": "exact", "categories": ["containers"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"]},
-    {"target": "public.ecr.aws", "match": "exact", "categories": ["containers"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://docs.aws.amazon.com/AmazonECR/latest/public/what-is-ecr.html"]},
-    {"target": "mcr.microsoft.com", "match": "exact", "categories": ["containers"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://learn.microsoft.com/azure/container-registry/container-registry-artifact-streaming"]},
-    {"target": "nvcr.io", "match": "exact", "categories": ["containers"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://docs.nvidia.com/ngc/gpu-cloud/ngc-private-registry-user-guide/"]},
-    {"target": "registry.k8s.io", "match": "exact", "categories": ["containers"], "kind": "canonical", "status": "approved", "evidence": ["https://kubernetes.io/blog/2023/03/10/image-registry-redirect/"]},
-    {"target": "registry.gitlab.com", "match": "exact", "categories": ["containers", "multi_ecosystem"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://docs.gitlab.com/user/packages/container_registry/"]},
-    {"target": "cgr.dev", "match": "exact", "categories": ["containers"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://edu.chainguard.dev/chainguard/chainguard-images/overview/"]},
-    {"target": "registry.access.redhat.com", "match": "exact", "categories": ["containers"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://access.redhat.com/RegistryAuthentication"]},
-    {"target": "registry.redhat.io", "match": "exact", "categories": ["containers"], "kind": "hosted-registry", "status": "approved", "evidence": ["https://access.redhat.com/RegistryAuthentication"]},
-
-    {"target": ".jfrog.io", "match": "suffix", "categories": ["multi_ecosystem"], "kind": "hosted-registry-provider", "status": "approved", "evidence": ["https://jfrog.com/help/r/jfrog-platform-administration-documentation/jfrog-platform-domain-and-structure"]},
-    {"target": ".cloudsmith.io", "match": "suffix", "categories": ["multi_ecosystem"], "kind": "hosted-registry-provider", "status": "approved", "evidence": ["https://help.cloudsmith.io/docs/repository-formats"]},
-    {"target": ".fury.io", "match": "suffix", "categories": ["multi_ecosystem"], "kind": "hosted-registry-provider", "status": "approved", "evidence": ["https://gemfury.com/help/"]},
-    {"target": ".pkg.dev", "match": "suffix", "categories": ["containers", "multi_ecosystem"], "kind": "hosted-registry-provider", "status": "approved", "evidence": ["https://cloud.google.com/artifact-registry/docs/repositories"]},
-    {"target": "packagecloud.io", "match": "exact", "categories": ["multi_ecosystem"], "kind": "hosted-registry-provider", "status": "approved", "evidence": ["https://packagecloud.io/docs"]},
-    {"target": "pkgs.dev.azure.com", "match": "exact", "categories": ["dotnet", "multi_ecosystem"], "kind": "hosted-registry-provider", "status": "approved", "evidence": ["https://learn.microsoft.com/azure/devops/artifacts/start-using-azure-artifacts"]},
-    {"target": "npm.pkg.github.com", "match": "exact", "categories": ["javascript", "multi_ecosystem"], "kind": "hosted-registry-provider", "status": "approved", "evidence": ["https://docs.github.com/packages/working-with-a-github-packages-registry/working-with-the-npm-registry"]},
-    {"target": "maven.pkg.github.com", "match": "exact", "categories": ["jvm", "multi_ecosystem"], "kind": "hosted-registry-provider", "status": "approved", "evidence": ["https://docs.github.com/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry"]},
-    {"target": "nuget.pkg.github.com", "match": "exact", "categories": ["dotnet", "multi_ecosystem"], "kind": "hosted-registry-provider", "status": "approved", "evidence": ["https://docs.github.com/packages/working-with-a-github-packages-registry/working-with-the-nuget-registry"]},
-    {"target": "rubygems.pkg.github.com", "match": "exact", "categories": ["ruby", "multi_ecosystem"], "kind": "hosted-registry-provider", "status": "approved", "evidence": ["https://docs.github.com/packages/working-with-a-github-packages-registry/working-with-the-rubygems-registry"]}
-  ]
+    {
+      "categories": [
+        "dotnet",
+        "multi_ecosystem"
+      ],
+      "evidence": [
+        "https://docs.myget.org/"
+      ],
+      "kind": "hosted-registry",
+      "match": "exact",
+      "status": "approved",
+      "target": "api.myget.org"
+    },
+    {
+      "categories": [
+        "dotnet"
+      ],
+      "evidence": [
+        "https://learn.microsoft.com/nuget/api/overview"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "api.nuget.org"
+    },
+    {
+      "categories": [
+        "php"
+      ],
+      "evidence": [
+        "https://asset-packagist.org/"
+      ],
+      "kind": "community-registry",
+      "match": "exact",
+      "status": "approved",
+      "target": "asset-packagist.org"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "evidence": [
+        "https://docs.docker.com/reference/api/registry/auth/"
+      ],
+      "kind": "authentication",
+      "match": "exact",
+      "status": "approved",
+      "target": "auth.docker.io"
+    },
+    {
+      "categories": [
+        "r"
+      ],
+      "evidence": [
+        "https://www.bioconductor.org/install/"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "bioconductor.org"
+    },
+    {
+      "categories": [
+        "erlang"
+      ],
+      "evidence": [
+        "https://hex.pm/docs/usage"
+      ],
+      "kind": "artifact-host",
+      "match": "exact",
+      "status": "approved",
+      "target": "builds.hex.pm"
+    },
+    {
+      "categories": [
+        "swift"
+      ],
+      "evidence": [
+        "https://blog.cocoapods.org/CocoaPods-1.8.0-beta/"
+      ],
+      "kind": "canonical-index",
+      "match": "exact",
+      "status": "approved",
+      "target": "cdn.cocoapods.org"
+    },
+    {
+      "categories": [
+        "javascript"
+      ],
+      "evidence": [
+        "https://www.jsdelivr.com/documentation"
+      ],
+      "kind": "artifact-cdn",
+      "match": "exact",
+      "status": "approved",
+      "target": "cdn.jsdelivr.net"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "evidence": [
+        "https://conan.io/center"
+      ],
+      "kind": "canonical-alias",
+      "match": "exact",
+      "status": "approved",
+      "target": "center.conan.io"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "evidence": [
+        "https://docs.conan.io/2/reference/config_files/remotes.html"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "center2.conan.io"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://github.com/vert-x3/vertx-examples/blob/28c594db476583f41b2326ed41ebb837726f59e6/settings.xml"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "central.sonatype.com"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "evidence": [
+        "https://edu.chainguard.dev/chainguard/chainguard-images/overview/"
+      ],
+      "kind": "hosted-registry",
+      "match": "exact",
+      "status": "approved",
+      "target": "cgr.dev"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://clojars.org/"
+      ],
+      "kind": "community-registry",
+      "match": "exact",
+      "status": "approved",
+      "target": "clojars.org"
+    },
+    {
+      "categories": [
+        "r"
+      ],
+      "evidence": [
+        "https://cran.r-project.org/mirrors.html"
+      ],
+      "kind": "canonical-mirror",
+      "match": "exact",
+      "status": "approved",
+      "target": "cloud.r-project.org"
+    },
+    {
+      "categories": [
+        "multi_ecosystem"
+      ],
+      "evidence": [
+        "https://help.cloudsmith.io/docs/repository-formats"
+      ],
+      "kind": "hosted-registry-provider",
+      "match": "suffix",
+      "status": "approved",
+      "target": ".cloudsmith.io"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "evidence": [
+        "https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/channels.html"
+      ],
+      "kind": "hosted-registry",
+      "match": "exact",
+      "status": "approved",
+      "target": "conda.anaconda.org"
+    },
+    {
+      "categories": [
+        "r"
+      ],
+      "evidence": [
+        "https://cran.r-project.org/"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "cran.r-project.org"
+    },
+    {
+      "categories": [
+        "rust"
+      ],
+      "evidence": [
+        "https://doc.rust-lang.org/cargo/reference/registries.html"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "crates.io"
+    },
+    {
+      "categories": [
+        "javascript"
+      ],
+      "evidence": [
+        "https://docs.deno.com/runtime/fundamentals/modules/"
+      ],
+      "kind": "module-host",
+      "match": "exact",
+      "status": "approved",
+      "target": "deno.land"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://github.com/SAP/hybris-commerce-eclipse-plugin/blob/3d8f10a62cf6b37a9272acdd95f94f23300070fc/pom.xml"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "download.eclipse.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://github.com/Glamdring/computoser/blob/94b518cc46d672ee062532befd180f2105f0f248/pom.xml",
+        "https://github.com/jsuereth/scala-arm/blob/41d63402108324b8ba90affa1f93b19d9f447f5c/build.sbt"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "download.java.net"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "evidence": [
+        "https://github.com/DataArcTech/DataArc-SynData-Toolkit/blob/b6f0b97e0c9e5a70bea6835884d6ec62297c6a5e/pyproject.toml",
+        "https://github.com/Emerge-Lab/gpudrive/blob/aa48a431ed127a37610cc2176db30ec73d0c55df/pyproject.toml",
+        "https://github.com/arhanjain/polaris/blob/129abc45f680559a7da62b9280fdb127b02b7275/pyproject.toml",
+        "https://github.com/borglab/gtsfm/blob/4e626637001747dbd1fcb2ea50a266c49fb8da07/pyproject.toml",
+        "https://github.com/daydreamlive/DEMON/blob/7c3a31b8d4857d15da4e51a69f8ca682f8876204/pyproject.toml",
+        "https://github.com/elefant-ai/open-p2p/blob/a329d98cbe62119679a254d71bea6446773541bc/pyproject.toml",
+        "https://github.com/facebookresearch/blt/blob/9774ed4fcc78313f9f218295f3d7e4decdadf2ae/pyproject.toml",
+        "https://github.com/guidelabs/steerling/blob/f34ffa89e46969445f3cf6e7c885e9623a2047c1/pyproject.toml",
+        "https://github.com/lavaman131/dinov2.cpp/blob/3d070782afc264b7d60aa5692c5b10cb79b9bd56/pyproject.toml",
+        "https://github.com/lumina37/rotate-captcha-crack/blob/4a1c0b8792c9a658e74436066349cd340ca9de59/pyproject.toml",
+        "https://github.com/masouduut94/volleyball_analytics/blob/c746a879552cc559748649012844342affc0d9c6/pyproject.toml",
+        "https://github.com/wangwenho/HanziGen/blob/7ba30b735984aa04d1ba5a61ef4f9025aa55fc23/pyproject.toml"
+      ],
+      "kind": "canonical-index",
+      "match": "exact",
+      "status": "approved",
+      "target": "download.pytorch.org"
+    },
+    {
+      "categories": [
+        "dotnet",
+        "multi_ecosystem"
+      ],
+      "evidence": [
+        "https://github.com/exceptionless/Exceptionless/blob/9fa81b49ed776c7bbda86ada5492e21d63c9ec6a/NuGet.Config"
+      ],
+      "kind": "hosted-registry-provider",
+      "match": "suffix",
+      "status": "approved",
+      "target": ".feedz.io"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "evidence": [
+        "https://docs.pypi.org/api/index-api/"
+      ],
+      "kind": "artifact-cdn",
+      "match": "exact",
+      "status": "approved",
+      "target": "files.pythonhosted.org"
+    },
+    {
+      "categories": [
+        "multi_ecosystem"
+      ],
+      "evidence": [
+        "https://gemfury.com/help/"
+      ],
+      "kind": "hosted-registry-provider",
+      "match": "suffix",
+      "status": "approved",
+      "target": ".fury.io"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "evidence": [
+        "https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"
+      ],
+      "kind": "hosted-registry",
+      "match": "exact",
+      "status": "approved",
+      "target": "gcr.io"
+    },
+    {
+      "categories": [
+        "containers",
+        "multi_ecosystem"
+      ],
+      "evidence": [
+        "https://docs.github.com/packages/working-with-a-github-packages-registry/working-with-the-container-registry"
+      ],
+      "kind": "hosted-registry",
+      "match": "exact",
+      "status": "approved",
+      "target": "ghcr.io"
+    },
+    {
+      "categories": [
+        "dotnet"
+      ],
+      "evidence": [
+        "https://learn.microsoft.com/nuget/api/package-base-address-resource"
+      ],
+      "kind": "artifact-cdn",
+      "match": "exact",
+      "status": "approved",
+      "target": "globalcdn.nuget.org"
+    },
+    {
+      "categories": [
+        "go"
+      ],
+      "evidence": [
+        "https://goproxy.cn/"
+      ],
+      "kind": "mirror",
+      "match": "exact",
+      "status": "approved",
+      "target": "goproxy.cn"
+    },
+    {
+      "categories": [
+        "go"
+      ],
+      "evidence": [
+        "https://goproxy.io/"
+      ],
+      "kind": "mirror",
+      "match": "exact",
+      "status": "approved",
+      "target": "goproxy.io"
+    },
+    {
+      "categories": [
+        "haskell"
+      ],
+      "evidence": [
+        "https://hackage.haskell.org/"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "hackage.haskell.org"
+    },
+    {
+      "categories": [
+        "erlang"
+      ],
+      "evidence": [
+        "https://hex.pm/docs/usage"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "hex.pm"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "evidence": [
+        "https://raw.githubusercontent.com/package-url/purl-spec/main/docs/types/definitions/docker-definition.md"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "hub.docker.com"
+    },
+    {
+      "categories": [
+        "rust"
+      ],
+      "evidence": [
+        "https://doc.rust-lang.org/cargo/reference/registry-index.html"
+      ],
+      "kind": "canonical-index",
+      "match": "exact",
+      "status": "approved",
+      "target": "index.crates.io"
+    },
+    {
+      "categories": [
+        "go"
+      ],
+      "evidence": [
+        "https://index.golang.org/"
+      ],
+      "kind": "canonical-index",
+      "match": "exact",
+      "status": "approved",
+      "target": "index.golang.org"
+    },
+    {
+      "categories": [
+        "ruby"
+      ],
+      "evidence": [
+        "https://guides.rubygems.org/rubygems-org-api/"
+      ],
+      "kind": "canonical-index",
+      "match": "exact",
+      "status": "approved",
+      "target": "index.rubygems.org"
+    },
+    {
+      "categories": [
+        "multi_ecosystem"
+      ],
+      "evidence": [
+        "https://jfrog.com/help/r/jfrog-platform-administration-documentation/jfrog-platform-domain-and-structure"
+      ],
+      "kind": "hosted-registry-provider",
+      "match": "suffix",
+      "status": "approved",
+      "target": ".jfrog.io"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://docs.jitpack.io/"
+      ],
+      "kind": "hosted-registry",
+      "match": "exact",
+      "status": "approved",
+      "target": "jitpack.io"
+    },
+    {
+      "categories": [
+        "javascript"
+      ],
+      "evidence": [
+        "https://jsr.io/docs/introduction"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "jsr.io"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://github.com/JoySafety/JoySafety/blob/a2342fdb6c105f00f8045a8c7d9c7cbb35972582/deploy/settings.xml"
+      ],
+      "kind": "mirror",
+      "match": "exact",
+      "status": "approved",
+      "target": "maven.163.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://github.com/JoySafety/JoySafety/blob/a2342fdb6c105f00f8045a8c7d9c7cbb35972582/deploy/settings.xml",
+        "https://github.com/Qihoo360/hbox/blob/b5eb493fc35a63d3faef055b85326ce79d628233/.mvn/settings.xml",
+        "https://github.com/ZhongFuCheng3y/austin/blob/8379c029e0ba3c541f1e34cfc9c8401a4355b2f6/doc/maven/settings.xml",
+        "https://github.com/dromara/Jpom/blob/723b1ccca071772f7d7ad3481740624da6bc91df/script/settings.xml",
+        "https://github.com/dromara/x-file-storage/blob/f7baa6e933398185096a5bff5e427593247b19d7/.mvn/settings.xml",
+        "https://github.com/hi-dhl/PokemonGo/blob/ed204eaefa6f2929c04f3de668ae5d23db13f5d9/build.gradle",
+        "https://github.com/pnoker/iot-dc3/blob/ca5b9734460f39351956c8318ecfe565a2cba37f/.mvn/settings.xml"
+      ],
+      "kind": "mirror",
+      "match": "exact",
+      "status": "approved",
+      "target": "maven.aliyun.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://developer.android.com/build/remote-repositories"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "maven.google.com"
+    },
+    {
+      "categories": [
+        "jvm",
+        "multi_ecosystem"
+      ],
+      "evidence": [
+        "https://docs.github.com/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry"
+      ],
+      "kind": "hosted-registry-provider",
+      "match": "exact",
+      "status": "approved",
+      "target": "maven.pkg.github.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://github.com/Glamdring/computoser/blob/94b518cc46d672ee062532befd180f2105f0f248/pom.xml",
+        "https://github.com/ponxu/blog4j/blob/d9be3eaa3e4f972ec11732ddc3fb238fafb6ec85/pom.xml"
+      ],
+      "kind": "canonical-alias",
+      "match": "exact",
+      "status": "approved",
+      "target": "maven.springframework.org"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "evidence": [
+        "https://learn.microsoft.com/azure/container-registry/container-registry-artifact-streaming"
+      ],
+      "kind": "hosted-registry",
+      "match": "exact",
+      "status": "approved",
+      "target": "mcr.microsoft.com"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "evidence": [
+        "https://github.com/SUC-DriverOld/MSST-WebUI/blob/332c024771d9c048d209b12663d4745a4cb676f2/pyproject.toml"
+      ],
+      "kind": "mirror",
+      "match": "exact",
+      "status": "approved",
+      "target": "mirror.nju.edu.cn"
+    },
+    {
+      "categories": [
+        "php",
+        "python"
+      ],
+      "evidence": [
+        "https://github.com/BaihaiAI/IDP/blob/23eadcda9d3b7c57dd377ecffb574207daca099b/docker_build/pip.conf",
+        "https://github.com/DataArcTech/DataArc-SynData-Toolkit/blob/b6f0b97e0c9e5a70bea6835884d6ec62297c6a5e/pyproject.toml",
+        "https://github.com/DeepInsight-AI/DeepBI/blob/8baf98e0f586bc912aabada93233640def75d864/pip.conf",
+        "https://github.com/alibaba/Elastic-Federated-Learning-Solution/blob/92efcfacf026ac31d5da32b1eab3b20bd003f57f/docker/pip.conf",
+        "https://github.com/dxcweb/local-ai/blob/b227ba68bd566cc29eb511d213270a10a0b44bd2/src/service/.condarc.aly",
+        "https://github.com/edusoho/edusoho/blob/ec046e7e6e9c0c8ef1ca97d90da4057a8a1b8505/composer.json",
+        "https://github.com/flink-extended/dl-on-flink/blob/ab209907c4a4ed7a017d00d079519fb01fd4045d/docker/flink/pip.conf",
+        "https://github.com/flyhigher139/OctBlog/blob/2f653377f7e5f3ca49df46c69168ae9fbadfb8b7/app/pip.conf",
+        "https://github.com/flyhigher139/mayblog/blob/d4434059291fc4a4d584d093c99d5f7ecb2f3598/blog/pip.conf",
+        "https://github.com/grimoire/mmdetection-to-tensorrt/blob/b5c6d0eed2a384a715cc800548d06458daa2e774/docker/pip.conf",
+        "https://github.com/int32bit/dotfiles/blob/7a31997c723d05f5263db34f7de8790e52e0f992/pip/pip.conf",
+        "https://github.com/intelligent-machine-learning/atorch/blob/7fb7da86be5794c57440db5b96f3278c158f0c7a/dev/docker/base/.condarc",
+        "https://github.com/knownsec/aipyapp/blob/49086c0f22ed6e8afd6cb4bbd2364516d92ce3b9/pyproject.toml",
+        "https://github.com/longguikeji/arkid/blob/b7a7c074fb0ee36b1f779353c1b4d3b3288c1cae/pip.conf"
+      ],
+      "kind": "mirror",
+      "match": "exact",
+      "status": "approved",
+      "target": "mirrors.aliyun.com"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "evidence": [
+        "https://github.com/SJTU-IPADS/gnnlab/blob/2d0dd92ce4e2efec3d47212ce73358cd03f8d3d8/docker/.condarc",
+        "https://github.com/epfml/federated-learning-public-code/blob/44dd5551071969eb354ee2ed091a9ba36c1d5b08/environments/pytorch-mpi/.condarc",
+        "https://github.com/young010101/dotfiles/blob/99c080776076adaba29f33ab1638857e0f7aeca7/.condarc",
+        "https://github.com/zju3dv/neuralbody/blob/3c516b953477006a3d1a7311eb4d51438c982c33/docker/.condarc"
+      ],
+      "kind": "mirror",
+      "match": "exact",
+      "status": "approved",
+      "target": "mirrors.bfsu.edu.cn"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://github.com/JoySafety/JoySafety/blob/a2342fdb6c105f00f8045a8c7d9c7cbb35972582/deploy/settings.xml",
+        "https://github.com/ZhongFuCheng3y/austin/blob/8379c029e0ba3c541f1e34cfc9c8401a4355b2f6/doc/maven/settings.xml"
+      ],
+      "kind": "mirror",
+      "match": "exact",
+      "status": "approved",
+      "target": "mirrors.cloud.tencent.com"
+    },
+    {
+      "categories": [
+        "julia",
+        "python"
+      ],
+      "evidence": [
+        "https://github.com/QuantumBFS/quantum.harness/blob/f46e71729c2d0a290027cd9c340a4d6eb6b9109f/skills/setup-julia/SKILL.md",
+        "https://github.com/xiesx123/CreatorBox/blob/bc1adf57267a973566fdcf47b3ecffbcce1a12a2/pyproject.toml"
+      ],
+      "kind": "mirror",
+      "match": "exact",
+      "status": "approved",
+      "target": "mirrors.nju.edu.cn"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "evidence": [
+        "https://github.com/yizhiwang96/deepvecfont/blob/e1fe3255c876fa0d347018ffda80fe9b8d62ea1c/.condarc"
+      ],
+      "kind": "mirror",
+      "match": "exact",
+      "status": "approved",
+      "target": "mirrors.pku.edu.cn"
+    },
+    {
+      "categories": [
+        "dart",
+        "haskell",
+        "python"
+      ],
+      "evidence": [
+        "https://github.com/Certseeds/dotfiles/blob/e3c1424c2e3e8774f67ebe546470d8d553632be0/lang/.condarc",
+        "https://github.com/JupiterFund/workspace/blob/7ad98051eae211483f0202c30e1fb6cdcd12a942/.condarc",
+        "https://github.com/Karmenzind/dotfiles-and-scripts/blob/3d5864ced835b39de3dcb4f805f2131fd2a1953c/home_k/.condarc",
+        "https://github.com/KumaCool/Haskell-learning-notes/blob/a6634954f6d4685eac6e3d743690f65877e1d8a7/.devcontainer/stack-tuna-config.yaml",
+        "https://github.com/Oneflow-Inc/oneflow/blob/25c8978c1c8b1371ef6aa4187dae4495bd233c35/ci/conda/tuna.condarc",
+        "https://github.com/QiangZiBro/Qdotfiles/blob/ebc689b890524d4709012aeece94cd9bea01c6b3/conda/.condarc",
+        "https://github.com/Sorosliu1029/dotfiles/blob/05502840cd8f6d4f9308add52a246015839525c6/conda/.condarc",
+        "https://github.com/ZouJiu1/zhihu_spider_selenium/blob/bca199370d261075a91792072e6e58d6b7796926/msedgedriver/.condarc",
+        "https://github.com/airtz/dotfiles/blob/fef6732aab77a2faf0acde2fb0824b098d3d9b73/files/.stack/config.yaml",
+        "https://github.com/apuex/etude/blob/811766d214b714e34ebaf49c8059b171c8e0bf76/haskell/stack/config/config.yaml",
+        "https://github.com/berberman/dotfiles/blob/432145e4d454d3a6ccb2ca14fe634d76e06862bf/haskell/.stack/config.yaml",
+        "https://github.com/bozoyan/AsrTools/blob/6f3fa8fccabbdd673e2ea9d197c8fa39b656d23a/logs/.condarc",
+        "https://github.com/damon-kwok/oh-my-env/blob/ad763ed14832948dcaae91b0218bfc3596d90fdb/conf/stack/config.yaml",
+        "https://github.com/damon-kwok/oh-my-env/blob/ad763ed14832948dcaae91b0218bfc3596d90fdb/conf/stack/config_old.yaml",
+        "https://github.com/dingjingmaster/ml-spider/blob/8bd0c09953391251515a816a9592b0d14ab8cd78/data/.condarc",
+        "https://github.com/dxcweb/local-ai/blob/b227ba68bd566cc29eb511d213270a10a0b44bd2/src/service/.condarc",
+        "https://github.com/hedzr/mirror-list/blob/b3a6cd7137ba492ebb5c1560f2c2cf4fa6bb583c/docs/index.md",
+        "https://github.com/hughplay/TVR/blob/d6b94b38d89c443e89e99c5395d17e66b06085d4/docker/misc/.condarc",
+        "https://github.com/hypergravity/laspec/blob/ea46b915b461ca15423aadd791f50cbaeb9da364/.condarc",
+        "https://github.com/ineo6/awesome-mirror/blob/215071be5b23f3d6a1272bff8ce7b416b5a47936/README.md",
+        "https://github.com/kaixindelele/ChatPaper/blob/f19b3a4510c24d49a14549a41de4ad4dd32dc6c1/docker/tsinghua.condarc",
+        "https://github.com/kevin-meng/OS-base-docker/blob/b9a8301033840ffd94ad6fa7a1cec6bdda15bb7c/anaconda/config/.condarc",
+        "https://github.com/kevin-meng/OS-base-docker/blob/b9a8301033840ffd94ad6fa7a1cec6bdda15bb7c/miniconda/config/.condarc",
+        "https://github.com/leoatchina/leoatchina-datasci/blob/96b4008d385f4cff522f711e3e766aa371b6fccc/datasci/.condarc",
+        "https://github.com/lqhuang/dotfiles/blob/3a962e8f82a38a817761e8456898fee301e8e4a0/stack/config.yaml",
+        "https://github.com/lululau/dot_files/blob/98331bbf9c4b12d3158a92fd8cfef4d509b9ecc8/stack-config.yaml",
+        "https://github.com/qixuema/envs/blob/c0dc9a9173dfdb5c7c8b0bda9eef939e149f17b6/novnc/.condarc",
+        "https://github.com/qixuema/envs/blob/c0dc9a9173dfdb5c7c8b0bda9eef939e149f17b6/unovnc/.condarc",
+        "https://github.com/vra/mirrors-china/blob/958707b40ab4d7e1f83709f54140d50e4c8eba15/configs/.condarc",
+        "https://github.com/youkaichao/my-portable-aiml-environment/blob/c7a5dcd81246d3a0d2e8c042487daf8e5cbe9a06/.condarc",
+        "https://github.com/yuchuangu85/Develop-Source/blob/0868142a7b4994194e4980c4620ae6ee628a3bfb/Cross-Platform/Flutter/README.md"
+      ],
+      "kind": "mirror",
+      "match": "exact",
+      "status": "approved",
+      "target": "mirrors.tuna.tsinghua.edu.cn"
+    },
+    {
+      "categories": [
+        "haskell",
+        "julia",
+        "python"
+      ],
+      "evidence": [
+        "https://github.com/Akagi201/learning-haskell/blob/09482663a97c1d9ef7f167a214ce4bc80695ffdc/stack/config.yaml",
+        "https://github.com/SUC-DriverOld/MSST-WebUI/blob/332c024771d9c048d209b12663d4745a4cb676f2/pyproject.toml",
+        "https://github.com/aGolduck/etc/blob/64d5f9ebceb79dcf20c03e02b5a660bdd9419f71/stack-config.yaml",
+        "https://github.com/secretflow/secretflow/blob/11425fa5282cf0898393cf881df09d210ef384e2/docker/release/.condarc",
+        "https://github.com/secretflow/spec/blob/cf2b6c4e11bb5e8c52b20b616fa2fb3a7f6882b4/.condarc",
+        "https://github.com/ustclug/mirrorhelp/blob/1a29f1580f55be869565eec4e5c6abb135dc1065/docs/julia.md",
+        "https://github.com/zhangkaizhao/configurations/blob/1e72bcf7139742282140f40df6d069c8f5e52845/haskell/stack/config.yaml"
+      ],
+      "kind": "mirror",
+      "match": "exact",
+      "status": "approved",
+      "target": "mirrors.ustc.edu.cn"
+    },
+    {
+      "categories": [
+        "dotnet",
+        "multi_ecosystem"
+      ],
+      "evidence": [
+        "https://github.com/BotBuilderCommunity/botbuilder-community-dotnet/blob/5625e8164b0e83b4a7a66af37cdb6b83fbb9914d/nuget.config",
+        "https://github.com/Element-Blazor/Element-Blazor/blob/dbd8d7c3a3b2654ecef90221477182b42ebcf2c0/nuget.config",
+        "https://github.com/goldshtn/linux-tracing-workshop/blob/a3a34fe7242a16047f277f28c1e5c1edef29340d/dotnet/NuGet.Config"
+      ],
+      "kind": "hosted-registry-provider",
+      "match": "suffix",
+      "status": "approved",
+      "target": ".myget.org"
+    },
+    {
+      "categories": [
+        "javascript",
+        "multi_ecosystem"
+      ],
+      "evidence": [
+        "https://docs.github.com/packages/working-with-a-github-packages-registry/working-with-the-npm-registry"
+      ],
+      "kind": "hosted-registry-provider",
+      "match": "exact",
+      "status": "approved",
+      "target": "npm.pkg.github.com"
+    },
+    {
+      "categories": [
+        "dotnet",
+        "multi_ecosystem"
+      ],
+      "evidence": [
+        "https://docs.github.com/packages/working-with-a-github-packages-registry/working-with-the-nuget-registry"
+      ],
+      "kind": "hosted-registry-provider",
+      "match": "exact",
+      "status": "approved",
+      "target": "nuget.pkg.github.com"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "evidence": [
+        "https://docs.nvidia.com/ngc/gpu-cloud/ngc-private-registry-user-guide/"
+      ],
+      "kind": "hosted-registry",
+      "match": "exact",
+      "status": "approved",
+      "target": "nvcr.io"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://github.com/Comcast/sirius/blob/b69ca498cb5d8a225eaa90c4d091ff7d913e6836/build.sbt",
+        "https://github.com/Glamdring/computoser/blob/94b518cc46d672ee062532befd180f2105f0f248/pom.xml",
+        "https://github.com/PhantomThief/simple-failover-java/blob/c024cb9ab8e77784ba10af5b3da3d82da5c7cd35/pom.xml",
+        "https://github.com/appreciated/vaadin-app-layout/blob/c9d2a70eef045f07e7a06f207fe406da70ace5f2/pom.xml",
+        "https://github.com/cternes/openkeepass/blob/761839f1c151f37b2fb7ac1fdfecb4d099e4e0bb/pom.xml",
+        "https://github.com/e-gineering/gitflow-helper-maven-plugin/blob/2d6d947113a17fc56d51349cff71b201ed3ee476/pom.xml",
+        "https://github.com/hsp8712/addrparser/blob/a6e7d12fbe51fc63c80a7577a904f88b221727fe/pom.xml",
+        "https://github.com/json-template/JsonTemplate/blob/093d5a74f0d71259497b650355e6482e9ded9975/pom.xml",
+        "https://github.com/knowitall/openie/blob/877f182c9c9ffc0c6d1d25e9ebaec493a6ba8496/build.sbt",
+        "https://github.com/kristian/system-hook/blob/c9463895324c5b467f0b8535dbd90a440006645d/pom.xml",
+        "https://github.com/lior-k/fast-elasticsearch-vector-scoring/blob/bb3405bfe8ed3cd21694b7d98a5e1b3c505bbccb/pom.xml",
+        "https://github.com/liu-xiao-dong/JD-Test/blob/9dc3696d0492d80a9d6ff9c2ddb32a0600ece71c/build.gradle",
+        "https://github.com/lobobrowser/LoboBrowser/blob/7d60db5425c09b6c11c8b82c4fcc943cc5de0410/pom.xml",
+        "https://github.com/mikeyhu/scaladiagrams/blob/8508bb490e9d9a1802679cde19909a9f6f2d7313/build.sbt",
+        "https://github.com/mongobee/mongobee/blob/4e1ec5e381121fc9e5ad54881c84029114bafa52/pom.xml",
+        "https://github.com/nidi3/graphviz-java/blob/f0c1fdfa37c8b9876ef1dcccec1a6c19219e727e/settings.xml",
+        "https://github.com/pinpoint-apm/pinpoint/blob/09324f126394c7461894c93a9ecec0a6b8ef6532/pom.xml",
+        "https://github.com/stirante/RuneChanger/blob/29eed9f735e01c41e799f81c9a223b112ae6a3b7/pom.xml",
+        "https://github.com/ushahidi/SMSSync/blob/01b0271d87c6d095b187388dca9652b02d29abaa/build.gradle"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "oss.sonatype.org"
+    },
+    {
+      "categories": [
+        "multi_ecosystem"
+      ],
+      "evidence": [
+        "https://packagecloud.io/docs"
+      ],
+      "kind": "hosted-registry-provider",
+      "match": "exact",
+      "status": "approved",
+      "target": "packagecloud.io"
+    },
+    {
+      "categories": [
+        "r"
+      ],
+      "evidence": [
+        "https://packagemanager.posit.co/"
+      ],
+      "kind": "hosted-registry",
+      "match": "exact",
+      "status": "approved",
+      "target": "packagemanager.posit.co"
+    },
+    {
+      "categories": [
+        "php"
+      ],
+      "evidence": [
+        "https://www.drupal.org/docs/develop/using-composer/manage-dependencies"
+      ],
+      "kind": "vendor-repository",
+      "match": "exact",
+      "status": "approved",
+      "target": "packages.drupal.org"
+    },
+    {
+      "categories": [
+        "php"
+      ],
+      "evidence": [
+        "https://packagist.org/about"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "packagist.org"
+    },
+    {
+      "categories": [
+        "containers",
+        "multi_ecosystem"
+      ],
+      "evidence": [
+        "https://cloud.google.com/artifact-registry/docs/repositories"
+      ],
+      "kind": "hosted-registry-provider",
+      "match": "suffix",
+      "status": "approved",
+      "target": ".pkg.dev"
+    },
+    {
+      "categories": [
+        "julia"
+      ],
+      "evidence": [
+        "https://pkgdocs.julialang.org/dev/registries/"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "pkg.julialang.org"
+    },
+    {
+      "categories": [
+        "dotnet",
+        "multi_ecosystem"
+      ],
+      "evidence": [
+        "https://learn.microsoft.com/azure/devops/artifacts/start-using-azure-artifacts"
+      ],
+      "kind": "hosted-registry-provider",
+      "match": "exact",
+      "status": "approved",
+      "target": "pkgs.dev.azure.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://plugins.gradle.org/docs"
+      ],
+      "kind": "artifact-cdn",
+      "match": "exact",
+      "status": "approved",
+      "target": "plugins-artifacts.gradle.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://plugins.gradle.org/docs"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "plugins.gradle.org"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "evidence": [
+        "https://prefix.dev/docs"
+      ],
+      "kind": "hosted-registry",
+      "match": "exact",
+      "status": "approved",
+      "target": "prefix.dev"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "evidence": [
+        "https://docs.docker.com/desktop/setup/allow-list/"
+      ],
+      "kind": "artifact-cdn",
+      "match": "exact",
+      "status": "approved",
+      "target": "production.cloudflare.docker.com"
+    },
+    {
+      "categories": [
+        "go"
+      ],
+      "evidence": [
+        "https://go.dev/ref/mod#goproxy-protocol"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "proxy.golang.org"
+    },
+    {
+      "categories": [
+        "dart"
+      ],
+      "evidence": [
+        "https://raw.githubusercontent.com/package-url/purl-spec/main/docs/types/definitions/pub-definition.md"
+      ],
+      "kind": "canonical-alias",
+      "match": "exact",
+      "status": "approved",
+      "target": "pub.dartlang.org"
+    },
+    {
+      "categories": [
+        "dart"
+      ],
+      "evidence": [
+        "https://dart.dev/tools/pub/custom-package-repositories"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "pub.dev"
+    },
+    {
+      "categories": [
+        "dart"
+      ],
+      "evidence": [
+        "https://docs.flutter.dev/community/china"
+      ],
+      "kind": "mirror",
+      "match": "exact",
+      "status": "approved",
+      "target": "pub.flutter-io.cn"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "evidence": [
+        "https://docs.aws.amazon.com/AmazonECR/latest/public/what-is-ecr.html"
+      ],
+      "kind": "hosted-registry",
+      "match": "exact",
+      "status": "approved",
+      "target": "public.ecr.aws"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "evidence": [
+        "https://github.com/BaihaiAI/IDP/blob/23eadcda9d3b7c57dd377ecffb574207daca099b/docker_build/pip.conf",
+        "https://github.com/pyeden/FastAPI-demo/blob/98d46fb00c2d1fbb371bb4b319e44b0ef55a4e90/pip.conf"
+      ],
+      "kind": "mirror",
+      "match": "exact",
+      "status": "approved",
+      "target": "pypi.douban.com"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "evidence": [
+        "https://github.com/kerlomz/captcha_platform/blob/f7d719bd1239a987996e266bd7fe35c96003b378/.pip.conf",
+        "https://github.com/khs1994-docker/lnmp/blob/43eb77cb0d88b46f9da42d36921ff3db787eb0cc/config/python/.pip/pip.conf",
+        "https://github.com/pinry/pinry/blob/05476b112401cf34a38bfbffc67c37f5f6c3b38f/docker/pip.conf"
+      ],
+      "kind": "mirror",
+      "match": "exact",
+      "status": "approved",
+      "target": "pypi.doubanio.com"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "evidence": [
+        "https://github.com/unias/docklet/blob/70c089a6a5bb186dc3f898127af84d79b4dfab2d/tools/pip.conf"
+      ],
+      "kind": "mirror",
+      "match": "exact",
+      "status": "approved",
+      "target": "pypi.mirrors.ustc.edu.cn"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "evidence": [
+        "https://github.com/liguodongiot/llm-action/blob/3a1e24448ec451108f448580fa8a37f04ee834f2/llm-compression/quantization/llm-qat/cfd70ff/pip.conf"
+      ],
+      "kind": "canonical-index",
+      "match": "exact",
+      "status": "approved",
+      "target": "pypi.ngc.nvidia.com"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "evidence": [
+        "https://github.com/arhanjain/polaris/blob/129abc45f680559a7da62b9280fdb127b02b7275/pyproject.toml"
+      ],
+      "kind": "canonical-index",
+      "match": "exact",
+      "status": "approved",
+      "target": "pypi.nvidia.com"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "evidence": [
+        "https://packaging.python.org/en/latest/specifications/simple-repository-api/"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "pypi.org"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "evidence": [
+        "https://github.com/0xbug/Hawkeye/blob/3ef48c27c47c86c8bfe013b4a266e08534c821d4/deploy/pyenv/pip.conf",
+        "https://github.com/BaihaiAI/IDP/blob/23eadcda9d3b7c57dd377ecffb574207daca099b/docker_build/pip.conf",
+        "https://github.com/IceBearAI/LLM-And-More/blob/95ca1d266c213f22d1f35e17e96407d353625010/docker/llmops/pip.conf",
+        "https://github.com/Vu1nT0tal/IoT-vulhub/blob/80a58b00485403fd88578da85d846210cc9792f2/baseImage/ubuntu1604/pip.conf",
+        "https://github.com/jianzfb/antgo/blob/4cf2c5b2eebb526718b4211910ca3cea975c79cd/docker/pip.conf",
+        "https://github.com/pyeden/FastAPI-demo/blob/98d46fb00c2d1fbb371bb4b319e44b0ef55a4e90/pip.conf",
+        "https://github.com/xiesx123/CreatorBox/blob/bc1adf57267a973566fdcf47b3ecffbcce1a12a2/pyproject.toml"
+      ],
+      "kind": "mirror",
+      "match": "exact",
+      "status": "approved",
+      "target": "pypi.tuna.tsinghua.edu.cn"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "evidence": [
+        "https://docs.quay.io/"
+      ],
+      "kind": "hosted-registry",
+      "match": "exact",
+      "status": "approved",
+      "target": "quay.io"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "evidence": [
+        "https://docs.docker.com/docker-hub/"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "registry-1.docker.io"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "evidence": [
+        "https://access.redhat.com/RegistryAuthentication"
+      ],
+      "kind": "hosted-registry",
+      "match": "exact",
+      "status": "approved",
+      "target": "registry.access.redhat.com"
+    },
+    {
+      "categories": [
+        "containers",
+        "multi_ecosystem"
+      ],
+      "evidence": [
+        "https://docs.gitlab.com/user/packages/container_registry/"
+      ],
+      "kind": "hosted-registry",
+      "match": "exact",
+      "status": "approved",
+      "target": "registry.gitlab.com"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "evidence": [
+        "https://kubernetes.io/blog/2023/03/10/image-registry-redirect/"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "registry.k8s.io"
+    },
+    {
+      "categories": [
+        "javascript"
+      ],
+      "evidence": [
+        "https://docs.npmjs.com/cli/v11/using-npm/registry"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "registry.npmjs.org"
+    },
+    {
+      "categories": [
+        "javascript"
+      ],
+      "evidence": [
+        "https://npmmirror.com/"
+      ],
+      "kind": "mirror",
+      "match": "exact",
+      "status": "approved",
+      "target": "registry.npmmirror.com"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "evidence": [
+        "https://access.redhat.com/RegistryAuthentication"
+      ],
+      "kind": "hosted-registry",
+      "match": "exact",
+      "status": "approved",
+      "target": "registry.redhat.io"
+    },
+    {
+      "categories": [
+        "javascript"
+      ],
+      "evidence": [
+        "https://yarnpkg.com/configuration/yarnrc#npmRegistryServer"
+      ],
+      "kind": "mirror",
+      "match": "exact",
+      "status": "approved",
+      "target": "registry.yarnpkg.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://github.com/prnicolas/ScalaMl/blob/cb06d36f90e525da904af2a5ad98cd4616284e64/build.sbt"
+      ],
+      "kind": "vendor-repository",
+      "match": "exact",
+      "status": "approved",
+      "target": "repo.akka.io"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "evidence": [
+        "https://www.anaconda.com/docs/getting-started/working-with-conda/reference/default-repositories"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "repo.anaconda.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://github.com/lambdaisland/deep-diff2/blob/c01094c6827d7ff047545941525e4677a04a6d99/pom.xml"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "repo.clojars.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://github.com/adept-dm/adept/blob/94bf9976e02721c4af5f0c019a954b90a09de175/build.sbt"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "repo.eclipse.org"
+    },
+    {
+      "categories": [
+        "erlang"
+      ],
+      "evidence": [
+        "https://hex.pm/docs/usage"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "repo.hex.pm"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://github.com/JoySafety/JoySafety/blob/a2342fdb6c105f00f8045a8c7d9c7cbb35972582/deploy/settings.xml",
+        "https://github.com/ZhongFuCheng3y/austin/blob/8379c029e0ba3c541f1e34cfc9c8401a4355b2f6/doc/maven/settings.xml",
+        "https://github.com/platonai/Browser4/blob/8b22bc969140bf5e3d61273da0f3a0ece81a48fb/bin/tools/maven/cn/settings.xml"
+      ],
+      "kind": "mirror",
+      "match": "exact",
+      "status": "approved",
+      "target": "repo.huaweicloud.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://maven.apache.org/pom.html"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "repo.maven.apache.org"
+    },
+    {
+      "categories": [
+        "php"
+      ],
+      "evidence": [
+        "https://packagist.org/about"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "repo.packagist.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://github.com/jason1210/java-bucket/blob/35b36216775d8fe58e1122203b1a2f9e17e61966/pom.xml"
+      ],
+      "kind": "mirror",
+      "match": "exact",
+      "status": "approved",
+      "target": "repo.rdc.aliyun.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://repo.spring.io/"
+      ],
+      "kind": "vendor-repository",
+      "match": "exact",
+      "status": "approved",
+      "target": "repo.spring.io"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://github.com/Glamdring/computoser/blob/94b518cc46d672ee062532befd180f2105f0f248/pom.xml"
+      ],
+      "kind": "canonical-alias",
+      "match": "exact",
+      "status": "approved",
+      "target": "repo.springsource.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://github.com/Comcast/sirius/blob/b69ca498cb5d8a225eaa90c4d091ff7d913e6836/build.sbt",
+        "https://github.com/adept-dm/adept/blob/94bf9976e02721c4af5f0c019a954b90a09de175/build.sbt",
+        "https://github.com/chrisdinn/brando/blob/efcc20d6b99868d121f8fd7923ebf8b2d9e97089/build.sbt",
+        "https://github.com/geeksville/arduleader/blob/15f8c543ddead9a5a272fd891545325aff8ef7d7/build.sbt",
+        "https://github.com/kenshoo/metrics-play/blob/6c33b0998ded70458703a5089a914e889df2a5a8/build.sbt",
+        "https://github.com/mikeyhu/scaladiagrams/blob/8508bb490e9d9a1802679cde19909a9f6f2d7313/build.sbt"
+      ],
+      "kind": "vendor-repository",
+      "match": "exact",
+      "status": "approved",
+      "target": "repo.typesafe.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://maven.apache.org/repository/"
+      ],
+      "kind": "canonical-alias",
+      "match": "exact",
+      "status": "approved",
+      "target": "repo1.maven.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://github.com/Glamdring/computoser/blob/94b518cc46d672ee062532befd180f2105f0f248/pom.xml",
+        "https://github.com/nidi3/graphviz-java/blob/f0c1fdfa37c8b9876ef1dcccec1a6c19219e727e/settings.xml",
+        "https://github.com/norbert-radyk/spoiwo/blob/a99a156a3217f0ae4a777c02c152dcf90fd77cc7/build.sbt"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "repository.apache.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://repository.jboss.org/"
+      ],
+      "kind": "vendor-repository",
+      "match": "exact",
+      "status": "approved",
+      "target": "repository.jboss.org"
+    },
+    {
+      "categories": [
+        "rust"
+      ],
+      "evidence": [
+        "https://rsproxy.cn/"
+      ],
+      "kind": "mirror",
+      "match": "exact",
+      "status": "approved",
+      "target": "rsproxy.cn"
+    },
+    {
+      "categories": [
+        "ruby"
+      ],
+      "evidence": [
+        "https://guides.rubygems.org/run-your-own-gem-server/"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "rubygems.org"
+    },
+    {
+      "categories": [
+        "multi_ecosystem",
+        "ruby"
+      ],
+      "evidence": [
+        "https://docs.github.com/packages/working-with-a-github-packages-registry/working-with-the-rubygems-registry"
+      ],
+      "kind": "hosted-registry-provider",
+      "match": "exact",
+      "status": "approved",
+      "target": "rubygems.pkg.github.com"
+    },
+    {
+      "categories": [
+        "haskell"
+      ],
+      "evidence": [
+        "https://www.stackage.org/"
+      ],
+      "kind": "curated-repository",
+      "match": "exact",
+      "status": "approved",
+      "target": "stackage.org"
+    },
+    {
+      "categories": [
+        "rust"
+      ],
+      "evidence": [
+        "https://doc.rust-lang.org/cargo/reference/registry-index.html"
+      ],
+      "kind": "artifact-cdn",
+      "match": "exact",
+      "status": "approved",
+      "target": "static.crates.io"
+    },
+    {
+      "categories": [
+        "go"
+      ],
+      "evidence": [
+        "https://go.dev/ref/mod#checksum-database"
+      ],
+      "kind": "checksum-service",
+      "match": "exact",
+      "status": "approved",
+      "target": "sum.golang.org"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "evidence": [
+        "https://packaging.python.org/en/latest/guides/using-testpypi/"
+      ],
+      "kind": "canonical-test",
+      "match": "exact",
+      "status": "approved",
+      "target": "test.pypi.org"
+    },
+    {
+      "categories": [
+        "swift"
+      ],
+      "evidence": [
+        "https://guides.cocoapods.org/making/getting-setup-with-trunk.html"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "trunk.cocoapods.org"
+    },
+    {
+      "categories": [
+        "javascript"
+      ],
+      "evidence": [
+        "https://unpkg.com/"
+      ],
+      "kind": "artifact-cdn",
+      "match": "exact",
+      "status": "approved",
+      "target": "unpkg.com"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "evidence": [
+        "https://github.com/linuxserver/docker-homeassistant/blob/21583925d1d4f64b92bbbc3951af15bc1f954b15/root/etc/pip.conf"
+      ],
+      "kind": "canonical-index",
+      "match": "exact",
+      "status": "approved",
+      "target": "wheels.home-assistant.io"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "evidence": [
+        "https://github.com/mcoblenz/Obsidian/blob/a32efc07b0a3c3128413999324f55f16fb349c1b/build.sbt"
+      ],
+      "kind": "canonical-alias",
+      "match": "exact",
+      "status": "approved",
+      "target": "www.jitpack.io"
+    },
+    {
+      "categories": [
+        "dotnet"
+      ],
+      "evidence": [
+        "https://www.nuget.org/"
+      ],
+      "kind": "canonical",
+      "match": "exact",
+      "status": "approved",
+      "target": "www.nuget.org"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "evidence": [
+        "https://github.com/Jpe230/SonicPad-Debian/blob/aa2c5853e61627aeee5f1d4aa6c0b5c5dbdc59d5/src/base_rootfs/etc/pip.conf",
+        "https://github.com/RickDB/PlexAniSync/blob/ae7905433867bce5bff9000b50d4ce161085a3f0/Docker/PlexAniSync/pip.conf",
+        "https://github.com/RickDB/PlexAniSync/blob/ae7905433867bce5bff9000b50d4ce161085a3f0/Docker/Tautulli/pip.conf",
+        "https://github.com/ambianic/ambianic-edge/blob/cad14a3ae8a2149c9e17e1bd41ee7d1b75568271/build/raspberrypi.pip.conf",
+        "https://github.com/balena-io-experimental/inkyshot/blob/9af36eb3d84f8528d8b6959f2c255d6d86aeb08c/inkyshot/pip.conf",
+        "https://github.com/bluerobotics/BlueOS/blob/8e16119ea52340fd9dbb596fbc0f7a49090871d3/bootstrap/pip.conf",
+        "https://github.com/dtcooper/raspberrypi-os-docker/blob/0e597b219f17d9017819051e0b317b5d4f0ba485/image/etc/pip.conf",
+        "https://github.com/niccokunzmann/open-web-calendar/blob/718fb2aa5f334ff914cca91e55713793728b6c4c/docker/pip.conf",
+        "https://github.com/thorrak/fermentrack/blob/1aea05b07b9445edce2f39480b03c93eced125e6/compose/production/django/pip.conf"
+      ],
+      "kind": "canonical-index",
+      "match": "exact",
+      "status": "approved",
+      "target": "www.piwheels.org"
+    }
+  ],
+  "schema_version": 1
 }

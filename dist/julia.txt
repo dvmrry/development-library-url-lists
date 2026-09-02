@@ -1,1 +1,3 @@
+mirrors.nju.edu.cn
+mirrors.ustc.edu.cn
 pkg.julialang.org

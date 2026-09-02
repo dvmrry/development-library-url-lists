@@ -1,6 +1,8 @@
 api.myget.org
 api.nuget.org
+.feedz.io
 globalcdn.nuget.org
+.myget.org
 nuget.pkg.github.com
 pkgs.dev.azure.com
 www.nuget.org

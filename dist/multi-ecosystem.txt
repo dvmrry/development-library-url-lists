@@ -1,9 +1,11 @@
 api.myget.org
 .cloudsmith.io
+.feedz.io
 .fury.io
 ghcr.io
 .jfrog.io
 maven.pkg.github.com
+.myget.org
 npm.pkg.github.com
 nuget.pkg.github.com
 packagecloud.io

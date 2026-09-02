@@ -1,4 +1,2039 @@
 {
-  "schema_version": 1,
-  "candidates": []
+  "candidates": [
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "1e8d15c63ea5dbc1624f0b7b1d20c4d52bdb18f97e41f93f8831150f3d2c71a7",
+          "extractor": "pip-config",
+          "query_id": "pip-extra-index",
+          "repository": "vrk-kpa/opendata",
+          "source": "https://github.com/vrk-kpa/opendata/blob/163b9498df2b9411790129f9adf0f2db989be237/ckan/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "ckan/pip.conf",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "alpine-wheels.github.io"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "ccd1ac76b2905475ef4787f67c6c0589bfa26a68b19bc9362894c9b5e36053cb",
+          "extractor": "conda-yaml",
+          "query_id": "conda-channel-alias",
+          "repository": "pnlbwh/multi-shell-dMRIharmonization",
+          "source": "https://github.com/pnlbwh/multi-shell-dMRIharmonization/blob/602fe91b93fe4bc3166881ab392d1d9f2fe51a53/.condarc",
+          "source_kind": "github-code",
+          "source_path": ".condarc",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "anaconda.mgb.org"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "afd7ef807dfa7150612b637457530743ce23394365b49f47a83139c1d9e897b5",
+          "extractor": "conda-yaml",
+          "query_id": "conda-channel-alias",
+          "repository": "NOAA-GSL/contrib_miniconda3",
+          "source": "https://github.com/NOAA-GSL/contrib_miniconda3/blob/8c97c66923a30b91d7518e5b7d43c9f3274f61cd/4.5.12/.condarc",
+          "source_kind": "github-code",
+          "source_path": "4.5.12/.condarc",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "anaconda.rdhpcs.noaa.gov"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "retired-service"
+      ],
+      "sources": [
+        {
+          "content_sha256": "b5ff90ba65c83de18fb695bc15285c2a18fca17620c9280effe3e99354002f2a",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "Exiv2/exiv2",
+          "source": "https://github.com/Exiv2/exiv2/blob/e84cb9db060527416a43f3d257656331c85aff28/README-CONAN.md",
+          "source_kind": "github-code",
+          "source_path": "README-CONAN.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "90ed321f3ea110da2bad5ba748c8f78a5bbbbceb17044bef505200c85d30ed3d",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "LesnyRumcajs/grpc_bench",
+          "source": "https://github.com/LesnyRumcajs/grpc_bench/blob/48b6b958832c995eee021361bdf3544d7c356fcc/lua_grpc_st_onhold/Dockerfile",
+          "source_kind": "github-code",
+          "source_path": "lua_grpc_st_onhold/Dockerfile",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "799284543382148ee4be0666170733c367217d785cdd3c700a242f396f64c64f",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "PacktPublishing/Software-Architecture-with-Cpp",
+          "source": "https://github.com/PacktPublishing/Software-Architecture-with-Cpp/blob/8be901cafa57654d7b3ad360126bf3c9d668cca2/Chapter12/README.md",
+          "source_kind": "github-code",
+          "source_path": "Chapter12/README.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "3bafdee484f99462badd2fb2dc9f1a19bfa649517270b6379357ffd6619fb907",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "ericniebler/range-v3",
+          "source": "https://github.com/ericniebler/range-v3/blob/108f93c279c8f9cec175dac361084983d0176e99/CMakeLists.txt",
+          "source_kind": "github-code",
+          "source_path": "CMakeLists.txt",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "e3595218986edc830c8608314cd943929a21062cc22ea2e1151f45ba5b51feff",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "facebookincubator/FBX2glTF",
+          "source": "https://github.com/facebookincubator/FBX2glTF/blob/739ee5db94b0ca9eabe2b6ed92f32d13175072a3/Dockerfile",
+          "source_kind": "github-code",
+          "source_path": "Dockerfile",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "21378ffd6af282458258677828afcd494babb896b886a2405487102c95d1f6ce",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "facebookincubator/FBX2glTF",
+          "source": "https://github.com/facebookincubator/FBX2glTF/blob/739ee5db94b0ca9eabe2b6ed92f32d13175072a3/README.md",
+          "source_kind": "github-code",
+          "source_path": "README.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "f973cb5036f8f44bd9b2e113baa911fd376eae09d43dd32e48cc8dc88de46709",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "grisumbras/enum-flags",
+          "source": "https://github.com/grisumbras/enum-flags/blob/48d25b470ee6971d0db15f020937abf6017ebf51/README.md",
+          "source_kind": "github-code",
+          "source_path": "README.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "20fabdab06dc06926ed660160d52702379b01478e631b976b97dca99f4af2da8",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "jinq0123/LuaPbIntf",
+          "source": "https://github.com/jinq0123/LuaPbIntf/blob/781761b3557c5a08b47446ad10b30d83d4b79ddf/README.md",
+          "source_kind": "github-code",
+          "source_path": "README.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "5ac8029644640c002d0f497cde7660704ad249b490e8023e2d66d53a4f234f9d",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "jinq0123/grpc-lua",
+          "source": "https://github.com/jinq0123/grpc-lua/blob/90797e106b89e81837f53df1c61aad28ed32dbac/README.md",
+          "source_kind": "github-code",
+          "source_path": "README.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "e5c045bc1f008d0e1c2509c01addc61c8a1c12cbbf3a2f302ff9510b89450c75",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "karasusan/OpenVDBForUnity",
+          "source": "https://github.com/karasusan/OpenVDBForUnity/blob/d4906025a0592c52d07edef151ce2b2b904f2bc8/.travis/install.sh",
+          "source_kind": "github-code",
+          "source_path": ".travis/install.sh",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "6530ab83e98d7df9d53f1c162b831c6276a8941bed0158a9b2d6acd1ed2d0b7d",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "kmhofmann/selene",
+          "source": "https://github.com/kmhofmann/selene/blob/11718e1a7de6ff6251c46e4ef429a7cfb1bdb9eb/docs/installation.md",
+          "source_kind": "github-code",
+          "source_path": "docs/installation.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "4867062c206912787a9a1e598e2a94ca182c4a9257b9660484b939382f96d405",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "thelfer/tfel",
+          "source": "https://github.com/thelfer/tfel/blob/df68fbe6cdd2954d03e417941b85331451872c08/README-conan.md",
+          "source_kind": "github-code",
+          "source_path": "README-conan.md",
+          "source_role": "documentation"
+        }
+      ],
+      "target": "api.bintray.com"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "medium",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "9524f35353f03af0b192ea43f3f616d029fc220e08b3b1d180228382a1da3a96",
+          "extractor": "conan-json",
+          "query_id": "conan-remotes-json",
+          "repository": "SiliconLabs/matter_extension",
+          "source": "https://github.com/SiliconLabs/matter_extension/blob/5e1a67e5bc22b0778a4e8844f4d08b4d77a2d78b/packages/remotes.json",
+          "source_kind": "github-code",
+          "source_path": "packages/remotes.json",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "d15a1418086f0575ca3506b3a3f06c40c5c7ab85c4e39518f5763cf7b34cf71b",
+          "extractor": "conan-json",
+          "query_id": "conan-remotes-json",
+          "repository": "SiliconLabs/z-wave-ts-silabs",
+          "source": "https://github.com/SiliconLabs/z-wave-ts-silabs/blob/10c51c790f463d0bee11eb7fe3d30bb33afcfe26/remotes.json",
+          "source_kind": "github-code",
+          "source_path": "remotes.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "artifactory-local.silabs.net"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "3ca1d9f9a7282ed6ae018972f4f003accc4faaef70e1e2cd1dcab0ef0afdd62f",
+          "extractor": "pip-config",
+          "query_id": "pip-extra-index",
+          "repository": "nasa/opera-sds-pcm",
+          "source": "https://github.com/nasa/opera-sds-pcm/blob/9a4172637f8c7c600b21488c8eebe00dc923dffb/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "pip.conf",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "artifactory.jpl.nasa.gov"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "247892576beb549d3cd1670fa9536527a881c3500089220a7cfd18f44a593fbd",
+          "extractor": "conan-json",
+          "query_id": "conan-remotes-json",
+          "repository": "xtuml/masl",
+          "source": "https://github.com/xtuml/masl/blob/7a59e1f6cebbf802e5162172043e69a4912acad7/docker/masl-dev/conan-config/remotes.json",
+          "source_kind": "github-code",
+          "source_path": "docker/masl-dev/conan-config/remotes.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "artifactory.onefact.net"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "medium",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "9524f35353f03af0b192ea43f3f616d029fc220e08b3b1d180228382a1da3a96",
+          "extractor": "conan-json",
+          "query_id": "conan-remotes-json",
+          "repository": "SiliconLabs/matter_extension",
+          "source": "https://github.com/SiliconLabs/matter_extension/blob/5e1a67e5bc22b0778a4e8844f4d08b4d77a2d78b/packages/remotes.json",
+          "source_kind": "github-code",
+          "source_path": "packages/remotes.json",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "d15a1418086f0575ca3506b3a3f06c40c5c7ab85c4e39518f5763cf7b34cf71b",
+          "extractor": "conan-json",
+          "query_id": "conan-remotes-json",
+          "repository": "SiliconLabs/z-wave-ts-silabs",
+          "source": "https://github.com/SiliconLabs/z-wave-ts-silabs/blob/10c51c790f463d0bee11eb7fe3d30bb33afcfe26/remotes.json",
+          "source_kind": "github-code",
+          "source_path": "remotes.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "artifactory.silabs.net"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "ecbb16614c243dd343a5e8517d3ff95edf7c09a3a66fa1d6a9503cad49e948bf",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "camunda/camunda",
+          "source": "https://github.com/camunda/camunda/blob/672b5a7a0add9f5be80078f191f988c5bb9fc841/maven-settings.xml",
+          "source_kind": "github-code",
+          "source_path": "maven-settings.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "artifacts.camunda.com"
+    },
+    {
+      "categories": [
+        "go"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "sources": [
+        {
+          "content_sha256": "dee66b4d90d11c8178f721274291313a93d712dc292f077ba96db5b1c229502e",
+          "extractor": "environment-assignment",
+          "query_id": "go-proxy",
+          "repository": "IBAX-io/go-ibax",
+          "source": "https://github.com/IBAX-io/go-ibax/blob/66f135846a10d1a1edddbceff517b9c937639576/README.md",
+          "source_kind": "github-code",
+          "source_path": "README.md",
+          "source_role": "documentation"
+        }
+      ],
+      "target": "athens.azurefd.net"
+    },
+    {
+      "categories": [
+        "dotnet"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "4301538b513b656ec8dbca5018a8714a5e2d29f87e35f8fa9803a01a8294c292",
+          "extractor": "nuget-xml",
+          "query_id": "nuget-package-sources",
+          "repository": "mgravell/PooledAwait",
+          "source": "https://github.com/mgravell/PooledAwait/blob/e1b18312be845e77751178be1793aaee95ab22c6/nuget.config",
+          "source_kind": "github-code",
+          "source_path": "nuget.config",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "ci.appveyor.com"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "nonstandard-port"
+      ],
+      "sources": [
+        {
+          "content_sha256": "45ee9df791db6dc56e7a9546c19c7e224db1a0713035aa406af1aca29a9651ba",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "ray-cast/AnimatorGo",
+          "source": "https://github.com/ray-cast/AnimatorGo/blob/473539b34b9b7986538a2053004e1c1292129bc0/build.bat",
+          "source_kind": "github-code",
+          "source_path": "build.bat",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "conan.iteale.com:19479"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "sources": [
+        {
+          "content_sha256": "0e0a1a86653aa27a18854e01e3d36bee87537b556a4afb27dc73c4b440103130",
+          "extractor": "conan-cli",
+          "query_id": "conan-remote-cli",
+          "repository": "NatLabRockies/OpenStudio",
+          "source": "https://github.com/NatLabRockies/OpenStudio/blob/03150b3539f27b244bac75e249ab6b6a9583cc8d/BUILDING.md",
+          "source_kind": "github-code",
+          "source_path": "BUILDING.md",
+          "source_role": "documentation"
+        }
+      ],
+      "target": "conan.openstudio.net"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "medium",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "9524f35353f03af0b192ea43f3f616d029fc220e08b3b1d180228382a1da3a96",
+          "extractor": "conan-json",
+          "query_id": "conan-remotes-json",
+          "repository": "SiliconLabs/matter_extension",
+          "source": "https://github.com/SiliconLabs/matter_extension/blob/5e1a67e5bc22b0778a4e8844f4d08b4d77a2d78b/packages/remotes.json",
+          "source_kind": "github-code",
+          "source_path": "packages/remotes.json",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "d15a1418086f0575ca3506b3a3f06c40c5c7ab85c4e39518f5763cf7b34cf71b",
+          "extractor": "conan-json",
+          "query_id": "conan-remotes-json",
+          "repository": "SiliconLabs/z-wave-ts-silabs",
+          "source": "https://github.com/SiliconLabs/z-wave-ts-silabs/blob/10c51c790f463d0bee11eb7fe3d30bb33afcfe26/remotes.json",
+          "source_kind": "github-code",
+          "source_path": "remotes.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "conan.silabs.net"
+    },
+    {
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "697b86cd2fd569ebc44ca77770f19f95b9fa3e4b305b22a80f3c8e75eff906ee",
+          "extractor": "r-repositories",
+          "query_id": "r-repositories",
+          "repository": "Kaggle/docker-rstats",
+          "source": "https://github.com/Kaggle/docker-rstats/blob/7f87ef40939e893f34939e3f033c61cd2d1ce9bb/RProfile.R",
+          "source_kind": "github-code",
+          "source_path": "RProfile.R",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "f085b7602596dcc597982072587a6174178372944dd0a166c246a56603d3d492",
+          "extractor": "r-repositories",
+          "query_id": "r-repositories",
+          "repository": "natverse/nat",
+          "source": "https://github.com/natverse/nat/blob/ccf69b118f3475130748bafb1b087c8aca30a6ce/build_docs.r",
+          "source_kind": "github-code",
+          "source_path": "build_docs.r",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "5cf28af883877757ca54168a56c57872d70df7349778b24529d57fa0b38b329a",
+          "extractor": "r-repositories",
+          "query_id": "r-repositories",
+          "repository": "rstudio/tinytex",
+          "source": "https://github.com/rstudio/tinytex/blob/d01200eb642187eb3b00b02084500844906cbeef/tools/config.R",
+          "source_kind": "github-code",
+          "source_path": "tools/config.R",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "cran.rstudio.com"
+    },
+    {
+      "categories": [
+        "rust"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "7f79d5e8e9f62b1c3decd7dbbcdd8ca3918db32bb47bbd4f5335f2c8674917a8",
+          "extractor": "cargo-toml",
+          "query_id": "cargo-registries",
+          "repository": "Sunscreen-tech/Sunscreen",
+          "source": "https://github.com/Sunscreen-tech/Sunscreen/blob/f8ee4a0dc32418f2acd9e176c6f0af73cdf68d40/.cargo/config.toml",
+          "source_kind": "github-code",
+          "source_path": ".cargo/config.toml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "crates.sunscreen.tech"
+    },
+    {
+      "categories": [
+        "dart"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "sources": [
+        {
+          "content_sha256": "55feea41fd423d98714431f2d812f1c971e8d2ac3b96dc560f55c367c8a6ab73",
+          "extractor": "environment-assignment",
+          "query_id": "dart-pub-hosted",
+          "repository": "yuchuangu85/Develop-Source",
+          "source": "https://github.com/yuchuangu85/Develop-Source/blob/0868142a7b4994194e4980c4620ae6ee628a3bfb/Cross-Platform/Flutter/README.md",
+          "source_kind": "github-code",
+          "source_path": "Cross-Platform/Flutter/README.md",
+          "source_role": "documentation"
+        }
+      ],
+      "target": "dart-pub.mirrors.sjtug.sjtu.edu.cn"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "retired-service"
+      ],
+      "sources": [
+        {
+          "content_sha256": "b5504563effa64156b9d82b02f2b4474b7e4e9456d14042ea0efce45e387f6fb",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "devexperts/aprof",
+          "source": "https://github.com/devexperts/aprof/blob/d211d6a059ddd1be8542e64276c8bf3dfe278501/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "d1d570e0769cae0dbc34329915a03fa2c25a898d4c3f0778e5cb9af5a3644208",
+          "extractor": "sbt-resolver",
+          "query_id": "sbt-resolvers",
+          "repository": "kenshoo/metrics-play",
+          "source": "https://github.com/kenshoo/metrics-play/blob/6c33b0998ded70458703a5089a914e889df2a5a8/build.sbt",
+          "source_kind": "github-code",
+          "source_path": "build.sbt",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "71b39cb0747f7208d7a2c05fe5592e5295161f9986dae75f0d02ae8f9cba1b27",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "stirante/RuneChanger",
+          "source": "https://github.com/stirante/RuneChanger/blob/29eed9f735e01c41e799f81c9a223b112ae6a3b7/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "dl.bintray.com"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "d306d457e1487fb4c5beb5f56fcf1756ec7c60db7846c852a05e0cc93f38b929",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "easzlab/kubeasz",
+          "source": "https://github.com/easzlab/kubeasz/blob/2547bf30deeb3becbf5630156a9fbcf71a432101/roles/docker/templates/daemon.json.j2",
+          "source_kind": "github-code",
+          "source_path": "roles/docker/templates/daemon.json.j2",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "docker.1ms.run"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "d306d457e1487fb4c5beb5f56fcf1756ec7c60db7846c852a05e0cc93f38b929",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "easzlab/kubeasz",
+          "source": "https://github.com/easzlab/kubeasz/blob/2547bf30deeb3becbf5630156a9fbcf71a432101/roles/docker/templates/daemon.json.j2",
+          "source_kind": "github-code",
+          "source_path": "roles/docker/templates/daemon.json.j2",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "docker.1panel.live"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "d306d457e1487fb4c5beb5f56fcf1756ec7c60db7846c852a05e0cc93f38b929",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "easzlab/kubeasz",
+          "source": "https://github.com/easzlab/kubeasz/blob/2547bf30deeb3becbf5630156a9fbcf71a432101/roles/docker/templates/daemon.json.j2",
+          "source_kind": "github-code",
+          "source_path": "roles/docker/templates/daemon.json.j2",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "docker.amingg.com"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "2d2ebeb3454a13484387ab6bdecc787b3b555910ab033dceb653fc2864431572",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "chenzhiwei/linux",
+          "source": "https://github.com/chenzhiwei/linux/blob/bdfa947b04b07163b34baf08d1c26363fcaa145c/docker/daemon.json",
+          "source_kind": "github-code",
+          "source_path": "docker/daemon.json",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "e9dce1e00282ec8a246fab66370e0cd3abc6631c78a1d3b4f19c75ce8de4708b",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "tinyclub/linux-lab",
+          "source": "https://github.com/tinyclub/linux-lab/blob/cbd1cbd2e078fb5c164002adc1e56fdaeb101910/doc/install/daemon.json",
+          "source_kind": "github-code",
+          "source_path": "doc/install/daemon.json",
+          "source_role": "documentation"
+        }
+      ],
+      "target": "docker.mirrors.ustc.edu.cn"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "c69c3b364fd4c2bd2f59d1163933ff5929580d7e2b734bc73c462a5ac6710dc7",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "unixhot/salt-kubebin",
+          "source": "https://github.com/unixhot/salt-kubebin/blob/9f545ee1f3115b3ff6fa8390cf74e85caf244aa1/salt/k8s/templates/docker/daemon.json.template",
+          "source_kind": "github-code",
+          "source_path": "salt/k8s/templates/docker/daemon.json.template",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "dx5z2hy7.mirror.aliyuncs.com"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "sources": [
+        {
+          "content_sha256": "b76955a871d0cb2cf7bb51be4c6349c97dda210e9f435e790d882f81fb712507",
+          "extractor": "conan-json",
+          "query_id": "conan-remotes-json",
+          "repository": "NEARBuilders/near-social-js",
+          "source": "https://github.com/NEARBuilders/near-social-js/blob/695c899db4eb581d763ba6cd593e07b2fa403970/demo/host/remotes.json",
+          "source_kind": "github-code",
+          "source_path": "demo/host/remotes.json",
+          "source_role": "example"
+        }
+      ],
+      "target": "elliot-braem-1032-near-social-js-ui-near-social-j-6efa4bd9f-ze.zephyrcloud.app"
+    },
+    {
+      "categories": [
+        "ruby"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "c6c440a5a7f629be8112a7d0ab6289e0616e77ff0a5df02f37f2b6822dc36f67",
+          "extractor": "ruby-source",
+          "query_id": "gemfile-source",
+          "repository": "pangea-project/pangea-tooling",
+          "source": "https://github.com/pangea-project/pangea-tooling/blob/b137331e058919ef181a7a73e2bde7856d86a35d/Gemfile.git",
+          "source_kind": "github-code",
+          "source_path": "Gemfile.git",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "git.gem.cache.pangea.pub"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "3b1f1b8244381d7765a5deff44312980a5080dd3be33c119e6d4d79107bd4cd7",
+          "extractor": "conan-json",
+          "query_id": "conan-remotes-json",
+          "repository": "paulscherrerinstitute/std_detector_buffer",
+          "source": "https://github.com/paulscherrerinstitute/std_detector_buffer/blob/e2eba41407d448d83a41604edc8ea7924a46a0bf/conan/remotes.json",
+          "source_kind": "github-code",
+          "source_path": "conan/remotes.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "git.psi.ch"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "13891bc16ad564a9aefdb817805c0f2df099467bac694e69fc16219b0fe3ce06",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "pixiu-io/kubez-ansible",
+          "source": "https://github.com/pixiu-io/kubez-ansible/blob/e76768c4b2cd1734ae99d1c77dd757cba78acd22/ansible/roles/baremetal/templates/kube-daemon.json.j2",
+          "source_kind": "github-code",
+          "source_path": "ansible/roles/baremetal/templates/kube-daemon.json.j2",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "hdi5v8p1.mirror.aliyuncs.com"
+    },
+    {
+      "categories": [
+        "erlang"
+      ],
+      "confidence": "high",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "74c6bc166cf4681bc2649eb95236bcf6b6d976af6ecbb3720eff36e5f8a2eb24",
+          "extractor": "environment-assignment",
+          "query_id": "hex-mirror",
+          "repository": "DogLooksGood/dotfiles",
+          "source": "https://github.com/DogLooksGood/dotfiles/blob/1ffc24b68cc5d82446bcebfda59861061ddae7cc/manjaro-dots/.zshrc",
+          "source_kind": "github-code",
+          "source_path": "manjaro-dots/.zshrc",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "0543a50bf20f7adfa96fd9da92b552ef5f410c8c1a46edc99be365c5416bd1a1",
+          "extractor": "environment-assignment",
+          "query_id": "hex-mirror",
+          "repository": "EdmondFrank/gitgud",
+          "source": "https://github.com/EdmondFrank/gitgud/blob/6b51e00001aed397fe0eebb7ace96597ffb14c8e/Dockerfile",
+          "source_kind": "github-code",
+          "source_path": "Dockerfile",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "c48daeeafd67574775befe95a505c881d1f5a86187d8962d24cd5d05e6718d30",
+          "extractor": "environment-assignment",
+          "query_id": "hex-mirror",
+          "repository": "damon-kwok/oh-my-env",
+          "source": "https://github.com/damon-kwok/oh-my-env/blob/ad763ed14832948dcaae91b0218bfc3596d90fdb/packages/lang/elixir",
+          "source_kind": "github-code",
+          "source_path": "packages/lang/elixir",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "10a0d6f505844d17f8fdf6286b6b4fd14f82f73de57858608c5a9d8b091ae87d",
+          "extractor": "environment-assignment",
+          "query_id": "hex-mirror",
+          "repository": "dfang/bash",
+          "source": "https://github.com/dfang/bash/blob/b0e2a90833e6e02c0e1a59d3abe5b0ae5b1e6da2/home/.mirrors",
+          "source_kind": "github-code",
+          "source_path": "home/.mirrors",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "6b7d6d4c149a552aeaf663b39b7c771dc28976044a22409ee065eb1f9587a595",
+          "extractor": "environment-assignment",
+          "query_id": "hex-mirror",
+          "repository": "fky2015/dotfiles",
+          "source": "https://github.com/fky2015/dotfiles/blob/e81882a71ff23562ef1e961e4d24a2affd76242b/.exports.zsh",
+          "source_kind": "github-code",
+          "source_path": ".exports.zsh",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "0f18b47cf3c497794596e819be0adeb32c16bfff0e03af3fe766c1809fb7a8f6",
+          "extractor": "environment-assignment",
+          "query_id": "hex-mirror",
+          "repository": "getong/getong_code_snippet",
+          "source": "https://github.com/getong/getong_code_snippet/blob/e96208e76d8ce0e5cbc3ed3b06df60c450a99e87/erlang_code/rebar3.org",
+          "source_kind": "github-code",
+          "source_path": "erlang_code/rebar3.org",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "b5a62a7d98caa01c223ce7adc971a228d5fdb7ced55c2671d3922a923614b300",
+          "extractor": "environment-assignment",
+          "query_id": "hex-mirror",
+          "repository": "leops-china/leops-cheatsheet",
+          "source": "https://github.com/leops-china/leops-cheatsheet/blob/7b26149c80e3e01f1f9f53602a873e534b817755/docs/cheatsheet/public/mirrors.md",
+          "source_kind": "github-code",
+          "source_path": "docs/cheatsheet/public/mirrors.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "8c7bed033d4a161e27839cd0f1332a14e21f3c1afa9d2b798825983e4c4aae04",
+          "extractor": "environment-assignment",
+          "query_id": "hex-mirror",
+          "repository": "lework/lemonitor",
+          "source": "https://github.com/lework/lemonitor/blob/1b9912fa675f254011d59f725c45fc0bc80997a9/static/data/mirrors.md",
+          "source_kind": "github-code",
+          "source_path": "static/data/mirrors.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "8cc2c2dfc3bd56ccfb93d1a018a5ae2f5995d65795a0fcb1f055e7e0b511afbb",
+          "extractor": "environment-assignment",
+          "query_id": "hex-mirror",
+          "repository": "lework/reference",
+          "source": "https://github.com/lework/reference/blob/0b74471f80a4503c850f7fe6b2512769f2a4ca60/source/_posts/mirrors.md",
+          "source_kind": "github-code",
+          "source_path": "source/_posts/mirrors.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "41abb4946342b844eb9bef4457e30f70b932d6df4c2a682b78afbed710c2a4ff",
+          "extractor": "environment-assignment",
+          "query_id": "hex-mirror",
+          "repository": "shenxiangzhuang/legacyblog",
+          "source": "https://github.com/shenxiangzhuang/legacyblog/blob/be5fe4365fb0b54668f3c8092f841746ff80d0c5/docs/cs/programming/elixir/index.md",
+          "source_kind": "github-code",
+          "source_path": "docs/cs/programming/elixir/index.md",
+          "source_role": "documentation"
+        }
+      ],
+      "target": "hexpm.upyun.com"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "a2798b381cbd6812143af7b55462552ba84b4d2a43ce04a3170136f1f3d9ca05",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "unifreq/openwrt_packit",
+          "source": "https://github.com/unifreq/openwrt_packit/blob/e88d776ced23ff1c36a193aa4bf80011ec29aeea/files/s905/daemon.json",
+          "source_kind": "github-code",
+          "source_path": "files/s905/daemon.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "hub-mirror.c.163.com"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "d306d457e1487fb4c5beb5f56fcf1756ec7c60db7846c852a05e0cc93f38b929",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "easzlab/kubeasz",
+          "source": "https://github.com/easzlab/kubeasz/blob/2547bf30deeb3becbf5630156a9fbcf71a432101/roles/docker/templates/daemon.json.j2",
+          "source_kind": "github-code",
+          "source_path": "roles/docker/templates/daemon.json.j2",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "hub.rat.dev"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "d306d457e1487fb4c5beb5f56fcf1756ec7c60db7846c852a05e0cc93f38b929",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "easzlab/kubeasz",
+          "source": "https://github.com/easzlab/kubeasz/blob/2547bf30deeb3becbf5630156a9fbcf71a432101/roles/docker/templates/daemon.json.j2",
+          "source_kind": "github-code",
+          "source_path": "roles/docker/templates/daemon.json.j2",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "hub1.nat.tf"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "5a6791a810f48c56b9c843b61c5d9df0b6e225c0cff00eb297807b764f7bf024",
+          "extractor": "conan-json",
+          "query_id": "conan-remotes-json",
+          "repository": "Deltares/Delft3D",
+          "source": "https://github.com/Deltares/Delft3D/blob/035f2d436ac6bcbc98e62c792ab7d398db5f1d4b/conan/config/remotes.json",
+          "source_kind": "github-code",
+          "source_path": "conan/config/remotes.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "internal-artifacts.deltares.nl"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "62e97abb4604aca9471fb0f14a04dd82cd8481ef339733627314bee75bd4949a",
+          "extractor": "sbt-resolver",
+          "query_id": "sbt-resolvers",
+          "repository": "seyhanp/seyhan",
+          "source": "https://github.com/seyhanp/seyhan/blob/45da8d00f4cd0baa3bfa1bb20f6ca124f7b7d397/build.sbt",
+          "source_kind": "github-code",
+          "source_path": "build.sbt",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "jaspersoft.artifactoryonline.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "retired-service"
+      ],
+      "sources": [
+        {
+          "content_sha256": "ef78d24c4ec2f51fc122d7f1a10a04f6654c4cbfa169452859cab644437af7c9",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "lobobrowser/LoboBrowser",
+          "source": "https://github.com/lobobrowser/LoboBrowser/blob/7d60db5425c09b6c11c8b82c4fcc943cc5de0410/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "jcenter.bintray.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "dea44cc48fb3594d6dc256e9e06a202287bc28394db89167493a2d89e54b9e1e",
+          "extractor": "sbt-resolver",
+          "query_id": "sbt-resolvers",
+          "repository": "shadowsocksr-rm/shadowsocksr-android",
+          "source": "https://github.com/shadowsocksr-rm/shadowsocksr-android/blob/ad7af09df3421a2b8c159734a5834d9714ef1613/build.sbt",
+          "source_kind": "github-code",
+          "source_path": "build.sbt",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "jraf.org"
+    },
+    {
+      "categories": [
+        "julia"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "sources": [
+        {
+          "content_sha256": "1ee2db09b5addf5bd901c72edfb7663a54c2ce058aaba936fa56f81f294a92b3",
+          "extractor": "environment-assignment",
+          "query_id": "julia-pkg-server",
+          "repository": "DyadLang/SpacePowerWorkshop.jl",
+          "source": "https://github.com/DyadLang/SpacePowerWorkshop.jl/blob/7742ccc052efccf17cdc34bdee444071b4348f1e/README.md",
+          "source_kind": "github-code",
+          "source_path": "README.md",
+          "source_role": "documentation"
+        }
+      ],
+      "target": "juliahub.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "b5504563effa64156b9d82b02f2b4474b7e4e9456d14042ea0efce45e387f6fb",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "devexperts/aprof",
+          "source": "https://github.com/devexperts/aprof/blob/d211d6a059ddd1be8542e64276c8bf3dfe278501/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "maven.in.devexperts.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "f0c34cda9dda813b20a1fdf42d00f75229811c318f509eeb9cf81ae18c67a593",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "OpenNMS/opennms",
+          "source": "https://github.com/OpenNMS/opennms/blob/e9f333dee36c81fac411b6ce8d2a07d1424a77c5/.circleci/settings.xml",
+          "source_kind": "github-code",
+          "source_path": ".circleci/settings.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "maven.opennms.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "eac9b7c86216413ab494384944219a8d797e39fe6e178e58295e8f3cbbee9e79",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "appreciated/vaadin-app-layout",
+          "source": "https://github.com/appreciated/vaadin-app-layout/blob/c9d2a70eef045f07e7a06f207fe406da70ace5f2/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "maven.vaadin.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "da61104d297286275cd7367c42666021aa2c8d9f96830f0b6933a3243c17cf3e",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "wso2/product-microgateway",
+          "source": "https://github.com/wso2/product-microgateway/blob/7f01aaeae542c8f659a81b6bb506688c1651c806/.maven/settings.xml",
+          "source_kind": "github-code",
+          "source_path": ".maven/settings.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "maven.wso2.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "f3a06a1d2b0d40ab0c895becb32007a180c812461e62de4e5c4a06ac6c42ca6d",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "openmrs/openmrs-module-cdagenerator",
+          "source": "https://github.com/openmrs/openmrs-module-cdagenerator/blob/8b8bf601b344c40aef5449a1a6e790441e4633e0/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "mavenrepo.openmrs.org"
+    },
+    {
+      "categories": [
+        "rust"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "95a1fbacfae6f6cbe318f84fd49886550c1f0330409c45b09a25958fd62cc148",
+          "extractor": "cargo-toml",
+          "query_id": "cargo-registries",
+          "repository": "microsoft/mxc",
+          "source": "https://github.com/microsoft/mxc/blob/7dac1a952f0c9ad13f0a4cb089c4e0e8b3e0013a/.azure-pipelines/.cargo/config.toml",
+          "source_kind": "github-code",
+          "source_path": ".azure-pipelines/.cargo/config.toml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "microsoft.pkgs.visualstudio.com"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "a2798b381cbd6812143af7b55462552ba84b4d2a43ce04a3170136f1f3d9ca05",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "unifreq/openwrt_packit",
+          "source": "https://github.com/unifreq/openwrt_packit/blob/e88d776ced23ff1c36a193aa4bf80011ec29aeea/files/s905/daemon.json",
+          "source_kind": "github-code",
+          "source_path": "files/s905/daemon.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "mirror.baidubce.com"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "medium",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "7ff797cefec3a7360716db705e0c8016b34f99e605ca88667605dabce104494c",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "coder/coder",
+          "source": "https://github.com/coder/coder/blob/c9a1e2bceef354408b890f81bb6b3eb0c6fb1af7/dogfood/coder/ubuntu-22.04/files/etc/docker/daemon.json",
+          "source_kind": "github-code",
+          "source_path": "dogfood/coder/ubuntu-22.04/files/etc/docker/daemon.json",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "7ff797cefec3a7360716db705e0c8016b34f99e605ca88667605dabce104494c",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "coder/coder",
+          "source": "https://github.com/coder/coder/blob/c9a1e2bceef354408b890f81bb6b3eb0c6fb1af7/dogfood/coder/ubuntu-26.04/files/etc/docker/daemon.json",
+          "source_kind": "github-code",
+          "source_path": "dogfood/coder/ubuntu-26.04/files/etc/docker/daemon.json",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "28979eab43ea9453f97fad4aa08877ff9e392d501c36847620c75724e1d10b32",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "play-with-docker/play-with-docker",
+          "source": "https://github.com/play-with-docker/play-with-docker/blob/62cb0727cab93cf4273017d33e965a5f26c83b05/dockerfiles/dind/daemon.json",
+          "source_kind": "github-code",
+          "source_path": "dockerfiles/dind/daemon.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "mirror.gcr.io"
+    },
+    {
+      "categories": [
+        "dart"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "sources": [
+        {
+          "content_sha256": "55feea41fd423d98714431f2d812f1c971e8d2ac3b96dc560f55c367c8a6ab73",
+          "extractor": "environment-assignment",
+          "query_id": "dart-pub-hosted",
+          "repository": "yuchuangu85/Develop-Source",
+          "source": "https://github.com/yuchuangu85/Develop-Source/blob/0868142a7b4994194e4980c4620ae6ee628a3bfb/Cross-Platform/Flutter/README.md",
+          "source_kind": "github-code",
+          "source_path": "Cross-Platform/Flutter/README.md",
+          "source_role": "documentation"
+        }
+      ],
+      "target": "mirrors.cnnic.cn"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "sources": [
+        {
+          "content_sha256": "ae187d41e6a9a3751fed9ed7278fee53a70c969dd2a4fe387ea608c39b85cdb0",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "beclab/Olares",
+          "source": "https://github.com/beclab/Olares/blob/9e520991b90c8d0675ac9875323a4762e0369887/docs/code-snippets/docker-daemon.json",
+          "source_kind": "github-code",
+          "source_path": "docs/code-snippets/docker-daemon.json",
+          "source_role": "documentation"
+        }
+      ],
+      "target": "mirrors.olares.cn"
+    },
+    {
+      "categories": [
+        "go"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "sources": [
+        {
+          "content_sha256": "28567ef9d254e6780a2127e634961943d0fb6cd8d8fab5e80178da3b73568712",
+          "extractor": "environment-assignment",
+          "query_id": "go-proxy",
+          "repository": "opsre/Thanks-Mirror",
+          "source": "https://github.com/opsre/Thanks-Mirror/blob/2c31b29910945a0c3f8740d0248f3a4686e2b46c/README.md",
+          "source_kind": "github-code",
+          "source_path": "README.md",
+          "source_role": "documentation"
+        }
+      ],
+      "target": "nexus.eryajf.net"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "71b39cb0747f7208d7a2c05fe5592e5295161f9986dae75f0d02ae8f9cba1b27",
+          "extractor": "maven-pom-xml",
+          "query_id": "maven-pom-repositories",
+          "repository": "stirante/RuneChanger",
+          "source": "https://github.com/stirante/RuneChanger/blob/29eed9f735e01c41e799f81c9a223b112ae6a3b7/pom.xml",
+          "source_kind": "github-code",
+          "source_path": "pom.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "nexus.stirante.com"
+    },
+    {
+      "categories": [
+        "php"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "e9832f9b5627867a2e3c00045c43a4b4903682a78a01918d1ce15292d66c6234",
+          "extractor": "composer-json",
+          "query_id": "composer-repositories",
+          "repository": "whitecube/nova-flexible-content",
+          "source": "https://github.com/whitecube/nova-flexible-content/blob/d48d607686fad3dfc8b2fe725789857e6eeaa6e4/composer.json",
+          "source_kind": "github-code",
+          "source_path": "composer.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "nova.laravel.com"
+    },
+    {
+      "categories": [
+        "javascript"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "dbcc2bd63bda3919732f5d86d45c5cb0f82c4ccea8a37d4f2f83f2c1baccf36f",
+          "extractor": "npmrc",
+          "query_id": "npmrc-registry",
+          "repository": "nordicsemi/pc-nrfconnect-launcher",
+          "source": "https://github.com/nordicsemi/pc-nrfconnect-launcher/blob/92cf12680d96e9f74f7fb12e2ea402daddba0460/.npmrc-internal",
+          "source_kind": "github-code",
+          "source_path": ".npmrc-internal",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "npm.nordicsemi.no"
+    },
+    {
+      "categories": [
+        "r"
+      ],
+      "confidence": "medium",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "800cec3010f03e596311f043aef97b96d184e61f685288406313e094ff3422c1",
+          "extractor": "r-repositories",
+          "query_id": "r-repositories",
+          "repository": "ThinkR-open/engineering-shiny-book",
+          "source": "https://github.com/ThinkR-open/engineering-shiny-book/blob/c69b54b3b2f899199ca29c1612e58df6c9e92b50/before-build.R",
+          "source_kind": "github-code",
+          "source_path": "before-build.R",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "7476ac1d948f551953d0700bc8b54a2503b6c03992d01ef452741f39c762900e",
+          "extractor": "r-repositories",
+          "query_id": "r-repositories",
+          "repository": "juliasilge/supervised-ML-case-studies-course",
+          "source": "https://github.com/juliasilge/supervised-ML-case-studies-course/blob/19620906cdc88efdb9993c9c50d6879ff1c60eb6/binder/install.R",
+          "source_kind": "github-code",
+          "source_path": "binder/install.R",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "packagemanager.rstudio.com"
+    },
+    {
+      "categories": [
+        "erlang",
+        "julia"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "sources": [
+        {
+          "content_sha256": "e1f723e9197f5b50776004fcc0c3d3051f4e6e3f6b79c5374a985c5f666a693f",
+          "extractor": "environment-assignment",
+          "query_id": "hex-mirror",
+          "repository": "Vulnetix/cli",
+          "source": "https://github.com/Vulnetix/cli/blob/329676d3b10c594b87df8c4f7e297ab1b731c642/website/content/docs/enterprise/package-firewall/hex.md",
+          "source_kind": "github-code",
+          "source_path": "website/content/docs/enterprise/package-firewall/hex.md",
+          "source_role": "documentation"
+        },
+        {
+          "content_sha256": "df5dab3ac7d9b59fb8be1cacb6ca1578baa3bdda04e1118abc47b7dcfb9e5b76",
+          "extractor": "environment-assignment",
+          "query_id": "julia-pkg-server",
+          "repository": "Vulnetix/cli",
+          "source": "https://github.com/Vulnetix/cli/blob/329676d3b10c594b87df8c4f7e297ab1b731c642/website/content/docs/enterprise/package-firewall/julia.md",
+          "source_kind": "github-code",
+          "source_path": "website/content/docs/enterprise/package-firewall/julia.md",
+          "source_role": "documentation"
+        }
+      ],
+      "target": "packages.vulnetix.com"
+    },
+    {
+      "categories": [
+        "php"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "1a9df6bb034d139cd068feb6200f9c9c7506c561cdc75508bb610b4afa9883b8",
+          "extractor": "composer-json",
+          "query_id": "composer-repositories",
+          "repository": "swoft-cloud/swoft-cli",
+          "source": "https://github.com/swoft-cloud/swoft-cli/blob/bfd4cfb6dd40bb4a2c65ee7e7e5223dec253e9a4/composer.json.dev",
+          "source_kind": "github-code",
+          "source_path": "composer.json.dev",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "packagist.laravel-china.org"
+    },
+    {
+      "categories": [
+        "php"
+      ],
+      "confidence": "high",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "1d17960e2a0be36f11ca39a4b2abc88d8a55251e48b7027b385a1f505b0a093d",
+          "extractor": "composer-json",
+          "query_id": "composer-repositories",
+          "repository": "alexandregz/twofactor_gauthenticator",
+          "source": "https://github.com/alexandregz/twofactor_gauthenticator/blob/b14306150da37c18b7a1e761875e8aa06d47e6a0/composer.json",
+          "source_kind": "github-code",
+          "source_path": "composer.json",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "628b22888260ee271ddf8644534a1e9aaafe59611ba1d8ccaaabb815330d008a",
+          "extractor": "composer-json",
+          "query_id": "composer-repositories",
+          "repository": "sentora/sentora-core",
+          "source": "https://github.com/sentora/sentora-core/blob/78e4041bfb981868dcfbebff47d1a991a09f3ca1/etc/apps/webmail/composer.json-dist",
+          "source_kind": "github-code",
+          "source_path": "etc/apps/webmail/composer.json-dist",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "6dc6a2477495a28b7f0083af2acdf897732504c9baf263e1a72305c5841ca711",
+          "extractor": "composer-json",
+          "query_id": "composer-repositories",
+          "repository": "zpanel/zpanelx",
+          "source": "https://github.com/zpanel/zpanelx/blob/f9e8d4d9a281b382292985f09056d97694c3258e/etc/apps/webmail/composer.json-dist",
+          "source_kind": "github-code",
+          "source_path": "etc/apps/webmail/composer.json-dist",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "plugins.roundcube.net"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "130b97e9cb2526ead20e75667f605f0efd1abd12c8c9c35f3dbd5a1adf536915",
+          "extractor": "pip-config",
+          "query_id": "pip-extra-index",
+          "repository": "skybrush-io/skybrush-server",
+          "source": "https://github.com/skybrush-io/skybrush-server/blob/254ccc05e378d9dee7ccc3e77852b90c95615857/etc/deployment/docker/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "etc/deployment/docker/pip.conf",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "pypi.collmot.com"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "0435cbe5c6706f5bf54789dc96c0d5b8afb31a64bd386a67fe526f14b1d57ef6",
+          "extractor": "uv-toml",
+          "query_id": "uv-index",
+          "repository": "getsentry/pypi",
+          "source": "https://github.com/getsentry/pypi/blob/c8a578a932791e37162a75bbf8c2d2b9ab2e72ce/pyproject.toml",
+          "source_kind": "github-code",
+          "source_path": "pyproject.toml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "pypi.devinfra.sentry.io"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "d0271df8003b4ba3a0634e038fee37711b01f000a45f033e8f2db29af619e08c",
+          "extractor": "pip-config",
+          "query_id": "pip-index",
+          "repository": "photonixapp/photonix",
+          "source": "https://github.com/photonixapp/photonix/blob/c3a4b5ccef2493b6c38029aa7bf79a6c65af770b/docker/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "docker/pip.conf",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "pypi.epixstudios.co.uk"
+    },
+    {
+      "categories": [
+        "r"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "2ba2006d0df1c815351190b27dec03b9ca00671acae16012e5375b3caff18112",
+          "extractor": "r-repositories",
+          "query_id": "r-repositories",
+          "repository": "radiant-rstats/radiant",
+          "source": "https://github.com/radiant-rstats/radiant/blob/1bdb1780bdfbe59127a666e446e2a1ee3bc83aff/build/build_win.R",
+          "source_kind": "github-code",
+          "source_path": "build/build_win.R",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "radiant-rstats.github.io"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "2d2ebeb3454a13484387ab6bdecc787b3b555910ab033dceb653fc2864431572",
+          "extractor": "docker-json",
+          "query_id": "docker-registry-mirrors",
+          "repository": "chenzhiwei/linux",
+          "source": "https://github.com/chenzhiwei/linux/blob/bdfa947b04b07163b34baf08d1c26363fcaa145c/docker/daemon.json",
+          "source_kind": "github-code",
+          "source_path": "docker/daemon.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "registry.cn-hangzhou.aliyuncs.com"
+    },
+    {
+      "categories": [
+        "rust"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "55e4f01d9e7fceef26de102a3f9478c0641a83f341da577e883d241cb200470d",
+          "extractor": "cargo-toml",
+          "query_id": "cargo-registries",
+          "repository": "gosub-io/gosub-engine",
+          "source": "https://github.com/gosub-io/gosub-engine/blob/138bbb298f73504badb59ddb951f9a30c43a9b5c/.cargo/config.toml",
+          "source_kind": "github-code",
+          "source_path": ".cargo/config.toml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "registry.gosub.io"
+    },
+    {
+      "categories": [
+        "swift"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "ce5ba96c49790d1fdbf2df44e98ae6933085674939ea08f418461c334eb3717e",
+          "extractor": "swift-registries-json",
+          "query_id": "swift-registries",
+          "repository": "tuist/tuist",
+          "source": "https://github.com/tuist/tuist/blob/d8431e4b6c30d40efa2b8149266701b0dc07e863/.swiftpm/configuration/registries.json",
+          "source_kind": "github-code",
+          "source_path": ".swiftpm/configuration/registries.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "registry.tuist.dev"
+    },
+    {
+      "categories": [
+        "julia"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "114fd8d814a5a63645fb2b9c00ffe010df0b6502d0a04c231c2d94fc8ececce3",
+          "extractor": "environment-assignment",
+          "query_id": "julia-pkg-server",
+          "repository": "Suzhou-Tongyuan/SyslabCC-JuliaAOT",
+          "source": "https://github.com/Suzhou-Tongyuan/SyslabCC-JuliaAOT/blob/bf4e4e2b46145cb1452d0fa86986c26b101672e5/setup.sh",
+          "source_kind": "github-code",
+          "source_path": "setup.sh",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "releases.tongyuan.cc"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "79577ab9433e74743f9d3457254438ed17b6cc1bb8988700ee843b2ec7d093c1",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "BetonQuest/BetonQuest",
+          "source": "https://github.com/BetonQuest/BetonQuest/blob/6e25c34c282d8c792bfc745a5c46a95b19987c0e/.mvn/settings.xml",
+          "source_kind": "github-code",
+          "source_path": ".mvn/settings.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "repo.betonquest.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "4d22972a9b882b193590c90cf66758b2031ec4975d7b249907c9e88672fd3eb2",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "gentics/mesh",
+          "source": "https://github.com/gentics/mesh/blob/ae898ba1664004a19160867513df93c202b8547b/build/settings.xml",
+          "source_kind": "github-code",
+          "source_path": "build/settings.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "repo.gentics.com"
+    },
+    {
+      "categories": [
+        "php"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "e5a2209bbd66e5099d6ebe560cc526bdf8204a525452308e65f0dea8c474eeab",
+          "extractor": "composer-json",
+          "query_id": "composer-repositories",
+          "repository": "Adyen/adyen-magento2",
+          "source": "https://github.com/Adyen/adyen-magento2/blob/9e739bb1a54b9d0bd9825e14dea6ef9cb9e44e92/composer.json",
+          "source_kind": "github-code",
+          "source_path": "composer.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "repo.magento.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "9d03cc8825628d08395f9f7be0a8c8ba38fc44da4c77fb0f7ef0918e26680f24",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "camunda/docker-camunda-bpm-platform",
+          "source": "https://github.com/camunda/docker-camunda-bpm-platform/blob/19f70eda8195e4936b7e245428fff79e5de835fd/settings.xml",
+          "source_kind": "github-code",
+          "source_path": "settings.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "repository.nexus.camunda.cloud"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "da61104d297286275cd7367c42666021aa2c8d9f96830f0b6933a3243c17cf3e",
+          "extractor": "maven-settings-xml",
+          "query_id": "maven-settings-mirrors",
+          "repository": "wso2/product-microgateway",
+          "source": "https://github.com/wso2/product-microgateway/blob/7f01aaeae542c8f659a81b6bb506688c1651c806/.maven/settings.xml",
+          "source_kind": "github-code",
+          "source_path": ".maven/settings.xml",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "resources.knopflerfish.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "080c7c2d4a144fcbbac4112118460271f651b7d456a190305c61bdc745631c98",
+          "extractor": "sbt-resolver",
+          "query_id": "sbt-resolvers",
+          "repository": "scala/scala-dist",
+          "source": "https://github.com/scala/scala-dist/blob/1182e6deb82feae6f7e050bfdb5e62ab8ab0d426/build.sbt",
+          "source_kind": "github-code",
+          "source_path": "build.sbt",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "scala-ci.typesafe.com"
+    },
+    {
+      "categories": [
+        "swift"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "6647bae2efe3003518f09b779db6694a28e35b0606d3201894f92b45c7e7d280",
+          "extractor": "swift-registries-json",
+          "query_id": "swift-registries",
+          "repository": "tuist/tuist",
+          "source": "https://github.com/tuist/tuist/blob/d8431e4b6c30d40efa2b8149266701b0dc07e863/server/native/xcactivitylog_nif/.swiftpm/configuration/registries.json",
+          "source_kind": "github-code",
+          "source_path": "server/native/xcactivitylog_nif/.swiftpm/configuration/registries.json",
+          "source_role": "configuration"
+        },
+        {
+          "content_sha256": "6647bae2efe3003518f09b779db6694a28e35b0606d3201894f92b45c7e7d280",
+          "extractor": "swift-registries-json",
+          "query_id": "swift-registries",
+          "repository": "tuist/tuist",
+          "source": "https://github.com/tuist/tuist/blob/d8431e4b6c30d40efa2b8149266701b0dc07e863/server/native/xcresult_nif/.swiftpm/configuration/registries.json",
+          "source_kind": "github-code",
+          "source_path": "server/native/xcresult_nif/.swiftpm/configuration/registries.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "tuist.dev"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "9c44cd9fb51bf6a001360432cf19b520e2e182aaf68f6bf9da55fc17bf29ed44",
+          "extractor": "pip-config",
+          "query_id": "pip-extra-index",
+          "repository": "thorrak/fermentrack",
+          "source": "https://github.com/thorrak/fermentrack/blob/1aea05b07b9445edce2f39480b03c93eced125e6/compose/production/django/pip.conf",
+          "source_kind": "github-code",
+          "source_path": "compose/production/django/pip.conf",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "wheels.fermentrack.com"
+    },
+    {
+      "categories": [
+        "php"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "2f487325df31a0db50f840a59952cb6d3b5848e18c8c0039661e3d2368cce6ef",
+          "extractor": "composer-json",
+          "query_id": "composer-repositories",
+          "repository": "kasparsd/minit",
+          "source": "https://github.com/kasparsd/minit/blob/46a6a3d9191bcd40bbc49083d4ff929a415e3d90/composer.json",
+          "source_kind": "github-code",
+          "source_path": "composer.json",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "wpackagist.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "first_seen": "2026-08-23",
+      "last_evidence_change": "2026-08-23",
+      "match": "exact",
+      "review_flags": [],
+      "sources": [
+        {
+          "content_sha256": "549ebac66274bfbfcfd4566219b0d623861d6c775c8f09c817868278033dd4e4",
+          "extractor": "sbt-resolver",
+          "query_id": "sbt-resolvers",
+          "repository": "amplab/SparkNet",
+          "source": "https://github.com/amplab/SparkNet/blob/199116dfa73832e1dae37a2b8921839f36a9bab3/build.sbt",
+          "source_kind": "github-code",
+          "source_path": "build.sbt",
+          "source_role": "configuration"
+        }
+      ],
+      "target": "www.eecs.berkeley.edu"
+    }
+  ],
+  "discovery_rules_sha256": "1c0e7380d455677e617ec1ab27997da093873d3f84f3b5339f75dbb3f1e88417",
+  "schema_version": 1
 }

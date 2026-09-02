@@ -1,4 +1,5 @@
 asset-packagist.org
+mirrors.aliyun.com
 packages.drupal.org
 packagist.org
 repo.packagist.org
