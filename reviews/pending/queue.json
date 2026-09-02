@@ -3,26 +3,11 @@
   "entries": [
     {
       "categories": [
-        "r"
-      ],
-      "confidence": "high",
-      "domain": "cran.rstudio.com",
-      "review_flags": [],
-      "source_ecosystems": [],
-      "source_kinds": [
-        "github-code"
-      ],
-      "source_roles": [
-        "configuration"
-      ],
-      "target": "cran.rstudio.com"
-    },
-    {
-      "categories": [
         "erlang"
       ],
       "confidence": "high",
       "domain": "hexpm.upyun.com",
+      "repository_count": 10,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -36,10 +21,28 @@
     },
     {
       "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "domain": "cran.rstudio.com",
+      "repository_count": 3,
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "cran.rstudio.com"
+    },
+    {
+      "categories": [
         "php"
       ],
       "confidence": "high",
       "domain": "plugins.roundcube.net",
+      "repository_count": 3,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -56,6 +59,7 @@
       ],
       "confidence": "medium",
       "domain": "artifactory-local.silabs.net",
+      "repository_count": 2,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -72,6 +76,7 @@
       ],
       "confidence": "medium",
       "domain": "artifactory.silabs.net",
+      "repository_count": 2,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -88,6 +93,7 @@
       ],
       "confidence": "medium",
       "domain": "conan.silabs.net",
+      "repository_count": 2,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -104,6 +110,7 @@
       ],
       "confidence": "medium",
       "domain": "mirror.gcr.io",
+      "repository_count": 2,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -120,6 +127,7 @@
       ],
       "confidence": "medium",
       "domain": "packagemanager.rstudio.com",
+      "repository_count": 2,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -132,10 +140,68 @@
     },
     {
       "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "domain": "api.bintray.com",
+      "repository_count": 11,
+      "review_flags": [
+        "retired-service"
+      ],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration",
+        "documentation"
+      ],
+      "target": "api.bintray.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "domain": "dl.bintray.com",
+      "repository_count": 3,
+      "review_flags": [
+        "retired-service"
+      ],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "dl.bintray.com"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "domain": "docker.mirrors.ustc.edu.cn",
+      "repository_count": 2,
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration",
+        "documentation"
+      ],
+      "target": "docker.mirrors.ustc.edu.cn"
+    },
+    {
+      "categories": [
         "python"
       ],
       "confidence": "low",
       "domain": "alpine-wheels.github.io",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -152,6 +218,7 @@
       ],
       "confidence": "low",
       "domain": "anaconda.mgb.org",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -168,6 +235,7 @@
       ],
       "confidence": "low",
       "domain": "anaconda.rdhpcs.noaa.gov",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -180,29 +248,11 @@
     },
     {
       "categories": [
-        "cpp"
-      ],
-      "confidence": "low",
-      "domain": "api.bintray.com",
-      "review_flags": [
-        "retired-service"
-      ],
-      "source_ecosystems": [],
-      "source_kinds": [
-        "github-code"
-      ],
-      "source_roles": [
-        "configuration",
-        "documentation"
-      ],
-      "target": "api.bintray.com"
-    },
-    {
-      "categories": [
         "python"
       ],
       "confidence": "low",
       "domain": "artifactory.jpl.nasa.gov",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -219,6 +269,7 @@
       ],
       "confidence": "low",
       "domain": "artifactory.onefact.net",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -235,6 +286,7 @@
       ],
       "confidence": "low",
       "domain": "artifacts.camunda.com",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -251,6 +303,7 @@
       ],
       "confidence": "low",
       "domain": "athens.azurefd.net",
+      "repository_count": 1,
       "review_flags": [
         "non-configuration-evidence-only"
       ],
@@ -269,6 +322,7 @@
       ],
       "confidence": "low",
       "domain": "ci.appveyor.com",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -285,6 +339,7 @@
       ],
       "confidence": "low",
       "domain": "conan.iteale.com",
+      "repository_count": 1,
       "review_flags": [
         "nonstandard-port"
       ],
@@ -303,6 +358,7 @@
       ],
       "confidence": "low",
       "domain": "conan.openstudio.net",
+      "repository_count": 1,
       "review_flags": [
         "non-configuration-evidence-only"
       ],
@@ -321,6 +377,7 @@
       ],
       "confidence": "low",
       "domain": "crates.sunscreen.tech",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -337,6 +394,7 @@
       ],
       "confidence": "low",
       "domain": "dart-pub.mirrors.sjtug.sjtu.edu.cn",
+      "repository_count": 1,
       "review_flags": [
         "non-configuration-evidence-only"
       ],
@@ -351,28 +409,11 @@
     },
     {
       "categories": [
-        "jvm"
-      ],
-      "confidence": "low",
-      "domain": "dl.bintray.com",
-      "review_flags": [
-        "retired-service"
-      ],
-      "source_ecosystems": [],
-      "source_kinds": [
-        "github-code"
-      ],
-      "source_roles": [
-        "configuration"
-      ],
-      "target": "dl.bintray.com"
-    },
-    {
-      "categories": [
         "containers"
       ],
       "confidence": "low",
       "domain": "docker.1ms.run",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -389,6 +430,7 @@
       ],
       "confidence": "low",
       "domain": "docker.1panel.live",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -405,6 +447,7 @@
       ],
       "confidence": "low",
       "domain": "docker.amingg.com",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -420,24 +463,8 @@
         "containers"
       ],
       "confidence": "low",
-      "domain": "docker.mirrors.ustc.edu.cn",
-      "review_flags": [],
-      "source_ecosystems": [],
-      "source_kinds": [
-        "github-code"
-      ],
-      "source_roles": [
-        "configuration",
-        "documentation"
-      ],
-      "target": "docker.mirrors.ustc.edu.cn"
-    },
-    {
-      "categories": [
-        "containers"
-      ],
-      "confidence": "low",
       "domain": "dx5z2hy7.mirror.aliyuncs.com",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -454,6 +481,7 @@
       ],
       "confidence": "low",
       "domain": "elliot-braem-1032-near-social-js-ui-near-social-j-6efa4bd9f-ze.zephyrcloud.app",
+      "repository_count": 1,
       "review_flags": [
         "non-configuration-evidence-only"
       ],
@@ -472,6 +500,7 @@
       ],
       "confidence": "low",
       "domain": "git.gem.cache.pangea.pub",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -488,6 +517,7 @@
       ],
       "confidence": "low",
       "domain": "git.psi.ch",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -504,6 +534,7 @@
       ],
       "confidence": "low",
       "domain": "hdi5v8p1.mirror.aliyuncs.com",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -520,6 +551,7 @@
       ],
       "confidence": "low",
       "domain": "hub-mirror.c.163.com",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -536,6 +568,7 @@
       ],
       "confidence": "low",
       "domain": "hub.rat.dev",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -552,6 +585,7 @@
       ],
       "confidence": "low",
       "domain": "hub1.nat.tf",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -568,6 +602,7 @@
       ],
       "confidence": "low",
       "domain": "internal-artifacts.deltares.nl",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -584,6 +619,7 @@
       ],
       "confidence": "low",
       "domain": "jaspersoft.artifactoryonline.com",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -600,6 +636,7 @@
       ],
       "confidence": "low",
       "domain": "jcenter.bintray.com",
+      "repository_count": 1,
       "review_flags": [
         "retired-service"
       ],
@@ -618,6 +655,7 @@
       ],
       "confidence": "low",
       "domain": "jraf.org",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -634,6 +672,7 @@
       ],
       "confidence": "low",
       "domain": "juliahub.com",
+      "repository_count": 1,
       "review_flags": [
         "non-configuration-evidence-only"
       ],
@@ -652,6 +691,7 @@
       ],
       "confidence": "low",
       "domain": "maven.in.devexperts.com",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -668,6 +708,7 @@
       ],
       "confidence": "low",
       "domain": "maven.opennms.org",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -684,6 +725,7 @@
       ],
       "confidence": "low",
       "domain": "maven.vaadin.com",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -700,6 +742,7 @@
       ],
       "confidence": "low",
       "domain": "maven.wso2.org",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -716,6 +759,7 @@
       ],
       "confidence": "low",
       "domain": "mavenrepo.openmrs.org",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -732,6 +776,7 @@
       ],
       "confidence": "low",
       "domain": "microsoft.pkgs.visualstudio.com",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -748,6 +793,7 @@
       ],
       "confidence": "low",
       "domain": "mirror.baidubce.com",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -764,6 +810,7 @@
       ],
       "confidence": "low",
       "domain": "mirrors.cnnic.cn",
+      "repository_count": 1,
       "review_flags": [
         "non-configuration-evidence-only"
       ],
@@ -782,6 +829,7 @@
       ],
       "confidence": "low",
       "domain": "mirrors.olares.cn",
+      "repository_count": 1,
       "review_flags": [
         "non-configuration-evidence-only"
       ],
@@ -800,6 +848,7 @@
       ],
       "confidence": "low",
       "domain": "nexus.eryajf.net",
+      "repository_count": 1,
       "review_flags": [
         "non-configuration-evidence-only"
       ],
@@ -818,6 +867,7 @@
       ],
       "confidence": "low",
       "domain": "nexus.stirante.com",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -834,6 +884,7 @@
       ],
       "confidence": "low",
       "domain": "nova.laravel.com",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -850,6 +901,7 @@
       ],
       "confidence": "low",
       "domain": "npm.nordicsemi.no",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -867,6 +919,7 @@
       ],
       "confidence": "low",
       "domain": "packages.vulnetix.com",
+      "repository_count": 1,
       "review_flags": [
         "non-configuration-evidence-only"
       ],
@@ -885,6 +938,7 @@
       ],
       "confidence": "low",
       "domain": "packagist.laravel-china.org",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -901,6 +955,7 @@
       ],
       "confidence": "low",
       "domain": "pypi.collmot.com",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -917,6 +972,7 @@
       ],
       "confidence": "low",
       "domain": "pypi.devinfra.sentry.io",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -933,6 +989,7 @@
       ],
       "confidence": "low",
       "domain": "pypi.epixstudios.co.uk",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -949,6 +1006,7 @@
       ],
       "confidence": "low",
       "domain": "radiant-rstats.github.io",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -965,6 +1023,7 @@
       ],
       "confidence": "low",
       "domain": "registry.cn-hangzhou.aliyuncs.com",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -981,6 +1040,7 @@
       ],
       "confidence": "low",
       "domain": "registry.gosub.io",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -997,6 +1057,7 @@
       ],
       "confidence": "low",
       "domain": "registry.tuist.dev",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -1013,6 +1074,7 @@
       ],
       "confidence": "low",
       "domain": "releases.tongyuan.cc",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -1029,6 +1091,7 @@
       ],
       "confidence": "low",
       "domain": "repo.betonquest.org",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -1045,6 +1108,7 @@
       ],
       "confidence": "low",
       "domain": "repo.gentics.com",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -1061,6 +1125,7 @@
       ],
       "confidence": "low",
       "domain": "repo.magento.com",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -1077,6 +1142,7 @@
       ],
       "confidence": "low",
       "domain": "repository.nexus.camunda.cloud",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -1093,6 +1159,7 @@
       ],
       "confidence": "low",
       "domain": "resources.knopflerfish.org",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -1109,6 +1176,7 @@
       ],
       "confidence": "low",
       "domain": "scala-ci.typesafe.com",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -1125,6 +1193,7 @@
       ],
       "confidence": "low",
       "domain": "tuist.dev",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -1141,6 +1210,7 @@
       ],
       "confidence": "low",
       "domain": "wheels.fermentrack.com",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -1157,6 +1227,7 @@
       ],
       "confidence": "low",
       "domain": "wpackagist.org",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [
@@ -1173,6 +1244,7 @@
       ],
       "confidence": "low",
       "domain": "www.eecs.berkeley.edu",
+      "repository_count": 1,
       "review_flags": [],
       "source_ecosystems": [],
       "source_kinds": [

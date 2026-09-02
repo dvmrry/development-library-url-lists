@@ -18,6 +18,59 @@ from url_lists.review_queue import (
 
 
 class ReviewQueueTests(unittest.TestCase):
+    def test_queue_ranks_equal_confidence_by_repository_reach(self) -> None:
+        """The bulk vendor pass should meet the widest-used endpoints first.
+
+        Distinct-repository reach is what separates a broadly used public
+        registry from one organisation's internal endpoint, so it orders the
+        queue ahead of the alphabetical fallback.
+        """
+
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            write_json_atomic(
+                root / "data" / "candidates.json",
+                {
+                    "schema_version": 1,
+                    "candidates": [
+                        {
+                            "target": "zzz-wide.vendor.net",
+                            "match": "exact",
+                            "categories": ["python"],
+                            "confidence": "low",
+                            "sources": [
+                                {
+                                    "source": f"https://github.com/org{n}/p/blob/HEAD/pip.conf",
+                                    "source_kind": "bigquery-github",
+                                    "repository": f"org{n}/p",
+                                }
+                                for n in range(40)
+                            ],
+                        },
+                        {
+                            "target": "aaa-narrow.vendor.net",
+                            "match": "exact",
+                            "categories": ["python"],
+                            "confidence": "low",
+                            "sources": [
+                                {
+                                    "source": "https://github.com/org0/p/blob/HEAD/pip.conf",
+                                    "source_kind": "bigquery-github",
+                                    "repository": "org0/p",
+                                }
+                            ],
+                        },
+                    ],
+                },
+            )
+            queue = build_review_queue(root)
+            self.assertEqual(
+                [entry["domain"] for entry in queue["entries"]],
+                ["zzz-wide.vendor.net", "aaa-narrow.vendor.net"],
+            )
+            self.assertEqual(queue["entries"][0]["repository_count"], 40)
+            self.assertEqual(queue["entries"][1]["repository_count"], 1)
+
     def test_exports_only_review_metadata_in_confidence_order(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)

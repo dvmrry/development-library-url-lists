@@ -49,6 +49,14 @@ def build_review_queue(root: Path) -> dict[str, Any]:
                         and isinstance(source.get("source_ecosystem"), str)
                     }
                 ),
+                "repository_count": len(
+                    {
+                        source.get("repository")
+                        for source in sources
+                        if isinstance(source, dict)
+                        and isinstance(source.get("repository"), str)
+                    }
+                ),
                 "source_roles": sorted(
                     {
                         source.get("source_role")
@@ -59,9 +67,12 @@ def build_review_queue(root: Path) -> dict[str, Any]:
                 ),
             }
         )
+    # Confidence first, then distinct-repository reach, so a bulk vendor pass
+    # meets the most widely used endpoints before the long tail.
     entries.sort(
         key=lambda entry: (
             {"high": 0, "medium": 1, "low": 2}.get(entry["confidence"], 3),
+            -entry["repository_count"],
             entry["domain"],
         )
     )
