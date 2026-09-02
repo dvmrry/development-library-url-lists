@@ -63,6 +63,10 @@ rejections such as a malformed query are never retried. A run in which every
 query fails raises instead of reporting an empty result, so a total outage
 cannot be mistaken for a clean run that found nothing.
 
+An infrequent, out-of-band BigQuery seed can extend coverage past that ceiling;
+its freshness check, scan-cost procedure, and import contract are documented in
+[`docs/bigquery-seed.md`](docs/bigquery-seed.md).
+
 Every search query names a deterministic extractor for its actual format, such
 as a Maven XML path, Cargo TOML field, or Docker JSON key. Generic line-wide
 URL matching is rejected by validation. Documentation, examples, and tests may
