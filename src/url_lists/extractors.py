@@ -11,32 +11,6 @@ from typing import Any, Callable, Iterable
 from .normalize import extract_urls
 
 
-SUPPORTED_EXTRACTORS = frozenset(
-    {
-        "bunfig-toml",
-        "cargo-toml",
-        "composer-json",
-        "conan-cli",
-        "conan-json",
-        "conda-yaml",
-        "docker-json",
-        "environment-assignment",
-        "gradle-repository",
-        "maven-pom-xml",
-        "maven-settings-xml",
-        "npmrc",
-        "nuget-xml",
-        "pip-config",
-        "r-repositories",
-        "ruby-source",
-        "sbt-resolver",
-        "stack-yaml",
-        "swift-registries-json",
-        "uv-toml",
-        "yarnrc-yaml",
-    }
-)
-
 
 def _unique(values: Iterable[str]) -> list[str]:
     seen: set[str] = set()
@@ -625,6 +599,96 @@ def _extract_docker(text: str, _: tuple[str, ...]) -> list[str]:
     return _unique(extract_urls(array))
 
 
+def _extract_pip_requirements(text: str, _: tuple[str, ...]) -> list[str]:
+    """Read pip's index options, not the package URLs pinned beside them.
+
+    A requirements file routinely carries direct-reference and VCS URLs that
+    identify a single artifact rather than a registry, so only the documented
+    index and find-links options are treated as evidence.
+    """
+
+    pattern = re.compile(
+        r"^\s*(?:--index-url|--extra-index-url|--find-links|-i|-f)[\s=]+"
+        r"(?P<value>.+)$",
+        re.IGNORECASE,
+    )
+    return _urls_from_assignment_lines(text, pattern)
+
+
+def _extract_python_toml_sources(text: str, _: tuple[str, ...]) -> list[str]:
+    """Read declared package sources from Poetry, PDM, and Pipfile tables."""
+
+    document = _load_toml(text)
+    if document is None:
+        return []
+    tool = document.get("tool")
+    tool = tool if isinstance(tool, dict) else {}
+    tables: list[Any] = []
+    for owner in ("poetry", "pdm"):
+        section = tool.get(owner)
+        if isinstance(section, dict):
+            tables.append(section.get("source"))
+    tables.append(document.get("source"))
+
+    urls: list[str] = []
+    for table in tables:
+        entries = table if isinstance(table, list) else [table]
+        for entry in entries:
+            if isinstance(entry, dict):
+                urls.extend(_urls_from_values([entry.get("url")]))
+    return _unique(urls)
+
+
+def _extract_yarnrc_v1(text: str, _: tuple[str, ...]) -> list[str]:
+    pattern = re.compile(
+        r"^\s*\"?(?:@[^:\"\s]+:)?registry\"?\s+(?P<value>.+)$",
+        re.IGNORECASE,
+    )
+    return _urls_from_assignment_lines(text, pattern)
+
+
+def _extract_package_json_registry(text: str, _: tuple[str, ...]) -> list[str]:
+    """Read publishConfig registries, not repository or issue-tracker metadata."""
+
+    try:
+        document = json.loads(text)
+    except (json.JSONDecodeError, RecursionError):
+        return []
+    if not isinstance(document, dict):
+        return []
+    publish_config = document.get("publishConfig")
+    if not isinstance(publish_config, dict):
+        return []
+    values = [
+        value
+        for key, value in publish_config.items()
+        if isinstance(key, str)
+        and (key.lower() == "registry" or key.lower().endswith(":registry"))
+    ]
+    return _urls_from_values(values)
+
+
+def _extract_paket(text: str, _: tuple[str, ...]) -> list[str]:
+    pattern = re.compile(r"^\s*source\s+(?P<value>\S+)", re.IGNORECASE)
+    return _urls_from_assignment_lines(text, pattern)
+
+
+def _extract_msbuild_restore_sources(text: str, _: tuple[str, ...]) -> list[str]:
+    """Read MSBuild restore-source properties, which are semicolon separated."""
+
+    root = _xml_document(text)
+    if root is None:
+        return []
+    fields = {"restoresources", "restoreadditionalprojectsources"}
+    urls: list[str] = []
+    for path, element in _walk_xml(root):
+        if not path or path[-1] not in fields:
+            continue
+        for part in (element.text or "").split(";"):
+            urls.extend(extract_urls(part))
+    return _unique(urls)
+
+
 Extractor = Callable[[str, tuple[str, ...]], list[str]]
 
 _EXTRACTORS: dict[str, Extractor] = {
@@ -639,17 +703,27 @@ _EXTRACTORS: dict[str, Extractor] = {
     "gradle-repository": _extract_gradle,
     "maven-pom-xml": _extract_maven_pom,
     "maven-settings-xml": _extract_maven_settings,
+    "msbuild-restore-sources": _extract_msbuild_restore_sources,
     "npmrc": _extract_npmrc,
     "nuget-xml": _extract_nuget,
+    "package-json-registry": _extract_package_json_registry,
+    "paket-dependencies": _extract_paket,
     "pip-config": _extract_pip_config,
+    "pip-requirements": _extract_pip_requirements,
+    "python-toml-sources": _extract_python_toml_sources,
     "r-repositories": _extract_r_repositories,
     "ruby-source": _extract_ruby_source,
     "sbt-resolver": _extract_sbt,
     "stack-yaml": _extract_stack_yaml,
     "swift-registries-json": _extract_swift_registries,
     "uv-toml": _extract_uv_toml,
+    "yarnrc-v1": _extract_yarnrc_v1,
     "yarnrc-yaml": _extract_yarnrc,
 }
+
+# Derived, never hand-maintained: a name validation accepts but dispatch does
+# not know would pass review and then fail mid-run against untrusted input.
+SUPPORTED_EXTRACTORS = frozenset(_EXTRACTORS)
 
 
 def extract_registry_urls(

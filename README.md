@@ -29,9 +29,10 @@ suffix, for example `.jfrog.io`. Asterisks are never emitted.
 The weekly GitHub Actions job uses only Python's standard library and the
 repository's built-in `GITHUB_TOKEN`. It:
 
-1. Searches public code for package-manager settings across npm, Yarn,
-   pip, uv, Conda, Maven, Gradle, NuGet, Cargo, Go, Composer, RubyGems, Conan,
-   Dart, Hex, Haskell, R, Julia, CocoaPods, Swift registries, and OCI mirrors.
+1. Searches public code for package-manager settings across npm, Yarn, pnpm,
+   pip, uv, Poetry, PDM, Pipenv, Conda, Maven, Gradle, sbt, NuGet, MSBuild,
+   Paket, Cargo, Go, Composer, RubyGems, Conan, Dart, Hex, Haskell, R, Julia,
+   CocoaPods, Swift registries, and OCI mirrors.
 2. Reads default repositories from the official Package-URL definitions.
 3. Parses only package-manager-specific configuration fields and normalizes
    their public hostnames.
