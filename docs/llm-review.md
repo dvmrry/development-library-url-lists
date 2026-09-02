@@ -88,9 +88,12 @@ variable.
 ## Review contract
 
 The provider receives a bounded JSON inventory containing categories, curated
-targets, candidate targets, rejection summaries, discovery queries, and at most
-three evidence links per entry. It does not receive raw public configuration
-file contents.
+targets, every candidate target for duplicate detection, aggregate candidate
+counts, a category-balanced sample of at most 300 candidate records, rejection
+summaries, discovery queries, and at most three evidence links per sampled
+entry. This keeps large official mirror catalogs from exhausting the review
+context or provider quota. It does not receive raw public configuration file
+contents.
 
 The resulting report is deliberately constrained:
 

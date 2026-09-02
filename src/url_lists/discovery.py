@@ -18,6 +18,11 @@ from urllib.request import HTTPRedirectHandler, Request, build_opener
 from .catalog import load_catalog, read_json, write_json_atomic
 from .extractors import extract_registry_urls
 from .normalize import TargetError, extract_urls, normalize_target, target_hostname
+from .published_sources import (
+    PublishedCollection,
+    PublishedSourceError,
+    collect_published_sources,
+)
 
 
 TRUSTED_NETWORK_HOSTS = {"api.github.com", "raw.githubusercontent.com"}
@@ -26,9 +31,18 @@ RETRYABLE_STATUS_CODES = frozenset({429, 500, 502, 503, 504})
 MAX_RETRY_DELAY_SECONDS = 60.0
 MAX_TOTAL_RETRY_SECONDS = 600.0
 SOURCE_ROLES = frozenset(
-    {"configuration", "documentation", "example", "official", "test"}
+    {
+        "configuration",
+        "documentation",
+        "example",
+        "mirror-catalog",
+        "official",
+        "registry-catalog",
+        "test",
+    }
 )
 NON_CONFIGURATION_ROLES = frozenset({"documentation", "example", "test"})
+PUBLISHED_CATALOG_ROLES = frozenset({"mirror-catalog", "registry-catalog"})
 HARD_REJECTION_FLAGS = frozenset({"documentation-like", "placeholder-like"})
 PURL_TYPE_CATEGORIES = {
     "cargo": "rust",
@@ -492,6 +506,14 @@ def _confidence(
         return "low"
     if any(source.get("source_kind") == "purl-definition" for source in sources):
         return "high"
+    if any(
+        source.get("source_kind") == "published-list"
+        and source.get("source_role") == "official"
+        for source in sources
+    ):
+        return "high"
+    if any(source.get("source_role") in PUBLISHED_CATALOG_ROLES for source in sources):
+        return "medium"
     repositories = {
         source["repository"]
         for source in sources
@@ -584,10 +606,12 @@ def merge_candidates(
             key: observation[key]
             for key in ("source", "source_kind", "repository")
         }
+        source["source_category"] = observation["category"]
         for key in (
             "content_sha256",
             "extractor",
             "query_id",
+            "source_ecosystem",
             "source_path",
             "source_role",
         ):
@@ -659,6 +683,73 @@ def _source_identity(source: dict[str, str]) -> tuple[str, str, str]:
     return source["source_kind"], source["repository"], location
 
 
+def reconcile_published_snapshot(
+    document: dict[str, Any],
+    observations: Iterable[dict[str, str]],
+    *,
+    successful_query_ids: Iterable[str],
+    today: str | None = None,
+) -> dict[str, Any]:
+    """Remove mirror/registry evidence absent from a successfully refreshed feed."""
+
+    successful = set(successful_query_ids)
+    if not successful:
+        return document
+    observed = {
+        (
+            observation["target"],
+            observation.get("query_id"),
+            observation.get("source_path") or observation["source"],
+        )
+        for observation in observations
+        if observation.get("source_kind") == "published-list"
+        and observation.get("query_id") in successful
+    }
+    observed_date = today or datetime.now(timezone.utc).date().isoformat()
+    candidates = []
+    for original in document.get("candidates", []):
+        candidate = dict(original)
+        sources = []
+        removed = False
+        for source in candidate.get("sources", []):
+            query_id = source.get("query_id")
+            location = source.get("source_path") or source.get("source")
+            identity = (candidate["target"], query_id, location)
+            if (
+                source.get("source_kind") == "published-list"
+                and query_id in successful
+                and identity not in observed
+            ):
+                removed = True
+                continue
+            sources.append(source)
+        if not sources:
+            continue
+        if removed:
+            candidate["sources"] = sources
+            source_categories = {
+                source["source_category"]
+                for source in sources
+                if isinstance(source.get("source_category"), str)
+            }
+            if all(
+                isinstance(source.get("source_category"), str)
+                for source in sources
+            ):
+                candidate["categories"] = sorted(source_categories)
+            review_flags = _review_flags(candidate["target"], sources)
+            candidate["confidence"] = _confidence(sources, review_flags)
+            candidate["review_flags"] = review_flags
+            candidate["last_evidence_change"] = observed_date
+        candidates.append(candidate)
+    result = dict(document)
+    result["candidates"] = sorted(
+        candidates,
+        key=lambda item: item["target"].lstrip("."),
+    )
+    return result
+
+
 def _discovery_rules_sha256(
     root: Path,
     queries: dict[str, Any],
@@ -681,6 +772,7 @@ def _discovery_rules_sha256(
         "src/url_lists/discovery.py",
         "src/url_lists/extractors.py",
         "src/url_lists/normalize.py",
+        "src/url_lists/published_sources.py",
     ):
         try:
             content = (root / relative_path).read_text(encoding="utf-8")
@@ -754,6 +846,23 @@ def run_network_discovery(root: Path, *, token: str | None = None) -> int:
     catalog = load_catalog(root)
     observations = collect_github_code(queries, token=github_token)
     observations.extend(collect_purl_definitions())
+    try:
+        published = collect_published_sources()
+    except PublishedSourceError as error:
+        # Third-party catalogs are supplementary. Their outage must not discard
+        # the code-search and Package-URL evidence already gathered; an empty
+        # successful_query_ids also leaves the published snapshot untouched.
+        published = PublishedCollection(
+            observations=[],
+            successful_query_ids=frozenset(),
+            failed_query_ids=frozenset(),
+        )
+        print(
+            "Published source discovery was skipped entirely: "
+            f"{_safe_log_text(str(error))}",
+            file=sys.stderr,
+        )
+    observations.extend(published.observations)
     observations = filter_observations(
         observations,
         exclusions=exclusions,
@@ -776,6 +885,11 @@ def run_network_discovery(root: Path, *, token: str | None = None) -> int:
         },
     )
     merged, additions = merge_candidates(current, observations)
+    merged = reconcile_published_snapshot(
+        merged,
+        observations,
+        successful_query_ids=published.successful_query_ids,
+    )
     merged["discovery_rules_sha256"] = rules_sha256
     if merged != current:
         write_json_atomic(candidates_path, merged)

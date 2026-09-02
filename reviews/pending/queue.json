@@ -1,0 +1,1189 @@
+{
+  "candidate_count": 72,
+  "entries": [
+    {
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "domain": "cran.rstudio.com",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "cran.rstudio.com"
+    },
+    {
+      "categories": [
+        "erlang"
+      ],
+      "confidence": "high",
+      "domain": "hexpm.upyun.com",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration",
+        "documentation"
+      ],
+      "target": "hexpm.upyun.com"
+    },
+    {
+      "categories": [
+        "php"
+      ],
+      "confidence": "high",
+      "domain": "plugins.roundcube.net",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "plugins.roundcube.net"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "medium",
+      "domain": "artifactory-local.silabs.net",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "artifactory-local.silabs.net"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "medium",
+      "domain": "artifactory.silabs.net",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "artifactory.silabs.net"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "medium",
+      "domain": "conan.silabs.net",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "conan.silabs.net"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "medium",
+      "domain": "mirror.gcr.io",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "mirror.gcr.io"
+    },
+    {
+      "categories": [
+        "r"
+      ],
+      "confidence": "medium",
+      "domain": "packagemanager.rstudio.com",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "packagemanager.rstudio.com"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "domain": "alpine-wheels.github.io",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "alpine-wheels.github.io"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "domain": "anaconda.mgb.org",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "anaconda.mgb.org"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "domain": "anaconda.rdhpcs.noaa.gov",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "anaconda.rdhpcs.noaa.gov"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "domain": "api.bintray.com",
+      "review_flags": [
+        "retired-service"
+      ],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration",
+        "documentation"
+      ],
+      "target": "api.bintray.com"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "domain": "artifactory.jpl.nasa.gov",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "artifactory.jpl.nasa.gov"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "domain": "artifactory.onefact.net",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "artifactory.onefact.net"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "domain": "artifacts.camunda.com",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "artifacts.camunda.com"
+    },
+    {
+      "categories": [
+        "go"
+      ],
+      "confidence": "low",
+      "domain": "athens.azurefd.net",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "documentation"
+      ],
+      "target": "athens.azurefd.net"
+    },
+    {
+      "categories": [
+        "dotnet"
+      ],
+      "confidence": "low",
+      "domain": "ci.appveyor.com",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "ci.appveyor.com"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "domain": "conan.iteale.com",
+      "review_flags": [
+        "nonstandard-port"
+      ],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "conan.iteale.com:19479"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "domain": "conan.openstudio.net",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "documentation"
+      ],
+      "target": "conan.openstudio.net"
+    },
+    {
+      "categories": [
+        "rust"
+      ],
+      "confidence": "low",
+      "domain": "crates.sunscreen.tech",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "crates.sunscreen.tech"
+    },
+    {
+      "categories": [
+        "dart"
+      ],
+      "confidence": "low",
+      "domain": "dart-pub.mirrors.sjtug.sjtu.edu.cn",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "documentation"
+      ],
+      "target": "dart-pub.mirrors.sjtug.sjtu.edu.cn"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "domain": "dl.bintray.com",
+      "review_flags": [
+        "retired-service"
+      ],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "dl.bintray.com"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "domain": "docker.1ms.run",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "docker.1ms.run"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "domain": "docker.1panel.live",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "docker.1panel.live"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "domain": "docker.amingg.com",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "docker.amingg.com"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "domain": "docker.mirrors.ustc.edu.cn",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration",
+        "documentation"
+      ],
+      "target": "docker.mirrors.ustc.edu.cn"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "domain": "dx5z2hy7.mirror.aliyuncs.com",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "dx5z2hy7.mirror.aliyuncs.com"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "domain": "elliot-braem-1032-near-social-js-ui-near-social-j-6efa4bd9f-ze.zephyrcloud.app",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "example"
+      ],
+      "target": "elliot-braem-1032-near-social-js-ui-near-social-j-6efa4bd9f-ze.zephyrcloud.app"
+    },
+    {
+      "categories": [
+        "ruby"
+      ],
+      "confidence": "low",
+      "domain": "git.gem.cache.pangea.pub",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "git.gem.cache.pangea.pub"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "domain": "git.psi.ch",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "git.psi.ch"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "domain": "hdi5v8p1.mirror.aliyuncs.com",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "hdi5v8p1.mirror.aliyuncs.com"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "domain": "hub-mirror.c.163.com",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "hub-mirror.c.163.com"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "domain": "hub.rat.dev",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "hub.rat.dev"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "domain": "hub1.nat.tf",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "hub1.nat.tf"
+    },
+    {
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "domain": "internal-artifacts.deltares.nl",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "internal-artifacts.deltares.nl"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "domain": "jaspersoft.artifactoryonline.com",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "jaspersoft.artifactoryonline.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "domain": "jcenter.bintray.com",
+      "review_flags": [
+        "retired-service"
+      ],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "jcenter.bintray.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "domain": "jraf.org",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "jraf.org"
+    },
+    {
+      "categories": [
+        "julia"
+      ],
+      "confidence": "low",
+      "domain": "juliahub.com",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "documentation"
+      ],
+      "target": "juliahub.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "domain": "maven.in.devexperts.com",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "maven.in.devexperts.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "domain": "maven.opennms.org",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "maven.opennms.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "domain": "maven.vaadin.com",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "maven.vaadin.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "domain": "maven.wso2.org",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "maven.wso2.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "domain": "mavenrepo.openmrs.org",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "mavenrepo.openmrs.org"
+    },
+    {
+      "categories": [
+        "rust"
+      ],
+      "confidence": "low",
+      "domain": "microsoft.pkgs.visualstudio.com",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "microsoft.pkgs.visualstudio.com"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "domain": "mirror.baidubce.com",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "mirror.baidubce.com"
+    },
+    {
+      "categories": [
+        "dart"
+      ],
+      "confidence": "low",
+      "domain": "mirrors.cnnic.cn",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "documentation"
+      ],
+      "target": "mirrors.cnnic.cn"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "domain": "mirrors.olares.cn",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "documentation"
+      ],
+      "target": "mirrors.olares.cn"
+    },
+    {
+      "categories": [
+        "go"
+      ],
+      "confidence": "low",
+      "domain": "nexus.eryajf.net",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "documentation"
+      ],
+      "target": "nexus.eryajf.net"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "domain": "nexus.stirante.com",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "nexus.stirante.com"
+    },
+    {
+      "categories": [
+        "php"
+      ],
+      "confidence": "low",
+      "domain": "nova.laravel.com",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "nova.laravel.com"
+    },
+    {
+      "categories": [
+        "javascript"
+      ],
+      "confidence": "low",
+      "domain": "npm.nordicsemi.no",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "npm.nordicsemi.no"
+    },
+    {
+      "categories": [
+        "erlang",
+        "julia"
+      ],
+      "confidence": "low",
+      "domain": "packages.vulnetix.com",
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "documentation"
+      ],
+      "target": "packages.vulnetix.com"
+    },
+    {
+      "categories": [
+        "php"
+      ],
+      "confidence": "low",
+      "domain": "packagist.laravel-china.org",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "packagist.laravel-china.org"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "domain": "pypi.collmot.com",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "pypi.collmot.com"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "domain": "pypi.devinfra.sentry.io",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "pypi.devinfra.sentry.io"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "domain": "pypi.epixstudios.co.uk",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "pypi.epixstudios.co.uk"
+    },
+    {
+      "categories": [
+        "r"
+      ],
+      "confidence": "low",
+      "domain": "radiant-rstats.github.io",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "radiant-rstats.github.io"
+    },
+    {
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "domain": "registry.cn-hangzhou.aliyuncs.com",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "registry.cn-hangzhou.aliyuncs.com"
+    },
+    {
+      "categories": [
+        "rust"
+      ],
+      "confidence": "low",
+      "domain": "registry.gosub.io",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "registry.gosub.io"
+    },
+    {
+      "categories": [
+        "swift"
+      ],
+      "confidence": "low",
+      "domain": "registry.tuist.dev",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "registry.tuist.dev"
+    },
+    {
+      "categories": [
+        "julia"
+      ],
+      "confidence": "low",
+      "domain": "releases.tongyuan.cc",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "releases.tongyuan.cc"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "domain": "repo.betonquest.org",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "repo.betonquest.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "domain": "repo.gentics.com",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "repo.gentics.com"
+    },
+    {
+      "categories": [
+        "php"
+      ],
+      "confidence": "low",
+      "domain": "repo.magento.com",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "repo.magento.com"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "domain": "repository.nexus.camunda.cloud",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "repository.nexus.camunda.cloud"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "domain": "resources.knopflerfish.org",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "resources.knopflerfish.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "domain": "scala-ci.typesafe.com",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "scala-ci.typesafe.com"
+    },
+    {
+      "categories": [
+        "swift"
+      ],
+      "confidence": "low",
+      "domain": "tuist.dev",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "tuist.dev"
+    },
+    {
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "domain": "wheels.fermentrack.com",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "wheels.fermentrack.com"
+    },
+    {
+      "categories": [
+        "php"
+      ],
+      "confidence": "low",
+      "domain": "wpackagist.org",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "wpackagist.org"
+    },
+    {
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "domain": "www.eecs.berkeley.edu",
+      "review_flags": [],
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "www.eecs.berkeley.edu"
+    }
+  ],
+  "schema_version": 1,
+  "source": "data/candidates.json"
+}

@@ -143,6 +143,40 @@ class LlmReviewTests(unittest.TestCase):
         self.assertEqual(candidate["evidence_source_count"], 1)
         self.assertNotIn("content", json.dumps(bundle))
 
+    def test_large_candidate_inventory_is_summarized_and_sampled(self) -> None:
+        root = self.make_root()
+        candidates = []
+        for index in range(1_200):
+            candidates.append(
+                {
+                    "target": f"mirror-{index:04d}.vendor.net",
+                    "categories": ["python" if index % 2 else "javascript"],
+                    "confidence": "high",
+                    "review_flags": [],
+                    "sources": [
+                        {
+                            "source": "https://cran.r-project.org/CRAN_mirrors.csv",
+                            "source_ecosystem": "cran",
+                            "source_kind": "published-list",
+                            "repository": "r-project/cran-mirrors",
+                        }
+                    ],
+                }
+            )
+        self.write_json(
+            root / "data" / "candidates.json",
+            {"schema_version": 1, "candidates": candidates},
+        )
+        bundle = build_review_input(root)
+        self.assertEqual(bundle["candidate_summary"]["total"], 1_200)
+        self.assertEqual(
+            bundle["candidate_summary"]["by_source_ecosystem"],
+            {"cran": 1_200},
+        )
+        self.assertEqual(len(bundle["unapproved_candidates"]), 300)
+        self.assertEqual(len(bundle["candidate_targets"]), 1_200)
+        self.assertLess(len(json.dumps(bundle).encode()), 500_000)
+
     def test_openai_request_uses_fixed_endpoint_and_structured_output(self) -> None:
         captured = {}
 
