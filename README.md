@@ -47,6 +47,14 @@ The collectors contact only `api.github.com` and
 `raw.githubusercontent.com`. Discovered URLs are parsed but never fetched,
 so a malicious public config cannot turn the workflow into an SSRF primitive.
 
+GitHub code search throttles routinely, so a rate-limited or transient request
+is retried with the server's own `Retry-After` interval under a whole-run wait
+budget, and a query that still cannot complete is skipped with a warning rather
+than discarding the evidence every other query gathered. Deterministic
+rejections such as a malformed query are never retried. A run in which every
+query fails raises instead of reporting an empty result, so a total outage
+cannot be mistaken for a clean run that found nothing.
+
 Every search query names a deterministic extractor for its actual format, such
 as a Maven XML path, Cargo TOML field, or Docker JSON key. Generic line-wide
 URL matching is rejected by validation. Documentation, examples, and tests may

@@ -21,6 +21,10 @@ from .normalize import TargetError, extract_urls, normalize_target, target_hostn
 
 
 TRUSTED_NETWORK_HOSTS = {"api.github.com", "raw.githubusercontent.com"}
+MAX_REQUEST_ATTEMPTS = 4
+RETRYABLE_STATUS_CODES = frozenset({429, 500, 502, 503, 504})
+MAX_RETRY_DELAY_SECONDS = 60.0
+MAX_TOTAL_RETRY_SECONDS = 600.0
 SOURCE_ROLES = frozenset(
     {"configuration", "documentation", "example", "official", "test"}
 )
@@ -93,7 +97,65 @@ def _trusted_ascii_url(url: str) -> str:
     )
 
 
-def _get_bytes(url: str, *, token: str | None = None) -> bytes:
+class _RetryBudget:
+    """Bound the total time one run may spend waiting on throttled sources.
+
+    Without a shared ceiling, a fully throttled GitHub search would sleep
+    through the job timeout and lose the evidence already gathered. Spending
+    the budget instead degrades the run into skipped queries, which
+    ``collect_github_code`` already reports and survives.
+    """
+
+    def __init__(self, total_seconds: float = MAX_TOTAL_RETRY_SECONDS) -> None:
+        self.remaining = total_seconds
+
+    @property
+    def exhausted(self) -> bool:
+        return self.remaining <= 0
+
+    def claim(self, seconds: float) -> float | None:
+        """Reserve a wait, or refuse and close the budget if it will not fit."""
+
+        if seconds > self.remaining:
+            self.remaining = 0.0
+            return None
+        self.remaining -= seconds
+        return seconds
+
+
+def _is_retryable(error: Exception) -> bool:
+    """Distinguish transient throttling from a deterministic rejection.
+
+    Retrying a 4xx other than 429 cannot succeed and only spends more of a
+    rate-limit budget that is already the scarce resource here.
+    """
+
+    if isinstance(error, HTTPError):
+        return error.code in RETRYABLE_STATUS_CODES
+    return isinstance(error, (URLError, TimeoutError))
+
+
+def _retry_delay(error: Exception, attempt: int) -> float:
+    """Prefer the server's own Retry-After over a guessed backoff."""
+
+    headers = getattr(error, "headers", None)
+    if headers is not None:
+        try:
+            advertised = float(str(headers.get("Retry-After", "")).strip())
+        except (TypeError, ValueError):
+            advertised = -1.0
+        if advertised >= 0:
+            return min(advertised, MAX_RETRY_DELAY_SECONDS)
+    return min(2.0 ** attempt, MAX_RETRY_DELAY_SECONDS)
+
+
+def _get_bytes(
+    url: str,
+    *,
+    token: str | None = None,
+    budget: "_RetryBudget | None" = None,
+) -> bytes:
+    retry_budget = budget if budget is not None else _RetryBudget()
     safe_url = _trusted_ascii_url(url)
     headers = {
         "Accept": "application/vnd.github+json",
@@ -103,17 +165,31 @@ def _get_bytes(url: str, *, token: str | None = None) -> bytes:
     if token and urlsplit(safe_url).hostname == "api.github.com":
         headers["Authorization"] = f"Bearer {token}"
     request = Request(safe_url, headers=headers)
-    try:
-        with _OPENER.open(request, timeout=30) as response:
-            return response.read(2_000_001)
-    except (HTTPError, URLError, TimeoutError, UnicodeError) as error:
-        raise DiscoveryError(
-            f"trusted source request failed for {safe_url}: {error}"
-        ) from error
+    last_error: Exception | None = None
+    for attempt in range(MAX_REQUEST_ATTEMPTS):
+        try:
+            with _OPENER.open(request, timeout=30) as response:
+                return response.read(2_000_001)
+        except (HTTPError, URLError, TimeoutError, UnicodeError) as error:
+            last_error = error
+            if attempt + 1 >= MAX_REQUEST_ATTEMPTS or not _is_retryable(error):
+                break
+            granted = retry_budget.claim(_retry_delay(error, attempt))
+            if granted is None:
+                break
+            time.sleep(granted)
+    raise DiscoveryError(
+        f"trusted source request failed for {safe_url}: {last_error}"
+    ) from last_error
 
 
-def _get_json(url: str, *, token: str | None = None) -> Any:
-    content = _get_bytes(url, token=token)
+def _get_json(
+    url: str,
+    *,
+    token: str | None = None,
+    budget: "_RetryBudget | None" = None,
+) -> Any:
+    content = _get_bytes(url, token=token, budget=budget)
     if len(content) > 2_000_000:
         raise DiscoveryError(f"trusted source response is too large: {url}")
     try:
@@ -122,8 +198,13 @@ def _get_json(url: str, *, token: str | None = None) -> Any:
         raise DiscoveryError(f"trusted source returned invalid JSON: {url}") from error
 
 
-def _get_text(url: str, *, token: str | None = None) -> str:
-    content = _get_bytes(url, token=token)
+def _get_text(
+    url: str,
+    *,
+    token: str | None = None,
+    budget: "_RetryBudget | None" = None,
+) -> str:
+    content = _get_bytes(url, token=token, budget=budget)
     if len(content) > 2_000_000:
         raise DiscoveryError(f"trusted source response is too large: {url}")
     try:
@@ -180,6 +261,8 @@ def collect_github_code(
 
     observations: list[dict[str, str]] = []
     extraction_failures = 0
+    failed_queries = 0
+    retry_budget = _RetryBudget()
     query_list = list(queries)
     for query_index, query in enumerate(query_list):
         query_id = query["id"]
@@ -192,7 +275,19 @@ def collect_github_code(
             "https://api.github.com/search/code"
             f"?q={quote(search_text)}&per_page={maximum}"
         )
-        result = _get_json(search_url, token=token)
+        try:
+            result = _get_json(search_url, token=token, budget=retry_budget)
+        except DiscoveryError as error:
+            # GitHub code search throttles routinely. One exhausted query must
+            # not discard the evidence every other query already gathered.
+            failed_queries += 1
+            result = {}
+            print(
+                "Search query failed and was skipped: "
+                f"query={_safe_log_text(query_id)} "
+                f"error={_safe_log_text(str(error))}",
+                file=sys.stderr,
+            )
         for item in result.get("items", []):
             content_url = item.get("url")
             evidence_url = item.get("html_url")
@@ -204,7 +299,9 @@ def collect_github_code(
             ):
                 continue
             try:
-                document = _get_json(content_url, token=token)
+                document = _get_json(
+                    content_url, token=token, budget=retry_budget
+                )
             except DiscoveryError:
                 continue
             encoded = document.get("content")
@@ -261,6 +358,18 @@ def collect_github_code(
             f"Discovery skipped {extraction_failures} file(s) whose "
             "extraction failed; see warnings above.",
             file=sys.stderr,
+        )
+    if failed_queries:
+        print(
+            f"Discovery skipped {failed_queries} of {len(query_list)} search "
+            "queries that could not be completed; see warnings above.",
+            file=sys.stderr,
+        )
+    if query_list and failed_queries == len(query_list):
+        # A total outage must not masquerade as a clean run with no new evidence.
+        raise DiscoveryError(
+            "every GitHub search query failed; refusing to report an empty "
+            "discovery run"
         )
     return observations
 

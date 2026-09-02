@@ -2,17 +2,22 @@ from __future__ import annotations
 
 import base64
 import contextlib
+import email.message
 import hashlib
 import io
 import sys
 import unittest
 from pathlib import Path
 from unittest.mock import patch
+from urllib.error import HTTPError
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from url_lists.discovery import (
+    DiscoveryError,
+    _RetryBudget,
+    _get_bytes,
     _reconcile_current_candidates,
     _source_role,
     _trusted_ascii_url,
@@ -20,6 +25,20 @@ from url_lists.discovery import (
     filter_observations,
     merge_candidates,
 )
+
+
+class _FakeResponse:
+    def __init__(self, payload: bytes) -> None:
+        self._payload = payload
+
+    def read(self, size: int | None = None) -> bytes:
+        return self._payload
+
+    def __enter__(self) -> "_FakeResponse":
+        return self
+
+    def __exit__(self, *exc_info: object) -> bool:
+        return False
 
 
 class DiscoveryTests(unittest.TestCase):
@@ -426,6 +445,158 @@ class DiscoveryTests(unittest.TestCase):
         self.assertEqual(_source_role("tests/fixtures/pip.conf"), "test")
         self.assertEqual(_source_role("examples/pip.conf"), "example")
         self.assertEqual(_source_role("config/pip.conf"), "configuration")
+
+    def test_rate_limited_request_is_retried_and_succeeds(self) -> None:
+        """One 429 must not end a request; GitHub search throttles routinely."""
+
+        headers = email.message.Message()
+        headers["Retry-After"] = "3"
+        attempts: list[str] = []
+
+        def fake_open(request, timeout=None):
+            attempts.append(request.full_url)
+            if len(attempts) == 1:
+                raise HTTPError(
+                    request.full_url, 429, "Too Many Requests", headers, None
+                )
+            return _FakeResponse(b'{"items": []}')
+
+        slept: list[float] = []
+        with patch("url_lists.discovery._OPENER.open", side_effect=fake_open), patch(
+            "url_lists.discovery.time.sleep", side_effect=slept.append
+        ):
+            content = _get_bytes("https://api.github.com/search/code?q=x")
+
+        self.assertEqual(content, b'{"items": []}')
+        self.assertEqual(len(attempts), 2)
+        self.assertEqual(slept, [3.0])
+
+    def test_persistent_rate_limit_eventually_raises(self) -> None:
+        headers = email.message.Message()
+
+        def fake_open(request, timeout=None):
+            raise HTTPError(request.full_url, 429, "Too Many Requests", headers, None)
+
+        with patch("url_lists.discovery._OPENER.open", side_effect=fake_open), patch(
+            "url_lists.discovery.time.sleep"
+        ):
+            with self.assertRaises(DiscoveryError):
+                _get_bytes("https://api.github.com/search/code?q=x")
+
+    def test_client_error_is_not_retried(self) -> None:
+        """A 422 is deterministic; retrying only burns the rate-limit budget."""
+
+        headers = email.message.Message()
+        attempts: list[str] = []
+
+        def fake_open(request, timeout=None):
+            attempts.append(request.full_url)
+            raise HTTPError(request.full_url, 422, "Unprocessable", headers, None)
+
+        with patch("url_lists.discovery._OPENER.open", side_effect=fake_open), patch(
+            "url_lists.discovery.time.sleep"
+        ):
+            with self.assertRaises(DiscoveryError):
+                _get_bytes("https://api.github.com/search/code?q=x")
+        self.assertEqual(len(attempts), 1)
+
+    def test_retry_budget_stops_sleeping_once_exhausted(self) -> None:
+        """A hard-throttled run must skip queries, not hit the job timeout."""
+
+        headers = email.message.Message()
+        headers["Retry-After"] = "60"
+        budget = _RetryBudget(90.0)
+        slept: list[float] = []
+
+        def fake_open(request, timeout=None):
+            raise HTTPError(request.full_url, 429, "Too Many Requests", headers, None)
+
+        with patch("url_lists.discovery._OPENER.open", side_effect=fake_open), patch(
+            "url_lists.discovery.time.sleep", side_effect=slept.append
+        ):
+            for _ in range(3):
+                with self.assertRaises(DiscoveryError):
+                    _get_bytes(
+                        "https://api.github.com/search/code?q=x", budget=budget
+                    )
+
+        # 90s of budget funds one 60s wait; everything after fails immediately.
+        self.assertEqual(slept, [60.0])
+        self.assertTrue(budget.exhausted)
+
+    def test_failed_query_skips_without_aborting_the_run(self) -> None:
+        """A throttled query must not discard the other 29 queries' evidence."""
+
+        good_search = {
+            "items": [
+                {
+                    "url": "https://api.github.com/repos/acme/good/contents/pip.conf",
+                    "html_url": "https://github.com/acme/good/blob/b/pip.conf",
+                    "path": "pip.conf",
+                    "repository": {"full_name": "acme/good"},
+                }
+            ]
+        }
+        good_content = {
+            "encoding": "base64",
+            "content": base64.b64encode(
+                b"index-url = https://packages.vendor.net/simple\n"
+            ).decode(),
+        }
+        stderr = io.StringIO()
+        with patch(
+            "url_lists.discovery._get_json",
+            side_effect=[
+                DiscoveryError("HTTP Error 429: Too Many Requests"),
+                good_search,
+                good_content,
+            ],
+        ), contextlib.redirect_stderr(stderr):
+            observations = collect_github_code(
+                [
+                    {
+                        "id": "conda-default-channels",
+                        "ecosystem": "python",
+                        "query": '"default_channels:" filename:.condarc',
+                        "extractor": "conda-yaml",
+                    },
+                    {
+                        "id": "pip-index",
+                        "ecosystem": "python",
+                        "query": '"index-url" filename:pip.conf',
+                        "extractor": "pip-config",
+                    },
+                ],
+                token="test-token",
+                delay_seconds=0,
+            )
+
+        self.assertEqual(len(observations), 1)
+        self.assertEqual(observations[0]["query_id"], "pip-index")
+        report = stderr.getvalue()
+        self.assertIn("conda-default-channels", report)
+
+    def test_every_query_failing_raises_instead_of_reporting_no_evidence(self) -> None:
+        """A total outage must fail loudly, not look like a quiet clean run."""
+
+        stderr = io.StringIO()
+        with patch(
+            "url_lists.discovery._get_json",
+            side_effect=DiscoveryError("HTTP Error 429: Too Many Requests"),
+        ), contextlib.redirect_stderr(stderr):
+            with self.assertRaises(DiscoveryError):
+                collect_github_code(
+                    [
+                        {
+                            "id": "pip-index",
+                            "ecosystem": "python",
+                            "query": '"index-url" filename:pip.conf',
+                            "extractor": "pip-config",
+                        }
+                    ],
+                    token="test-token",
+                    delay_seconds=0,
+                )
 
     @staticmethod
     def observation(url: str) -> dict[str, str]:
