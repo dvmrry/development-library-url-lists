@@ -13,6 +13,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from url_lists.catalog import read_json, write_json_atomic
 from url_lists.normalize import TargetError, normalize_target
+from url_lists.outputs import refresh_outputs
 
 
 def main() -> int:
@@ -26,8 +27,8 @@ def main() -> int:
     except TargetError as error:
         parser.error(str(error))
     reason = arguments.reason.strip()
-    if not reason:
-        parser.error("--reason cannot be empty")
+    if not reason or reason.startswith("REPLACE"):
+        parser.error("--reason must contain your actual rejection rationale")
 
     candidates_path = ROOT / "data" / "candidates.json"
     candidates = read_json(candidates_path)
@@ -58,6 +59,7 @@ def main() -> int:
     ]
     write_json_atomic(rejections_path, rejections)
     write_json_atomic(candidates_path, candidates)
+    refresh_outputs(ROOT)
     print(f"Rejected and suppressed {target}")
     return 0
 

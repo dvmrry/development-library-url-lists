@@ -518,10 +518,12 @@ class SeedImportTests(unittest.TestCase):
             )
 
         self.assertEqual(result.records_read, 2)
-        self.assertEqual(result.skipped, 1)
+        # The shared URL filter drops this observation without failing either
+        # otherwise valid JSONL record or retrying the batch.
+        self.assertEqual(result.skipped, 0)
         self.assertEqual(result.observations_produced, 2)
         self.assertEqual(result.candidates_added, 1)
-        self.assertIn("recovering individually", stderr.getvalue())
+        self.assertEqual(stderr.getvalue(), "")
 
 
 if __name__ == "__main__":

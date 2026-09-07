@@ -87,6 +87,12 @@ variable.
 
 ## Review contract
 
+A validated prior report is reused when its inventory hash, prompt version,
+provider, and model match. Use `python scripts/llm_review.py --force` to request
+a fresh review. The scheduled job restores the previous automation report so
+unchanged inputs do not incur another model request. Failed or invalid reports
+are not reused. The original report timestamp is retained when reused.
+
 The provider receives a bounded JSON inventory containing categories, curated
 targets, every candidate target for duplicate detection, aggregate candidate
 counts, a category-balanced sample of at most 300 candidate records, rejection

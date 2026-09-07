@@ -10,8 +10,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from url_lists.catalog import write_documents
-from url_lists.discovery import DiscoveryError, run_network_discovery
+from url_lists.outputs import refresh_outputs
+from url_lists.discovery import DiscoveryError, run_network_discovery, write_run_summary
 
 
 def main() -> int:
@@ -25,12 +25,15 @@ def main() -> int:
 
     additions = 0
     if arguments.network:
+        metrics = {}
         try:
-            additions = run_network_discovery(ROOT)
+            additions = run_network_discovery(ROOT, metrics=metrics)
         except DiscoveryError as error:
             print(f"Discovery failed: {error}", file=sys.stderr)
             return 1
-    write_documents(ROOT)
+        finally:
+            write_run_summary(ROOT, metrics)
+    refresh_outputs(ROOT)
     print(f"Update complete; {additions} new evidence record(s)")
     return 0
 

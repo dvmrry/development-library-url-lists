@@ -23,6 +23,8 @@ Generated files live in `dist/`:
 - `reviews/pending/domains.txt` and `queue.json` provide a minimal handoff for
   private Cloudflare and Zscaler review without publishing either vendor's
   response data.
+- [`reviews/pending/README.md`](reviews/pending/README.md) provides evidence
+  links, a 20-target ecosystem-balanced review batch, and decision commands.
 
 Targets are lowercase and scheme-free. A leading period represents a provider
 suffix, for example `.jfrog.io`. Asterisks are never emitted.
@@ -56,12 +58,14 @@ never fetched, so a malicious public config or catalog record cannot turn the
 workflow into an SSRF primitive.
 
 GitHub code search throttles routinely, so a rate-limited or transient request
-is retried with the server's own `Retry-After` interval under a whole-run wait
+is retried with the server's `Retry-After` or rate-limit reset interval under a whole-run wait
 budget, and a query that still cannot complete is skipped with a warning rather
 than discarding the evidence every other query gathered. Deterministic
 rejections such as a malformed query are never retried. A run in which every
 query fails raises instead of reporting an empty result, so a total outage
-cannot be mistaken for a clean run that found nothing.
+cannot be mistaken for a clean run that found nothing. Independent published
+sources can still complete during a GitHub outage. The Actions summary labels
+partial runs and reports query, retrieval, evidence, and candidate counts.
 
 An infrequent, out-of-band BigQuery seed can extend coverage past that ceiling;
 its freshness check, scan-cost procedure, and import contract are documented in
@@ -71,8 +75,11 @@ Every search query names a deterministic extractor for its actual format, such
 as a Maven XML path, Cargo TOML field, or Docker JSON key. Generic line-wide
 URL matching is rejected by validation. Documentation, examples, and tests may
 preserve useful evidence but cannot raise confidence by repetition. A discovery
-rules fingerprint rebuilds the candidate snapshot after extraction or filtering
-logic changes, preventing older noisy results from surviving a stricter rule set.
+rules fingerprint marks retained evidence for revalidation after extraction or
+filtering logic changes. Stale evidence cannot raise confidence; a fresh source
+observation clears its flag. Offline seed evidence stays available for replay
+or explicit review instead of being lost. Current exclusion and rejection
+rules still remove ineligible targets.
 
 ## Approval model
 
@@ -90,10 +97,16 @@ python scripts/reject.py docs.example.org --reason "documentation site"
 ~~~
 
 Promotion records the discovery evidence, removes the review candidate, and
-regenerates `dist/`. Rejection preserves its evidence and rationale in
+regenerates `dist/` and `reviews/pending/`. Rejection preserves its evidence and rationale in
 `data/rejections.json`. Deterministic flags identify documentation-like,
 placeholder-like, nonstandard-port, retired-service, and non-configuration-only
 candidates to speed up review.
+
+Already approved hosts can generate suggestions for additional ecosystems.
+Use `promote.py TARGET --extend --category CATEGORY` after reviewing an exact
+host's new category evidence. Promotion of stale evidence also requires a
+`--review-note` explaining the evidence and blocking scope you reviewed.
+See [the review workflow and offline traffic comparison](docs/review-workflow.md).
 
 Published entries are never removed automatically; a retired
 endpoint remains in the evidence catalog with status `retired`.

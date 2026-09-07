@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -14,10 +15,10 @@ from url_lists.catalog import (
     load_catalog,
     load_categories,
     read_json,
-    write_documents,
     write_json_atomic,
 )
 from url_lists.normalize import TargetError, normalize_target
+from url_lists.outputs import refresh_outputs
 
 
 def main() -> int:
@@ -36,12 +37,25 @@ def main() -> int:
     )
     parser.add_argument("--kind", default="discovered-repository")
     parser.add_argument(
+        "--extend",
+        action="store_true",
+        help="add reviewed categories to an existing target with the same match mode",
+    )
+    parser.add_argument(
+        "--review-note",
+        help="record evidence and blocking-scope rationale; required for stale evidence",
+    )
+    parser.add_argument(
         "--evidence",
         action="append",
         default=[],
         help="HTTP(S) evidence URL; required if target is not a candidate",
     )
     arguments = parser.parse_args()
+    if arguments.review_note is not None and (
+        not arguments.review_note.strip() or arguments.review_note.startswith("REPLACE")
+    ):
+        parser.error("--review-note must contain your actual review rationale")
 
     try:
         target = normalize_target(
@@ -82,18 +96,42 @@ def main() -> int:
 
     evidence = set(arguments.evidence)
     if candidate is not None:
+        if (
+            any(source.get("needs_revalidation") for source in candidate["sources"])
+            and not arguments.review_note
+        ):
+            parser.error(
+                "evidence needs revalidation; inspect it and record --review-note before promotion"
+            )
         evidence.update(source["source"] for source in candidate["sources"])
-    if not evidence or not all(url.startswith(("https://", "http://")) for url in evidence):
+    if not evidence or not all(
+        url.startswith(("https://", "http://")) for url in evidence
+    ):
         parser.error("at least one HTTP(S) evidence URL is required")
 
     catalog = load_catalog(ROOT)
-    if any(
-        item["target"] == target and item["match"] == arguments.match
-        for item in catalog["entries"]
-    ):
+    existing = next(
+        (
+            item
+            for item in catalog["entries"]
+            if item["target"] == target and item["match"] == arguments.match
+        ),
+        None,
+    )
+    if existing and not arguments.extend:
         parser.error("target and match mode already exist in the catalog")
-    catalog["entries"].append(
-        {
+    if arguments.extend and (existing is None or existing["status"] != "approved"):
+        parser.error("--extend requires an approved target with the same match mode")
+    if existing:
+        if not selected_categories - set(existing["categories"]):
+            parser.error("the selected categories are already approved")
+        existing["categories"] = sorted(
+            set(existing["categories"]) | selected_categories
+        )
+        existing["evidence"] = sorted(set(existing["evidence"]) | evidence)
+        entry = existing
+    else:
+        entry = {
             "target": target,
             "match": arguments.match,
             "categories": sorted(selected_categories),
@@ -101,19 +139,33 @@ def main() -> int:
             "status": "approved",
             "evidence": sorted(evidence),
         }
+        catalog["entries"].append(entry)
+    if arguments.review_note:
+        entry.setdefault("reviews", []).append(
+            {
+                "reviewed_on": datetime.now(timezone.utc).date().isoformat(),
+                "categories": sorted(selected_categories),
+                "note": arguments.review_note.strip(),
+            }
+        )
+    catalog["entries"].sort(
+        key=lambda item: (item["target"].lstrip("."), item["match"])
     )
-    catalog["entries"].sort(key=lambda item: (item["target"].lstrip("."), item["match"]))
     write_json_atomic(ROOT / "data" / "catalog.json", catalog)
 
     if candidate is not None:
-        candidates_document["candidates"] = [
-            item
-            for item in candidates_document["candidates"]
-            if item["target"] != target
-        ]
+        remaining = set(candidate["categories"]) - set(entry["categories"])
+        if remaining:
+            candidate["categories"] = sorted(remaining)
+        else:
+            candidates_document["candidates"] = [
+                item
+                for item in candidates_document["candidates"]
+                if item["target"] != target
+            ]
         write_json_atomic(candidates_path, candidates_document)
 
-    write_documents(ROOT)
+    refresh_outputs(ROOT)
     print(f"Promoted {target} to {', '.join(sorted(selected_categories))}")
     return 0
 

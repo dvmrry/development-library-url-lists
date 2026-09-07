@@ -53,11 +53,13 @@ class DiscoveryTests(unittest.TestCase):
         self.catalog = [
             {
                 "target": "registry.npmjs.org",
+                "categories": ["python"],
                 "match": "exact",
                 "status": "approved",
             },
             {
                 "target": ".jfrog.io",
+                "categories": ["python"],
                 "match": "suffix",
                 "status": "approved",
             },

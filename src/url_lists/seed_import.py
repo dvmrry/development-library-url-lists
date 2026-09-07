@@ -627,6 +627,10 @@ def run_seed_import(
 
     repository_root = Path(root)
     imported = read_seed_records(Path(seed_path), stderr=stderr)
+    with Path(seed_path).open("rb") as stream:
+        seed_sha256 = hashlib.file_digest(stream, "sha256").hexdigest()
+    for observation in imported.observations:
+        observation["seed_sha256"] = seed_sha256
 
     category_ids = {item["id"] for item in load_categories(repository_root)}
     unknown_categories = {

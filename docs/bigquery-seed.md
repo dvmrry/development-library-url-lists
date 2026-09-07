@@ -169,12 +169,13 @@ contrast, usually appears only in that company's few open-sourced repositories.
 Count distinct `repo_name` values that produce each normalized hostname, not
 file rows or repeated matches from one repository, and apply the seed's
 minimum repository-count threshold before placing that hostname in the review
-queue. The threshold is the primary safety signal that separates a broadly
-used public registry from an organisation's internal endpoint at this scale.
-It keeps a large export from flooding review with other organisations'
-internal Artifactory and similar endpoints, which is the failure this
-repository exists to avoid. The count is an admission filter, not proof that a
-hostname is safe or a reason to bypass human review.
+queue. This threshold reduces low-reach noise but does not establish independent
+ownership or public accessibility. Review also shows distinct owner and content
+counts, making one company's many repositories visible as such. The count is an
+admission filter, not proof that a hostname is safe or a reason to bypass review.
+
+Each new imported source records the seed file's SHA-256. Retain the original
+seed privately for replay; see [evidence continuity](review-workflow.md#evidence-continuity).
 
 ## Provenance and trust boundary
 

@@ -48,9 +48,13 @@ def _validate_domain(domain: str) -> str:
     try:
         normalized = normalize_target(domain, preserve_path=False)
     except TargetError as error:
-        raise CloudflareIntelError(f"invalid Cloudflare lookup domain: {domain!r}") from error
+        raise CloudflareIntelError(
+            f"invalid Cloudflare lookup domain: {domain!r}"
+        ) from error
     if normalized != domain or ":" in normalized:
-        raise CloudflareIntelError(f"Cloudflare lookup requires a bare domain: {domain!r}")
+        raise CloudflareIntelError(
+            f"Cloudflare lookup requires a bare domain: {domain!r}"
+        )
     return normalized
 
 
@@ -143,7 +147,9 @@ def _normalize_result(item: Any) -> tuple[str, dict[str, Any]]:
         or isinstance(risk_score, bool)
         or not 0 <= risk_score <= 1
     ):
-        raise CloudflareIntelError("Cloudflare risk score is outside the documented range")
+        raise CloudflareIntelError(
+            "Cloudflare risk score is outside the documented range"
+        )
     inherited_from = item.get("inherited_from")
     if inherited_from is not None and not isinstance(inherited_from, str):
         raise CloudflareIntelError("Cloudflare inherited_from field changed shape")
@@ -200,12 +206,9 @@ def fetch_domain_batch(
         raise CloudflareIntelError("CLOUDFLARE_API_TOKEN is empty")
 
     query = urlencode(
-        [("domain", domain) for domain in domain_list]
-        + [("include_ranking", "false")]
+        [("domain", domain) for domain in domain_list] + [("include_ranking", "false")]
     )
-    url = (
-        f"{CLOUDFLARE_API_ROOT}/accounts/{safe_account_id}/intel/domain/bulk?{query}"
-    )
+    url = f"{CLOUDFLARE_API_ROOT}/accounts/{safe_account_id}/intel/domain/bulk?{query}"
     request = Request(
         url,
         headers={
@@ -327,6 +330,8 @@ def load_cache(root: Path) -> dict[str, Any]:
 
 
 def _candidate_targets(root: Path) -> tuple[list[str], dict[str, str]]:
+    from .review_queue import balanced_entries, build_review_queue
+
     try:
         document = read_json(root / "data" / "candidates.json")
     except CatalogError as error:
@@ -349,12 +354,14 @@ def _candidate_targets(root: Path) -> tuple[list[str], dict[str, str]]:
         rank = {"high": 0, "medium": 1, "low": 2}
         if current is None or rank[confidence] < rank[current]:
             priorities[domain] = confidence
-    ordered = sorted(
-        priorities,
-        key=lambda domain: (
-            {"high": 0, "medium": 1, "low": 2}[priorities[domain]],
-            domain,
-        ),
+    ordered = list(
+        dict.fromkeys(
+            entry["domain"]
+            for entry in balanced_entries(
+                build_review_queue(root)["entries"], limit=None
+            )
+            if entry["domain"] in priorities
+        )
     )
     return ordered, priorities
 
@@ -438,7 +445,9 @@ def enrich_candidates(
         "schema_version": 1,
         "provider": "cloudflare-domain-intelligence",
         "status": status,
-        "as_of": run_date.isoformat() if calls_made or provider_error else max(relevant_dates, default=None),
+        "as_of": run_date.isoformat()
+        if calls_made or provider_error
+        else max(relevant_dates, default=None),
         "candidate_domain_count": len(targets),
         "cached_domain_count": sum(domain in entries for domain in targets),
         "refreshed_domain_count": len(refreshed),
@@ -475,7 +484,9 @@ def validate_review_files(root: Path) -> list[str]:
     if not json_path.exists() and not markdown_path.exists():
         return []
     if not json_path.exists() or not markdown_path.exists():
-        return ["Cloudflare review JSON and Markdown must either both exist or both be absent"]
+        return [
+            "Cloudflare review JSON and Markdown must either both exist or both be absent"
+        ]
     try:
         report = read_json(json_path)
     except CatalogError as error:
@@ -507,7 +518,9 @@ def validate_review_files(root: Path) -> list[str]:
             try:
                 _validate_domain(domain)
             except CloudflareIntelError:
-                problems.append("Cloudflare review contains an invalid refreshed domain")
+                problems.append(
+                    "Cloudflare review contains an invalid refreshed domain"
+                )
                 break
     provider_error = report.get("provider_error")
     if provider_error is not None and not isinstance(provider_error, str):
@@ -580,9 +593,7 @@ def write_review(root: Path, report: dict[str, Any]) -> None:
                 "" if risk_score is None else str(risk_score),
                 _display_names(entry.get("risk_types")),
             )
-            lines.append(
-                "| " + " | ".join(fields) + " |"
-            )
+            lines.append("| " + " | ".join(fields) + " |")
         if len(refreshed) > 200:
             lines.extend(
                 [
