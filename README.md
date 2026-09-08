@@ -20,6 +20,11 @@ Generated files live in `dist/`:
   Haskell, R, Julia, Swift, containers, and multi-ecosystem providers.
 - `catalog.json` retains category, match type, status, kind, and evidence.
 - `manifest.json` and `SHA256SUMS` provide counts and integrity hashes.
+- `reviews/pending/domains.txt` and `queue.json` provide a minimal handoff for
+  private Cloudflare and Zscaler review without publishing either vendor's
+  response data.
+- [`reviews/pending/README.md`](reviews/pending/README.md) provides evidence
+  links, a 20-target ecosystem-balanced review batch, and decision commands.
 
 Targets are lowercase and scheme-free. A leading period represents a provider
 suffix, for example `.jfrog.io`. Asterisks are never emitted.
@@ -29,30 +34,52 @@ suffix, for example `.jfrog.io`. Asterisks are never emitted.
 The weekly GitHub Actions job uses only Python's standard library and the
 repository's built-in `GITHUB_TOKEN`. It:
 
-1. Searches public code for package-manager settings across npm, Yarn,
-   pip, uv, Conda, Maven, Gradle, NuGet, Cargo, Go, Composer, RubyGems, Conan,
-   Dart, Hex, Haskell, R, Julia, CocoaPods, Swift registries, and OCI mirrors.
+1. Searches public code for package-manager settings across npm, Yarn, pnpm,
+   pip, uv, Poetry, PDM, Pipenv, Conda, Maven, Gradle, sbt, NuGet, MSBuild,
+   Paket, Cargo, Go, Composer, RubyGems, Conan, Dart, Hex, Haskell, R, Julia,
+   CocoaPods, Swift registries, and OCI mirrors.
 2. Reads default repositories from the official Package-URL definitions.
-3. Parses only package-manager-specific configuration fields and normalizes
+3. Reads published registry and mirror catalogs from ecosyste.ms, MirrorZ,
+   and CRAN. Operating-system distribution mirrors are out of scope.
+4. Parses only package-manager-specific configuration fields and normalizes
    their public hostnames.
-4. Removes private/test/shared infrastructure, obvious documentation and
+5. Removes private/test/shared infrastructure, obvious documentation and
    placeholder targets, and targets already covered by the curated catalog.
-5. Records extractor, source path, source role, and content hash provenance in
+6. Records extractor, source path, source role, ecosystem, and content hash provenance in
    `data/candidates.json`, then scores independent, non-identical configuration
    evidence.
-6. Optionally asks one configured LLM for suggestion-only coverage gaps.
-7. Tests the result and opens or updates an automation pull request.
+7. Exports a minimal queue for a private Cloudflare/Zscaler pass and optionally
+   asks one configured LLM for suggestion-only coverage gaps.
+8. Tests the result and opens or updates an automation pull request.
 
-The collectors contact only `api.github.com` and
-`raw.githubusercontent.com`. Discovered URLs are parsed but never fetched,
-so a malicious public config cannot turn the workflow into an SSRF primitive.
+Collectors contact only the fixed source hosts documented in
+[`docs/data-sources.md`](docs/data-sources.md). Discovered URLs are parsed but
+never fetched, so a malicious public config or catalog record cannot turn the
+workflow into an SSRF primitive.
+
+GitHub code search throttles routinely, so a rate-limited or transient request
+is retried with the server's `Retry-After` or rate-limit reset interval under a whole-run wait
+budget, and a query that still cannot complete is skipped with a warning rather
+than discarding the evidence every other query gathered. Deterministic
+rejections such as a malformed query are never retried. A run in which every
+query fails raises instead of reporting an empty result, so a total outage
+cannot be mistaken for a clean run that found nothing. Independent published
+sources can still complete during a GitHub outage. The Actions summary labels
+partial runs and reports query, retrieval, evidence, and candidate counts.
+
+An infrequent, out-of-band BigQuery seed can extend coverage past that ceiling;
+its freshness check, scan-cost procedure, and import contract are documented in
+[`docs/bigquery-seed.md`](docs/bigquery-seed.md).
 
 Every search query names a deterministic extractor for its actual format, such
 as a Maven XML path, Cargo TOML field, or Docker JSON key. Generic line-wide
 URL matching is rejected by validation. Documentation, examples, and tests may
 preserve useful evidence but cannot raise confidence by repetition. A discovery
-rules fingerprint rebuilds the candidate snapshot after extraction or filtering
-logic changes, preventing older noisy results from surviving a stricter rule set.
+rules fingerprint marks retained evidence for revalidation after extraction or
+filtering logic changes. Stale evidence cannot raise confidence; a fresh source
+observation clears its flag. Offline seed evidence stays available for replay
+or explicit review instead of being lost. Current exclusion and rejection
+rules still remove ineligible targets.
 
 ## Approval model
 
@@ -70,10 +97,16 @@ python scripts/reject.py docs.example.org --reason "documentation site"
 ~~~
 
 Promotion records the discovery evidence, removes the review candidate, and
-regenerates `dist/`. Rejection preserves its evidence and rationale in
+regenerates `dist/` and `reviews/pending/`. Rejection preserves its evidence and rationale in
 `data/rejections.json`. Deterministic flags identify documentation-like,
 placeholder-like, nonstandard-port, retired-service, and non-configuration-only
 candidates to speed up review.
+
+Already approved hosts can generate suggestions for additional ecosystems.
+Use `promote.py TARGET --extend --category CATEGORY` after reviewing an exact
+host's new category evidence. Promotion of stale evidence also requires a
+`--review-note` explaining the evidence and blocking scope you reviewed.
+See [the review workflow and offline traffic comparison](docs/review-workflow.md).
 
 Published entries are never removed automatically; a retired
 endpoint remains in the evidence catalog with status `retired`.
@@ -82,6 +115,11 @@ This intentionally favors false negatives in published policy over silently
 blocking an unrelated hostname because it appeared in an untrusted config.
 
 ## Optional LLM review
+
+The recommended workflow is deterministic CI plus an on-demand, evidence-backed
+review of the balanced candidate batch in Codex. Leave `LLM_REVIEW_PROVIDER`
+unset or set it to `disabled`; neither discovery nor the review queue needs a
+model API key. See [the review handoff](docs/review-workflow.md#codex-review-handoff).
 
 An opt-in pre-PR reviewer supports OpenAI, Anthropic, Gemini, and DeepSeek. It
 receives a compact inventory, returns strictly validated suggestions, and writes
@@ -93,6 +131,43 @@ The feature is off unless a repository variable selects a provider and the
 matching API-key secret is present. Provider failures do not stop deterministic
 discovery. Every suggested evidence link is marked unverified. See
 [the setup, provider comparison, and review contract](docs/llm-review.md).
+
+## Optional Cloudflare enrichment
+
+Cloudflare Domain Intelligence adds a second opinion about each candidate's
+application, content categories, inherited categories, risk score, and risk
+types. It is enrichment evidence only and cannot promote, reject, or edit a
+target.
+
+The public workflow deliberately does **not** publish Cloudflare responses.
+Cloudflare's current Cloudforce One terms restrict third-party disclosure of
+API-delivered threat intelligence, while public redistribution rights for the
+ordinary Domain Intelligence response are not explicit. The repository
+therefore writes `reviews/pending/domains.txt` and
+`reviews/pending/queue.json`, which can feed a private runner or a local work
+device. Detailed Cloudflare results are cached only beneath the gitignored
+`.private/` directory.
+
+For that private execution, create a least-privilege custom API token with
+`Account > Intel > Read`, scoped to the intended account, and expose:
+
+- `CLOUDFLARE_API_TOKEN` as a secret;
+- `CLOUDFLARE_ACCOUNT_ID` as a variable.
+
+The helper uses the bulk endpoint in groups of at most 20, disables ranking,
+caps itself at 20 API calls per run, and caches results for 90 days. Successful
+batches are retained even if a later batch fails.
+
+For credential and response-shape verification, the discovery workflow also
+offers a manual `cloudflare_smoke` mode. Run it against a non-default branch;
+it restores the open automation PR's candidate file, makes exactly one bulk
+request, prints only aggregate counts, and uploads no Cloudflare artifact.
+Scheduled and ordinary manual discovery runs never invoke this mode.
+
+Free, Pro, and Business accounts currently receive 100 Security Intelligence
+API calls per month. The call cap and private cache are designed around that
+budget. Cloudflare setup, terms, and API references are listed in
+[`docs/data-sources.md`](docs/data-sources.md).
 
 ## Local verification
 
@@ -117,6 +192,13 @@ $env:GITHUB_TOKEN = "..."
 python scripts/update.py --network
 ~~~
 
+To run Cloudflare enrichment on a private runner or locally, set
+`CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`, then run:
+
+~~~console
+python scripts/enrich_cloudflare.py --max-calls 20 --stale-days 90
+~~~
+
 ## Cost
 
 The spike requires no paid service:
@@ -124,12 +206,14 @@ The spike requires no paid service:
 - public-repository GitHub Actions usage;
 - GitHub's authenticated API through the workflow token;
 - official Package-URL data;
+- public registry and mirror catalogs;
 - Python's standard library.
 
-The optional LLM review is disabled by default, so no LLM account or external
-API key is required. If enabled, provider usage follows that provider's API
-pricing or free-tier terms. The model remains a reviewer and is never the
-authority that promotes or removes a network-policy target.
+Private Cloudflare enrichment requires an account and API token but is designed
+around the ordinary account quota. The optional LLM review is disabled by
+default. If enabled, provider usage follows that provider's API pricing or
+free-tier terms. Neither enrichment provider is the authority that promotes or
+removes a network-policy target.
 
 ## Limits
 
@@ -146,4 +230,5 @@ that the internal artifact service has every required upstream endpoint.
 See [CONTRIBUTING.md](CONTRIBUTING.md). Each curated addition needs a category,
 match mode, endpoint kind, and at least one public evidence URL.
 
-MIT licensed.
+The repository code is MIT licensed. Source-derived data retains any applicable
+upstream terms and attribution; see [`docs/data-sources.md`](docs/data-sources.md).

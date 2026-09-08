@@ -17,7 +17,12 @@ from url_lists.llm_review import (
     ReviewError,
     create_review_report,
     write_review_report,
+    PROMPT_VERSION,
+    build_review_input,
+    review_input_sha256,
+    validate_review_files,
 )
+from url_lists.catalog import CatalogError, read_json
 
 
 def _warning(message: str) -> None:
@@ -47,6 +52,11 @@ def main() -> int:
         action="store_true",
         help="fail open when the provider is disabled, unavailable, or invalid",
     )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="review even when the input and model are unchanged",
+    )
     arguments = parser.parse_args()
 
     if arguments.provider == "disabled":
@@ -58,9 +68,27 @@ def main() -> int:
     key_name = PROVIDER_API_KEYS[provider]
     api_key = os.environ.get(key_name, "")
     try:
+        previous_path = ROOT / "reviews" / "llm" / "latest.json"
+        if (
+            not arguments.force
+            and previous_path.exists()
+            and not validate_review_files(ROOT)
+        ):
+            previous = read_json(previous_path)
+            if (
+                previous.get("provider") == provider
+                and previous.get("model") == model
+                and previous.get("prompt_version") == PROMPT_VERSION
+                and previous.get("input_sha256")
+                == review_input_sha256(build_review_input(ROOT))
+            ):
+                print(
+                    "LLM review reused: inventory, prompt, provider, and model are unchanged"
+                )
+                return 0
         report = create_review_report(ROOT, provider, model, api_key)
         write_review_report(ROOT, report)
-    except ReviewError as error:
+    except (ReviewError, CatalogError) as error:
         if arguments.optional:
             _warning(str(error))
             return 0

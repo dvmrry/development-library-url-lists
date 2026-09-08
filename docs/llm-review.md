@@ -12,8 +12,12 @@ fixed-source collectors -> compact inventory -> one LLM request
                                             -> human review and promotion
 ~~~
 
-The feature is disabled by default. With no provider configured, the project
-keeps its existing zero-paid-service behavior.
+The feature is disabled by default. The recommended workflow for this project
+is deterministic CI plus [on-demand Codex candidate review](review-workflow.md#codex-review-handoff).
+Leave `LLM_REVIEW_PROVIDER` unset or set it to `disabled` to skip all provider
+steps, even if their secrets remain stored. Collection, validation, and the
+balanced review report continue to work. A paid API is an optional future
+experiment, not a requirement for the project.
 
 ## Why pre-PR
 
@@ -35,9 +39,9 @@ and product availability change; the links below are the source of truth.
 
 | Provider | Default model | Account/cost shape | Practical fit |
 | --- | --- | --- | --- |
-| OpenAI | `gpt-5.4-mini` | Separate API key and usage billing. At current list prices, the expected weekly request is pennies. | Recommended paid baseline for stronger gap analysis and strict structured output. |
+| OpenAI | `gpt-5.4-mini` | Separate API key and usage billing. | Optional structured-output coverage review. |
 | Anthropic | `claude-haiku-4-5` | Separate API key for this GitHub Actions adapter. Claude subscription Routines are an alternative outside the workflow. | Useful when Claude is already approved by the organization. |
-| Gemini | `gemini-3.7-flash` | A limited API free tier is available. Google states that free-tier content may be used to improve its products; paid-tier content is not. | Best zero-incremental-cost experiment for this public-data repository. |
+| Gemini | `gemini-3.7-flash` | Separate API quota and provider data-use terms. | Optional experiment; free-tier quota is not a dependable CI capacity assumption. |
 | DeepSeek | `deepseek-v4-flash` | Separate prepaid API account; JSON mode rather than schema-constrained output. | Low-cost experiment when organizational data-processing and provider approval permit it. |
 
 Current references:
@@ -87,10 +91,19 @@ variable.
 
 ## Review contract
 
+A validated prior report is reused when its inventory hash, prompt version,
+provider, and model match. Use `python scripts/llm_review.py --force` to request
+a fresh review. The scheduled job restores the previous automation report so
+unchanged inputs do not incur another model request. Failed or invalid reports
+are not reused. The original report timestamp is retained when reused.
+
 The provider receives a bounded JSON inventory containing categories, curated
-targets, candidate targets, rejection summaries, discovery queries, and at most
-three evidence links per entry. It does not receive raw public configuration
-file contents.
+targets, every candidate target for duplicate detection, aggregate candidate
+counts, a category-balanced sample of at most 300 candidate records, rejection
+summaries, discovery queries, and at most three evidence links per sampled
+entry. This keeps large official mirror catalogs from exhausting the review
+context or provider quota. It does not receive raw public configuration file
+contents.
 
 The resulting report is deliberately constrained:
 

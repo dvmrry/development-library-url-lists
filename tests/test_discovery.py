@@ -2,24 +2,45 @@ from __future__ import annotations
 
 import base64
 import contextlib
+import email.message
 import hashlib
 import io
 import sys
 import unittest
 from pathlib import Path
 from unittest.mock import patch
+from urllib.error import HTTPError
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from url_lists.discovery import (
+    DiscoveryError,
+    run_network_discovery,
+    _RetryBudget,
+    _get_bytes,
     _reconcile_current_candidates,
     _source_role,
     _trusted_ascii_url,
     collect_github_code,
     filter_observations,
     merge_candidates,
+    reconcile_published_snapshot,
 )
+
+
+class _FakeResponse:
+    def __init__(self, payload: bytes) -> None:
+        self._payload = payload
+
+    def read(self, size: int | None = None) -> bytes:
+        return self._payload
+
+    def __enter__(self) -> "_FakeResponse":
+        return self
+
+    def __exit__(self, *exc_info: object) -> bool:
+        return False
 
 
 class DiscoveryTests(unittest.TestCase):
@@ -32,11 +53,13 @@ class DiscoveryTests(unittest.TestCase):
         self.catalog = [
             {
                 "target": "registry.npmjs.org",
+                "categories": ["python"],
                 "match": "exact",
                 "status": "approved",
             },
             {
                 "target": ".jfrog.io",
+                "categories": ["python"],
                 "match": "suffix",
                 "status": "approved",
             },
@@ -348,6 +371,113 @@ class DiscoveryTests(unittest.TestCase):
         )
         self.assertEqual(merged["candidates"][0]["confidence"], "high")
 
+    def test_official_mirror_list_is_high_confidence(self) -> None:
+        observation = self.observation("https://mirror.vendor.net/packages")
+        observation["target"] = "mirror.vendor.net"
+        del observation["discovered_url"]
+        observation["source_kind"] = "published-list"
+        observation["source_role"] = "official"
+        merged, _ = merge_candidates(
+            {"schema_version": 1, "candidates": []},
+            [observation],
+            today="2026-08-20",
+        )
+        self.assertEqual(merged["candidates"][0]["confidence"], "high")
+
+    def test_third_party_registry_catalog_is_medium_confidence(self) -> None:
+        observation = self.observation("https://packages.vendor.net/simple")
+        observation["target"] = "packages.vendor.net"
+        del observation["discovered_url"]
+        observation["source_kind"] = "published-list"
+        observation["source_role"] = "registry-catalog"
+        merged, _ = merge_candidates(
+            {"schema_version": 1, "candidates": []},
+            [observation],
+            today="2026-08-20",
+        )
+        self.assertEqual(merged["candidates"][0]["confidence"], "medium")
+
+    def test_successful_published_refresh_removes_absent_mirror(self) -> None:
+        observation = self.observation("https://removed.vendor.net/packages")
+        observation["target"] = "removed.vendor.net"
+        del observation["discovered_url"]
+        observation.update(
+            {
+                "source_kind": "published-list",
+                "source_role": "official",
+                "query_id": "official-mirrors",
+                "source_path": "https://removed.vendor.net/packages",
+            }
+        )
+        merged, _ = merge_candidates(
+            {"schema_version": 1, "candidates": []},
+            [observation],
+            today="2026-08-20",
+        )
+        reconciled = reconcile_published_snapshot(
+            merged,
+            [],
+            successful_query_ids={"official-mirrors"},
+            today="2026-08-21",
+        )
+        self.assertEqual(reconciled["candidates"], [])
+
+    def test_failed_published_refresh_preserves_prior_mirror(self) -> None:
+        observation = self.observation("https://retained.vendor.net/packages")
+        observation["target"] = "retained.vendor.net"
+        del observation["discovered_url"]
+        observation.update(
+            {
+                "source_kind": "published-list",
+                "source_role": "official",
+                "query_id": "failed-mirrors",
+                "source_path": "https://retained.vendor.net/packages",
+            }
+        )
+        merged, _ = merge_candidates(
+            {"schema_version": 1, "candidates": []},
+            [observation],
+            today="2026-08-20",
+        )
+        reconciled = reconcile_published_snapshot(
+            merged,
+            [],
+            successful_query_ids={"different-source"},
+            today="2026-08-21",
+        )
+        self.assertEqual(len(reconciled["candidates"]), 1)
+
+    def test_removing_published_source_recomputes_mixed_candidate_category(self) -> None:
+        github = self.observation("https://mixed.vendor.net/simple")
+        github["target"] = "mixed.vendor.net"
+        del github["discovered_url"]
+        published = dict(github)
+        published.update(
+            {
+                "category": "multi_ecosystem",
+                "source": "https://catalog.vendor.net/mirrors.json",
+                "source_kind": "published-list",
+                "source_role": "mirror-catalog",
+                "repository": "vendor/mirror-catalog",
+                "query_id": "mirror-catalog",
+                "source_path": "https://mixed.vendor.net/packages",
+            }
+        )
+        merged, _ = merge_candidates(
+            {"schema_version": 1, "candidates": []},
+            [github, published],
+            today="2026-08-20",
+        )
+        reconciled = reconcile_published_snapshot(
+            merged,
+            [],
+            successful_query_ids={"mirror-catalog"},
+            today="2026-08-21",
+        )
+        candidate = reconciled["candidates"][0]
+        self.assertEqual(candidate["categories"], ["python"])
+        self.assertEqual(len(candidate["sources"]), 1)
+
     def test_merge_preserves_extractor_provenance(self) -> None:
         observation = self.observation("https://packages.vendor.net/simple")
         observation["target"] = "packages.vendor.net"
@@ -426,6 +556,199 @@ class DiscoveryTests(unittest.TestCase):
         self.assertEqual(_source_role("tests/fixtures/pip.conf"), "test")
         self.assertEqual(_source_role("examples/pip.conf"), "example")
         self.assertEqual(_source_role("config/pip.conf"), "configuration")
+
+    def test_rate_limited_request_is_retried_and_succeeds(self) -> None:
+        """One 429 must not end a request; GitHub search throttles routinely."""
+
+        headers = email.message.Message()
+        headers["Retry-After"] = "3"
+        attempts: list[str] = []
+
+        def fake_open(request, timeout=None):
+            attempts.append(request.full_url)
+            if len(attempts) == 1:
+                raise HTTPError(
+                    request.full_url, 429, "Too Many Requests", headers, None
+                )
+            return _FakeResponse(b'{"items": []}')
+
+        slept: list[float] = []
+        with patch("url_lists.discovery._OPENER.open", side_effect=fake_open), patch(
+            "url_lists.discovery.time.sleep", side_effect=slept.append
+        ):
+            content = _get_bytes("https://api.github.com/search/code?q=x")
+
+        self.assertEqual(content, b'{"items": []}')
+        self.assertEqual(len(attempts), 2)
+        self.assertEqual(slept, [3.0])
+
+    def test_persistent_rate_limit_eventually_raises(self) -> None:
+        headers = email.message.Message()
+
+        def fake_open(request, timeout=None):
+            raise HTTPError(request.full_url, 429, "Too Many Requests", headers, None)
+
+        with patch("url_lists.discovery._OPENER.open", side_effect=fake_open), patch(
+            "url_lists.discovery.time.sleep"
+        ):
+            with self.assertRaises(DiscoveryError):
+                _get_bytes("https://api.github.com/search/code?q=x")
+
+    def test_client_error_is_not_retried(self) -> None:
+        """A 422 is deterministic; retrying only burns the rate-limit budget."""
+
+        headers = email.message.Message()
+        attempts: list[str] = []
+
+        def fake_open(request, timeout=None):
+            attempts.append(request.full_url)
+            raise HTTPError(request.full_url, 422, "Unprocessable", headers, None)
+
+        with patch("url_lists.discovery._OPENER.open", side_effect=fake_open), patch(
+            "url_lists.discovery.time.sleep"
+        ):
+            with self.assertRaises(DiscoveryError):
+                _get_bytes("https://api.github.com/search/code?q=x")
+        self.assertEqual(len(attempts), 1)
+
+    def test_retry_budget_stops_sleeping_once_exhausted(self) -> None:
+        """A hard-throttled run must skip queries, not hit the job timeout."""
+
+        headers = email.message.Message()
+        headers["Retry-After"] = "60"
+        budget = _RetryBudget(90.0)
+        slept: list[float] = []
+
+        def fake_open(request, timeout=None):
+            raise HTTPError(request.full_url, 429, "Too Many Requests", headers, None)
+
+        with patch("url_lists.discovery._OPENER.open", side_effect=fake_open), patch(
+            "url_lists.discovery.time.sleep", side_effect=slept.append
+        ):
+            for _ in range(3):
+                with self.assertRaises(DiscoveryError):
+                    _get_bytes(
+                        "https://api.github.com/search/code?q=x", budget=budget
+                    )
+
+        # 90s of budget funds one 60s wait; everything after fails immediately.
+        self.assertEqual(slept, [60.0])
+        self.assertTrue(budget.exhausted)
+
+    def test_failed_query_skips_without_aborting_the_run(self) -> None:
+        """A throttled query must not discard the other 29 queries' evidence."""
+
+        good_search = {
+            "items": [
+                {
+                    "url": "https://api.github.com/repos/acme/good/contents/pip.conf",
+                    "html_url": "https://github.com/acme/good/blob/b/pip.conf",
+                    "path": "pip.conf",
+                    "repository": {"full_name": "acme/good"},
+                }
+            ]
+        }
+        good_content = {
+            "encoding": "base64",
+            "content": base64.b64encode(
+                b"index-url = https://packages.vendor.net/simple\n"
+            ).decode(),
+        }
+        stderr = io.StringIO()
+        with patch(
+            "url_lists.discovery._get_json",
+            side_effect=[
+                DiscoveryError("HTTP Error 429: Too Many Requests"),
+                good_search,
+                good_content,
+            ],
+        ), contextlib.redirect_stderr(stderr):
+            observations = collect_github_code(
+                [
+                    {
+                        "id": "conda-default-channels",
+                        "ecosystem": "python",
+                        "query": '"default_channels:" filename:.condarc',
+                        "extractor": "conda-yaml",
+                    },
+                    {
+                        "id": "pip-index",
+                        "ecosystem": "python",
+                        "query": '"index-url" filename:pip.conf',
+                        "extractor": "pip-config",
+                    },
+                ],
+                token="test-token",
+                delay_seconds=0,
+            )
+
+        self.assertEqual(len(observations), 1)
+        self.assertEqual(observations[0]["query_id"], "pip-index")
+        report = stderr.getvalue()
+        self.assertIn("conda-default-channels", report)
+
+    def test_every_query_failing_raises_instead_of_reporting_no_evidence(self) -> None:
+        """A total outage must fail loudly, not look like a quiet clean run."""
+
+        stderr = io.StringIO()
+        with patch(
+            "url_lists.discovery._get_json",
+            side_effect=DiscoveryError("HTTP Error 429: Too Many Requests"),
+        ), contextlib.redirect_stderr(stderr):
+            with self.assertRaises(DiscoveryError):
+                collect_github_code(
+                    [
+                        {
+                            "id": "pip-index",
+                            "ecosystem": "python",
+                            "query": '"index-url" filename:pip.conf',
+                            "extractor": "pip-config",
+                        }
+                    ],
+                    token="test-token",
+                    delay_seconds=0,
+                )
+
+    def test_published_source_outage_keeps_the_github_evidence(self) -> None:
+        """A third-party feed outage must not discard the code-search results."""
+
+        from url_lists.published_sources import PublishedSourceError
+
+        github_observation = {
+            "category": "python",
+            "discovered_url": "https://packages.newvendor.net/simple",
+            "query_id": "pip-index",
+            "extractor": "pip-config",
+            "source": "https://github.com/acme/project/blob/main/pip.conf",
+            "source_kind": "github-code",
+            "source_path": "pip.conf",
+            "source_role": "configuration",
+            "repository": "acme/project",
+            "content_sha256": "a" * 64,
+        }
+        written: dict[str, object] = {}
+        stderr = io.StringIO()
+        with patch(
+            "url_lists.discovery.collect_github_code",
+            return_value=[github_observation],
+        ), patch(
+            "url_lists.discovery.collect_purl_definitions", return_value=[]
+        ), patch(
+            "url_lists.discovery.collect_published_sources",
+            side_effect=PublishedSourceError("all published source collectors failed"),
+        ), patch(
+            "url_lists.discovery.write_json_atomic",
+            side_effect=lambda path, document: written.update(document=document),
+        ), contextlib.redirect_stderr(stderr):
+            additions = run_network_discovery(ROOT, token="test-token")
+
+        self.assertEqual(additions, 1)
+        targets = [
+            candidate["target"]
+            for candidate in written["document"]["candidates"]
+        ]
+        self.assertIn("packages.newvendor.net", targets)
+        self.assertIn("published source", stderr.getvalue().lower())
 
     @staticmethod
     def observation(url: str) -> dict[str, str]:

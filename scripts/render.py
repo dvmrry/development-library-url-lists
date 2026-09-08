@@ -9,12 +9,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from url_lists.catalog import write_documents
+from url_lists.outputs import refresh_outputs
 
 
 def main() -> int:
-    write_documents(ROOT)
-    print("Rendered dist/ from data/catalog.json")
+    refresh_outputs(ROOT)
+    print("Rendered dist/ and reviews/pending/ from source data")
     return 0
 
 

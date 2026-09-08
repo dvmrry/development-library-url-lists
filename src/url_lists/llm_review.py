@@ -14,6 +14,7 @@ import re
 import sys
 import tempfile
 import time
+from collections import Counter, defaultdict
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -30,6 +31,8 @@ PROMPT_VERSION = "1"
 MAX_INPUT_BYTES = 500_000
 MAX_RESPONSE_BYTES = 2_000_000
 MAX_FINDINGS = 25
+MAX_CANDIDATES = 5_000
+MAX_CANDIDATE_SAMPLE = 300
 RETRY_DELAYS_SECONDS = (5, 15, 30)
 RETRYABLE_HTTP_STATUS_CODES = {429, 500, 502, 503, 504}
 DEFAULT_MODELS = {
@@ -208,7 +211,9 @@ def build_review_input(root: Path) -> dict[str, Any]:
     categories = _require_list(categories_document, "categories", 200)
     catalog_entries = _require_list(load_catalog(root), "entries", 2_000)
     candidates = _require_list(
-        read_json(root / "data" / "candidates.json"), "candidates", 1_000
+        read_json(root / "data" / "candidates.json"),
+        "candidates",
+        MAX_CANDIDATES,
     )
     rejections = _require_list(
         read_json(root / "data" / "rejections.json"), "rejections", 1_000
@@ -231,6 +236,22 @@ def build_review_input(root: Path) -> dict[str, Any]:
     compact_candidates = []
     for candidate in candidates:
         sources = candidate.get("sources", [])
+        source_kinds = sorted(
+            {
+                source.get("source_kind")
+                for source in sources
+                if isinstance(source, dict)
+                and isinstance(source.get("source_kind"), str)
+            }
+        )
+        source_ecosystems = sorted(
+            {
+                source.get("source_ecosystem")
+                for source in sources
+                if isinstance(source, dict)
+                and isinstance(source.get("source_ecosystem"), str)
+            }
+        )
         compact_candidates.append(
             {
                 "target": candidate.get("target"),
@@ -238,6 +259,8 @@ def build_review_input(root: Path) -> dict[str, Any]:
                 "confidence": candidate.get("confidence"),
                 "review_flags": candidate.get("review_flags", []),
                 "evidence_source_count": len(sources),
+                "source_ecosystems": source_ecosystems,
+                "source_kinds": source_kinds,
                 "evidence_urls": sorted(
                     {
                         source.get("source")
@@ -249,6 +272,50 @@ def build_review_input(root: Path) -> dict[str, Any]:
             }
         )
 
+    non_published = sorted(
+        (
+            candidate
+            for candidate in compact_candidates
+            if set(candidate["source_kinds"]) != {"published-list"}
+        ),
+        key=lambda candidate: str(candidate.get("target", "")),
+    )
+    sampled_candidates = non_published[: MAX_CANDIDATE_SAMPLE // 2]
+    selected_targets = {candidate.get("target") for candidate in sampled_candidates}
+    by_category: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for candidate in compact_candidates:
+        if candidate.get("target") in selected_targets:
+            continue
+        candidate_categories = candidate.get("categories")
+        primary_category = (
+            sorted(candidate_categories)[0]
+            if isinstance(candidate_categories, list) and candidate_categories
+            else "uncategorized"
+        )
+        by_category[primary_category].append(candidate)
+    for values in by_category.values():
+        values.sort(key=lambda candidate: str(candidate.get("target", "")))
+    while len(sampled_candidates) < MAX_CANDIDATE_SAMPLE and any(by_category.values()):
+        for category in sorted(by_category):
+            if by_category[category]:
+                sampled_candidates.append(by_category[category].pop(0))
+                if len(sampled_candidates) == MAX_CANDIDATE_SAMPLE:
+                    break
+
+    category_counts: Counter[str] = Counter()
+    confidence_counts: Counter[str] = Counter()
+    source_ecosystem_counts: Counter[str] = Counter()
+    source_kind_counts: Counter[str] = Counter()
+    for candidate in compact_candidates:
+        for category in candidate.get("categories", []):
+            if isinstance(category, str):
+                category_counts[category] += 1
+        confidence = candidate.get("confidence")
+        if isinstance(confidence, str):
+            confidence_counts[confidence] += 1
+        source_ecosystem_counts.update(candidate.get("source_ecosystems", []))
+        source_kind_counts.update(candidate.get("source_kinds", []))
+
     bundle = {
         "schema_version": 1,
         "purpose": "suggestion-only package repository coverage review",
@@ -257,7 +324,20 @@ def build_review_input(root: Path) -> dict[str, Any]:
             for item in categories
         ],
         "approved_and_retired_catalog": compact_catalog,
-        "unapproved_candidates": compact_candidates,
+        "candidate_summary": {
+            "total": len(compact_candidates),
+            "sample_count": len(sampled_candidates),
+            "by_category": dict(sorted(category_counts.items())),
+            "by_confidence": dict(sorted(confidence_counts.items())),
+            "by_source_ecosystem": dict(sorted(source_ecosystem_counts.items())),
+            "by_source_kind": dict(sorted(source_kind_counts.items())),
+        },
+        "candidate_targets": sorted(
+            candidate["target"]
+            for candidate in compact_candidates
+            if isinstance(candidate.get("target"), str)
+        ),
+        "unapproved_candidates": sampled_candidates,
         "previously_rejected": [
             {
                 "target": item.get("target"),
@@ -619,7 +699,7 @@ def _coverage_flags(target: str, match: str, bundle: dict[str, Any]) -> list[str
         if covered:
             flags.append(f"already-{entry.get('status', 'cataloged')}")
             break
-    if any(item.get("target") == target for item in bundle["unapproved_candidates"]):
+    if target in bundle.get("candidate_targets", []):
         flags.append("already-candidate")
     if any(item.get("target") == target for item in bundle["previously_rejected"]):
         flags.append("previously-rejected")

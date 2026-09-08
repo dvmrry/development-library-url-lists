@@ -1,2 +1,4 @@
 hackage.haskell.org
+mirrors.tuna.tsinghua.edu.cn
+mirrors.ustc.edu.cn
 stackage.org

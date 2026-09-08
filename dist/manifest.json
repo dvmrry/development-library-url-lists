@@ -1,12 +1,12 @@
 {
-  "approved_entry_count": 83,
+  "approved_entry_count": 118,
   "files": {
     "all.txt": {
-      "sha256": "9d7e8b1ebef4f001c0e1aa776dd5899bd40b96f9e37e21e6394e8bc55e2c3455",
-      "target_count": 83
+      "sha256": "9e2ae4fca2332b3fe2b0693409b2c99fa53720019529f3c8e0190df9e4f21cd2",
+      "target_count": 118
     },
     "catalog.json": {
-      "sha256": "722b895e63cf10867e9892875aa33d068f427df727d6fe955724c63fb2356b19",
+      "sha256": "9c225205938fe4356559996fb7127dfb5b9d06a7ab59fe91a5c83309d6983295",
       "target_count": null
     },
     "containers.txt": {
@@ -18,12 +18,12 @@
       "target_count": 2
     },
     "dart.txt": {
-      "sha256": "bf50dcf74905da9a0348b7ee5daa05feb83a89ed5678da189304b4c22d2a54eb",
-      "target_count": 3
+      "sha256": "a2fcd9fb98a775d3e0289eee41e2da717f915e55ce795e0f629d75ea13d27eaf",
+      "target_count": 4
     },
     "dotnet.txt": {
-      "sha256": "e091a4c56def8250fb927a8f0f2a145f375f2280dff1af72f2daaa227cd81035",
-      "target_count": 6
+      "sha256": "8d362cca7883619e951fcb06f4c008a60621369a8ad2b4b09f9301f301fa1e07",
+      "target_count": 8
     },
     "erlang.txt": {
       "sha256": "e63a512fb5039b86c2a56266854b8a16837b0968916dfb6fa02cd813b6ddbe98",
@@ -34,32 +34,32 @@
       "target_count": 5
     },
     "haskell.txt": {
-      "sha256": "346bd0a1101823f268626d7cdd190bb296eeeed083d81b556cbbb293b01b8618",
-      "target_count": 2
+      "sha256": "d2fc0868fd5dfe4fec6adfea35116550f67ff49bda981d85b167e99d88b48579",
+      "target_count": 4
     },
     "javascript.txt": {
       "sha256": "2d482af9872cac3eea7c0b8649f9c1cb24d7e4516ae105f1c58a4d55630348df",
       "target_count": 8
     },
     "julia.txt": {
-      "sha256": "9118f50ae1b2c30dd972f3ddc0d25aa674d7b00bce5c4694c0d55b19d2d6e88e",
-      "target_count": 1
+      "sha256": "47b1539b09c7295c6582e23cab901f45520c893a3ea621169cbd10ae87363ac7",
+      "target_count": 3
     },
     "jvm.txt": {
-      "sha256": "d07e2b5edb0c3e7590bf71f8b168404f8e1083056f7e599badd7dfd00db536c0",
-      "target_count": 10
+      "sha256": "77af4f0d0b10e74458670509889084d62dd03851dfeb0d0e29d15ef50c233030",
+      "target_count": 27
     },
     "multi-ecosystem.txt": {
-      "sha256": "b22360aece7c19922d050545894eefddf41f357c55b511486740c62ef715541c",
-      "target_count": 13
+      "sha256": "f0903ab26e238c56a87a85ebd322b47181afb8e9619cc932c39223d2f8609f49",
+      "target_count": 15
     },
     "php.txt": {
-      "sha256": "8154163e02526bb43a325c20e254eb44794acc26f72fd0ee360a4b6e9908e952",
-      "target_count": 4
+      "sha256": "3ab60fbe1574da48a1abe7f92adf06323655322a26e6df2dc2512508f649d9a6",
+      "target_count": 5
     },
     "python.txt": {
-      "sha256": "457e0f8eb4fce879fce4b78a2f56c0cbc44dfaa90cb4947320b459edab7f11ec",
-      "target_count": 6
+      "sha256": "b65f271befa08bf30c5bbb93465152b218fd3a877405a6802451ecd55de3ccc0",
+      "target_count": 22
     },
     "r.txt": {
       "sha256": "80d7a0449e9b100d023e18a32b21c2be7157b5418f6e0dadde8d8c738840ac49",
@@ -80,5 +80,5 @@
   },
   "schema_version": 1,
   "source": "data/catalog.json",
-  "unique_target_count": 83
+  "unique_target_count": 118
 }

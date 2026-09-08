@@ -5,10 +5,13 @@ from __future__ import annotations
 import base64
 import hashlib
 import json
+import math
 import os
 import sys
 import time
 from datetime import datetime, timezone
+from copy import deepcopy
+from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Any, Iterable
 from urllib.error import HTTPError, URLError
@@ -18,13 +21,31 @@ from urllib.request import HTTPRedirectHandler, Request, build_opener
 from .catalog import load_catalog, read_json, write_json_atomic
 from .extractors import extract_registry_urls
 from .normalize import TargetError, extract_urls, normalize_target, target_hostname
+from .published_sources import (
+    PublishedCollection,
+    PublishedSourceError,
+    collect_published_sources,
+)
 
 
 TRUSTED_NETWORK_HOSTS = {"api.github.com", "raw.githubusercontent.com"}
+MAX_REQUEST_ATTEMPTS = 4
+RETRYABLE_STATUS_CODES = frozenset({429, 500, 502, 503, 504})
+MAX_RETRY_DELAY_SECONDS = 60.0
+MAX_TOTAL_RETRY_SECONDS = 600.0
 SOURCE_ROLES = frozenset(
-    {"configuration", "documentation", "example", "official", "test"}
+    {
+        "configuration",
+        "documentation",
+        "example",
+        "mirror-catalog",
+        "official",
+        "registry-catalog",
+        "test",
+    }
 )
 NON_CONFIGURATION_ROLES = frozenset({"documentation", "example", "test"})
+PUBLISHED_CATALOG_ROLES = frozenset({"mirror-catalog", "registry-catalog"})
 HARD_REJECTION_FLAGS = frozenset({"documentation-like", "placeholder-like"})
 PURL_TYPE_CATEGORIES = {
     "cargo": "rust",
@@ -93,8 +114,91 @@ def _trusted_ascii_url(url: str) -> str:
     )
 
 
-def _get_bytes(url: str, *, token: str | None = None) -> bytes:
+class _RetryBudget:
+    """Bound the total time one run may spend waiting on throttled sources.
+
+    Without a shared ceiling, a fully throttled GitHub search would sleep
+    through the job timeout and lose the evidence already gathered. Spending
+    the budget instead degrades the run into skipped queries, which
+    ``collect_github_code`` already reports and survives.
+    """
+
+    def __init__(self, total_seconds: float = MAX_TOTAL_RETRY_SECONDS) -> None:
+        self.remaining = total_seconds
+        self.deferred_hosts: set[str] = set()
+
+    @property
+    def exhausted(self) -> bool:
+        return self.remaining <= 0
+
+    def claim(self, seconds: float) -> float | None:
+        """Reserve a wait, or refuse and close the budget if it will not fit."""
+
+        if seconds > self.remaining:
+            self.remaining = 0.0
+            return None
+        self.remaining -= seconds
+        return seconds
+
+
+def _is_retryable(error: Exception) -> bool:
+    """Distinguish transient throttling from a deterministic rejection.
+
+    Permission errors are terminal; GitHub also uses 403 for rate limiting
+    when accompanied by rate-limit headers.
+    """
+
+    if isinstance(error, HTTPError):
+        if error.code == 403 and error.headers is not None:
+            return (
+                error.headers.get("Retry-After") is not None
+                or error.headers.get("x-ratelimit-remaining") == "0"
+            )
+        return error.code in RETRYABLE_STATUS_CODES
+    return isinstance(error, (URLError, TimeoutError))
+
+
+def _retry_delay(error: Exception, attempt: int) -> float:
+    """Prefer the server's own Retry-After over a guessed backoff."""
+
+    headers = getattr(error, "headers", None)
+    if headers is not None:
+        try:
+            advertised = float(str(headers.get("Retry-After", "")).strip())
+        except (TypeError, ValueError):
+            advertised = -1.0
+        if math.isfinite(advertised) and advertised >= 0:
+            return advertised
+        try:
+            retry_at = parsedate_to_datetime(headers.get("Retry-After", ""))
+            return max(0.0, retry_at.timestamp() - time.time())
+        except (TypeError, ValueError, OverflowError):
+            pass
+        if headers.get("x-ratelimit-remaining") == "0":
+            try:
+                reset_at = float(headers.get("x-ratelimit-reset", ""))
+                if math.isfinite(reset_at):
+                    return max(0.0, reset_at - time.time()) + 1
+            except (TypeError, ValueError):
+                pass
+    if isinstance(error, HTTPError) and error.code in {403, 429}:
+        return MAX_RETRY_DELAY_SECONDS * (2**attempt)
+    return min(2.0**attempt, MAX_RETRY_DELAY_SECONDS)
+
+
+def _get_bytes(
+    url: str,
+    *,
+    token: str | None = None,
+    budget: "_RetryBudget | None" = None,
+) -> bytes:
+    retry_budget = budget if budget is not None else _RetryBudget()
     safe_url = _trusted_ascii_url(url)
+    hostname = urlsplit(safe_url).hostname
+    if hostname in retry_budget.deferred_hosts:
+        raise DiscoveryError(
+            f"rate-limited host deferred for this collection pass: {hostname}"
+        )
     headers = {
         "Accept": "application/vnd.github+json",
         "User-Agent": "development-library-url-lists/0.1",
@@ -103,17 +207,39 @@ def _get_bytes(url: str, *, token: str | None = None) -> bytes:
     if token and urlsplit(safe_url).hostname == "api.github.com":
         headers["Authorization"] = f"Bearer {token}"
     request = Request(safe_url, headers=headers)
-    try:
-        with _OPENER.open(request, timeout=30) as response:
-            return response.read(2_000_001)
-    except (HTTPError, URLError, TimeoutError, UnicodeError) as error:
-        raise DiscoveryError(
-            f"trusted source request failed for {safe_url}: {error}"
-        ) from error
+    last_error: Exception | None = None
+    for attempt in range(MAX_REQUEST_ATTEMPTS):
+        try:
+            with _OPENER.open(request, timeout=30) as response:
+                return response.read(2_000_001)
+        except (HTTPError, URLError, TimeoutError, UnicodeError) as error:
+            last_error = error
+            if attempt + 1 >= MAX_REQUEST_ATTEMPTS or not _is_retryable(error):
+                break
+            granted = retry_budget.claim(_retry_delay(error, attempt))
+            if granted is None:
+                break
+            time.sleep(granted)
+    if (
+        isinstance(last_error, HTTPError)
+        and last_error.code in {403, 429}
+        and _is_retryable(last_error)
+    ):
+        # A new query uses the same service quota. Do not send it immediately
+        # after abandoning an advertised wait or exhausting throttle retries.
+        retry_budget.deferred_hosts.add(hostname)
+    raise DiscoveryError(
+        f"trusted source request failed for {safe_url}: {last_error}"
+    ) from last_error
 
 
-def _get_json(url: str, *, token: str | None = None) -> Any:
-    content = _get_bytes(url, token=token)
+def _get_json(
+    url: str,
+    *,
+    token: str | None = None,
+    budget: "_RetryBudget | None" = None,
+) -> Any:
+    content = _get_bytes(url, token=token, budget=budget)
     if len(content) > 2_000_000:
         raise DiscoveryError(f"trusted source response is too large: {url}")
     try:
@@ -122,14 +248,21 @@ def _get_json(url: str, *, token: str | None = None) -> Any:
         raise DiscoveryError(f"trusted source returned invalid JSON: {url}") from error
 
 
-def _get_text(url: str, *, token: str | None = None) -> str:
-    content = _get_bytes(url, token=token)
+def _get_text(
+    url: str,
+    *,
+    token: str | None = None,
+    budget: "_RetryBudget | None" = None,
+) -> str:
+    content = _get_bytes(url, token=token, budget=budget)
     if len(content) > 2_000_000:
         raise DiscoveryError(f"trusted source response is too large: {url}")
     try:
         return content.decode("utf-8")
     except UnicodeDecodeError as error:
-        raise DiscoveryError(f"trusted source returned non-UTF-8 text: {url}") from error
+        raise DiscoveryError(
+            f"trusted source returned non-UTF-8 text: {url}"
+        ) from error
 
 
 def _source_role(path: str) -> str:
@@ -175,12 +308,24 @@ def collect_github_code(
     *,
     token: str,
     delay_seconds: float = 7.0,
+    metrics: dict[str, Any] | None = None,
 ) -> list[dict[str, str]]:
     """Collect URLs from public package-manager configuration on GitHub."""
 
     observations: list[dict[str, str]] = []
     extraction_failures = 0
+    failed_queries = 0
+    retry_budget = _RetryBudget()
     query_list = list(queries)
+    metrics = metrics if metrics is not None else {}
+    metrics.update(
+        queries_total=len(query_list),
+        queries_completed=0,
+        queries_failed=0,
+        files_retrieved=0,
+        files_failed=0,
+        extraction_failures=0,
+    )
     for query_index, query in enumerate(query_list):
         query_id = query["id"]
         ecosystem = query["ecosystem"]
@@ -192,7 +337,21 @@ def collect_github_code(
             "https://api.github.com/search/code"
             f"?q={quote(search_text)}&per_page={maximum}"
         )
-        result = _get_json(search_url, token=token)
+        try:
+            result = _get_json(search_url, token=token, budget=retry_budget)
+            metrics["queries_completed"] += 1
+        except DiscoveryError as error:
+            # GitHub code search throttles routinely. One exhausted query must
+            # not discard the evidence every other query already gathered.
+            failed_queries += 1
+            metrics["queries_failed"] += 1
+            result = {}
+            print(
+                "Search query failed and was skipped: "
+                f"query={_safe_log_text(query_id)} "
+                f"error={_safe_log_text(str(error))}",
+                file=sys.stderr,
+            )
         for item in result.get("items", []):
             content_url = item.get("url")
             evidence_url = item.get("html_url")
@@ -204,9 +363,11 @@ def collect_github_code(
             ):
                 continue
             try:
-                document = _get_json(content_url, token=token)
+                document = _get_json(content_url, token=token, budget=retry_budget)
             except DiscoveryError:
+                metrics["files_failed"] += 1
                 continue
+            metrics["files_retrieved"] += 1
             encoded = document.get("content")
             if document.get("encoding") != "base64" or not isinstance(encoded, str):
                 continue
@@ -230,6 +391,7 @@ def collect_github_code(
                 # the whole discovery run; skip it, but report it so a
                 # systemic parser regression cannot hide behind a green run.
                 extraction_failures += 1
+                metrics["extraction_failures"] += 1
                 print(
                     "Extraction failed and was skipped: "
                     f"query={_safe_log_text(query_id)} "
@@ -261,6 +423,18 @@ def collect_github_code(
             f"Discovery skipped {extraction_failures} file(s) whose "
             "extraction failed; see warnings above.",
             file=sys.stderr,
+        )
+    if failed_queries:
+        print(
+            f"Discovery skipped {failed_queries} of {len(query_list)} search "
+            "queries that could not be completed; see warnings above.",
+            file=sys.stderr,
+        )
+    if query_list and failed_queries == len(query_list):
+        # A total outage must not masquerade as a clean run with no new evidence.
+        raise DiscoveryError(
+            "every GitHub search query failed; refusing to report an empty "
+            "discovery run"
         )
     return observations
 
@@ -320,10 +494,16 @@ def _is_excluded(hostname: str, exclusions: dict[str, Any]) -> bool:
     return any(hostname == value or hostname.endswith(f".{value}") for value in shared)
 
 
-def _is_covered(target: str, catalog_entries: Iterable[dict[str, Any]]) -> bool:
+def _is_covered(
+    target: str,
+    catalog_entries: Iterable[dict[str, Any]],
+    category: str | None = None,
+) -> bool:
     hostname = target_hostname(target)
     for entry in catalog_entries:
         if entry["status"] != "approved":
+            continue
+        if category is not None and category not in entry.get("categories", []):
             continue
         known = entry["target"]
         if entry["match"] == "suffix":
@@ -350,6 +530,7 @@ def filter_observations(
     """Normalize and conservatively filter untrusted observations."""
 
     rejected = set(rejected_targets)
+    catalog_entries = list(catalog_entries)
     filtered: list[dict[str, str]] = []
     for observation in observations:
         try:
@@ -357,19 +538,21 @@ def filter_observations(
                 observation["discovered_url"],
                 preserve_path=False,
             )
+            repository_url = normalize_target(observation["discovered_url"])
             hostname = target_hostname(target)
-        except (KeyError, TargetError):
+        except (KeyError, ValueError):
             continue
         if target in rejected:
             continue
         if _is_excluded(hostname, exclusions):
             continue
-        if _is_covered(target, catalog_entries):
+        if _is_covered(target, catalog_entries, observation["category"]):
             continue
         if HARD_REJECTION_FLAGS.intersection(_review_flags(target)):
             continue
         normalized = dict(observation)
         normalized["target"] = target
+        normalized["repository_url"] = repository_url
         del normalized["discovered_url"]
         filtered.append(normalized)
     return filtered
@@ -381,8 +564,17 @@ def _confidence(
 ) -> str:
     if "retired-service" in review_flags:
         return "low"
+    sources = [source for source in sources if not source.get("needs_revalidation")]
     if any(source.get("source_kind") == "purl-definition" for source in sources):
         return "high"
+    if any(
+        source.get("source_kind") == "published-list"
+        and source.get("source_role") == "official"
+        for source in sources
+    ):
+        return "high"
+    if any(source.get("source_role") in PUBLISHED_CATALOG_ROLES for source in sources):
+        return "medium"
     repositories = {
         source["repository"]
         for source in sources
@@ -435,6 +627,8 @@ def _review_flags(
     if ":" in target.split("/", 1)[0]:
         flags.append("nonstandard-port")
     source_list = list(sources)
+    if any(source.get("needs_revalidation") for source in source_list):
+        flags.append("evidence-needs-revalidation")
     if source_list and all(
         source.get("source_role", "configuration") in NON_CONFIGURATION_ROLES
         for source in source_list
@@ -459,7 +653,7 @@ def merge_candidates(
         raise DiscoveryError("unsupported candidates document")
     observed_date = today or datetime.now(timezone.utc).date().isoformat()
     by_target: dict[str, dict[str, Any]] = {
-        candidate["target"]: dict(candidate) for candidate in current["candidates"]
+        candidate["target"]: deepcopy(candidate) for candidate in current["candidates"]
     }
     additions = 0
 
@@ -472,13 +666,16 @@ def merge_candidates(
     for observation in observations:
         target = observation["target"]
         source = {
-            key: observation[key]
-            for key in ("source", "source_kind", "repository")
+            key: observation[key] for key in ("source", "source_kind", "repository")
         }
+        source["source_category"] = observation["category"]
         for key in (
             "content_sha256",
             "extractor",
             "query_id",
+            "repository_url",
+            "seed_sha256",
+            "source_ecosystem",
             "source_path",
             "source_role",
         ):
@@ -518,6 +715,8 @@ def merge_candidates(
             changed = True
             additions += 1
         else:
+            if existing_source.pop("needs_revalidation", None):
+                changed = True
             for key, value in source.items():
                 if existing_source.get(key) != value:
                     existing_source[key] = value
@@ -550,6 +749,103 @@ def _source_identity(source: dict[str, str]) -> tuple[str, str, str]:
     return source["source_kind"], source["repository"], location
 
 
+def merge_candidate_snapshots(
+    current: dict[str, Any], previous: dict[str, Any]
+) -> dict[str, Any]:
+    """Restore automation evidence without replacing locally imported evidence."""
+    result = deepcopy(current)
+    by_target = {c["target"]: c for c in result["candidates"]}
+    stale = previous.get("discovery_rules_sha256") != current.get(
+        "discovery_rules_sha256"
+    )
+    for original in previous["candidates"]:
+        candidate = deepcopy(original)
+        if stale:
+            for source in candidate["sources"]:
+                source["needs_revalidation"] = True
+        existing = by_target.get(candidate["target"])
+        if existing is None:
+            by_target[candidate["target"]] = candidate
+            continue
+        existing["categories"] = sorted(
+            set(existing["categories"]) | set(candidate["categories"])
+        )
+        identities = {_source_identity(s) for s in existing["sources"]}
+        existing["sources"].extend(
+            s for s in candidate["sources"] if _source_identity(s) not in identities
+        )
+    result["candidates"] = sorted(by_target.values(), key=lambda c: c["target"])
+    merged, _ = merge_candidates(result, [])
+    result["candidates"] = merged["candidates"]
+    return result
+
+
+def reconcile_published_snapshot(
+    document: dict[str, Any],
+    observations: Iterable[dict[str, str]],
+    *,
+    successful_query_ids: Iterable[str],
+    today: str | None = None,
+) -> dict[str, Any]:
+    """Remove mirror/registry evidence absent from a successfully refreshed feed."""
+
+    successful = set(successful_query_ids)
+    if not successful:
+        return document
+    observed = {
+        (
+            observation["target"],
+            observation.get("query_id"),
+            observation.get("source_path") or observation["source"],
+        )
+        for observation in observations
+        if observation.get("source_kind") == "published-list"
+        and observation.get("query_id") in successful
+    }
+    observed_date = today or datetime.now(timezone.utc).date().isoformat()
+    candidates = []
+    for original in document.get("candidates", []):
+        candidate = dict(original)
+        sources = []
+        removed = False
+        for source in candidate.get("sources", []):
+            query_id = source.get("query_id")
+            location = source.get("source_path") or source.get("source")
+            identity = (candidate["target"], query_id, location)
+            if (
+                source.get("source_kind") == "published-list"
+                and query_id in successful
+                and identity not in observed
+            ):
+                removed = True
+                continue
+            sources.append(source)
+        if not sources:
+            continue
+        if removed:
+            candidate["sources"] = sources
+            source_categories = {
+                source["source_category"]
+                for source in sources
+                if isinstance(source.get("source_category"), str)
+            }
+            if all(
+                isinstance(source.get("source_category"), str) for source in sources
+            ):
+                candidate["categories"] = sorted(source_categories)
+            review_flags = _review_flags(candidate["target"], sources)
+            candidate["confidence"] = _confidence(sources, review_flags)
+            candidate["review_flags"] = review_flags
+            candidate["last_evidence_change"] = observed_date
+        candidates.append(candidate)
+    result = dict(document)
+    result["candidates"] = sorted(
+        candidates,
+        key=lambda item: item["target"].lstrip("."),
+    )
+    return result
+
+
 def _discovery_rules_sha256(
     root: Path,
     queries: dict[str, Any],
@@ -572,6 +868,8 @@ def _discovery_rules_sha256(
         "src/url_lists/discovery.py",
         "src/url_lists/extractors.py",
         "src/url_lists/normalize.py",
+        "src/url_lists/published_sources.py",
+        "src/url_lists/seed_import.py",
     ):
         try:
             content = (root / relative_path).read_text(encoding="utf-8")
@@ -592,7 +890,7 @@ def _reconcile_current_candidates(
     catalog_entries: Iterable[dict[str, Any]],
     rejected_targets: Iterable[str],
 ) -> dict[str, Any]:
-    """Drop stale-rule snapshots and entries resolved by deterministic policy."""
+    """Reapply inclusion policy and retain stale evidence for explicit review."""
 
     if current.get("schema_version") != 1 or not isinstance(
         current.get("candidates"), list
@@ -603,11 +901,11 @@ def _reconcile_current_candidates(
         "discovery_rules_sha256": rules_sha256,
         "candidates": [],
     }
-    if current.get("discovery_rules_sha256") != rules_sha256:
-        return reconciled
+    rules_changed = current.get("discovery_rules_sha256") != rules_sha256
 
     rejected = set(rejected_targets)
-    for candidate in current["candidates"]:
+    for original in current["candidates"]:
+        candidate = deepcopy(original)
         try:
             target = normalize_target(candidate["target"], preserve_path=False)
             hostname = target_hostname(target)
@@ -617,20 +915,38 @@ def _reconcile_current_candidates(
             continue
         if _is_excluded(hostname, exclusions):
             continue
-        if _is_covered(target, catalog_entries):
+        candidate["categories"] = [
+            category
+            for category in candidate.get("categories", [])
+            if not _is_covered(target, catalog_entries, category)
+        ]
+        if not candidate["categories"] or not candidate.get("sources"):
             continue
         if HARD_REJECTION_FLAGS.intersection(
             _review_flags(target, candidate.get("sources", []))
         ):
             continue
+        if rules_changed:
+            for source in candidate["sources"]:
+                source["needs_revalidation"] = True
+        flags = _review_flags(target, candidate["sources"])
+        candidate["review_flags"] = flags
+        candidate["confidence"] = _confidence(candidate["sources"], flags)
         reconciled["candidates"].append(candidate)
     return reconciled
 
 
-def run_network_discovery(root: Path, *, token: str | None = None) -> int:
+def run_network_discovery(
+    root: Path,
+    *,
+    token: str | None = None,
+    metrics: dict[str, Any] | None = None,
+) -> int:
     """Run all collectors and persist newly evidenced candidates."""
 
     github_token = token or os.environ.get("GITHUB_TOKEN")
+    metrics = metrics if metrics is not None else {}
+    metrics.update(status="failed", failed_sources=[], refreshed_sources=[])
     if not github_token:
         raise DiscoveryError("GITHUB_TOKEN is required for GitHub code search")
 
@@ -643,8 +959,49 @@ def run_network_discovery(root: Path, *, token: str | None = None) -> int:
     ):
         raise DiscoveryError("unsupported rejections document")
     catalog = load_catalog(root)
-    observations = collect_github_code(queries, token=github_token)
-    observations.extend(collect_purl_definitions())
+    observations = []
+    try:
+        observations.extend(
+            collect_github_code(queries, token=github_token, metrics=metrics)
+        )
+        metrics["refreshed_sources"].append("github-code")
+    except DiscoveryError as error:
+        metrics["failed_sources"].append("github-code")
+        print(
+            f"GitHub discovery incomplete: {_safe_log_text(str(error))}",
+            file=sys.stderr,
+        )
+    try:
+        observations.extend(collect_purl_definitions())
+        metrics["refreshed_sources"].append("package-url")
+    except DiscoveryError as error:
+        metrics["failed_sources"].append("package-url")
+        print(
+            f"Package-URL discovery incomplete: {_safe_log_text(str(error))}",
+            file=sys.stderr,
+        )
+    try:
+        published = collect_published_sources()
+    except PublishedSourceError as error:
+        # Third-party catalogs are supplementary. Their outage must not discard
+        # the code-search and Package-URL evidence already gathered; an empty
+        # successful_query_ids also leaves the published snapshot untouched.
+        published = PublishedCollection(
+            observations=[],
+            successful_query_ids=frozenset(),
+            failed_query_ids=frozenset(),
+        )
+        print(
+            "Published source discovery was skipped entirely: "
+            f"{_safe_log_text(str(error))}",
+            file=sys.stderr,
+        )
+        metrics["failed_sources"].append("published-catalogs")
+    metrics["refreshed_sources"].extend(sorted(published.successful_query_ids))
+    metrics["failed_sources"].extend(sorted(published.failed_query_ids))
+    if not metrics["refreshed_sources"]:
+        raise DiscoveryError("all discovery sources failed; previous evidence retained")
+    observations.extend(published.observations)
     observations = filter_observations(
         observations,
         exclusions=exclusions,
@@ -655,10 +1012,10 @@ def run_network_discovery(root: Path, *, token: str | None = None) -> int:
     )
 
     candidates_path = root / "data" / "candidates.json"
-    current = read_json(candidates_path)
+    original = read_json(candidates_path)
     rules_sha256 = _discovery_rules_sha256(root, queries_document, exclusions)
     current = _reconcile_current_candidates(
-        current,
+        original,
         rules_sha256=rules_sha256,
         exclusions=exclusions,
         catalog_entries=catalog["entries"],
@@ -667,7 +1024,67 @@ def run_network_discovery(root: Path, *, token: str | None = None) -> int:
         },
     )
     merged, additions = merge_candidates(current, observations)
+    merged = reconcile_published_snapshot(
+        merged,
+        observations,
+        successful_query_ids=published.successful_query_ids,
+    )
     merged["discovery_rules_sha256"] = rules_sha256
-    if merged != current:
+    if merged != original:
         write_json_atomic(candidates_path, merged)
+    metrics.update(
+        status="partial"
+        if metrics["failed_sources"]
+        or any(
+            metrics.get(key, 0)
+            for key in ("queries_failed", "files_failed", "extraction_failures")
+        )
+        else "complete",
+        evidence_added=additions,
+        candidates_added=len(
+            {c["target"] for c in merged["candidates"]}
+            - {c["target"] for c in original["candidates"]}
+        ),
+        candidate_count=len(merged["candidates"]),
+        needs_revalidation=sum(
+            "evidence-needs-revalidation" in c["review_flags"]
+            for c in merged["candidates"]
+        ),
+    )
     return additions
+
+
+def write_run_summary(root: Path, metrics: dict[str, Any]) -> None:
+    """Keep operational status outside the deterministic published snapshot."""
+    write_json_atomic(root / ".private" / "discovery-run.json", metrics)
+    lines = [
+        "### Package discovery",
+        "",
+        f"Status: **{metrics.get('status', 'failed')}**",
+        "",
+        "| Measurement | Result |",
+        "| --- | --- |",
+    ]
+    for key in (
+        "queries_total",
+        "queries_completed",
+        "queries_failed",
+        "files_retrieved",
+        "files_failed",
+        "extraction_failures",
+        "candidates_added",
+        "candidate_count",
+        "evidence_added",
+        "needs_revalidation",
+    ):
+        lines.append(f"| {key.replace('_', ' ')} | {metrics.get(key, 'unavailable')} |")
+    for key in ("refreshed_sources", "failed_sources"):
+        lines.append(
+            f"| {key.replace('_', ' ')} | {', '.join(metrics.get(key, [])) or 'none'} |"
+        )
+    content = "\n".join(lines) + "\n"
+    print(content)
+    summary_path = os.environ.get("GITHUB_STEP_SUMMARY")
+    if summary_path:
+        with open(summary_path, "a", encoding="utf-8") as stream:
+            stream.write(content)

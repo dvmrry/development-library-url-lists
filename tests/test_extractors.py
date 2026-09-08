@@ -8,10 +8,148 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from url_lists.extractors import extract_registry_urls
+from url_lists.extractors import (
+    SUPPORTED_EXTRACTORS,
+    _EXTRACTORS,
+    extract_registry_urls,
+)
 
 
 class ExtractorTests(unittest.TestCase):
+    def test_validated_extractor_names_match_the_dispatch_table(self) -> None:
+        """Validation must accept exactly the extractors that actually run.
+
+        A name validation accepts but dispatch does not know would pass review
+        and then fail mid-run against untrusted input.
+        """
+
+        self.assertEqual(SUPPORTED_EXTRACTORS, frozenset(_EXTRACTORS))
+
+    def test_pip_requirements_reads_index_options_not_package_urls(self) -> None:
+        content = """
+--index-url https://packages.acme.net/simple
+--extra-index-url https://wheels.acme.net/simple
+-i https://short.acme.net/simple
+--find-links https://links.acme.net/wheels
+# see https://docs.acme.net/pip for details
+requests @ https://files.example.org/requests-2.0.tar.gz
+git+https://github.com/acme/project.git#egg=project
+"""
+        self.assertEqual(
+            extract_registry_urls(content, "pip-requirements"),
+            [
+                "https://packages.acme.net/simple",
+                "https://wheels.acme.net/simple",
+                "https://short.acme.net/simple",
+                "https://links.acme.net/wheels",
+            ],
+        )
+
+    def test_python_toml_sources_read_declared_sources_only(self) -> None:
+        content = """
+[project]
+homepage = "https://project.acme.net"
+
+[[tool.poetry.source]]
+name = "acme"
+url = "https://packages.acme.net/simple"
+
+[[tool.pdm.source]]
+name = "pdm-acme"
+url = "https://pdm.acme.net/simple"
+
+[tool.poetry.dependencies]
+requests = "^2.0"
+"""
+        self.assertEqual(
+            extract_registry_urls(content, "python-toml-sources"),
+            [
+                "https://packages.acme.net/simple",
+                "https://pdm.acme.net/simple",
+            ],
+        )
+
+    def test_pipfile_source_url_ignores_the_package_table(self) -> None:
+        content = """
+[[source]]
+name = "pypi"
+url = "https://packages.acme.net/simple"
+verify_ssl = true
+
+[packages]
+requests = {file = "https://files.example.org/requests.tar.gz"}
+"""
+        self.assertEqual(
+            extract_registry_urls(content, "python-toml-sources"),
+            ["https://packages.acme.net/simple"],
+        )
+
+    def test_yarn_v1_registry_ignores_unrelated_settings(self) -> None:
+        content = """
+registry "https://packages.acme.net/npm"
+"@acme:registry" "https://scoped.acme.net/npm"
+lastUpdateCheck 1600000000
+# changelog https://docs.acme.net/yarn
+"""
+        self.assertEqual(
+            extract_registry_urls(content, "yarnrc-v1"),
+            [
+                "https://packages.acme.net/npm",
+                "https://scoped.acme.net/npm",
+            ],
+        )
+
+    def test_package_json_reads_registry_fields_not_repository_metadata(self) -> None:
+        content = """
+{
+  "name": "project",
+  "homepage": "https://project.acme.net",
+  "repository": {"type": "git", "url": "https://github.com/acme/project.git"},
+  "bugs": {"url": "https://github.com/acme/project/issues"},
+  "publishConfig": {"registry": "https://packages.acme.net/npm"}
+}
+"""
+        self.assertEqual(
+            extract_registry_urls(content, "package-json-registry"),
+            ["https://packages.acme.net/npm"],
+        )
+
+    def test_paket_reads_source_lines_not_dependency_urls(self) -> None:
+        content = """
+source https://packages.acme.net/nuget
+source https://api.nuget.example.org/v3/index.json
+
+nuget Newtonsoft.Json >= 12.0
+github acme/project:master src/File.fs
+# mirror of https://docs.acme.net/paket
+"""
+        self.assertEqual(
+            extract_registry_urls(content, "paket-dependencies"),
+            [
+                "https://packages.acme.net/nuget",
+                "https://api.nuget.example.org/v3/index.json",
+            ],
+        )
+
+    def test_msbuild_restore_sources_ignore_unrelated_properties(self) -> None:
+        content = """
+<Project>
+  <PropertyGroup>
+    <PackageProjectUrl>https://project.acme.net</PackageProjectUrl>
+    <RestoreSources>https://packages.acme.net/nuget;https://api.nuget.org/v3/index.json</RestoreSources>
+    <RestoreAdditionalProjectSources>https://extra.acme.net/nuget</RestoreAdditionalProjectSources>
+  </PropertyGroup>
+</Project>
+"""
+        self.assertEqual(
+            extract_registry_urls(content, "msbuild-restore-sources"),
+            [
+                "https://packages.acme.net/nuget",
+                "https://api.nuget.org/v3/index.json",
+                "https://extra.acme.net/nuget",
+            ],
+        )
+
     def test_maven_uses_repository_fields_not_every_url_element(self) -> None:
         content = """
 <project>

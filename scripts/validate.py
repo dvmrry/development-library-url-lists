@@ -11,11 +11,17 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from url_lists.catalog import load_catalog, load_categories, read_json, validate_documents
+from url_lists.catalog import (
+    load_catalog,
+    load_categories,
+    read_json,
+    validate_documents,
+)
 from url_lists.discovery import SOURCE_ROLES
 from url_lists.extractors import SUPPORTED_EXTRACTORS
 from url_lists.llm_review import validate_review_files
 from url_lists.normalize import TargetError, normalize_target
+from url_lists.review_queue import validate_review_queue
 
 
 def validate_candidates(document: dict[str, Any], category_ids: set[str]) -> list[str]:
@@ -27,8 +33,7 @@ def validate_candidates(document: dict[str, Any], category_ids: set[str]) -> lis
         return ["candidates must be a list"]
     rules_sha256 = document.get("discovery_rules_sha256")
     if rules_sha256 is not None and not (
-        isinstance(rules_sha256, str)
-        and re.fullmatch(r"[0-9a-f]{64}", rules_sha256)
+        isinstance(rules_sha256, str) and re.fullmatch(r"[0-9a-f]{64}", rules_sha256)
     ):
         problems.append("candidates discovery rules SHA-256 is invalid")
 
@@ -58,12 +63,14 @@ def validate_candidates(document: dict[str, Any], category_ids: set[str]) -> lis
             problems.append(f"{label} has invalid confidence")
         review_flags = candidate.get("review_flags")
         if not isinstance(review_flags, list) or not all(
-            flag in {
+            flag
+            in {
                 "documentation-like",
                 "non-configuration-evidence-only",
                 "nonstandard-port",
                 "placeholder-like",
                 "retired-service",
+                "evidence-needs-revalidation",
             }
             for flag in review_flags
         ):
@@ -82,16 +89,44 @@ def validate_candidates(document: dict[str, Any], category_ids: set[str]) -> lis
                 ):
                     problems.append(f"{label} has an invalid evidence source")
                     break
-                optional_strings = ("extractor", "query_id", "source_path")
+                optional_strings = (
+                    "extractor",
+                    "query_id",
+                    "source_category",
+                    "source_ecosystem",
+                    "source_path",
+                )
+                if "needs_revalidation" in source and not isinstance(
+                    source["needs_revalidation"], bool
+                ):
+                    problems.append(f"{label} has invalid evidence revalidation status")
+                if "repository_url" in source:
+                    try:
+                        if (
+                            normalize_target(source["repository_url"])
+                            != source["repository_url"]
+                        ):
+                            problems.append(
+                                f"{label} has a non-normalized repository URL"
+                            )
+                    except (ValueError, TypeError, AttributeError):
+                        problems.append(f"{label} has an invalid repository URL")
+                if "seed_sha256" in source and not re.fullmatch(
+                    r"[0-9a-f]{64}", str(source["seed_sha256"])
+                ):
+                    problems.append(f"{label} has invalid seed provenance")
                 if any(
                     key in source
-                    and (
-                        not isinstance(source[key], str)
-                        or not source[key].strip()
-                    )
+                    and (not isinstance(source[key], str) or not source[key].strip())
                     for key in optional_strings
                 ):
                     problems.append(f"{label} has invalid evidence provenance")
+                    break
+                if (
+                    "source_category" in source
+                    and source["source_category"] not in category_ids
+                ):
+                    problems.append(f"{label} has invalid evidence source category")
                     break
                 if (
                     "source_role" in source
@@ -147,7 +182,10 @@ def validate_rejections(
             or set(categories) - category_ids
         ):
             problems.append(f"{label} has invalid categories")
-        if not isinstance(rejection.get("reason"), str) or not rejection["reason"].strip():
+        if (
+            not isinstance(rejection.get("reason"), str)
+            or not rejection["reason"].strip()
+        ):
             problems.append(f"{label} has no reason")
         sources = rejection.get("sources")
         if not isinstance(sources, list) or not sources:
@@ -205,9 +243,8 @@ def validate_discovery_configuration(category_ids: set[str]) -> list[str]:
         problems.append("discovery exclusions have an unsupported schema")
     for key in ("exact_hosts", "suffixes", "shared_hosts"):
         values = exclusions.get(key)
-        if (
-            not isinstance(values, list)
-            or not all(isinstance(item, str) and item for item in values)
+        if not isinstance(values, list) or not all(
+            isinstance(item, str) and item for item in values
         ):
             problems.append(f"discovery exclusions field {key} is invalid")
     return problems
@@ -236,6 +273,7 @@ def main() -> int:
     problems.extend(validate_discovery_configuration(category_ids))
     problems.extend(validate_documents(ROOT))
     problems.extend(validate_review_files(ROOT))
+    problems.extend(validate_review_queue(ROOT))
     if problems:
         for problem in problems:
             print(f"ERROR: {problem}", file=sys.stderr)

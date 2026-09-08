@@ -1,0 +1,7259 @@
+{
+  "candidate_count": 257,
+  "entries": [
+    {
+      "approved_categories": [],
+      "categories": [
+        "erlang"
+      ],
+      "confidence": "high",
+      "content_count": 10,
+      "covered_by": [],
+      "domain": "hexpm.upyun.com",
+      "evidence_urls": [
+        "https://github.com/DogLooksGood/dotfiles/blob/1ffc24b68cc5d82446bcebfda59861061ddae7cc/manjaro-dots/.zshrc",
+        "https://github.com/EdmondFrank/gitgud/blob/6b51e00001aed397fe0eebb7ace96597ffb14c8e/Dockerfile",
+        "https://github.com/damon-kwok/oh-my-env/blob/ad763ed14832948dcaae91b0218bfc3596d90fdb/packages/lang/elixir"
+      ],
+      "extend_existing": false,
+      "owner_count": 9,
+      "repository_count": 10,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration",
+        "documentation"
+      ],
+      "target": "hexpm.upyun.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "python"
+      ],
+      "confidence": "high",
+      "content_count": 10,
+      "covered_by": [],
+      "domain": "pypi.python.org",
+      "evidence_urls": [
+        "https://github.com/ATOMScience-org/AMPL/blob/c3fff25f138fcc792a62cad053e6d2707146f240/pip/cuda_requirements.txt",
+        "https://github.com/ATOMScience-org/AMPL/blob/c3fff25f138fcc792a62cad053e6d2707146f240/pip/docker_requirements.txt",
+        "https://github.com/ATOMScience-org/AMPL/blob/c3fff25f138fcc792a62cad053e6d2707146f240/pip/mchip_requirements.txt"
+      ],
+      "extend_existing": false,
+      "owner_count": 8,
+      "repository_count": 8,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "pypi.python.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "javascript"
+      ],
+      "confidence": "high",
+      "content_count": 6,
+      "covered_by": [],
+      "domain": "npm.jsr.io",
+      "evidence_urls": [
+        "https://github.com/OpenNeuroOrg/openneuro/blob/273c0f697a505c4dc5dc2d2c33f42a4eae9ea6ab/.yarnrc.yml",
+        "https://github.com/launchdarkly/js-core/blob/ecb0c6231bfabdbdd9b4b0be484a7bc50172ed45/.yarnrc.yml",
+        "https://github.com/mlx-node/mlx-node/blob/ddd16ad344594bda7ce97983320c05056cc864fb/.yarnrc.yml"
+      ],
+      "extend_existing": false,
+      "owner_count": 5,
+      "repository_count": 6,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "npm.jsr.io"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "javascript"
+      ],
+      "confidence": "high",
+      "content_count": 4,
+      "covered_by": [],
+      "domain": "registry.npm.taobao.org",
+      "evidence_urls": [
+        "https://github.com/feichao93/battle-city/blob/745c369af6d4a02c71560265fd9448518e99c18d/.yarnrc",
+        "https://github.com/ownx/taro-kit/blob/e894de3cb066a80ceaba63f049562789776d8fa2/.yarnrc",
+        "https://github.com/quick123official/quick_redis_blog/blob/c82cdd11026c2339cbf1ede3eeef783dbfa4b831/.yarnrc"
+      ],
+      "extend_existing": false,
+      "owner_count": 4,
+      "repository_count": 4,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "registry.npm.taobao.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "dotnet"
+      ],
+      "confidence": "high",
+      "content_count": 5,
+      "covered_by": [],
+      "domain": "ci.appveyor.com",
+      "evidence_urls": [
+        "https://github.com/CosmosOS/Cosmos/blob/764ceb0d5697024f35fe4ae9cae9f2f0d3662610/Build/Targets/RestoreSources.props",
+        "https://github.com/CosmosOS/IL2CPU/blob/a48ad6552b136c6290b1e6c88ad157070b0ce9da/build/Targets/RestoreSources.props",
+        "https://github.com/CosmosOS/XSharp/blob/a7dd07032aa75740be0163ba0b7f5d8456413fc4/build/Targets/RestoreSources.props"
+      ],
+      "extend_existing": false,
+      "owner_count": 3,
+      "repository_count": 5,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "ci.appveyor.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 3,
+      "covered_by": [],
+      "domain": "cran.rstudio.com",
+      "evidence_urls": [
+        "https://github.com/Kaggle/docker-rstats/blob/7f87ef40939e893f34939e3f033c61cd2d1ce9bb/RProfile.R",
+        "https://github.com/natverse/nat/blob/ccf69b118f3475130748bafb1b087c8aca30a6ce/build_docs.r",
+        "https://github.com/rstudio/tinytex/blob/d01200eb642187eb3b00b02084500844906cbeef/tools/config.R"
+      ],
+      "extend_existing": false,
+      "owner_count": 3,
+      "repository_count": 3,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "cran.rstudio.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "high",
+      "content_count": 3,
+      "covered_by": [],
+      "domain": "hub.spigotmc.org",
+      "evidence_urls": [
+        "https://github.com/Hex27/TerraformGenerator/blob/7e280aa78079697c8d774f3741270f2f9b5f676e/build.gradle.kts",
+        "https://github.com/PlaceholderAPI/PlaceholderAPI/blob/7d21d2f1d73f045b86812c70e6c6975b102c6d89/build.gradle.kts",
+        "https://github.com/pop4959/LWCX/blob/3cb6ce9f2a75261ebef40fada026b88539c88c95/build.gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 3,
+      "repository_count": 3,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "hub.spigotmc.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "php"
+      ],
+      "confidence": "high",
+      "content_count": 3,
+      "covered_by": [],
+      "domain": "plugins.roundcube.net",
+      "evidence_urls": [
+        "https://github.com/alexandregz/twofactor_gauthenticator/blob/b14306150da37c18b7a1e761875e8aa06d47e6a0/composer.json",
+        "https://github.com/sentora/sentora-core/blob/78e4041bfb981868dcfbebff47d1a991a09f3ca1/etc/apps/webmail/composer.json-dist",
+        "https://github.com/zpanel/zpanelx/blob/f9e8d4d9a281b382292985f09056d97694c3258e/etc/apps/webmail/composer.json-dist"
+      ],
+      "extend_existing": false,
+      "owner_count": 3,
+      "repository_count": 3,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "plugins.roundcube.net"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "high",
+      "content_count": 3,
+      "covered_by": [],
+      "domain": "maven.wso2.org",
+      "evidence_urls": [
+        "https://github.com/wso2/product-ei/blob/c60376b439d608ed915333de3161251efb723693/pom.xml",
+        "https://github.com/wso2/product-mi-tooling/blob/90c4c31252b086071519f25b86c9d06ebf4e90a3/pom.xml",
+        "https://github.com/wso2/product-microgateway/blob/7f01aaeae542c8f659a81b6bb506688c1651c806/.maven/settings.xml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 3,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "maven.wso2.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "archive.linux.duke.edu",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "archive.linux.duke.edu"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "brieger.esalq.usp.br",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "brieger.esalq.usp.br"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran-r.c3sl.ufpr.br",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran-r.c3sl.ufpr.br"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.030-datenrettung.de",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.030-datenrettung.de"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.asia",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.asia"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.asnr.fr",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.asnr.fr"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.case.edu",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.case.edu"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.csie.ntu.edu.tw",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.csie.ntu.edu.tw"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.csiro.au",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.csiro.au"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.datenrettung360.de",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.datenrettung360.de"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.dcc.uchile.cl",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.dcc.uchile.cl"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.hafro.is",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.hafro.is"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.isid.ac.in",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.isid.ac.in"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.itam.mx",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.itam.mx"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.ma.imperial.ac.uk",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.ma.imperial.ac.uk"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.mi2.ai",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.mi2.ai"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.mirror.garr.it",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.mirror.garr.it"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.mirror.rafal.ca",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.mirror.rafal.ca"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.mirrors.hoobly.com",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.mirrors.hoobly.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.ms.unimelb.edu.au",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.ms.unimelb.edu.au"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.nyuad.nyu.edu",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.nyuad.nyu.edu"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.r-project.hu",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.r-project.hu"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.radicaldevelop.com",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.radicaldevelop.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.rediris.es",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.rediris.es"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.stat.auckland.ac.nz",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.stat.auckland.ac.nz"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.stat.unipd.it",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.stat.unipd.it"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.uib.no",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.uib.no"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.um.ac.ir",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.um.ac.ir"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.uni-muenster.de",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.uni-muenster.de"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.usk.ac.id",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.usk.ac.id"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.wu.ac.at",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.wu.ac.at"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cran.wustl.edu",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "cran.wustl.edu"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "espejito.fder.edu.uy",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "espejito.fder.edu.uy"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "ftp.belnet.be",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "ftp.belnet.be"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "ftp.cc.uoc.gr",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "ftp.cc.uoc.gr"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "ftp.cixug.es",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "ftp.cixug.es"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "ftp.fau.de",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "ftp.fau.de"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "ftp.gwdg.de",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "ftp.gwdg.de"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "ftp.osuosl.org",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "ftp.osuosl.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "ftp.uni-sofia.bg",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "ftp.uni-sofia.bg"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "ftp.ussg.iu.edu",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "ftp.ussg.iu.edu"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "ftp.yz.yamagata-u.ac.jp",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "ftp.yz.yamagata-u.ac.jp"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "lib.stat.cmu.edu",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "lib.stat.cmu.edu"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror-hk.koddos.net",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirror-hk.koddos.net"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror.aarnet.edu.au",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirror.aarnet.edu.au"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror.accum.se",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirror.accum.se"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror.cedia.org.ec",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirror.cedia.org.ec"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror.chpc.utah.edu",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirror.chpc.utah.edu"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror.clientvps.com",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirror.clientvps.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror.csclub.uwaterloo.ca",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirror.csclub.uwaterloo.ca"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror.dogado.de",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirror.dogado.de"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror.fcaglp.unlp.edu.ar",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirror.fcaglp.unlp.edu.ar"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror.ibcp.fr",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirror.ibcp.fr"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror.its.umich.edu",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirror.its.umich.edu"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror.kamp.de",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirror.kamp.de"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror.las.iastate.edu",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirror.las.iastate.edu"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror.library.ucy.ac.cy",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirror.library.ucy.ac.cy"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror.lyrahosting.com",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirror.lyrahosting.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "multi_ecosystem",
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror.lzu.edu.cn",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv",
+        "https://mirrors.cernet.edu.cn/api/scoring"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "mirror-catalog",
+        "official"
+      ],
+      "target": "mirror.lzu.edu.cn"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror.maeen.sa",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirror.maeen.sa"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror.marwan.ma",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirror.marwan.ma"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror.metanet.ch",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirror.metanet.ch"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror.niser.ac.in",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirror.niser.ac.in"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror.rabisu.com",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirror.rabisu.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror.truenetwork.ru",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirror.truenetwork.ru"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror.uned.ac.cr",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirror.uned.ac.cr"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirrors.cicku.me",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirrors.cicku.me"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirrors.cqu.edu.cn",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirrors.cqu.edu.cn"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirrors.dotsrc.org",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirrors.dotsrc.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirrors.hust.edu.cn",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirrors.hust.edu.cn"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirrors.nics.utk.edu",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirrors.nics.utk.edu"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirrors.nwafu.edu.cn",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirrors.nwafu.edu.cn"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "multi_ecosystem",
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirrors.qlu.edu.cn",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv",
+        "https://mirrors.cernet.edu.cn/api/scoring"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "mirror-catalog",
+        "official"
+      ],
+      "target": "mirrors.qlu.edu.cn"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirrors.sjtug.sjtu.edu.cn",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirrors.sjtug.sjtu.edu.cn"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "multi_ecosystem",
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirrors.sustech.edu.cn",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv",
+        "https://mirrors.cernet.edu.cn/api/scoring"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "mirror-catalog",
+        "official"
+      ],
+      "target": "mirrors.sustech.edu.cn"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "multi_ecosystem",
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirrors.xjtu.edu.cn",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv",
+        "https://mirrors.cernet.edu.cn/api/scoring"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "mirror-catalog",
+        "official"
+      ],
+      "target": "mirrors.xjtu.edu.cn"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirrors.zju.edu.cn",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "mirrors.zju.edu.cn"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "muug.ca",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "muug.ca"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "pbil.univ-lyon1.fr",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "pbil.univ-lyon1.fr"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "stat.ethz.ch",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "stat.ethz.ch"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "vps.fmvz.usp.br",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "vps.fmvz.usp.br"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "www.freestatistics.org",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "www.freestatistics.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "high",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "www.stats.bris.ac.uk",
+      "evidence_urls": [
+        "https://cran.r-project.org/CRAN_mirrors.csv"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cran"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "official"
+      ],
+      "target": "www.stats.bris.ac.uk"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "medium",
+      "content_count": 2,
+      "covered_by": [],
+      "domain": "cache-redirector.jetbrains.com",
+      "evidence_urls": [
+        "https://github.com/JetBrains/rider-efcore/blob/0a8cfe099ff7eacb6a2833efd581e02c2047d2d8/build.gradle.kts",
+        "https://github.com/flutter/flutter-intellij/blob/ff8b8ec759a8c38eae22e120bb75e6a70d48f634/build.gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 2,
+      "repository_count": 2,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "cache-redirector.jetbrains.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "dotnet",
+        "python"
+      ],
+      "confidence": "medium",
+      "content_count": 4,
+      "covered_by": [],
+      "domain": "devdiv.pkgs.visualstudio.com",
+      "evidence_urls": [
+        "https://github.com/X-Sharp/XSharpPublic/blob/4e7027e2b5fbc1cbb4656ae4e7398617a89913d6/src/Compiler/eng/InternalTools.props",
+        "https://github.com/X-Sharp/XSharpPublic/blob/4e7027e2b5fbc1cbb4656ae4e7398617a89913d6/src/Compiler/eng/common/internal/Tools.csproj",
+        "https://github.com/X-Sharp/XSharpPublic/blob/4e7027e2b5fbc1cbb4656ae4e7398617a89913d6/src/Roslyn/eng/InternalTools.props"
+      ],
+      "extend_existing": false,
+      "owner_count": 2,
+      "repository_count": 2,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "devdiv.pkgs.visualstudio.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "medium",
+      "content_count": 2,
+      "covered_by": [],
+      "domain": "maven.vaadin.com",
+      "evidence_urls": [
+        "https://github.com/appreciated/vaadin-app-layout/blob/c9d2a70eef045f07e7a06f207fe406da70ace5f2/pom.xml",
+        "https://github.com/tzolov/playground-flight-booking/blob/08ceb07f7663c45a2ce51db03d5cdabd364ed741/pom.xml"
+      ],
+      "extend_existing": false,
+      "owner_count": 2,
+      "repository_count": 2,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "maven.vaadin.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "containers"
+      ],
+      "confidence": "medium",
+      "content_count": 2,
+      "covered_by": [],
+      "domain": "mirror.gcr.io",
+      "evidence_urls": [
+        "https://github.com/coder/coder/blob/4875ae218a402b8350c7315b8d08a7393f8d08f5/dogfood/coder/ubuntu-22.04/files/etc/docker/daemon.json",
+        "https://github.com/coder/coder/blob/4875ae218a402b8350c7315b8d08a7393f8d08f5/dogfood/coder/ubuntu-26.04/files/etc/docker/daemon.json",
+        "https://github.com/play-with-docker/play-with-docker/blob/62cb0727cab93cf4273017d33e965a5f26c83b05/dockerfiles/dind/daemon.json"
+      ],
+      "extend_existing": false,
+      "owner_count": 2,
+      "repository_count": 2,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "mirror.gcr.io"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "javascript"
+      ],
+      "confidence": "medium",
+      "content_count": 2,
+      "covered_by": [],
+      "domain": "npm.fontawesome.com",
+      "evidence_urls": [
+        "https://github.com/carrot2/carrot2/blob/a4bdca7554fadcd64a26bf7aa3d2e2806b6859aa/dcs/contexts/frontend/.yarnrc.yml",
+        "https://github.com/lissy93/awesome-privacy/blob/81602ee3de8fb25abf38863ddbb7a17953bb4c9b/web/.yarnrc.yml"
+      ],
+      "extend_existing": false,
+      "owner_count": 2,
+      "repository_count": 2,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "npm.fontawesome.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "dotnet"
+      ],
+      "confidence": "medium",
+      "content_count": 2,
+      "covered_by": [],
+      "domain": "nuget.org",
+      "evidence_urls": [
+        "https://github.com/YaccConstructor/QuickGraph/blob/50e0e16df0e6923d7a91e0fbabc89adee451145c/paket.dependencies",
+        "https://github.com/dnauck/Portable.Licensing/blob/6ec8ce3b20d057b0da6d8e58f2c96a683a75a339/paket.dependencies"
+      ],
+      "extend_existing": false,
+      "owner_count": 2,
+      "repository_count": 2,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "nuget.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "medium",
+      "content_count": 2,
+      "covered_by": [],
+      "domain": "packagemanager.rstudio.com",
+      "evidence_urls": [
+        "https://github.com/ThinkR-open/engineering-shiny-book/blob/c69b54b3b2f899199ca29c1612e58df6c9e92b50/before-build.R",
+        "https://github.com/juliasilge/supervised-ML-case-studies-course/blob/19620906cdc88efdb9993c9c50d6879ff1c60eb6/binder/install.R"
+      ],
+      "extend_existing": false,
+      "owner_count": 2,
+      "repository_count": 2,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "packagemanager.rstudio.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "medium",
+      "content_count": 2,
+      "covered_by": [],
+      "domain": "repo.codemc.io",
+      "evidence_urls": [
+        "https://github.com/Hex27/TerraformGenerator/blob/7e280aa78079697c8d774f3741270f2f9b5f676e/build.gradle.kts",
+        "https://github.com/pop4959/LWCX/blob/3cb6ce9f2a75261ebef40fada026b88539c88c95/build.gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 2,
+      "repository_count": 2,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "repo.codemc.io"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "medium",
+      "content_count": 2,
+      "covered_by": [],
+      "domain": "repo.papermc.io",
+      "evidence_urls": [
+        "https://github.com/Hex27/TerraformGenerator/blob/7e280aa78079697c8d774f3741270f2f9b5f676e/build.gradle.kts",
+        "https://github.com/PlaceholderAPI/PlaceholderAPI/blob/7d21d2f1d73f045b86812c70e6c6975b102c6d89/build.gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 2,
+      "repository_count": 2,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "repo.papermc.io"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "medium",
+      "content_count": 2,
+      "covered_by": [],
+      "domain": "artifactory-local.silabs.net",
+      "evidence_urls": [
+        "https://github.com/SiliconLabs/matter_extension/blob/5e1a67e5bc22b0778a4e8844f4d08b4d77a2d78b/packages/remotes.json",
+        "https://github.com/SiliconLabs/z-wave-ts-silabs/blob/10c51c790f463d0bee11eb7fe3d30bb33afcfe26/remotes.json"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 2,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "artifactory-local.silabs.net"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "medium",
+      "content_count": 2,
+      "covered_by": [],
+      "domain": "artifactory.silabs.net",
+      "evidence_urls": [
+        "https://github.com/SiliconLabs/matter_extension/blob/5e1a67e5bc22b0778a4e8844f4d08b4d77a2d78b/packages/remotes.json",
+        "https://github.com/SiliconLabs/z-wave-ts-silabs/blob/10c51c790f463d0bee11eb7fe3d30bb33afcfe26/remotes.json"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 2,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "artifactory.silabs.net"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "medium",
+      "content_count": 2,
+      "covered_by": [],
+      "domain": "artifacts.elastic.co",
+      "evidence_urls": [
+        "https://github.com/wso2/product-ei/blob/c60376b439d608ed915333de3161251efb723693/pom.xml",
+        "https://github.com/wso2/product-mi-tooling/blob/90c4c31252b086071519f25b86c9d06ebf4e90a3/pom.xml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 2,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "artifacts.elastic.co"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "medium",
+      "content_count": 2,
+      "covered_by": [],
+      "domain": "conan.silabs.net",
+      "evidence_urls": [
+        "https://github.com/SiliconLabs/matter_extension/blob/5e1a67e5bc22b0778a4e8844f4d08b4d77a2d78b/packages/remotes.json",
+        "https://github.com/SiliconLabs/z-wave-ts-silabs/blob/10c51c790f463d0bee11eb7fe3d30bb33afcfe26/remotes.json"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 2,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "conan.silabs.net"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "julia"
+      ],
+      "confidence": "medium",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "juliahub.com",
+      "evidence_urls": [
+        "https://github.com/DyadLang/SpacePowerWorkshop.jl/blob/7742ccc052efccf17cdc34bdee444071b4348f1e/README.md",
+        "https://packages.ecosyste.ms/api/v1/registries?page=1&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "julia"
+      ],
+      "source_kinds": [
+        "github-code",
+        "published-list"
+      ],
+      "source_roles": [
+        "documentation",
+        "registry-catalog"
+      ],
+      "target": "juliahub.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "python"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "anaconda.org",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=1&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "conda"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "anaconda.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "containers"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "artifacthub.io",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=1&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "helm"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "artifacthub.io"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "artifacts.alfresco.com",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=2&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "maven"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "artifacts.alfresco.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "javascript"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "bower.io",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=1&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "bower"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "bower.io"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "build.shibboleth.net",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=2&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "maven"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "build.shibboleth.net"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "swift"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "cocoapods.org",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=1&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cocoapods"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "cocoapods.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "conan.io",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=1&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "conan"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "conan.io"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "python"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "conda-forge.org",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=1&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "conda"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "conda-forge.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "multi_ecosystem"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "ctan.org",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=1&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "ctan"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "ctan.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "multi_ecosystem"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "elpa.gnu.org",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=1&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "melpa"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "elpa.gnu.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "multi_ecosystem"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "elpa.nongnu.org",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=1&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "melpa"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "elpa.nongnu.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "multi_ecosystem"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "forge.puppet.com",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=1&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "puppet"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "forge.puppet.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "ruby"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "gem.coop",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=1&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "gem"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "gem.coop"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "multi_ecosystem"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "metacpan.org",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=1&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "cpan"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "metacpan.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "multi_ecosystem"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror.bjtu.edu.cn",
+      "evidence_urls": [
+        "https://mirrors.cernet.edu.cn/api/scoring"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "mirror-catalog"
+      ],
+      "target": "mirror.bjtu.edu.cn"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "multi_ecosystem"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror.nyist.edu.cn",
+      "evidence_urls": [
+        "https://mirrors.cernet.edu.cn/api/scoring"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "mirror-catalog"
+      ],
+      "target": "mirror.nyist.edu.cn"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "multi_ecosystem"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirror.sysu.edu.cn",
+      "evidence_urls": [
+        "https://mirrors.cernet.edu.cn/api/scoring"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "mirror-catalog"
+      ],
+      "target": "mirror.sysu.edu.cn"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "multi_ecosystem"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirrors.hit.edu.cn",
+      "evidence_urls": [
+        "https://mirrors.cernet.edu.cn/api/scoring"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "mirror-catalog"
+      ],
+      "target": "mirrors.hit.edu.cn"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "multi_ecosystem"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirrors.jcut.edu.cn",
+      "evidence_urls": [
+        "https://mirrors.cernet.edu.cn/api/scoring"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "mirror-catalog"
+      ],
+      "target": "mirrors.jcut.edu.cn"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "multi_ecosystem"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirrors.jlu.edu.cn",
+      "evidence_urls": [
+        "https://mirrors.cernet.edu.cn/api/scoring"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "mirror-catalog"
+      ],
+      "target": "mirrors.jlu.edu.cn"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "multi_ecosystem"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirrors.sdu.edu.cn",
+      "evidence_urls": [
+        "https://mirrors.cernet.edu.cn/api/scoring"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "mirror-catalog"
+      ],
+      "target": "mirrors.sdu.edu.cn"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "multi_ecosystem"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "mirrors.wsyu.edu.cn",
+      "evidence_urls": [
+        "https://mirrors.cernet.edu.cn/api/scoring"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "mirror-catalog"
+      ],
+      "target": "mirrors.wsyu.edu.cn"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "nexus.gael.cloud",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=2&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "maven"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "nexus.gael.cloud"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "multi_ecosystem"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "open-vsx.org",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=1&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "openvsx"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "open-vsx.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "multi_ecosystem"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "package.elm-lang.org",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=1&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "elm"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "package.elm-lang.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "multi_ecosystem"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "packages.spack.io",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=1&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "spack"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "packages.spack.io"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "multi_ecosystem"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "pkgs.racket-lang.org",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=1&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "racket"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "pkgs.racket-lang.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "multi_ecosystem"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "registry.bazel.build",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=1&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "bazel"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "registry.bazel.build"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "multi_ecosystem"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "registry.terraform.io",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=1&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "terraform"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "registry.terraform.io"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "repo.jenkins-ci.org",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=2&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "maven"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "repo.jenkins-ci.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "repository.cloudera.com",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=1&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "maven"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "repository.cloudera.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "multi_ecosystem"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "reservoir.lean-lang.org",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=1&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "lean"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "reservoir.lean-lang.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "swift"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "swiftpackageindex.com",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=1&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "swift"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "swiftpackageindex.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "medium",
+      "content_count": 0,
+      "covered_by": [],
+      "domain": "vcpkg.io",
+      "evidence_urls": [
+        "https://packages.ecosyste.ms/api/v1/registries?page=1&per_page=100"
+      ],
+      "extend_existing": false,
+      "owner_count": 0,
+      "repository_count": 0,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [
+        "vcpkg"
+      ],
+      "source_kinds": [
+        "published-list"
+      ],
+      "source_roles": [
+        "registry-catalog"
+      ],
+      "target": "vcpkg.io"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "content_count": 13,
+      "covered_by": [],
+      "domain": "api.bintray.com",
+      "evidence_urls": [
+        "https://github.com/LesnyRumcajs/grpc_bench/blob/48b6b958832c995eee021361bdf3544d7c356fcc/lua_grpc_st_onhold/Dockerfile",
+        "https://github.com/ericniebler/range-v3/blob/108f93c279c8f9cec175dac361084983d0176e99/CMakeLists.txt",
+        "https://github.com/facebookincubator/FBX2glTF/blob/739ee5db94b0ca9eabe2b6ed92f32d13175072a3/Dockerfile"
+      ],
+      "extend_existing": false,
+      "owner_count": 11,
+      "repository_count": 12,
+      "repository_urls": [],
+      "review_flags": [
+        "retired-service"
+      ],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration",
+        "documentation"
+      ],
+      "target": "api.bintray.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 5,
+      "covered_by": [],
+      "domain": "dl.bintray.com",
+      "evidence_urls": [
+        "https://github.com/bernaferrari/GradleKotlinConverter/blob/779d9956e788bf5d1cc4aba38a3e2de52def9d4b/kotlin/expected_build_gradle.kts",
+        "https://github.com/devexperts/aprof/blob/d211d6a059ddd1be8542e64276c8bf3dfe278501/pom.xml",
+        "https://github.com/kenshoo/metrics-play/blob/6c33b0998ded70458703a5089a914e889df2a5a8/build.sbt"
+      ],
+      "extend_existing": false,
+      "owner_count": 5,
+      "repository_count": 5,
+      "repository_urls": [],
+      "review_flags": [
+        "retired-service"
+      ],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "dl.bintray.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 4,
+      "covered_by": [],
+      "domain": "jcenter.bintray.com",
+      "evidence_urls": [
+        "https://github.com/commercetools/commercetools-java-sdk-v2-training/blob/b84ee86a7745a2a80d3e2ead0f8ed223d377accd/src/main/resources/pom.xml.txt",
+        "https://github.com/cyberark/conjur-api-java/blob/0aeb7e85454fc4b375f5b5057fa03c85843d2643/settings.xml",
+        "https://github.com/goldmansachs/obevo/blob/133ce757ae80de9e7b7efa64328906c8471e4901/pom.xml"
+      ],
+      "extend_existing": false,
+      "owner_count": 4,
+      "repository_count": 4,
+      "repository_urls": [],
+      "review_flags": [
+        "retired-service"
+      ],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "jcenter.bintray.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "content_count": 2,
+      "covered_by": [],
+      "domain": "docker.mirrors.ustc.edu.cn",
+      "evidence_urls": [
+        "https://github.com/chenzhiwei/linux/blob/bdfa947b04b07163b34baf08d1c26363fcaa145c/docker/daemon.json",
+        "https://github.com/tinyclub/linux-lab/blob/cbd1cbd2e078fb5c164002adc1e56fdaeb101910/doc/install/daemon.json"
+      ],
+      "extend_existing": false,
+      "owner_count": 2,
+      "repository_count": 2,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration",
+        "documentation"
+      ],
+      "target": "docker.mirrors.ustc.edu.cn"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "120.25.164.233",
+      "evidence_urls": [
+        "https://github.com/xlrpa/FlowBot/blob/3e9c29537e48f38a161a7900e1e08b86ed8dfb9f/build.gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [
+        "nonstandard-port"
+      ],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "120.25.164.233:8081"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "aiinfra.pkgs.visualstudio.com",
+      "evidence_urls": [
+        "https://github.com/EyeTrackVR/EyeTrackVR/blob/5cf105d2f79a9eb356d1bcd107f5b16e76340466/pyproject.toml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "aiinfra.pkgs.visualstudio.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "alpine-wheels.github.io",
+      "evidence_urls": [
+        "https://github.com/vrk-kpa/opendata/blob/48ea7675e81d0d0a3e9067c435b8a0a994bec553/ckan/pip.conf"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "alpine-wheels.github.io"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "anaconda.mgb.org",
+      "evidence_urls": [
+        "https://github.com/pnlbwh/multi-shell-dMRIharmonization/blob/79b5c8f471e11c510f522bc70f4efb033f4c998a/.condarc"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "anaconda.mgb.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "anaconda.rdhpcs.noaa.gov",
+      "evidence_urls": [
+        "https://github.com/NOAA-GSL/contrib_miniconda3/blob/8c97c66923a30b91d7518e5b7d43c9f3274f61cd/4.5.12/.condarc"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "anaconda.rdhpcs.noaa.gov"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "api.modrinth.com",
+      "evidence_urls": [
+        "https://github.com/jenchanws/create-track-map/blob/24a8afeabacca762ded503942844bd94c47dca12/build.gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "api.modrinth.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "artifactory.audeering.com",
+      "evidence_urls": [
+        "https://github.com/audeering/opensmile/blob/055dda577c82383f8239663e5ac6c58d25b504db/doc/sphinx/requirements.txt.lock"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "documentation"
+      ],
+      "target": "artifactory.audeering.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "artifactory.jpl.nasa.gov",
+      "evidence_urls": [
+        "https://github.com/nasa/opera-sds-pcm/blob/b1c5e0d3bdc97ab60fea75d4201b26ff10b06aad/pip.conf"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "artifactory.jpl.nasa.gov"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "artifactory.onefact.net",
+      "evidence_urls": [
+        "https://github.com/xtuml/masl/blob/7a59e1f6cebbf802e5162172043e69a4912acad7/docker/masl-dev/conan-config/remotes.json"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "artifactory.onefact.net"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "artifactory.predix.io",
+      "evidence_urls": [
+        "https://github.com/PredixDev/predix-rmd-ref-app/blob/f4aefbd062669aa3ac52955167d031f144c7659a/docs/settings.xml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "documentation"
+      ],
+      "target": "artifactory.predix.io"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "artifacts.camunda.com",
+      "evidence_urls": [
+        "https://github.com/camunda/camunda/blob/11410f2ce3a0f1030b1d771194c07d750a63b0d8/maven-settings.xml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "artifacts.camunda.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "go"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "athens.azurefd.net",
+      "evidence_urls": [
+        "https://github.com/IBAX-io/go-ibax/blob/66f135846a10d1a1edddbceff517b9c937639576/README.md"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "documentation"
+      ],
+      "target": "athens.azurefd.net"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "autoincrement-versions-maven-plugin.googlecode.com",
+      "evidence_urls": [
+        "https://github.com/rob42/freeboard-server/blob/ac16ce21ef4cb6c8becf74f1ea1280e76125d68e/pom.xml.versionsBackup"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "autoincrement-versions-maven-plugin.googlecode.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "javascript"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "buf.build",
+      "evidence_urls": [
+        "https://github.com/haqq-network/haqq-wallet/blob/e29483238bf0d992ef6041e220a24c36f707252a/.yarnrc.yml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "buf.build"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "cfmlprojects.org",
+      "evidence_urls": [
+        "https://github.com/cflint/CFLint/blob/4a5d8a2ed57e51aa041f43a0640399cac488202e/pom.xml.versionsBackup"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "cfmlprojects.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "ci.ender.zone",
+      "evidence_urls": [
+        "https://github.com/pop4959/LWCX/blob/3cb6ce9f2a75261ebef40fada026b88539c88c95/build.gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "ci.ender.zone"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "code.mmk.pw",
+      "evidence_urls": [
+        "https://github.com/melianmiko/OpenFreebuds/blob/f7d9e1d72353d76403642d1d6d6cac147a4a0810/pyproject.toml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "code.mmk.pw"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "conan.iteale.com",
+      "evidence_urls": [
+        "https://github.com/ray-cast/AnimatorGo/blob/473539b34b9b7986538a2053004e1c1292129bc0/build.bat"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [
+        "nonstandard-port"
+      ],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "conan.iteale.com:19479"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "rust"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "crates.sunscreen.tech",
+      "evidence_urls": [
+        "https://github.com/Sunscreen-tech/Sunscreen/blob/f8ee4a0dc32418f2acd9e176c6f0af73cdf68d40/.cargo/config.toml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "crates.sunscreen.tech"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "dart"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "dart-pub.mirrors.sjtug.sjtu.edu.cn",
+      "evidence_urls": [
+        "https://github.com/yuchuangu85/Develop-Source/blob/0868142a7b4994194e4980c4620ae6ee628a3bfb/Cross-Platform/Flutter/README.md"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "documentation"
+      ],
+      "target": "dart-pub.mirrors.sjtug.sjtu.edu.cn"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "content_count": 4,
+      "covered_by": [],
+      "domain": "data.dgl.ai",
+      "evidence_urls": [
+        "https://github.com/ATOMScience-org/AMPL/blob/c3fff25f138fcc792a62cad053e6d2707146f240/pip/cpu_requirements.txt",
+        "https://github.com/ATOMScience-org/AMPL/blob/c3fff25f138fcc792a62cad053e6d2707146f240/pip/cuda_requirements.txt",
+        "https://github.com/ATOMScience-org/AMPL/blob/c3fff25f138fcc792a62cad053e6d2707146f240/pip/docker_requirements.txt"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "data.dgl.ai"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "data.pyg.org",
+      "evidence_urls": [
+        "https://github.com/GradientSpaces/Rectified-Point-Flow/blob/bf812e2fc768d221b921ece61cd84bd341d4b6c0/pyproject.toml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "data.pyg.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "docker.1ms.run",
+      "evidence_urls": [
+        "https://github.com/easzlab/kubeasz/blob/fcb46a47a7fcd3bbc97498ea4aefdd564e16b383/roles/docker/templates/daemon.json.j2"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "docker.1ms.run"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "docker.1panel.live",
+      "evidence_urls": [
+        "https://github.com/easzlab/kubeasz/blob/fcb46a47a7fcd3bbc97498ea4aefdd564e16b383/roles/docker/templates/daemon.json.j2"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "docker.1panel.live"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "docker.amingg.com",
+      "evidence_urls": [
+        "https://github.com/easzlab/kubeasz/blob/fcb46a47a7fcd3bbc97498ea4aefdd564e16b383/roles/docker/templates/daemon.json.j2"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "docker.amingg.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "dotnet"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "dotnetfeed.blob.core.windows.net",
+      "evidence_urls": [
+        "https://github.com/aspnet/BuildTools/blob/8a68f3d9fd76b9227c958ec5404d847192fe8b7e/build/sources.props"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "dotnetfeed.blob.core.windows.net"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "dx5z2hy7.mirror.aliyuncs.com",
+      "evidence_urls": [
+        "https://github.com/unixhot/salt-kubebin/blob/9f545ee1f3115b3ff6fa8390cf74e85caf244aa1/salt/k8s/templates/docker/daemon.json.template"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "dx5z2hy7.mirror.aliyuncs.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "elliot-braem-1032-near-social-js-ui-near-social-j-6efa4bd9f-ze.zephyrcloud.app",
+      "evidence_urls": [
+        "https://github.com/NEARBuilders/near-social-js/blob/695c899db4eb581d763ba6cd593e07b2fa403970/demo/host/remotes.json"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "example"
+      ],
+      "target": "elliot-braem-1032-near-social-js-ui-near-social-j-6efa4bd9f-ze.zephyrcloud.app"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "javascript"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "git.amazingcat.net",
+      "evidence_urls": [
+        "https://github.com/cattr-app/desktop-application/blob/c9846bde80a519633c4ed24c9657b7f75ac5a0df/.yarnrc.yml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "git.amazingcat.net"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "ruby"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "git.gem.cache.pangea.pub",
+      "evidence_urls": [
+        "https://github.com/pangea-project/pangea-tooling/blob/b137331e058919ef181a7a73e2bde7856d86a35d/Gemfile.git"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "git.gem.cache.pangea.pub"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "git.psi.ch",
+      "evidence_urls": [
+        "https://github.com/paulscherrerinstitute/std_detector_buffer/blob/e2eba41407d448d83a41604edc8ea7924a46a0bf/conan/remotes.json"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "git.psi.ch"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "javascript"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "gitlab.protontech.ch",
+      "evidence_urls": [
+        "https://github.com/ProtonMail/WebClients/blob/5a0e9084be93ade1239dbeee3544ebc06218a735/.yarnrc.yml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "gitlab.protontech.ch"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "hdi5v8p1.mirror.aliyuncs.com",
+      "evidence_urls": [
+        "https://github.com/pixiu-io/kubez-ansible/blob/a5f3f9e50773f4b72c6504ebf972cb713be219ce/ansible/roles/baremetal/templates/kube-daemon.json.j2"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "hdi5v8p1.mirror.aliyuncs.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "hub-mirror.c.163.com",
+      "evidence_urls": [
+        "https://github.com/unifreq/openwrt_packit/blob/a46b4f5d201ab99eba0ddc7c2e7cd67412fc3d5c/files/s905/daemon.json"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "hub-mirror.c.163.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "hub.rat.dev",
+      "evidence_urls": [
+        "https://github.com/easzlab/kubeasz/blob/fcb46a47a7fcd3bbc97498ea4aefdd564e16b383/roles/docker/templates/daemon.json.j2"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "hub.rat.dev"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "hub1.nat.tf",
+      "evidence_urls": [
+        "https://github.com/easzlab/kubeasz/blob/fcb46a47a7fcd3bbc97498ea4aefdd564e16b383/roles/docker/templates/daemon.json.j2"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "hub1.nat.tf"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "cpp"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "internal-artifacts.deltares.nl",
+      "evidence_urls": [
+        "https://github.com/Deltares/Delft3D/blob/1f8db835390b152994ef4e15dc9c1f97327854a4/conan/config/remotes.json"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "internal-artifacts.deltares.nl"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "jaspersoft.artifactoryonline.com",
+      "evidence_urls": [
+        "https://github.com/seyhanp/seyhan/blob/45da8d00f4cd0baa3bfa1bb20f6ca124f7b7d397/build.sbt"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "jaspersoft.artifactoryonline.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "jfrog.booking.com",
+      "evidence_urls": [
+        "https://github.com/bookingcom/upliftml/blob/35b83439eecc2074e1d4fb0bd230da963e632ee1/pyproject.toml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "jfrog.booking.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "jogamp.org",
+      "evidence_urls": [
+        "https://github.com/MarginallyClever/Robot-Overlord-App/blob/d3355e052257bed8c7a15df9ccd699fafa6f1ca2/pom.xml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "jogamp.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "libraries.minecraft.net",
+      "evidence_urls": [
+        "https://github.com/MiranCZ/altoclef/blob/1f8e038befeaed44b8a053402c69127866c46a4e/root.gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "libraries.minecraft.net"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "masa.dy.fi",
+      "evidence_urls": [
+        "https://github.com/jsorrell/CarpetSkyAdditions/blob/39aa4350679036ec2a51a5c38afab5c7ea09fb68/build.gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "masa.dy.fi"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "maven.aksw.org",
+      "evidence_urls": [
+        "https://github.com/dice-group/LIMES/blob/2fd41eaba3d3dadbef27b2198bc6a4e4f93d384d/pom.xml.releaseBackup"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "maven.aksw.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "maven.enginehub.org",
+      "evidence_urls": [
+        "https://github.com/pop4959/LWCX/blob/3cb6ce9f2a75261ebef40fada026b88539c88c95/build.gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "maven.enginehub.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "maven.fabric.io",
+      "evidence_urls": [
+        "https://github.com/bernaferrari/GradleKotlinConverter/blob/779d9956e788bf5d1cc4aba38a3e2de52def9d4b/kotlin/expected_build_gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "maven.fabric.io"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "maven.fabricmc.net",
+      "evidence_urls": [
+        "https://github.com/MiranCZ/altoclef/blob/1f8e038befeaed44b8a053402c69127866c46a4e/root.gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "maven.fabricmc.net"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "maven.in.devexperts.com",
+      "evidence_urls": [
+        "https://github.com/devexperts/aprof/blob/d211d6a059ddd1be8542e64276c8bf3dfe278501/pom.xml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "maven.in.devexperts.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "maven.jamieswhiteshirt.com",
+      "evidence_urls": [
+        "https://github.com/jenchanws/create-track-map/blob/24a8afeabacca762ded503942844bd94c47dca12/build.gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "maven.jamieswhiteshirt.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "maven.java.net",
+      "evidence_urls": [
+        "https://github.com/rob42/freeboard-server/blob/ac16ce21ef4cb6c8becf74f1ea1280e76125d68e/pom.xml.versionsBackup"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "maven.java.net"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "maven.opennms.org",
+      "evidence_urls": [
+        "https://github.com/OpenNMS/opennms/blob/847a82ed7001231e7c9c912b8c923143c5f0c33a/.circleci/settings.xml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "maven.opennms.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "maven.parchmentmc.org",
+      "evidence_urls": [
+        "https://github.com/jsorrell/CarpetSkyAdditions/blob/39aa4350679036ec2a51a5c38afab5c7ea09fb68/build.gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "maven.parchmentmc.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "maven.repository.redhat.com",
+      "evidence_urls": [
+        "https://github.com/teiid/teiid/blob/3de2f782befef980be5dc537249752e28ad972f7/settings.xml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "maven.repository.redhat.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "maven.restlet.talend.com",
+      "evidence_urls": [
+        "https://github.com/daisy/pipeline/blob/033c0f8ed1bc1b29cbc7c4f23064374a98a06d0a/settings.xml.in"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "maven.restlet.talend.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "maven.shedaniel.me",
+      "evidence_urls": [
+        "https://github.com/jsorrell/CarpetSkyAdditions/blob/39aa4350679036ec2a51a5c38afab5c7ea09fb68/build.gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "maven.shedaniel.me"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "maven.squiddev.cc",
+      "evidence_urls": [
+        "https://github.com/cc-tweaked/Cobalt/blob/5df90f08eefb0faf10ad4cadb47b9e59d661bf88/build.gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "maven.squiddev.cc"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "maven.terraformersmc.com",
+      "evidence_urls": [
+        "https://github.com/jsorrell/CarpetSkyAdditions/blob/39aa4350679036ec2a51a5c38afab5c7ea09fb68/build.gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "maven.terraformersmc.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "maven.tterrag.com",
+      "evidence_urls": [
+        "https://github.com/jenchanws/create-track-map/blob/24a8afeabacca762ded503942844bd94c47dca12/build.gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "maven.tterrag.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "mavenrepo.openmrs.org",
+      "evidence_urls": [
+        "https://github.com/openmrs/openmrs-module-cdagenerator/blob/8b8bf601b344c40aef5449a1a6e790441e4633e0/pom.xml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "mavenrepo.openmrs.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "mavensync.zkoss.org",
+      "evidence_urls": [
+        "https://github.com/rob42/freeboard-server/blob/ac16ce21ef4cb6c8becf74f1ea1280e76125d68e/pom.xml.versionsBackup"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "mavensync.zkoss.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "rust"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "microsoft.pkgs.visualstudio.com",
+      "evidence_urls": [
+        "https://github.com/microsoft/mxc/blob/1ced007c8564e2c4fa82a41a48f47341fe4394cc/.azure-pipelines/.cargo/config.toml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "microsoft.pkgs.visualstudio.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "mirror.baidubce.com",
+      "evidence_urls": [
+        "https://github.com/unifreq/openwrt_packit/blob/a46b4f5d201ab99eba0ddc7c2e7cd67412fc3d5c/files/s905/daemon.json"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "mirror.baidubce.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "dart"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "mirrors.cnnic.cn",
+      "evidence_urls": [
+        "https://github.com/yuchuangu85/Develop-Source/blob/0868142a7b4994194e4980c4620ae6ee628a3bfb/Cross-Platform/Flutter/README.md"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "documentation"
+      ],
+      "target": "mirrors.cnnic.cn"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "mirrors.olares.cn",
+      "evidence_urls": [
+        "https://github.com/beclab/Olares/blob/513a5701e2d0e59d420882b96729fe3b9ecb3ca9/docs/code-snippets/docker-daemon.json"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "documentation"
+      ],
+      "target": "mirrors.olares.cn"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "mtkopone.github.com",
+      "evidence_urls": [
+        "https://github.com/scalatra/oauth2-server/blob/c25a3935a7e516630097653e78a697c0492bf38d/pom.xml.disabled"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "mtkopone.github.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "mvn.devos.one",
+      "evidence_urls": [
+        "https://github.com/jenchanws/create-track-map/blob/24a8afeabacca762ded503942844bd94c47dca12/build.gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "mvn.devos.one"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "go"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "nexus.eryajf.net",
+      "evidence_urls": [
+        "https://github.com/opsre/Thanks-Mirror/blob/2c31b29910945a0c3f8740d0248f3a4686e2b46c/README.md"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "documentation"
+      ],
+      "target": "nexus.eryajf.net"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "javascript"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "nexus.protontech.ch",
+      "evidence_urls": [
+        "https://github.com/ProtonMail/WebClients/blob/5a0e9084be93ade1239dbeee3544ebc06218a735/.yarnrc.yml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "nexus.protontech.ch"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "nexus.stirante.com",
+      "evidence_urls": [
+        "https://github.com/stirante/RuneChanger/blob/29eed9f735e01c41e799f81c9a223b112ae6a3b7/pom.xml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "nexus.stirante.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "php"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "nova.laravel.com",
+      "evidence_urls": [
+        "https://github.com/whitecube/nova-flexible-content/blob/d48d607686fad3dfc8b2fe725789857e6eeaa6e4/composer.json"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "nova.laravel.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "javascript"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "npm.nordicsemi.no",
+      "evidence_urls": [
+        "https://github.com/nordicsemi/pc-nrfconnect-launcher/blob/caba83bfbfbbe2b1e6290d0dd198c2633d4af362/.npmrc-internal"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "npm.nordicsemi.no"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "javascript"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "npm.yzops.net",
+      "evidence_urls": [
+        "https://github.com/MMF-FE/svgicon/blob/a9f2548189310bea247efe50385bdc9b24ed249c/.yarnrc.yml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "npm.yzops.net"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "onejar-maven-plugin.googlecode.com",
+      "evidence_urls": [
+        "https://github.com/fgp/AirReceiver/blob/98e993b99b923726d1e28e10d62425d944086eb8/pom.xml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "onejar-maven-plugin.googlecode.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "oss.jfrog.org",
+      "evidence_urls": [
+        "https://github.com/cloudfoundry/cf-java-client/blob/356f550289d9730154020b1e944097984d9e7f3b/pom.xml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "oss.jfrog.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "packages.confluent.io",
+      "evidence_urls": [
+        "https://github.com/Aiven-Open/jdbc-connector-for-apache-kafka/blob/b56b25a092cd644ba70c67f9f1f0093255bd0456/build.gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "packages.confluent.io"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "packages.orekit.org",
+      "evidence_urls": [
+        "https://github.com/CS-SI/Orekit/blob/5c7f3f7637b78d5b7a8ea58f411d74796a0bf622/.CI/maven-settings.xml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "packages.orekit.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "erlang",
+        "julia"
+      ],
+      "confidence": "low",
+      "content_count": 2,
+      "covered_by": [],
+      "domain": "packages.vulnetix.com",
+      "evidence_urls": [
+        "https://github.com/Vulnetix/cli/blob/5576aa76cd99b8bfc9edea3236d07f387e7c28dc/website/content/docs/enterprise/package-firewall/hex.md",
+        "https://github.com/Vulnetix/cli/blob/5576aa76cd99b8bfc9edea3236d07f387e7c28dc/website/content/docs/enterprise/package-firewall/julia.md"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [
+        "non-configuration-evidence-only"
+      ],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "documentation"
+      ],
+      "target": "packages.vulnetix.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "php"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "packagist.laravel-china.org",
+      "evidence_urls": [
+        "https://github.com/swoft-cloud/swoft-cli/blob/bfd4cfb6dd40bb4a2c65ee7e7e5223dec253e9a4/composer.json.dev"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "packagist.laravel-china.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "pypi.anaconda.org",
+      "evidence_urls": [
+        "https://github.com/nipy/nitime/blob/a014ce0a298715e231f8ed56e87ed9bda444a12c/min-requirements.txt"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "pypi.anaconda.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "pypi.collmot.com",
+      "evidence_urls": [
+        "https://github.com/skybrush-io/skybrush-server/blob/59f70b5fc582533c8238a1453aef13464c67509a/etc/deployment/docker/pip.conf"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "pypi.collmot.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "pypi.epixstudios.co.uk",
+      "evidence_urls": [
+        "https://github.com/photonixapp/photonix/blob/c3a4b5ccef2493b6c38029aa7bf79a6c65af770b/docker/pip.conf"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "pypi.epixstudios.co.uk"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "pypi.zama.ai",
+      "evidence_urls": [
+        "https://github.com/zama-ai/concrete-ml/blob/e56714c72dbe81e38cef9811398c88267c31c5d9/pyproject.toml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "pypi.zama.ai"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "r"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "radiant-rstats.github.io",
+      "evidence_urls": [
+        "https://github.com/radiant-rstats/radiant/blob/1bdb1780bdfbe59127a666e446e2a1ee3bc83aff/build/build_win.R"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "radiant-rstats.github.io"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "javascript"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "registry-npm.kaikeba.com",
+      "evidence_urls": [
+        "https://github.com/ownx/taro-kit/blob/e894de3cb066a80ceaba63f049562789776d8fa2/.yarnrc"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "registry-npm.kaikeba.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "containers"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "registry.cn-hangzhou.aliyuncs.com",
+      "evidence_urls": [
+        "https://github.com/chenzhiwei/linux/blob/bdfa947b04b07163b34baf08d1c26363fcaa145c/docker/daemon.json"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "registry.cn-hangzhou.aliyuncs.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "rust"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "registry.gosub.io",
+      "evidence_urls": [
+        "https://github.com/gosub-io/gosub-engine/blob/3c653a453bca15730631b87db47a3a7e601d1c74/.cargo/config.toml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "registry.gosub.io"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "javascript"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "registry.npmjs.com",
+      "evidence_urls": [
+        "https://github.com/hepsiburada/VoltranJS/blob/3a79a19d3b60be7d8554163388b871a0c7ce0e5e/.yarnrc"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "registry.npmjs.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "swift"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "registry.tuist.dev",
+      "evidence_urls": [
+        "https://github.com/tuist/tuist/blob/588651d86ea2777935d9d7b80a1ae6e1317e6cc6/.swiftpm/configuration/registries.json"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "registry.tuist.dev"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "julia"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "releases.tongyuan.cc",
+      "evidence_urls": [
+        "https://github.com/Suzhou-Tongyuan/SyslabCC-JuliaAOT/blob/bf4e4e2b46145cb1452d0fa86986c26b101672e5/setup.sh"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "releases.tongyuan.cc"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "repo.codemc.org",
+      "evidence_urls": [
+        "https://github.com/PlaceholderAPI/PlaceholderAPI/blob/7d21d2f1d73f045b86812c70e6c6975b102c6d89/build.gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "repo.codemc.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "repo.extendedclip.com",
+      "evidence_urls": [
+        "https://github.com/PlaceholderAPI/PlaceholderAPI/blob/7d21d2f1d73f045b86812c70e6c6975b102c6d89/build.gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "repo.extendedclip.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "repo.gentics.com",
+      "evidence_urls": [
+        "https://github.com/gentics/mesh/blob/de01ed9d85b662304db17c36c76d465553d9762b/build/settings.xml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "repo.gentics.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "repo.glaremasters.me",
+      "evidence_urls": [
+        "https://github.com/pop4959/LWCX/blob/3cb6ce9f2a75261ebef40fada026b88539c88c95/build.gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "repo.glaremasters.me"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "dotnet"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "repo.itextsupport.com",
+      "evidence_urls": [
+        "https://github.com/itext/itextsharp/blob/b08125ef9a92732fb85379a06bcc0a4a117deb0f/nuget.config"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "repo.itextsupport.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "php"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "repo.magento.com",
+      "evidence_urls": [
+        "https://github.com/magento/catalog-storefront/blob/41b10253ba6e197bdd3eace9abe88904688775f6/composer.json.standalone"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "repo.magento.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "repo.radeon.com",
+      "evidence_urls": [
+        "https://github.com/beecave-homelab/insanely-fast-whisper-rocm/blob/c60e8521c3cf9b29499df063eca1f6d8ac9f3a70/pyproject.toml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "repo.radeon.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "repo.spongepowered.org",
+      "evidence_urls": [
+        "https://github.com/MiranCZ/altoclef/blob/1f8e038befeaed44b8a053402c69127866c46a4e/root.gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "repo.spongepowered.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "repository-dma.forge.cloudbees.com",
+      "evidence_urls": [
+        "https://github.com/rob42/freeboard-server/blob/ac16ce21ef4cb6c8becf74f1ea1280e76125d68e/pom.xml.versionsBackup"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "repository-dma.forge.cloudbees.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "repository.corporation.com",
+      "evidence_urls": [
+        "https://github.com/mzpqnxow/pyboot3/blob/e5658123d4e4a3ae5158b78534426b1764fddd8e/etc/pip.ini.prod"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "repository.corporation.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "repository.mulesoft.org",
+      "evidence_urls": [
+        "https://github.com/mulesoft/mule-objectstore-connector/blob/037cde9a175984dfd666a90a38ca7db18203d2f6/pom.xml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "repository.mulesoft.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "repository.nexus.camunda.cloud",
+      "evidence_urls": [
+        "https://github.com/camunda/docker-camunda-bpm-platform/blob/19f70eda8195e4936b7e245428fff79e5de835fd/settings.xml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "repository.nexus.camunda.cloud"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "resources.knopflerfish.org",
+      "evidence_urls": [
+        "https://github.com/wso2/product-microgateway/blob/7f01aaeae542c8f659a81b6bb506688c1651c806/.maven/settings.xml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "resources.knopflerfish.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "s01.oss.sonatype.org",
+      "evidence_urls": [
+        "https://github.com/icerockdev/mobile-multiplatform-gradle-plugin/blob/0d86f0442f29fca50f826b2c64a93614543e1cf1/build.gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "s01.oss.sonatype.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "scala-ci.typesafe.com",
+      "evidence_urls": [
+        "https://github.com/scala/scala-dist/blob/1182e6deb82feae6f7e050bfdb5e62ab8ab0d426/build.sbt"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "scala-ci.typesafe.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "static.mediadrop.video",
+      "evidence_urls": [
+        "https://github.com/mediadrop/mediadrop/blob/59b477398fe306932cd93fc6bddb37fd45327373/dev_requirements.txt"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "static.mediadrop.video"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "swift"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "tuist.dev",
+      "evidence_urls": [
+        "https://github.com/tuist/tuist/blob/588651d86ea2777935d9d7b80a1ae6e1317e6cc6/server/native/xcactivitylog_nif/.swiftpm/configuration/registries.json",
+        "https://github.com/tuist/tuist/blob/588651d86ea2777935d9d7b80a1ae6e1317e6cc6/server/native/xcresult_nif/.swiftpm/configuration/registries.json"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "tuist.dev"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "usw1.packages.broadcom.com",
+      "evidence_urls": [
+        "https://github.com/spring-projects/spring-modulith/blob/e411cb34c5e9bc590786b4341c8eeed8b4110046/settings.xml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "usw1.packages.broadcom.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "javascript"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "vd.kaikeba.com",
+      "evidence_urls": [
+        "https://github.com/ownx/taro-kit/blob/e894de3cb066a80ceaba63f049562789776d8fa2/.yarnrc"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "vd.kaikeba.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "content_count": 2,
+      "covered_by": [],
+      "domain": "wheels.cua.ai",
+      "evidence_urls": [
+        "https://github.com/trycua/cua/blob/4da67bb61c262c663fa88559d1d3f1a138b3a463/libs/python/cua-cli/pyproject.toml",
+        "https://github.com/trycua/cua/blob/4da67bb61c262c663fa88559d1d3f1a138b3a463/libs/python/cua-sandbox/pyproject.toml"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "wheels.cua.ai"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "python"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "wheels.fermentrack.com",
+      "evidence_urls": [
+        "https://github.com/thorrak/fermentrack/blob/1aea05b07b9445edce2f39480b03c93eced125e6/compose/production/django/pip.conf"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "wheels.fermentrack.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "php"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "wpackagist.org",
+      "evidence_urls": [
+        "https://github.com/kasparsd/minit/blob/46a6a3d9191bcd40bbc49083d4ff929a415e3d90/composer.json"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "wpackagist.org"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "www.cursemaven.com",
+      "evidence_urls": [
+        "https://github.com/jenchanws/create-track-map/blob/24a8afeabacca762ded503942844bd94c47dca12/build.gradle.kts"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "www.cursemaven.com"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "www.eecs.berkeley.edu",
+      "evidence_urls": [
+        "https://github.com/amplab/SparkNet/blob/199116dfa73832e1dae37a2b8921839f36a9bab3/build.sbt"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "www.eecs.berkeley.edu"
+    },
+    {
+      "approved_categories": [],
+      "categories": [
+        "jvm"
+      ],
+      "confidence": "low",
+      "content_count": 1,
+      "covered_by": [],
+      "domain": "www.sparetimelabs.com",
+      "evidence_urls": [
+        "https://github.com/rob42/freeboard-server/blob/ac16ce21ef4cb6c8becf74f1ea1280e76125d68e/pom.xml.versionsBackup"
+      ],
+      "extend_existing": false,
+      "owner_count": 1,
+      "repository_count": 1,
+      "repository_urls": [],
+      "review_flags": [],
+      "review_kind": "new-target",
+      "source_ecosystems": [],
+      "source_kinds": [
+        "github-code"
+      ],
+      "source_roles": [
+        "configuration"
+      ],
+      "target": "www.sparetimelabs.com"
+    }
+  ],
+  "schema_version": 1,
+  "source": "data/candidates.json"
+}

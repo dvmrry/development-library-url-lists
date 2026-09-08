@@ -2,144 +2,10 @@
   "schema_version": 1,
   "queries": [
     {
-      "id": "npmrc-registry",
-      "ecosystem": "javascript",
-      "query": "\"registry=\" filename:.npmrc",
-      "extractor": "npmrc",
-      "max_results": 20
-    },
-    {
-      "id": "yarn-registry",
-      "ecosystem": "javascript",
-      "query": "\"npmRegistryServer\" filename:.yarnrc.yml",
-      "extractor": "yarnrc-yaml",
-      "max_results": 20
-    },
-    {
-      "id": "bun-registry",
-      "ecosystem": "javascript",
-      "query": "\"registry\" filename:bunfig.toml",
-      "extractor": "bunfig-toml",
-      "max_results": 20
-    },
-    {
-      "id": "pip-extra-index",
-      "ecosystem": "python",
-      "query": "\"extra-index-url\" filename:pip.conf",
-      "extractor": "pip-config",
-      "max_results": 20
-    },
-    {
-      "id": "pip-index",
-      "ecosystem": "python",
-      "query": "\"index-url\" filename:pip.conf",
-      "extractor": "pip-config",
-      "max_results": 20
-    },
-    {
-      "id": "uv-index",
-      "ecosystem": "python",
-      "query": "\"[[tool.uv.index]]\" filename:pyproject.toml",
-      "extractor": "uv-toml",
-      "max_results": 20
-    },
-    {
-      "id": "conda-channels",
-      "ecosystem": "python",
-      "query": "\"channels:\" filename:.condarc",
-      "extractor": "conda-yaml",
-      "max_results": 20
-    },
-    {
-      "id": "conda-default-channels",
-      "ecosystem": "python",
-      "query": "\"default_channels:\" filename:.condarc",
-      "extractor": "conda-yaml",
-      "max_results": 20
-    },
-    {
-      "id": "conda-custom-channels",
-      "ecosystem": "python",
-      "query": "\"custom_channels:\" filename:.condarc",
-      "extractor": "conda-yaml",
-      "max_results": 20
-    },
-    {
-      "id": "conda-channel-alias",
-      "ecosystem": "python",
-      "query": "\"channel_alias:\" filename:.condarc",
-      "extractor": "conda-yaml",
-      "max_results": 20
-    },
-    {
-      "id": "maven-pom-repositories",
-      "ecosystem": "jvm",
-      "query": "\"<repository>\" \"<url>https://\" extension:xml",
-      "extractor": "maven-pom-xml",
-      "max_results": 20
-    },
-    {
-      "id": "maven-settings-mirrors",
-      "ecosystem": "jvm",
-      "query": "\"<mirror>\" \"<url>https://\" filename:settings.xml",
-      "extractor": "maven-settings-xml",
-      "max_results": 20
-    },
-    {
-      "id": "gradle-maven-repositories",
-      "ecosystem": "jvm",
-      "query": "\"maven { url\" extension:gradle",
-      "extractor": "gradle-repository",
-      "max_results": 20
-    },
-    {
-      "id": "sbt-resolvers",
-      "ecosystem": "jvm",
-      "query": "\"resolvers +=\" extension:sbt",
-      "extractor": "sbt-resolver",
-      "max_results": 20
-    },
-    {
-      "id": "nuget-package-sources",
-      "ecosystem": "dotnet",
-      "query": "\"<packageSources>\" filename:NuGet.Config",
-      "extractor": "nuget-xml",
-      "max_results": 20
-    },
-    {
-      "id": "cargo-registries",
-      "ecosystem": "rust",
-      "query": "\"[registries]\" filename:config.toml",
-      "extractor": "cargo-toml",
-      "max_results": 20
-    },
-    {
-      "id": "cargo-replacement",
-      "ecosystem": "rust",
-      "query": "\"replace-with\" filename:config.toml",
-      "extractor": "cargo-toml",
-      "max_results": 20
-    },
-    {
-      "id": "go-proxy",
-      "ecosystem": "go",
-      "query": "\"GOPROXY=\"",
-      "extractor": "environment-assignment",
-      "keys": ["GOPROXY"],
-      "max_results": 20
-    },
-    {
-      "id": "composer-repositories",
-      "ecosystem": "php",
-      "query": "\"repositories\" filename:composer.json",
-      "extractor": "composer-json",
-      "max_results": 20
-    },
-    {
-      "id": "gemfile-source",
-      "ecosystem": "ruby",
-      "query": "\"source https://\" filename:Gemfile",
-      "extractor": "ruby-source",
+      "id": "docker-registry-mirrors",
+      "ecosystem": "containers",
+      "query": "\"registry-mirrors\" filename:daemon.json",
+      "extractor": "docker-json",
       "max_results": 20
     },
     {
@@ -161,7 +27,37 @@
       "ecosystem": "dart",
       "query": "\"PUB_HOSTED_URL=\"",
       "extractor": "environment-assignment",
-      "keys": ["PUB_HOSTED_URL"],
+      "keys": [
+        "PUB_HOSTED_URL"
+      ],
+      "max_results": 20
+    },
+    {
+      "id": "msbuild-restore-sources",
+      "ecosystem": "dotnet",
+      "query": "\"<RestoreSources>\" extension:props",
+      "extractor": "msbuild-restore-sources",
+      "max_results": 20
+    },
+    {
+      "id": "msbuild-restore-sources-csproj",
+      "ecosystem": "dotnet",
+      "query": "\"<RestoreSources>\" extension:csproj",
+      "extractor": "msbuild-restore-sources",
+      "max_results": 20
+    },
+    {
+      "id": "nuget-package-sources",
+      "ecosystem": "dotnet",
+      "query": "\"<packageSources>\" filename:NuGet.Config",
+      "extractor": "nuget-xml",
+      "max_results": 20
+    },
+    {
+      "id": "paket-sources",
+      "ecosystem": "dotnet",
+      "query": "\"source https://\" filename:paket.dependencies",
+      "extractor": "paket-dependencies",
       "max_results": 20
     },
     {
@@ -169,7 +65,19 @@
       "ecosystem": "erlang",
       "query": "\"HEX_MIRROR=\"",
       "extractor": "environment-assignment",
-      "keys": ["HEX_MIRROR"],
+      "keys": [
+        "HEX_MIRROR"
+      ],
+      "max_results": 20
+    },
+    {
+      "id": "go-proxy",
+      "ecosystem": "go",
+      "query": "\"GOPROXY=\"",
+      "extractor": "environment-assignment",
+      "keys": [
+        "GOPROXY"
+      ],
       "max_results": 20
     },
     {
@@ -180,10 +88,52 @@
       "max_results": 20
     },
     {
-      "id": "r-repositories",
-      "ecosystem": "r",
-      "query": "\"options(repos\" extension:R",
-      "extractor": "r-repositories",
+      "id": "bun-registry",
+      "ecosystem": "javascript",
+      "query": "\"registry\" filename:bunfig.toml",
+      "extractor": "bunfig-toml",
+      "max_results": 20
+    },
+    {
+      "id": "npmrc-registry",
+      "ecosystem": "javascript",
+      "query": "\"registry=\" filename:.npmrc",
+      "extractor": "npmrc",
+      "max_results": 20
+    },
+    {
+      "id": "npmrc-scoped-registry",
+      "ecosystem": "javascript",
+      "query": "\":registry=\" filename:.npmrc",
+      "extractor": "npmrc",
+      "max_results": 20
+    },
+    {
+      "id": "package-json-publish-config",
+      "ecosystem": "javascript",
+      "query": "\"publishConfig\" \"registry\" filename:package.json",
+      "extractor": "package-json-registry",
+      "max_results": 20
+    },
+    {
+      "id": "yarn-registry",
+      "ecosystem": "javascript",
+      "query": "\"npmRegistryServer\" filename:.yarnrc.yml",
+      "extractor": "yarnrc-yaml",
+      "max_results": 20
+    },
+    {
+      "id": "yarn-scoped-registry",
+      "ecosystem": "javascript",
+      "query": "\"npmScopes\" filename:.yarnrc.yml",
+      "extractor": "yarnrc-yaml",
+      "max_results": 20
+    },
+    {
+      "id": "yarnrc-v1-registry",
+      "ecosystem": "javascript",
+      "query": "\"registry\" filename:.yarnrc",
+      "extractor": "yarnrc-v1",
       "max_results": 20
     },
     {
@@ -191,7 +141,205 @@
       "ecosystem": "julia",
       "query": "\"JULIA_PKG_SERVER=\"",
       "extractor": "environment-assignment",
-      "keys": ["JULIA_PKG_SERVER"],
+      "keys": [
+        "JULIA_PKG_SERVER"
+      ],
+      "max_results": 20
+    },
+    {
+      "id": "gradle-kotlin-maven-repositories",
+      "ecosystem": "jvm",
+      "query": "\"maven(\" \"https://\" extension:kts",
+      "extractor": "gradle-repository",
+      "max_results": 20
+    },
+    {
+      "id": "gradle-maven-repositories",
+      "ecosystem": "jvm",
+      "query": "\"maven { url\" extension:gradle",
+      "extractor": "gradle-repository",
+      "max_results": 20
+    },
+    {
+      "id": "maven-pom-distribution-management",
+      "ecosystem": "jvm",
+      "query": "\"<distributionManagement>\" \"<url>https://\" filename:pom.xml",
+      "extractor": "maven-pom-xml",
+      "max_results": 20
+    },
+    {
+      "id": "maven-pom-plugin-repositories",
+      "ecosystem": "jvm",
+      "query": "\"<pluginRepository>\" \"<url>https://\" filename:pom.xml",
+      "extractor": "maven-pom-xml",
+      "max_results": 20
+    },
+    {
+      "id": "maven-pom-repositories",
+      "ecosystem": "jvm",
+      "query": "\"<repository>\" \"<url>https://\" extension:xml",
+      "extractor": "maven-pom-xml",
+      "max_results": 20
+    },
+    {
+      "id": "maven-settings-mirrors",
+      "ecosystem": "jvm",
+      "query": "\"<mirror>\" \"<url>https://\" filename:settings.xml",
+      "extractor": "maven-settings-xml",
+      "max_results": 20
+    },
+    {
+      "id": "maven-settings-profile-repositories",
+      "ecosystem": "jvm",
+      "query": "\"<repositories>\" \"<url>https://\" filename:settings.xml",
+      "extractor": "maven-settings-xml",
+      "max_results": 20
+    },
+    {
+      "id": "sbt-resolvers",
+      "ecosystem": "jvm",
+      "query": "\"resolvers +=\" extension:sbt",
+      "extractor": "sbt-resolver",
+      "max_results": 20
+    },
+    {
+      "id": "composer-repositories",
+      "ecosystem": "php",
+      "query": "\"repositories\" filename:composer.json",
+      "extractor": "composer-json",
+      "max_results": 20
+    },
+    {
+      "id": "conda-channel-alias",
+      "ecosystem": "python",
+      "query": "\"channel_alias:\" filename:.condarc",
+      "extractor": "conda-yaml",
+      "max_results": 20
+    },
+    {
+      "id": "conda-channels",
+      "ecosystem": "python",
+      "query": "\"channels:\" filename:.condarc",
+      "extractor": "conda-yaml",
+      "max_results": 20
+    },
+    {
+      "id": "conda-custom-channels",
+      "ecosystem": "python",
+      "query": "\"custom_channels:\" filename:.condarc",
+      "extractor": "conda-yaml",
+      "max_results": 20
+    },
+    {
+      "id": "conda-default-channels",
+      "ecosystem": "python",
+      "query": "\"default_channels:\" filename:.condarc",
+      "extractor": "conda-yaml",
+      "max_results": 20
+    },
+    {
+      "id": "conda-environment-channels",
+      "ecosystem": "python",
+      "query": "\"channels:\" filename:environment.yml",
+      "extractor": "conda-yaml",
+      "max_results": 20
+    },
+    {
+      "id": "conda-environment-channels-yaml",
+      "ecosystem": "python",
+      "query": "\"channels:\" filename:environment.yaml",
+      "extractor": "conda-yaml",
+      "max_results": 20
+    },
+    {
+      "id": "pdm-source",
+      "ecosystem": "python",
+      "query": "\"[[tool.pdm.source]]\" filename:pyproject.toml",
+      "extractor": "python-toml-sources",
+      "max_results": 20
+    },
+    {
+      "id": "pip-extra-index",
+      "ecosystem": "python",
+      "query": "\"extra-index-url\" filename:pip.conf",
+      "extractor": "pip-config",
+      "max_results": 20
+    },
+    {
+      "id": "pip-index",
+      "ecosystem": "python",
+      "query": "\"index-url\" filename:pip.conf",
+      "extractor": "pip-config",
+      "max_results": 20
+    },
+    {
+      "id": "pip-ini-index",
+      "ecosystem": "python",
+      "query": "\"index-url\" filename:pip.ini",
+      "extractor": "pip-config",
+      "max_results": 20
+    },
+    {
+      "id": "pip-requirements-extra-index",
+      "ecosystem": "python",
+      "query": "\"--extra-index-url\" filename:requirements.txt",
+      "extractor": "pip-requirements",
+      "max_results": 20
+    },
+    {
+      "id": "pip-requirements-index",
+      "ecosystem": "python",
+      "query": "\"--index-url\" filename:requirements.txt",
+      "extractor": "pip-requirements",
+      "max_results": 20
+    },
+    {
+      "id": "pipfile-source",
+      "ecosystem": "python",
+      "query": "\"[[source]]\" \"url\" filename:Pipfile",
+      "extractor": "python-toml-sources",
+      "max_results": 20
+    },
+    {
+      "id": "poetry-source",
+      "ecosystem": "python",
+      "query": "\"[[tool.poetry.source]]\" filename:pyproject.toml",
+      "extractor": "python-toml-sources",
+      "max_results": 20
+    },
+    {
+      "id": "uv-index",
+      "ecosystem": "python",
+      "query": "\"[[tool.uv.index]]\" filename:pyproject.toml",
+      "extractor": "uv-toml",
+      "max_results": 20
+    },
+    {
+      "id": "r-repositories",
+      "ecosystem": "r",
+      "query": "\"options(repos\" extension:R",
+      "extractor": "r-repositories",
+      "max_results": 20
+    },
+    {
+      "id": "gemfile-source",
+      "ecosystem": "ruby",
+      "query": "\"source https://\" filename:Gemfile",
+      "extractor": "ruby-source",
+      "max_results": 20
+    },
+    {
+      "id": "cargo-registries",
+      "ecosystem": "rust",
+      "query": "\"[registries]\" filename:config.toml",
+      "extractor": "cargo-toml",
+      "max_results": 20
+    },
+    {
+      "id": "cargo-replacement",
+      "ecosystem": "rust",
+      "query": "\"replace-with\" filename:config.toml",
+      "extractor": "cargo-toml",
       "max_results": 20
     },
     {
@@ -206,13 +354,6 @@
       "ecosystem": "swift",
       "query": "\"registries\" filename:registries.json",
       "extractor": "swift-registries-json",
-      "max_results": 20
-    },
-    {
-      "id": "docker-registry-mirrors",
-      "ecosystem": "containers",
-      "query": "\"registry-mirrors\" filename:daemon.json",
-      "extractor": "docker-json",
       "max_results": 20
     }
   ]
