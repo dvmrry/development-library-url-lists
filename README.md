@@ -116,6 +116,11 @@ blocking an unrelated hostname because it appeared in an untrusted config.
 
 ## Optional LLM review
 
+The recommended workflow is deterministic CI plus an on-demand, evidence-backed
+review of the balanced candidate batch in Codex. Leave `LLM_REVIEW_PROVIDER`
+unset or set it to `disabled`; neither discovery nor the review queue needs a
+model API key. See [the review handoff](docs/review-workflow.md#codex-review-handoff).
+
 An opt-in pre-PR reviewer supports OpenAI, Anthropic, Gemini, and DeepSeek. It
 receives a compact inventory, returns strictly validated suggestions, and writes
 `reviews/llm/latest.json` plus a human-readable Markdown report into the

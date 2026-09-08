@@ -6,6 +6,31 @@ and owner counts, and the full queue. It is generated locally without an LLM
 call. Commands in the report are alternatives and their placeholder rationale
 must be replaced before execution.
 
+## Codex review handoff
+
+Keep scheduled collection and validation independent of model quotas. Leave the
+Actions variable `LLM_REVIEW_PROVIDER` unset or set to `disabled`, then review
+the prepared batch in a local Codex task when decisions are needed. No hosted
+reviewer needs to run first.
+
+Suggested task prompt:
+
+> Review the next 20 balanced candidates in reviews/pending/README.md. Verify
+> official sources and observed paths, distinguish dedicated package hosts from
+> shared or tenant-specific hosts, and propose additions, category extensions,
+> rejections, or holds. Check independent owners and stale-evidence flags.
+> Record evidence URLs and scope rationale. Do not promote, reject, publish,
+> merge, or change external policy until I approve the proposed decisions.
+
+Save reviewed conclusions under `reviews/manual/`, including the review date,
+target, proposed categories, evidence links, and any scope caveats. Keep private
+traffic and vendor intelligence out of committed notes. Then apply approved
+decisions using the commands below and run `python scripts/validate.py`.
+
+Signing into Codex with ChatGPT uses the subscription's included allowance;
+API-key calls use separate API billing. The subscription is not an API key for
+`scripts/llm_review.py`. See [OpenAI authentication documentation](https://developers.openai.com/codex/auth).
+
 ## Review package evidence and blocking scope separately
 
 High confidence means strong evidence of package use. It does not establish

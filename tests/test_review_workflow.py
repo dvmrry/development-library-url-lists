@@ -4,6 +4,7 @@ import contextlib
 import importlib.util
 import io
 import json
+import os
 import shutil
 import sys
 import tempfile
@@ -44,6 +45,29 @@ def script(name: str):
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
+
+
+class DisabledLlmWorkflowTests(unittest.TestCase):
+    def test_disabled_provider_never_builds_inventory_calls_or_writes(self):
+        module = script("llm_review")
+        for configured in (None, "", "disabled"):
+            environment = {"GEMINI_API_KEY": "unused-test-key"}
+            if configured is not None:
+                environment["LLM_REVIEW_PROVIDER"] = configured
+            with self.subTest(provider=configured), patch.dict(
+                os.environ, environment, clear=True
+            ), patch.object(sys, "argv", ["llm_review.py"]), patch.object(
+                module, "build_review_input"
+            ) as inventory, patch.object(
+                module, "create_review_report"
+            ) as provider, patch.object(
+                module, "write_review_report"
+            ) as writer, contextlib.redirect_stdout(io.StringIO()) as output:
+                self.assertEqual(module.main(), 0)
+                self.assertIn("disabled", output.getvalue())
+                inventory.assert_not_called()
+                provider.assert_not_called()
+                writer.assert_not_called()
 
 
 def observation(
