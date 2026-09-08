@@ -366,6 +366,27 @@ class ReviewWorkflowTests(unittest.TestCase):
 
 
 class RateLimitTests(unittest.TestCase):
+    def test_unhonored_rate_limit_defers_subsequent_queries(self):
+        error = HTTPError(
+            "https://api.github.com/search/code",
+            429,
+            "rate limit",
+            {"Retry-After": "120"},
+            None,
+        )
+        budget = _RetryBudget(90)
+        with (
+            patch("url_lists.discovery._OPENER.open", side_effect=error) as request,
+            patch("url_lists.discovery.time.sleep") as sleep,
+        ):
+            for query in ("one", "two"):
+                with self.assertRaises(DiscoveryError):
+                    _get_bytes(
+                        f"https://api.github.com/search/code?q={query}", budget=budget
+                    )
+        self.assertEqual(request.call_count, 1)
+        sleep.assert_not_called()
+
     def test_server_wait_is_never_shortened(self):
         error = HTTPError(
             "https://api.github.com/search/code",

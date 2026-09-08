@@ -125,6 +125,7 @@ class _RetryBudget:
 
     def __init__(self, total_seconds: float = MAX_TOTAL_RETRY_SECONDS) -> None:
         self.remaining = total_seconds
+        self.deferred_hosts: set[str] = set()
 
     @property
     def exhausted(self) -> bool:
@@ -193,6 +194,11 @@ def _get_bytes(
 ) -> bytes:
     retry_budget = budget if budget is not None else _RetryBudget()
     safe_url = _trusted_ascii_url(url)
+    hostname = urlsplit(safe_url).hostname
+    if hostname in retry_budget.deferred_hosts:
+        raise DiscoveryError(
+            f"rate-limited host deferred for this collection pass: {hostname}"
+        )
     headers = {
         "Accept": "application/vnd.github+json",
         "User-Agent": "development-library-url-lists/0.1",
@@ -214,6 +220,14 @@ def _get_bytes(
             if granted is None:
                 break
             time.sleep(granted)
+    if (
+        isinstance(last_error, HTTPError)
+        and last_error.code in {403, 429}
+        and _is_retryable(last_error)
+    ):
+        # A new query uses the same service quota. Do not send it immediately
+        # after abandoning an advertised wait or exhausting throttle retries.
+        retry_budget.deferred_hosts.add(hostname)
     raise DiscoveryError(
         f"trusted source request failed for {safe_url}: {last_error}"
     ) from last_error

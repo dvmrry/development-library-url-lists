@@ -73,6 +73,11 @@ local copy is kept at `.private/discovery-run.json`. Partial runs preserve
 evidence from unavailable sources; a total source outage leaves the candidate
 file unchanged and fails the run.
 
+If a rate-limited host exhausts retries or asks for more waiting time than the
+remaining budget permits, subsequent requests to that host are deferred for the
+rest of that collector pass. Other source hosts can still complete. This avoids
+immediately sending the next query against the same exhausted service quota.
+
 ## Compare with observed traffic offline
 
 Supply a sanitized JSONL sample. Each line is a JSON string containing a URL,
